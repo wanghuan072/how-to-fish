@@ -1,56 +1,57 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, CheckCircle2, Fish, MapPinned, Skull } from "lucide-react";
+import { BookOpen, CheckCircle2, Fish, Shell, Skull, Sparkles } from "lucide-react";
 import { FishExplorer } from "@/components/fish/FishExplorer";
 import { InnerHero } from "@/components/layout/InnerHero";
 import { FaqList } from "@/components/ui/FaqList";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { bossCreatures, collectorFish, islands, regularCollectorFish, regularFish } from "@/lib/content";
+import { bossCreatures, creatures, islands } from "@/lib/content";
 import { breadcrumbSchema, collectionPageSchema, faqSchema } from "@/seo/schema";
 import { pageTdk } from "@/seo/tdk";
 import ui from "@/style/components/ui.module.css";
 import styles from "@/style/page/fish.module.css";
 
-const fishFaq = [
-  { question: "How many fish and creatures are in How to Fish?", answer: `The current journal route contains ${collectorFish.length} creatures: ${regularCollectorFish.length} non-boss catches on this page and ${bossCreatures.length} bosses or special encounters on the Bosses page.` },
+const creatureFaq = [
+  { question: "How many creatures are in How to Fish?", answer: `This directory records all ${creatures.length} extracted creature assets: 40 fish, 5 shell creatures and 9 special creatures. Its ${bossCreatures.length} boss encounters link to their dedicated Boss pages.` },
   { question: "How do rare Drip variants work?", answer: "Drip is the term used by official Steam achievements for rare variants. Use the normal species route and lure while farming for one." },
-  { question: "What is the best bait for rare fish?", answer: "Use the bait associated with the base species. Drip variants do not use a separate universal bait." },
-  { question: "Do fish have different values?", answer: "Yes. The table shows the available raw base values. Killscore and cooking can change the final sale." },
-  { question: "When is the fish list updated?", answer: "Fish pages are updated when a route, lure pairing, value or creature location changes after a game update." },
+  { question: "What is the best bait for rare creatures?", answer: "Use the bait associated with the base creature. Drip variants do not use a separate universal bait." },
+  { question: "Do creatures have different values?", answer: "Yes. The table shows extracted or observed raw base values. Killscore and cooking can change the final sale." },
+  { question: "When is the creature list updated?", answer: "Creature pages are updated when an extracted asset, route, lure pairing, value or location changes after a game update." },
 ];
 
-const optionalFishLocationSlugs = new Set(["sunfish", "old-pike"]);
-const fishLocationTotal = regularCollectorFish.length + bossCreatures.filter((entry) => optionalFishLocationSlugs.has(entry.slug)).length;
-
 export function FishPage() {
-  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Fish", href: "/fish/" }, { name: "All Fish", href: "/fish/" }];
+  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Creatures", href: "/creatures/" }];
+  const fishCount = creatures.filter((entry) => entry.creatureGroup === "Fish").length;
+  const shellCount = creatures.filter((entry) => entry.creatureGroup === "Shell creatures").length;
+  const specialCount = creatures.filter((entry) => entry.creatureGroup === "Special creatures").length;
 
   return (
     <main id="main-content">
-      <JsonLd data={[breadcrumbSchema(breadcrumbs), collectionPageSchema(pageTdk.fish), faqSchema(fishFaq)]} />
+      <JsonLd data={[breadcrumbSchema(breadcrumbs), collectionPageSchema(pageTdk.creatures), faqSchema(creatureFaq)]} />
       <InnerHero
         breadcrumbs={breadcrumbs}
-        eyebrow="Creature encyclopedia"
-        title={`How to Fish Steam Fish Guide: All ${fishLocationTotal} Locations & Bait`}
-        description={`Browse ${regularCollectorFish.length} non-boss creatures here, then open Sunfish and The Old Pike in Bosses to complete all ${fishLocationTotal} fish-location routes. Every entry connects its island, rod, bait and observed value.`}
+        eyebrow="Extracted creature directory"
+        title={`How to Fish Creatures: All ${creatures.length} Extracted Creatures`}
+        description={`Browse every extracted creature asset: ${fishCount} fish, ${shellCount} shell creatures and ${specialCount} special creatures. Boss rows lead directly to their dedicated encounter guides.`}
         image="/images/official/gameplay-03.jpg"
         imageAlt="Official How to Fish gameplay screenshot of fishing on a tropical island"
         summary={<>
-          <span><Fish size={18} /><strong>{regularCollectorFish.length}</strong><small>Non-boss catches</small></span>
+          <span><Fish size={18} /><strong>{fishCount}</strong><small>Fish</small></span>
+          <span><Shell size={18} /><strong>{shellCount}</strong><small>Shell creatures</small></span>
+          <span><Sparkles size={18} /><strong>{specialCount}</strong><small>Special creatures</small></span>
           <span><Skull size={18} /><strong>{bossCreatures.length}</strong><small>Encounter guides</small></span>
-          <span><MapPinned size={18} /><strong>{islands.length}</strong><small>Island stages</small></span>
-          <span><BookOpen size={18} /><strong>{collectorFish.length}</strong><small>Journal routes</small></span>
+          <span><BookOpen size={18} /><strong>{creatures.length}</strong><small>All extracted</small></span>
         </>}
       />
 
       <div className={styles.paper}>
-        <FishExplorer entries={regularFish} islandEntries={islands} />
+        <FishExplorer entries={creatures} islandEntries={islands} bossSlugs={bossCreatures.map((entry) => entry.slug)} />
 
         <div className={styles.below}>
           <section className={`${styles.contentPanel} ${styles.valueStrip}`}>
-            <h2>Looking for encounter creatures?</h2>
-            <div><Link href="/bosses/"><Fish size={30} /><span><strong>Looking for a Boss?</strong><small>Story bosses, optional mini-bosses and the final encounter</small></span><b>See triggers, fight tips and rewards →</b></Link></div>
+            <h2>Boss creatures use dedicated encounter pages</h2>
+            <div><Link href="/bosses/"><Skull size={30} /><span><strong>Looking for a Boss?</strong><small>Boss rows above link here instead of creating duplicate creature detail pages.</small></span><b>See triggers, fight tips and rewards →</b></Link></div>
           </section>
 
           <div className={styles.bottomGrid}>
@@ -61,7 +62,7 @@ export function FishPage() {
 
             <section className={styles.contentPanel}>
               <SectionHeading title="Frequently Asked Questions" />
-              <FaqList items={fishFaq} />
+              <FaqList items={creatureFaq} />
             </section>
           </div>
         </div>

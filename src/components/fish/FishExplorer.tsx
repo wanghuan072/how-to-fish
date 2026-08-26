@@ -11,25 +11,25 @@ import styles from "@/style/page/fish.module.css";
 
 const all = "All";
 
-export function FishExplorer({ entries, islandEntries }: { entries: FishEntry[]; islandEntries: IslandEntry[] }) {
+export function FishExplorer({ entries, islandEntries, bossSlugs }: { entries: FishEntry[]; islandEntries: IslandEntry[]; bossSlugs: string[] }) {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [island, setIsland] = useState(all);
   const [category, setCategory] = useState(all);
   const [sort, setSort] = useState("route");
   const islandFilters = useMemo(() => islandEntries.map((item) => ({ slug: item.slug, label: item.label, count: entries.filter((entry) => entry.islandSlug === item.slug).length })), [entries, islandEntries]);
-  const categories = useMemo(() => [...new Set(entries.map((entry) => entry.category))], [entries]);
+  const categories = useMemo(() => ["Fish", "Shell creatures", "Special creatures"].filter((group) => entries.some((entry) => entry.creatureGroup === group)), [entries]);
   const routeOrder = useMemo(() => new Map(entries.map((entry, index) => [entry.slug, index])), [entries]);
 
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase();
     return entries.filter((entry) => {
-      const haystack = `${entry.name} ${entry.aliases?.join(" ") ?? ""} ${entry.islandName} ${entry.rod} ${entry.lure} ${entry.category}`.toLowerCase();
-      return (!needle || haystack.includes(needle)) && (island === all || entry.islandSlug === island) && (category === all || entry.category === category);
+      const haystack = `${entry.name} ${entry.aliases?.join(" ") ?? ""} ${entry.islandName} ${entry.rod} ${entry.lure} ${entry.creatureGroup} ${entry.creatureStatus}`.toLowerCase();
+      return (!needle || haystack.includes(needle)) && (island === all || entry.islandSlug === island) && (category === all || entry.creatureGroup === category);
     }).sort((a, b) => {
       if (sort === "route") return (routeOrder.get(a.slug) ?? 999) - (routeOrder.get(b.slug) ?? 999);
       if (sort === "island") return a.islandName.localeCompare(b.islandName) || a.name.localeCompare(b.name);
-      if (sort === "category") return a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+      if (sort === "category") return (a.creatureGroup ?? "").localeCompare(b.creatureGroup ?? "") || a.name.localeCompare(b.name);
       if (sort === "value") return (b.baseValue ?? -1) - (a.baseValue ?? -1) || a.name.localeCompare(b.name);
       return a.name.localeCompare(b.name);
     });
@@ -37,12 +37,12 @@ export function FishExplorer({ entries, islandEntries }: { entries: FishEntry[];
 
   return (
     <div className={styles.explorer}>
-      <aside className={styles.sidebar} aria-label="Fish filters">
+      <aside className={styles.sidebar} aria-label="Creature filters">
         <section className={styles.filterPanel}>
           <h2><Filter size={17} /> Categories</h2>
           <div className={styles.filterList}>
             <button className={`${styles.filterButton} ${category === all ? styles.filterActive : ""}`} onClick={() => setCategory(all)}><span>All creatures</span><span className={styles.count}>{entries.length}</span></button>
-            {categories.map((name) => <button className={`${styles.filterButton} ${category === name ? styles.filterActive : ""}`} onClick={() => setCategory(name)} key={name}><span>{name}</span><span className={styles.count}>{entries.filter((entry) => entry.category === name).length}</span></button>)}
+            {categories.map((name) => <button className={`${styles.filterButton} ${category === name ? styles.filterActive : ""}`} onClick={() => setCategory(name)} key={name}><span>{name}</span><span className={styles.count}>{entries.filter((entry) => entry.creatureGroup === name).length}</span></button>)}
           </div>
         </section>
         <section className={styles.filterPanel}>
@@ -57,20 +57,20 @@ export function FishExplorer({ entries, islandEntries }: { entries: FishEntry[];
 
       <div className={styles.main}>
         <div className={styles.resultLine}>
-          <label className={styles.inputWrap}><span className="sr-only">Search fish</span><input className={styles.searchInput} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search fish by name, island, rod or lure..." /><Search size={18} /></label>
+          <label className={styles.inputWrap}><span className="sr-only">Search creatures</span><input className={styles.searchInput} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search creatures by name, island, rod or lure..." /><Search size={18} /></label>
           <span>Showing {filtered.length} of {entries.length} creatures</span>
           <label>Sort <select value={sort} onChange={(event) => setSort(event.target.value)}><option value="route">Story / encyclopedia order</option><option value="name">Name</option><option value="island">Island</option><option value="category">Type</option><option value="value">Base coins (high to low)</option></select></label>
         </div>
-        <section className={styles.tablePanel} aria-label="Fish list results">
+        <section className={styles.tablePanel} aria-label="Creature list results">
           <div className={styles.tableWrap}>
             <table className={styles.table}>
               <thead><tr><th>Creature</th><th>Location</th><th>Rod</th><th>Bait / trigger</th><th>Base coins</th></tr></thead>
-              <tbody>{filtered.map((entry) => <tr className={styles.clickableRow} onClick={(event) => { if ((event.target as HTMLElement).closest("a")) return; router.push(`/fish/${entry.slug}/`); }} key={entry.slug}><td><Link className={styles.fishName} href={`/fish/${entry.slug}/`} aria-label={`Open ${entry.name} details`}><span className={styles.fishThumb}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} fill sizes="66px" /></span><span>{entry.name}<small>{entry.aliases?.length ? entry.aliases.join(" · ") : entry.category}</small></span></Link></td><td>{entry.islandName}</td><td>{entry.rod}</td><td>{entry.lure}{entry.lureCost !== undefined ? <small>${entry.lureCost.toLocaleString("en-US")}</small> : null}</td><td>{entry.baseValue !== undefined ? <span className={styles.coinValue}><Coins size={15} aria-hidden="true" /><strong>{entry.baseValue.toLocaleString("en-US")}</strong></span> : <span className={styles.pending}>No fixed value</span>}</td></tr>)}</tbody>
+              <tbody>{filtered.map((entry) => { const href = bossSlugs.includes(entry.slug) ? `/bosses/${entry.slug}/` : `/creatures/${entry.slug}/`; return <tr className={styles.clickableRow} onClick={(event) => { if ((event.target as HTMLElement).closest("a")) return; router.push(href); }} key={entry.slug}><td><Link className={styles.fishName} href={href} aria-label={`Open ${entry.name} details`}><span className={styles.fishThumb}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} fill sizes="66px" /></span><span>{entry.name}<small>{entry.creatureStatus !== "Journal" ? `${entry.creatureGroup} · ${entry.creatureStatus}` : entry.creatureGroup}</small></span></Link></td><td>{entry.islandName}</td><td>{entry.rod}</td><td>{entry.lure}{entry.lureCost !== undefined ? <small>${entry.lureCost.toLocaleString("en-US")}</small> : null}</td><td>{entry.baseValue !== undefined ? <span className={styles.coinValue}><Coins size={15} aria-hidden="true" /><strong>{entry.baseValue.toLocaleString("en-US")}</strong></span> : <span className={styles.pending}>No fixed value</span>}</td></tr>; })}</tbody>
             </table>
           </div>
         </section>
         <section className={styles.inlineIslands}>
-          <div className={styles.inlineHeading}><h2>Fish by Island</h2><Link href="/islands/">View all islands →</Link></div>
+          <div className={styles.inlineHeading}><h2>Creatures by Island</h2><Link href="/islands/">View all islands →</Link></div>
           <div className={styles.islandGrid}>{islandEntries.map((item) => <Link className={styles.islandCard} href={`/islands/${item.slug}/`} key={item.slug}><span className={styles.islandImage}><Image src={item.image} alt="" fill sizes="240px" /></span><span className={styles.islandBody}><strong>{item.label}</strong><span>{item.fishCount} creatures</span><span>Boss: {item.bossNames[0]}</span></span></Link>)}</div>
         </section>
       </div>

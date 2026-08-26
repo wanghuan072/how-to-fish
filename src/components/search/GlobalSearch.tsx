@@ -76,7 +76,7 @@ export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
             className={styles.searchInput}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search fish, guides, bosses, bait..."
+            placeholder="Search creatures, guides, bosses, bait..."
             aria-label="Search"
           />
           <button className={styles.closeSearch} onClick={onClose} aria-label="Close search">
@@ -99,7 +99,7 @@ export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
               </Link>
             ))
           ) : (
-            <p className={styles.empty}>No result yet. Try a fish, island, boss or lure name.</p>
+            <p className={styles.empty}>No result yet. Try a creature, island, boss or lure name.</p>
           )}
         </div>
       </section>

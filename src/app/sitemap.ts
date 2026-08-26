@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const fishPages: MetadataRoute.Sitemap = regularFish.map((entry) => ({
-    url: url(`/fish/${entry.slug}/`),
+    url: url(`/creatures/${entry.slug}/`),
     lastModified: new Date(getFishContent(entry).updated ?? "2026-08-24"),
     changeFrequency: "monthly",
     priority: 0.7,

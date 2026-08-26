@@ -4,7 +4,7 @@
     "name": "Spider Crab Boss Guide",
     "eyebrow": "Story boss · Lighthouse",
     "description": "Use the Empty Beer Can, punish missed charges and return the required quest result for the boat key.",
-    "image": "/images/game/bosses/spider-crab.webp",
+    "image": "/images/game/creatures/spider-crab.png",
     "imageAlt": "In-game screenshot of Spider Crab encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -37,7 +37,7 @@
     "name": "Sunfish Mini-Boss Guide",
     "eyebrow": "Optional · Forest Island",
     "description": "An optional Beginner Boss Lure encounter that counts toward Collector.",
-    "image": "/images/game/bosses/sunfish.webp",
+    "image": "/images/game/creatures/sunfish.png",
     "imageAlt": "In-game screenshot of Sunfish encounter in How to Fish",
     "featured": false,
     "tags": [
@@ -67,7 +67,7 @@
     "name": "The Old Pike Mini-Boss Guide",
     "eyebrow": "Optional · Forest Island",
     "description": "The optional Beginner Boss Lure encounter also labeled Gammelgäddan in some launch guides.",
-    "image": "/images/game/bosses/old-pike.jpg",
+    "image": "/images/game/creatures/the-old-pike.png",
     "imageAlt": "In-game screenshot of The Old Pike encounter in How to Fish",
     "featured": false,
     "tags": [
@@ -97,7 +97,7 @@
     "name": "Giant Piranha Boss Guide",
     "eyebrow": "Story boss · Forest Island",
     "description": "Collect three leeches, receive Leech Bait and return the boss trophy to unlock Desert Island.",
-    "image": "/images/game/bosses/giant-piranha.webp",
+    "image": "/images/game/creatures/giant-piranha.png",
     "imageAlt": "In-game screenshot of Giant Piranha encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -130,7 +130,7 @@
     "name": "Blue Shark Mini-Boss Guide",
     "eyebrow": "Grill quest · Desert Island",
     "description": "Use the $280 Standard Boss Lure and deliver the shark to the Grillmaster to unlock cooking.",
-    "image": "/images/game/bosses/blue-shark.png",
+    "image": "/images/game/creatures/blue-shark.png",
     "imageAlt": "In-game screenshot of Blue Shark encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -163,7 +163,7 @@
     "name": "Pufferfish Boss Guide",
     "eyebrow": "Story boss · Desert Island",
     "description": "Trade an eligible endangered creature for a Carrot, fight around the charge cycle and return the fin to unlock Rocks Island.",
-    "image": "/images/game/bosses/pufferfish.webp",
+    "image": "/images/game/creatures/pufferfish.png",
     "imageAlt": "In-game screenshot of Pufferfish encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -196,7 +196,7 @@
     "name": "Tuna Mini-Boss Guide",
     "eyebrow": "Story setup · Rocks Island",
     "description": "Catch Tuna with the $1,200 Professional Boss Lure and preserve the body for the Albatross fight.",
-    "image": "/images/game/bosses/tuna.png",
+    "image": "/images/game/creatures/tuna.png",
     "imageAlt": "In-game screenshot of Tuna encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -229,7 +229,7 @@
     "name": "Albatross Boss Guide",
     "eyebrow": "Story boss · Rocks Island",
     "description": "Use the defeated Tuna as bait, fight the long-range bird and return its head for Volcano coordinates.",
-    "image": "/images/game/bosses/albatross.webp",
+    "image": "/images/game/creatures/albatross.png",
     "imageAlt": "In-game screenshot of Albatross encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -262,7 +262,7 @@
     "name": "Goblin Shark Mini-Boss Guide",
     "eyebrow": "Optional · Volcano Island",
     "description": "The $5,800 Scientific Boss Lure summons this commonly missed Collector target.",
-    "image": "/images/game/bosses/goblin-shark.jpg",
+    "image": "/images/game/creatures/goblin-shark.png",
     "imageAlt": "In-game screenshot of Goblin Shark encounter in How to Fish",
     "featured": false,
     "tags": [
@@ -292,7 +292,7 @@
     "name": "Bowhead Whale Guide",
     "eyebrow": "Final-route setup · Volcano Island",
     "description": "Use the Fish Bucket or Whale Bait, defeat the whale and keep it for the mutated final encounter.",
-    "image": "/images/game/bosses/bowhead-whale.webp",
+    "image": "/images/game/creatures/bowhead-whale.png",
     "imageAlt": "In-game screenshot of Bowhead Whale Guide encounter in How to Fish",
     "featured": true,
     "tags": [
@@ -325,7 +325,7 @@
     "name": "Mutated Bowhead Whale Final Boss",
     "eyebrow": "Final story encounter",
     "description": "Use the defeated Bowhead Whale to begin the final phase and finish the game.",
-    "image": "/images/game/bosses/mutated-bowhead-whale.webp",
+    "image": "/images/game/creatures/mutated-bowhead-whale.png",
     "imageAlt": "In-game screenshot of Mutated Bowhead Whale Final Boss encounter in How to Fish",
     "featured": true,
     "tags": [

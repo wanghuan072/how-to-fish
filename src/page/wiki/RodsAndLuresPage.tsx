@@ -22,7 +22,7 @@ const lureGroups = [
 ] as const;
 
 function targetHref(entry: FishEntry) {
-  return isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/fish/${entry.slug}/`;
+  return isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/creatures/${entry.slug}/`;
 }
 
 export function RodsAndLuresPage() {
@@ -45,7 +45,7 @@ export function RodsAndLuresPage() {
         <aside className={styles.sidebar}>
           <h2>Find equipment</h2>
           <nav><a href="#rods"><span>Fishing rods</span><b>{rods.length}</b></a><a href="#default-pools"><span>No-bait pools</span><b>{defaultCatchPools.length}</b></a>{lureGroups.map((group) => <a href={`#${group.id}`} key={group.id}><span>{group.title}</span><b>{lures.filter(group.matches).length}</b></a>)}</nav>
-          <Link href="/fish/">Browse non-boss fish <ArrowRight size={13} /></Link>
+          <Link href="/creatures/">Browse creatures <ArrowRight size={13} /></Link>
           <Link href="/bosses/">Browse boss triggers <ArrowRight size={13} /></Link>
         </aside>
 
@@ -65,7 +65,7 @@ export function RodsAndLuresPage() {
 
           <section id="default-pools" className={styles.section}>
             <header><FishIcon size={24} /><div><p>No inventory item</p><h2>Default no-bait pools</h2><span>These are internal pool records, not a reusable item called Free Lure. Rod and island pairings are gameplay cross-checks.</span></div></header>
-            <div className={styles.defaultPools}>{defaultCatchPools.map((pool) => <article key={pool.id}><div><small>{pool.rod}</small><h3>{pool.name}</h3><p>Leave the bait slot empty. The internal catch-time field is {pool.catchTimeSeconds.min}–{pool.catchTimeSeconds.max} seconds.</p></div><nav aria-label={`${pool.name} targets`}>{pool.catchables.map((catchable) => <Link href={`/fish/${catchable.slug}/`} key={catchable.slug}>{catchable.name}<span>{catchable.poolShare.toFixed(catchable.poolShare % 1 ? 1 : 0)}%</span></Link>)}</nav></article>)}</div>
+            <div className={styles.defaultPools}>{defaultCatchPools.map((pool) => <article key={pool.id}><div><small>{pool.rod}</small><h3>{pool.name}</h3><p>Leave the bait slot empty. The internal catch-time field is {pool.catchTimeSeconds.min}–{pool.catchTimeSeconds.max} seconds.</p></div><nav aria-label={`${pool.name} targets`}>{pool.catchables.map((catchable) => <Link href={`/creatures/${catchable.slug}/`} key={catchable.slug}>{catchable.name}<span>{catchable.poolShare.toFixed(catchable.poolShare % 1 ? 1 : 0)}%</span></Link>)}</nav></article>)}</div>
           </section>
 
           {lureGroups.map((group) => {

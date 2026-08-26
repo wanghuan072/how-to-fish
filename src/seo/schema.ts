@@ -19,7 +19,7 @@ export function organizationSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     logo: new URL("/images/brand/how-to-fish-game-mark.png", siteConfig.url).toString(),
-    description: "Independent fan-made How to Fish guide site for fish, quests, bosses, islands and equipment.",
+    description: "Independent fan-made How to Fish guide site for creatures, quests, bosses, islands and equipment.",
   };
 }
 

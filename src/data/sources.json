@@ -142,5 +142,14 @@
     "tier": "Gameplay evidence",
     "checked": "2026-08-26",
     "usedFor": "Unity BaitInfo catch tables, raw weights, pool shares, compatible rods, catch times and bait-loss values extracted from game build 1.0.4."
+  },
+  {
+    "key": "unpacked-creature-assets",
+    "title": "How to Fish v1.0.4 Creature Prefab Extract",
+    "publisher": "Local game-build inspection",
+    "url": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+    "tier": "Gameplay evidence",
+    "checked": "2026-08-26",
+    "usedFor": "Creature prefab names, implementation classes and extracted renders, including ground pickups, the ambient Seagull and the excluded Bing Bong prefab."
   }
 ]

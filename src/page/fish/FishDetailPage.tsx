@@ -51,13 +51,13 @@ export function FishDetailPage({ slug }: { slug: string }) {
     .filter((candidate) => candidate.slug !== slug && candidate.islandSlug === entry.islandSlug)
     .sort((a, b) => Number(b.lure === entry.lure) - Number(a.lure === entry.lure) || a.name.localeCompare(b.name))
     .slice(0, 4);
-  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Fish", href: "/fish/" }, { name: entry.name, href: `/fish/${entry.slug}/` }];
+  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Creatures", href: "/creatures/" }, { name: entry.name, href: `/creatures/${entry.slug}/` }];
   const steps = catchMethod === "Ground pickup" ? [
-    [MapPin, "Go to Lighthouse", "Stay in the opening grounds."],
+    [MapPin, `Go to ${entry.islandName}`, `Search ${area}.`],
     [PackageCheck, "Leave bait unequipped", "No rod or lure is required."],
-    [Anchor, "Search the ground", "This is a pickup, not a pool catch."],
-    [Crosshair, "Pick up the Clam", "Interact with the ground creature."],
-    [Clock3, "Check the encyclopedia", "Use Tab to confirm registration."],
+    [Anchor, "Search the ground", "This is a direct pickup, not a pool catch."],
+    [Crosshair, `Pick up ${entry.name}`, "Interact with the creature."],
+    [Clock3, "Check your progress", "Confirm the pickup before leaving the area."],
   ] as const : unconfirmedCatch ? [
     [MapPin, `Go to ${entry.islandName}`, `The location is the strongest confirmed part of this route.`],
     [PackageCheck, "Do not assume a lure", "The current extract does not identify an exact catch pool."],
@@ -80,7 +80,7 @@ export function FishDetailPage({ slug }: { slug: string }) {
 
   return (
     <main id="main-content">
-      <JsonLd data={[articleSchema(content, `/fish/${entry.slug}/`), breadcrumbSchema(breadcrumbs), faqSchema(content.faq ?? [])]} />
+      <JsonLd data={[articleSchema(content, `/creatures/${entry.slug}/`), breadcrumbSchema(breadcrumbs), faqSchema(content.faq ?? [])]} />
 
       <header className={styles.hero}>
         <Image className={styles.heroBackdrop} src={island?.image ?? "/images/official/gameplay-03.jpg"} alt="" fill loading="eager" sizes="100vw" />
@@ -90,11 +90,11 @@ export function FishDetailPage({ slug }: { slug: string }) {
           <div className={styles.heroGrid}>
             <div className={styles.heroVisual}><Image src={getFishImage(entry)} alt={content.imageAlt} fill loading="eager" sizes="520px" /><small>Wiki species illustration</small></div>
             <div className={styles.heroCopy}>
-              <p>{entry.category} creature guide</p>
+              <p>{entry.creatureGroup ?? entry.category} creature guide</p>
               <h1>{entry.name}</h1>
               <span>{content.description}</span>
               <div className={styles.heroFacts}>
-                <div><Sparkles size={18} /><small>Type</small><strong>{entry.category}</strong></div>
+                <div><Sparkles size={18} /><small>Type</small><strong>{entry.creatureGroup ?? entry.category}</strong></div>
                 <div><Map size={18} /><small>Island</small><strong>{entry.islandName}</strong></div>
                 <div><Coins size={18} /><small>Base coins</small><strong>{entry.baseValue !== undefined ? entry.baseValue.toLocaleString("en-US") : "No fixed value"}</strong></div>
                 <div><Fish size={18} /><small>Method</small><strong>{catchMethod}</strong></div>
@@ -114,7 +114,8 @@ export function FishDetailPage({ slug }: { slug: string }) {
           <section className={`${styles.block} ${styles.dataBlock}`} id="data-overview">
             <SectionTitle number={2}>{entry.name} Data Overview</SectionTitle>
             <dl className={styles.dataOverview}>
-              <div><dt>Creature type</dt><dd>{entry.category}</dd></div>
+              <div><dt>Creature type</dt><dd>{entry.creatureGroup ?? entry.category}</dd></div>
+              <div><dt>Extract status</dt><dd>{entry.creatureStatus ?? "Journal"}</dd></div>
               <div><dt>Island</dt><dd><Link className={styles.inlineLink} href={`/islands/${entry.islandSlug}/`}>{entry.islandName}</Link></dd></div>
               <div><dt>Area</dt><dd>{area}</dd></div>
               <div><dt>Catch method</dt><dd>{catchMethod}</dd></div>
@@ -178,7 +179,7 @@ export function FishDetailPage({ slug }: { slug: string }) {
             </div>
             <div className={styles.relatedFishStrip}>
               <h3>Other catches on {entry.islandName}</h3>
-              <nav>{related.map((item) => <Link href={`/fish/${item.slug}/`} key={item.slug}><span className={styles.relatedFishImage}><Image src={getFishImage(item)} alt={getFishImageAlt(item)} fill sizes="88px" /></span><span><strong>{item.name}</strong><small>{item.category} · {item.lure}</small></span><ArrowRight size={13} /></Link>)}</nav>
+              <nav>{related.map((item) => <Link href={`/creatures/${item.slug}/`} key={item.slug}><span className={styles.relatedFishImage}><Image src={getFishImage(item)} alt={getFishImageAlt(item)} fill sizes="88px" /></span><span><strong>{item.name}</strong><small>{item.creatureGroup ?? item.category} · {item.lure}</small></span><ArrowRight size={13} /></Link>)}</nav>
             </div>
           </section>
 
@@ -194,7 +195,7 @@ export function FishDetailPage({ slug }: { slug: string }) {
             <div className={styles.sideImage}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} fill sizes="520px" /></div>
           </section>
 
-          <section className={`${styles.sideCard} ${styles.toc}`}><h2>On This Page</h2><ol>{visibleSectionIds.map((id, index) => <li key={id}><a href={`#${id}`}>{index + 1}. {id === "best-bait-gear" ? "Catch Methods" : id === "route-links" ? "Routes & Related Fish" : id.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}</a></li>)}</ol><Link className={styles.moreLink} href="/fish/">View all fish →</Link></section>
+          <section className={`${styles.sideCard} ${styles.toc}`}><h2>On This Page</h2><ol>{visibleSectionIds.map((id, index) => <li key={id}><a href={`#${id}`}>{index + 1}. {id === "best-bait-gear" ? "Catch Methods" : id === "route-links" ? "Routes & Related Creatures" : id.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}</a></li>)}</ol><Link className={styles.moreLink} href="/creatures/">View all creatures →</Link></section>
         </aside>
       </div>
     </main>

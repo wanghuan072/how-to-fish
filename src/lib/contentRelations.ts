@@ -236,7 +236,7 @@ function fishItem(slug: string): RelationItem | null {
   if (!entry) return null;
   return {
     title: entry.name,
-    href: isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/fish/${entry.slug}/`,
+    href: isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/creatures/${entry.slug}/`,
     meta: `${entry.category} · ${entry.islandName}`,
     description: `${entry.rod} · ${entry.lure}`,
     image: getFishImage(entry),
@@ -381,8 +381,8 @@ export function getFishRelationItems(slug: string) {
 }
 
 const achievementExtras: Record<string, RelationItem[]> = {
-  "Getting started": [{ title: "Fish list", href: "/fish/", meta: "Creature checklist", description: "Choose any opening creature and complete the catch-and-kill loop." }],
-  Drip: [{ title: "Fish list", href: "/fish/", meta: "Creature routes", description: "Match each base creature to its island, rod and bait before hunting the rare variant." }],
+  "Getting started": [{ title: "Creatures", href: "/creatures/", meta: "Creature checklist", description: "Choose any opening creature and complete the catch-and-kill loop." }],
+  Drip: [{ title: "Creatures", href: "/creatures/", meta: "Creature routes", description: "Match each base creature to its island, rod and bait before hunting the rare variant." }],
   Noob: [{ title: "Beginner Guide", href: "/guides/beginner-guide/", meta: "Guide", description: "Learn the opening catch, combat and selling loop." }],
   Impressive: [{ title: "Weapons", href: "/wiki/weapons/", meta: "Equipment", description: "Choose a weapon that makes style-condition attempts easier to control." }],
   "GOLD GOLD GOLD": [{ title: "Rocks Island", href: "/islands/island-4-rocks/", meta: "Island route", description: "Feed a Drip creature or boss trophy to the Rocks Island slot machine for a chance at a legendary skin." }],
@@ -392,11 +392,11 @@ const achievementExtras: Record<string, RelationItem[]> = {
   Easy: [{ title: "Boss guides", href: "/bosses/", meta: "Encounter directory", description: "Return to an early encounter with a stronger loadout for the ten-second kill." }],
   "I'm the bird now": [{ title: "Dynamite", href: "/wiki/weapons/dynamite/", meta: "Weapon", description: "Boat physics and explosive placement control the launch attempt." }],
   Collector: [
-    { title: "Fish list", href: "/fish/", meta: "Non-boss checklist", description: "All non-boss fish and creatures appear together on one page." },
+    { title: "Creatures", href: "/creatures/", meta: "Creature checklist", description: "All extracted creatures appear together, with Boss entries linking to their encounter pages." },
     { title: "Boss list", href: "/bosses/", meta: "Encounter checklist", description: "Story bosses, optional mini-bosses and the final encounter are listed separately." },
   ],
   "Rich! Millionaire": [{ title: "Desert Island", href: "/islands/island-3-desert/", meta: "Island route", description: "Use cooking and the Reel of Fortune route for the high-value sale." }],
-  Fishipedia: [{ title: "Fish list", href: "/fish/", meta: "Creature checklist", description: "Use each base creature route while cleaning up the separate Drip entries." }],
+  Fishipedia: [{ title: "Creatures", href: "/creatures/", meta: "Creature checklist", description: "Use each base creature route while cleaning up the separate Drip entries." }],
   Bean: [{ title: "Full Walkthrough", href: "/guides/full-walkthrough/", meta: "Speed route", description: "Practice only the five-island progression-critical objectives." }],
 };
 

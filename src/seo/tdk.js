@@ -2,9 +2,9 @@ const updated = "2026-08-25";
 
 export const pageTdk = {
   home: {
-    title: "How to Fish Steam Guide: Beginner Tips, Bosses, Fish & All Islands",
-    description: "Complete How to Fish Steam guide with beginner tips, all 42 fish locations, 11 boss strategies, 5 island routes, quest walkthroughs and all 28 Steam achievements. Updated for 2026-08.",
-    keywords: ["How to Fish", "How to Fish guide", "How to Fish fish", "How to Fish quests", "How to Fish bosses", "How to Fish islands"],
+    title: "How to Fish Steam Guide: 54 Creatures, Bosses & All Islands",
+    description: "Complete How to Fish Steam guide with all 54 extracted creatures, 11 boss strategies, 5 island routes, quest walkthroughs and all 28 Steam achievements. Updated for 2026-08.",
+    keywords: ["How to Fish", "How to Fish guide", "How to Fish creatures", "How to Fish quests", "How to Fish bosses", "How to Fish islands"],
     path: "/",
     lastModified: "2026-08-26",
   },
@@ -15,11 +15,11 @@ export const pageTdk = {
     path: "/guides/",
     lastModified: "2026-08-26",
   },
-  fish: {
-    title: "How to Fish Steam Fish Guide: All 42 Locations & Bait",
-    description: "Find all 42 How to Fish routes: 40 non-boss creatures plus Sunfish and The Old Pike, with islands, rods, bait, values and boss links. Updated for 2026-08.",
-    keywords: ["How to Fish fish list", "How to Fish fish locations", "How to Fish bait", "How to Fish fish values"],
-    path: "/fish/",
+  creatures: {
+    title: "How to Fish Creatures: All 54 Fish, Shell & Special Creatures",
+    description: "Browse all 54 extracted How to Fish creatures: 40 fish, 5 shell creatures and 9 special creatures, with locations, bait, values and direct Boss links. Updated for 2026-08.",
+    keywords: ["How to Fish creatures", "How to Fish creature list", "How to Fish fish", "How to Fish shell creatures", "How to Fish special creatures"],
+    path: "/creatures/",
     lastModified: "2026-08-26",
   },
   quests: {
@@ -203,9 +203,9 @@ export function getDetailTdk(collection, entry, path) {
 
 export function getFishTdk(entry, content, path) {
   return {
-    title: fitTitle(entry.name, " Location & Bait", "How to Fish Steam Guide"),
-    description: fitDescription(`${clean(content.description).replace(/[.!?]+$/, "")}. See the exact area, rod, bait or trigger, sell value, quests and achievements for ${entry.name} in How to Fish.`),
-    keywords: [entry.name, `${entry.name} How to Fish`, `${entry.name} bait`, `${entry.name} location`, "How to Fish fish"],
+    title: fitTitle(entry.name, " Creature Location & Bait", "How to Fish Steam Guide"),
+    description: fitDescription(`${clean(content.description).replace(/[.!?]+$/, "")}. See the exact area, rod, bait or trigger, sell value, quests and achievements for this How to Fish creature.`),
+    keywords: [entry.name, `${entry.name} How to Fish`, `${entry.name} bait`, `${entry.name} location`, "How to Fish creatures"],
     path,
     lastModified: content.updated ?? "2026-08-24",
   };

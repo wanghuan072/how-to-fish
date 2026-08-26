@@ -24,9 +24,9 @@ Start with the main route overview, browse current creature and island counts, o
 
 Choose between a spoiler-light beginner guide and the complete Lighthouse-to-Volcano walkthrough. The beginner route covers controls, early fishing, selling and safe purchases; the full walkthrough follows every major trigger, trophy, NPC return and island unlock.
 
-### [Fish](https://howtofish.org/fish/)
+### [Creatures](https://howtofish.org/creatures/)
 
-Browse all non-boss creatures on one page. Each creature guide links its island, exact rod and bait or trigger, observed base value, related quests and relevant achievements. Boss and special encounter creatures are kept in the dedicated boss section.
+Browse all 54 extracted creatures: 40 fish, 5 shell creatures and 9 special creatures. Each non-boss creature page links its island, exact rod and bait or trigger, observed base value, related quests and relevant achievements. Boss rows open the dedicated boss strategy page.
 
 ### [Quests](https://howtofish.org/quests/)
 
@@ -56,7 +56,7 @@ Keep named quest objects and boss trophies until their return dialogue is comple
 
 ## Maintaining Local Content
 
-Game content is maintained as separate local JSON files in `src/data`, including `fish.json`, `bosses.json`, `weapons.json`, `quests.json`, `guides.json`, `items.json`, `bait.json`, `npcs.json` and `islands.json`. Edit the matching JSON file directly when content changes.
+Game content is maintained as separate local JSON files in `src/data`, including `creatures.json`, `creature-categories.json`, `bosses.json`, `weapons.json`, `quests.json`, `guides.json`, `items.json`, `bait.json`, `npcs.json` and `islands.json`. Edit the matching JSON file directly when content changes.
 
 Use the `published` field in `guides.json` to control which guides appear on the site. Wiki directory categories are kept in `directory-groups.json`.
 
@@ -64,7 +64,7 @@ Use the `published` field in `guides.json` to control which guides appear on the
 
 ### How many creatures are tracked?
 
-The in-game collection contains regular creatures, story bosses and optional encounters. The Fish section lists non-boss catches, while the Bosses section contains encounter creatures with their triggers and fight routes.
+The creature directory contains all 54 extracted creature prefabs: fish, shell creatures, boss encounters, ground pickups and ambient creatures. Boss entries link to the Bosses section for their triggers and fight routes.
 
 ### Which bait should I use?
 

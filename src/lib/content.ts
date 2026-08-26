@@ -2,7 +2,8 @@ import achievementsJson from "@/data/achievements.json";
 import baitJson from "@/data/bait.json";
 import { baitGameData, defaultCatchPools } from "@/data/baitGameData";
 import bossesJson from "@/data/bosses.json";
-import fishJson from "@/data/fish.json";
+import creatureCategoriesJson from "@/data/creature-categories.json";
+import creaturesJson from "@/data/creatures.json";
 import fishValuesJson from "@/data/fish-values.json";
 import guidesJson from "@/data/guides.json";
 import islandsJson from "@/data/islands.json";
@@ -105,7 +106,17 @@ const contentCollections = {
 } as unknown as Record<CollectionKey, ContentEntry[]>;
 
 const auditedFishValues = fishValuesJson as Record<string, number>;
-export const fish: FishEntry[] = (fishJson as FishEntry[]).map((entry) => {
+type CreatureCategory = {
+  slug: string;
+  group: NonNullable<FishEntry["creatureGroup"]>;
+  status: NonNullable<FishEntry["creatureStatus"]>;
+  sourceClass: string;
+  image: string;
+};
+const creatureCategories = new Map((creatureCategoriesJson as CreatureCategory[]).map((entry) => [entry.slug, entry]));
+
+export const fish: FishEntry[] = (creaturesJson as FishEntry[]).map((entry) => {
+  const creatureCategory = creatureCategories.get(entry.slug);
   const catchMethods = extractedCatchMethods(entry);
   const methods = catchMethods.length ? catchMethods : [fallbackCatchMethod(entry)];
   const primaryMethod = methods.find((method) => method.baitName.includes("Boss Lure")) ?? methods[0];
@@ -115,7 +126,14 @@ export const fish: FishEntry[] = (fishJson as FishEntry[]).map((entry) => {
   if (auditedValue !== undefined && !sourceKeys.includes("nerdschalk-creature-values")) sourceKeys.push("nerdschalk-creature-values");
   return {
     ...entry,
-    collectionStatus: "Confirmed",
+    ...(creatureCategory ? {
+      creatureGroup: creatureCategory.group,
+      creatureStatus: creatureCategory.status,
+      sourceClass: creatureCategory.sourceClass,
+      image: creatureCategory.image,
+      imageAlt: `In-game creature asset render of ${entry.name}`,
+    } : {}),
+    collectionStatus: creatureCategory?.status === "Journal" ? "Confirmed" : "Unconfirmed",
     ...(catchMethods.length ? {
       islandSlug: primaryMethod.islandSlug,
       islandName: primaryMethod.islandName,
@@ -140,12 +158,13 @@ export function isBossCreature(entry: FishEntry) {
 
 export const regularFish = fish.filter((entry) => !isBossCreature(entry));
 export const bossCreatures = fish.filter(isBossCreature);
+export const creatures = fish;
 export const collectorFish = fish.filter((entry) => entry.collectionStatus === "Confirmed");
 export const additionalCatchTableFish = fish.filter((entry) => entry.collectionStatus === "Unconfirmed");
 export const regularCollectorFish = regularFish.filter((entry) => entry.collectionStatus === "Confirmed");
 export const islands = (islandsJson as unknown as IslandEntry[]).map((entry) => ({
   ...entry,
-  fishCount: fish.filter((creature) => creature.islandSlug === entry.slug).length,
+  fishCount: fish.filter((creature) => creature.islandSlug === entry.slug && creature.creatureStatus !== "Ambient").length,
 }));
 export const achievements = achievementsJson as AchievementEntry[];
 export const sources = sourcesJson as SourceEntry[];
@@ -182,7 +201,7 @@ export function getFishContent(entry: FishEntry): ContentEntry {
   return {
     slug: entry.slug,
     name: entry.name,
-    eyebrow: `${entry.category} creature guide`,
+    eyebrow: `${entry.creatureGroup ?? entry.category} creature guide`,
     description: `${entry.name} is found in ${area}. ${setup}. Check the route, sell value and any quest or achievement that uses this creature before moving on.`,
     image: getFishImage(entry),
     imageAlt: getFishImageAlt(entry),
@@ -207,15 +226,15 @@ export function getFishContent(entry: FishEntry): ContentEntry {
         bullets: [
           `Island: ${entry.islandName}`,
           `Rod: ${entry.rod}`,
-          `Target type: ${entry.category}`,
+          `Creature type: ${entry.creatureGroup ?? entry.category}`,
           entry.note ?? "Finish any local dialogue or quest step that controls the fishing area before changing your bait.",
         ],
       },
       {
         heading: `How to catch ${entry.name}`,
         bullets: [
-          catchMethod === "Ground pickup" ? "Search the Lighthouse opening grounds and pick the Clam up directly." : catchMethod === "Starter pool catch" ? `Equip ${entry.rod} and work the ${entry.lure}.` : `Equip ${entry.rod} and ${entry.lure}.`,
-          catchMethod === "Ground pickup" ? "No casting step or fishing pool is required; pick the creature up from the ground." : catchMethod === "Starter pool catch" ? "No separate lure is needed for this opening-pool catch." : `Stay on ${entry.islandName} rather than changing islands.`,
+          catchMethod === "Ground pickup" ? `Search ${entry.islandName} and pick ${entry.name} up directly.` : catchMethod === "Starter pool catch" ? `Equip ${entry.rod} and work the ${entry.lure}.` : `Equip ${entry.rod} and ${entry.lure}.`,
+          catchMethod === "Ground pickup" ? "No casting step or fishing pool is required; this creature is found on the ground." : catchMethod === "Starter pool catch" ? "No separate lure is needed for this opening-pool catch." : `Stay on ${entry.islandName} rather than changing islands.`,
           bossLike
             ? "Carry enough ammunition and use a weapon you can land consistently."
             : "Land the creature, create fighting space and finish it before starting the next cast.",
@@ -247,7 +266,7 @@ export function getFishContent(entry: FishEntry): ContentEntry {
       },
       {
         question: `What bait catches ${entry.name}?`,
-        answer: catchMethod === "Ground pickup" ? "No bait is required; Clam is a ground pickup in the Lighthouse opening area." : catchMethod === "Starter pool catch" ? `Use the ${entry.rod} in the ${entry.lure}; this opening-pool catch does not use a separate lure.` : `The bait or trigger is ${entry.lure}.`,
+        answer: catchMethod === "Ground pickup" ? `No bait is required; ${entry.name} is a ground pickup on ${entry.islandName}.` : catchMethod === "Starter pool catch" ? `Use the ${entry.rod} in the ${entry.lure}; this opening-pool catch does not use a separate lure.` : `The bait or trigger is ${entry.lure}.`,
       },
       {
         question: `What is ${entry.name} worth?`,
@@ -263,8 +282,8 @@ export function buildSearchIndex(): SearchItem[] {
   const index: SearchItem[] = [
     ...fish.map((entry) => ({
         title: entry.name,
-        href: isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/fish/${entry.slug}/`,
-        type: isBossCreature(entry) ? "Boss" : "Fish",
+        href: isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/creatures/${entry.slug}/`,
+        type: isBossCreature(entry) ? "Boss" : "Creature",
         description: `${entry.islandName} · ${entry.lure}`,
       })),
   ];

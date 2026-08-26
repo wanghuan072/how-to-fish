@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "How to Fish Wiki",
   shortName: "HTF Wiki",
   description:
-    "Find fish, bait, quests, bosses, weapons and island routes for Dazed Games' How to Fish on Steam.",
+    "Find creatures, bait, quests, bosses, weapons and island routes for Dazed Games' How to Fish on Steam.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://howtofish.org",
   steamUrl: "https://store.steampowered.com/app/4001890/How_to_Fish/",
   steamAchievementsUrl:
@@ -12,7 +12,7 @@ export const siteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Guides", href: "/guides/" },
-    { label: "Fish", href: "/fish/" },
+    { label: "Creatures", href: "/creatures/" },
     { label: "Quests", href: "/quests/" },
     { label: "Bosses", href: "/bosses/" },
     { label: "Islands", href: "/islands/" },

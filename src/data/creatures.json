@@ -1028,5 +1028,49 @@
     "image": "/images/game/bosses/mutated-bowhead-whale.webp",
     "guide": true,
     "imageAlt": "In-game screenshot of Mutated Bowhead Whale in How to Fish"
+  },
+  {
+    "slug": "foot-snail",
+    "name": "Foot Snail",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "None",
+    "lure": "Ground pickup",
+    "baseValue": 12,
+    "category": "Special",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["unpacked-creature-assets"],
+    "note": "A direct ground pickup in the Volcano scene. It is included because this directory records every extracted creature asset.",
+    "imageAlt": "In-game creature asset render of Foot Snail"
+  },
+  {
+    "slug": "leech",
+    "name": "Leech",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "None",
+    "lure": "Ground pickup",
+    "baseValue": 4,
+    "category": "Special",
+    "progression": "Story",
+    "evidence": "Verified",
+    "sourceKeys": ["unpacked-creature-assets"],
+    "note": "A direct ground pickup used by the Forest Island leech-bait quest route, not a rod catch.",
+    "imageAlt": "In-game creature asset render of Leech"
+  },
+  {
+    "slug": "seagull",
+    "name": "Seagull",
+    "islandSlug": "lighthouse",
+    "islandName": "Multiple islands",
+    "rod": "None",
+    "lure": "Ambient creature",
+    "category": "Special",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["unpacked-creature-assets"],
+    "note": "An ambient Bird creature prefab referenced by all five island scenes. Its exact spawn route and value are not established in the extract.",
+    "imageAlt": "Placeholder illustration for Seagull"
   }
 ]

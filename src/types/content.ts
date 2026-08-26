@@ -48,6 +48,9 @@ export type FishEntry = {
   imageAlt?: string;
   collectionStatus?: "Confirmed" | "Unconfirmed";
   catchMethods?: FishCatchMethod[];
+  creatureGroup?: "Fish" | "Shell creatures" | "Special creatures";
+  creatureStatus?: "Journal" | "Ground pickup" | "Ambient" | "Hidden";
+  sourceClass?: string;
 };
 
 export type FishCatchMethod = {

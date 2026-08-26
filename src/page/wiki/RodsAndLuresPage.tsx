@@ -35,8 +35,8 @@ export function RodsAndLuresPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Equipment compatibility"
-        title="How to Fish Rods & Lures — Match the Right Setup"
-        description="Choose the creature you want, then check its rod, lure and island before casting. Boss bodies and quest objects are shown separately because they are carried triggers, not normal bait."
+        title="How to Fish Steam Rods & Lures Guide: Best Catch Setups"
+        description="Choose a target, then match it with the correct rod, lure, island and weighted pool. Boss bodies and quest objects stay separate because they are carried triggers, not normal bait."
         image="/images/official/gameplay-07.jpg"
         imageAlt="Official How to Fish gameplay screenshot showing a fishing setup"
         summary={<><span><strong>{rods.length}</strong> rod types</span><span><strong>{lures.length}</strong> bait and trigger entries</span></>}
@@ -64,8 +64,8 @@ export function RodsAndLuresPage() {
           </section>
 
           <section id="default-pools" className={styles.section}>
-            <header><FishIcon size={24} /><div><p>No inventory item</p><h2>Default no-bait pools</h2><span>These are internal rod pools, not a reusable item called Free Lure.</span></div></header>
-            <div className={styles.defaultPools}>{defaultCatchPools.map((pool) => <article key={pool.id}><div><small>{pool.rod}</small><h3>{pool.name}</h3><p>Leave the bait slot empty. A target should bite after {pool.catchTimeSeconds.min}–{pool.catchTimeSeconds.max} seconds.</p></div><nav aria-label={`${pool.name} targets`}>{pool.catchables.map((catchable) => <Link href={`/fish/${catchable.slug}/`} key={catchable.slug}>{catchable.name}<span>{catchable.poolShare.toFixed(catchable.poolShare % 1 ? 1 : 0)}%</span></Link>)}</nav></article>)}</div>
+            <header><FishIcon size={24} /><div><p>No inventory item</p><h2>Default no-bait pools</h2><span>These are internal pool records, not a reusable item called Free Lure. Rod and island pairings are gameplay cross-checks.</span></div></header>
+            <div className={styles.defaultPools}>{defaultCatchPools.map((pool) => <article key={pool.id}><div><small>{pool.rod}</small><h3>{pool.name}</h3><p>Leave the bait slot empty. The internal catch-time field is {pool.catchTimeSeconds.min}–{pool.catchTimeSeconds.max} seconds.</p></div><nav aria-label={`${pool.name} targets`}>{pool.catchables.map((catchable) => <Link href={`/fish/${catchable.slug}/`} key={catchable.slug}>{catchable.name}<span>{catchable.poolShare.toFixed(catchable.poolShare % 1 ? 1 : 0)}%</span></Link>)}</nav></article>)}</div>
           </section>
 
           {lureGroups.map((group) => {
@@ -75,7 +75,7 @@ export function RodsAndLuresPage() {
               <div className={styles.lureGrid}>{entries.map((lure) => {
                 const catches = (lure.catchSlugs ?? []).map((slug) => fish.find((entry) => entry.slug === slug)).filter((entry): entry is FishEntry => Boolean(entry));
                 const gameData = getBaitGameData(lure.slug);
-                const rodsUsed = gameData ? [gameData.requireReeling ? "Fishing Rod" : "Crab Fishing Rod"] : [...new Set(catches.map((entry) => entry.rod).filter((rod) => rod !== "None"))];
+                const rodsUsed = gameData ? [gameData.rod] : [...new Set(catches.map((entry) => entry.rod).filter((rod) => rod !== "None"))];
                 return <article className={styles.lureCard} key={lure.slug}>
                   <Link className={styles.lureMedia} href={`/wiki/bait/${lure.slug}/`}><Image src={lure.image} alt={lure.imageAlt} fill sizes="240px" /><small>{catches.length} target{catches.length === 1 ? "" : "s"}</small></Link>
                   <div className={styles.lureBody}><p>{lure.eyebrow}</p><h3><Link href={`/wiki/bait/${lure.slug}/`}>{lure.name}</Link></h3><span>{lure.description}</span><div className={styles.setup}><Route size={13} /><b>{rodsUsed.join(" / ") || "No rod · physical trigger"}{gameData ? ` · ${gameData.catchTimeSeconds.min}–${gameData.catchTimeSeconds.max}s` : ""}</b></div><nav aria-label={`${lure.name} target pages`}>{catches.map((entry) => <Link href={targetHref(entry)} key={entry.slug}><FishIcon size={11} />{entry.name}</Link>)}</nav><Link className={styles.openLink} href={`/wiki/bait/${lure.slug}/`}>See stats and catch pool <ArrowRight size={13} /></Link></div>

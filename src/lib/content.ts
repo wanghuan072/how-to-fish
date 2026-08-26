@@ -42,6 +42,7 @@ function extractedCatchMethods(entry: FishEntry): FishCatchMethod[] {
       islandName: islandNames[pool.islandSlug],
       rod: pool.rod,
       methodType: "Default pool" as const,
+      verification: "Gameplay cross-check" as const,
       rawWeight: catchable.weight,
       poolShare: catchable.poolShare,
       catchTimeSeconds: pool.catchTimeSeconds,
@@ -57,8 +58,9 @@ function extractedCatchMethods(entry: FishEntry): FishCatchMethod[] {
       baitName: bait.sourceName,
       islandSlug: bait.islandSlug,
       islandName: islandNames[bait.islandSlug],
-      rod: bait.requireReeling ? "Fishing Rod" : "Crab Fishing Rod",
+      rod: bait.rod,
       methodType: bait.kind,
+      verification: "Unity BaitInfo" as const,
       price: bait.price ?? undefined,
       rawWeight: catchable.weight,
       poolShare: catchable.poolShare,
@@ -73,12 +75,14 @@ function extractedCatchMethods(entry: FishEntry): FishCatchMethod[] {
 function fallbackCatchMethod(entry: FishEntry): FishCatchMethod {
   const groundPickup = entry.lure.toLowerCase().includes("ground pickup");
   const encounterTrigger = entry.lure.startsWith("Defeated ");
+  const unconfirmed = entry.lure.toLowerCase().includes("unconfirmed") || entry.evidence === "Community";
   return {
     baitName: entry.lure,
     islandSlug: entry.islandSlug,
     islandName: entry.islandName,
     rod: entry.rod,
-    methodType: groundPickup ? "Ground pickup" : encounterTrigger ? "Encounter trigger" : "Default pool",
+    methodType: groundPickup ? "Ground pickup" : encounterTrigger ? "Encounter trigger" : unconfirmed ? "Unconfirmed" : "Default pool",
+    verification: "Route cross-check",
     price: entry.lureCost,
   };
 }
@@ -109,17 +113,18 @@ export const fish: FishEntry[] = (fishJson as FishEntry[]).map((entry) => {
   if (auditedValue !== undefined && !sourceKeys.includes("nerdschalk-creature-values")) sourceKeys.push("nerdschalk-creature-values");
   return {
     ...entry,
+    collectionStatus: "Confirmed",
     ...(catchMethods.length ? {
       islandSlug: primaryMethod.islandSlug,
       islandName: primaryMethod.islandName,
       rod: primaryMethod.rod,
       lure: methods.map((method) => method.baitName).join(" / "),
       lureCost: primaryMethod.price,
-      evidence: "Verified" as const,
+      evidence: catchMethods.every((method) => method.verification === "Unity BaitInfo") ? "Verified" as const : "Cross-checked" as const,
     } : {}),
     ...(auditedValue !== undefined ? {
       baseValue: auditedValue,
-      valueNote: "Base value before cooking and Killscore; the final sale can be higher.",
+      valueNote: "Observed base value for game build 1.0.4 before cooking and Killscore; inspect the catch after updates because the final sale can change.",
     } : {}),
     sourceKeys,
     catchMethods: methods,
@@ -133,6 +138,27 @@ export function isBossCreature(entry: FishEntry) {
 
 export const regularFish = fish.filter((entry) => !isBossCreature(entry));
 export const bossCreatures = fish.filter(isBossCreature);
+export const collectorFish = fish.filter((entry) => entry.collectionStatus === "Confirmed");
+export const additionalCatchTableFish = fish.filter((entry) => entry.collectionStatus === "Unconfirmed");
+export const regularCollectorFish = regularFish.filter((entry) => entry.collectionStatus === "Confirmed");
+
+export const fishDataAudit = {
+  documentedRecords: fish.length,
+  confirmedCollectorRecords: collectorFish.length,
+  additionalCatchTableRecords: additionalCatchTableFish.length,
+  confirmedNonBossRecords: regularCollectorFish.length,
+  encounterRecords: bossCreatures.length,
+} as const;
+
+if (fishDataAudit.documentedRecords !== 51) throw new Error(`Expected 51 documented creature records; found ${fishDataAudit.documentedRecords}.`);
+if (fishDataAudit.confirmedCollectorRecords !== 51) throw new Error(`Expected 51 current journal creature records; found ${fishDataAudit.confirmedCollectorRecords}.`);
+if (fishDataAudit.additionalCatchTableRecords !== 0) throw new Error(`Expected no detached catch-table records; found ${fishDataAudit.additionalCatchTableRecords}.`);
+if (fishDataAudit.confirmedNonBossRecords !== 40 || fishDataAudit.encounterRecords !== 11) throw new Error("Creature directory split no longer matches the audited 40 non-boss + 11 encounter structure.");
+
+const fishSlugs = new Set(fish.map((entry) => entry.slug));
+for (const catchable of [...baitGameData, ...defaultCatchPools].flatMap((entry) => entry.catchables)) {
+  if (!fishSlugs.has(catchable.slug)) throw new Error(`Catch-table creature ${catchable.slug} has no matching fish record.`);
+}
 export const islands = (islandsJson as unknown as IslandEntry[]).map((entry) => ({
   ...entry,
   fishCount: fish.filter((creature) => creature.islandSlug === entry.slug).length,
@@ -165,7 +191,7 @@ export function getFishImage(entry: FishEntry) {
 
 export function getFishImageAlt(entry: FishEntry) {
   return entry.image
-    ? `${entry.name} creature illustration from How to Fish`
+    ? entry.imageAlt ?? `${entry.name} creature illustration from How to Fish`
     : `No verified in-game creature thumbnail is available for ${entry.name}`;
 }
 
@@ -184,11 +210,7 @@ export function getFishContent(entry: FishEntry): ContentEntry {
     eyebrow: `${entry.category} creature guide`,
     description: `${entry.name} is found in ${area}. ${setup}. Check the route, sell value and any quest or achievement that uses this creature before moving on.`,
     image: getFishImage(entry),
-    imageAlt: !entry.image
-      ? getFishImageAlt(entry)
-      : bossLike
-      ? `In-game ${entry.name} encounter image from How to Fish`
-      : `${entry.name} creature illustration for How to Fish Wiki`,
+    imageAlt: getFishImageAlt(entry),
     updated: "2026-08-26",
     sourceLabel: `${entry.sourceKeys.length} checked source${entry.sourceKeys.length === 1 ? "" : "s"}`,
     sections: [
@@ -231,12 +253,6 @@ export function getFishContent(entry: FishEntry): ContentEntry {
           entry.baseValue !== undefined
             ? `${entry.name} starts at ${entry.baseValue.toLocaleString("en-US")} coins before Killscore, cooking and other multipliers. ${entry.valueNote ?? "The final sale can change after the fight."}`
             : `${entry.name} does not have a fixed base value shown here. Check the live value before selling because Killscore, cooking and item condition can change the result.`,
-        ],
-      },
-      {
-        heading: "Rare Drip variant",
-        paragraphs: [
-          `Drip ${entry.name} uses the same bait and island as the normal version. Repeat the usual route, watch for the rainbow name and use the Tab encyclopedia to see whether the rare entry registered.`,
         ],
       },
       {

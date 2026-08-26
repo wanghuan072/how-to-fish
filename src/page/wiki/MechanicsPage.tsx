@@ -22,7 +22,7 @@ const groups: Array<{ id: string; title: string; description: string; entries: M
     { title: "Island progression", description: "The route is Lighthouse → Forest → Desert → Rocks → Volcano. New Radar markers appear after the required story trophy is handed back to the current quest giver.", bullets: ["Green, yellow, red and pink dots mark the four destinations.", "The boss kill alone is not enough.", "Do not sell Tuna or Bowhead Whale before the next trigger."], links: [["Island routes", "/islands/"], ["Quest guides", "/quests/"], ["Radar", "/wiki/items/radar/"]] },
   ] },
   { id: "equipment-coop", title: "Equipment & Co-op", description: "Attachments, controller support and role planning for multiplayer.", entries: [
-    { title: "Weapons & four attachment slots", description: "The weapon set is Brass Knuckles, Knife, Pistol, SMG, Shotgun, Sniper Rifle, Dynamite and Assault Rifle. A full firearm build uses extended magazine, laser, one optic and one muzzle option.", bullets: ["Red dot and sniper scope share the optic slot.", "Compensator and suppressor share the muzzle slot.", "Fill all four slots on one weapon for Fully equipped."], links: [["Weapons", "/wiki/weapons/"], ["Fully equipped", "/wiki/achievements/#fully-equipped"]] },
+    { title: "Weapons & Fully equipped", description: "The weapon set is Brass Knuckles, Knife, Pistol, SMG, Shotgun, Sniper Rifle, Dynamite and Assault Rifle. The achievement check also requires a damage upgrade, not only visible attachments.", bullets: ["Equip a non-default optic.", "Install at least one damage upgrade and a muzzle attachment.", "Add both the laser sight and extended magazine on the same eligible firearm."], links: [["Weapons", "/wiki/weapons/"], ["Fully equipped", "/wiki/achievements/#fully-equipped"]] },
     { title: "Controller & Steam Deck", description: "The game supports controller play. On Steam Deck, controls and performance work while some in-game text can be small.", bullets: ["The default controller configuration is functional.", "The game displays controller icons.", "Test readable UI scale before a long handheld session."], links: [["Beginner Guide", "/guides/beginner-guide/"], ["Game Wiki", "/wiki/"]] },
     { title: "Online co-op", description: "Single-player and online co-op support up to four players. Physics and explosives make explicit roles useful during expensive boss attempts.", bullets: ["Agree who casts the single-use lure.", "Keep explosives away from the boat.", "Confirm who carries the physical chain item."], links: [["Boss guides", "/bosses/"], ["Dynamite", "/wiki/weapons/dynamite/"], ["Full Walkthrough", "/guides/full-walkthrough/"]] },
   ] },
@@ -40,8 +40,8 @@ export function MechanicsPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Gameplay systems"
-        title="How to Fish Mechanics — Fishing, Combat, Money & Co-op"
-        description="Learn how line tension, Killscore, cooking, island progression, Drip variants, attachments and multiplayer roles work during a normal playthrough."
+        title="How to Fish Steam Mechanics Guide: Fishing, Combat & Money"
+        description="Learn how fishing tension, Killscore, cooking, island progression, Drip variants, weapon attachments and multiplayer roles work during a complete Steam playthrough."
         image="/images/official/gameplay-06.jpg"
         imageAlt="Official How to Fish gameplay screenshot"
         summary={<><span><strong>{groups.length}</strong> system categories</span><span>Fishing, combat, progression and co-op</span></>}

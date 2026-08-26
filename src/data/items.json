@@ -21,7 +21,7 @@
   },
   {
     "slug": "beer-can",
-    "name": "Beer Can → Empty Beer Can",
+    "name": "Beer → Empty Beer Can",
     "eyebrow": "Opening quest item",
     "description": "The first multi-step item chain: give the beer to the Lighthouse Keeper, then use the empty can for Spider Crab.",
     "image": "/images/official/gameplay-04.jpg",
@@ -34,7 +34,7 @@
     "sections": [
       {
         "heading": "Exact route",
-        "bullets": ["Obtain the Beer Can and give it to the Lighthouse Keeper.", "Keep the returned Empty Beer Can.", "Equip it with the Crab Fishing Rod to summon Spider Crab.", "Return the required crab result to receive the boat key."]
+        "bullets": ["Obtain a Beer and give it to the Lighthouse Keeper.", "Keep the returned Empty Beer Can.", "Equip it with the Crab Fishing Rod to summon Spider Crab.", "Return the required crab result to receive the boat key."]
       }
     ]
   },
@@ -61,7 +61,7 @@
     "slug": "carrot",
     "name": "Carrot",
     "eyebrow": "Desert story bait",
-    "description": "The Pufferfish bait received by trading a Standard-Lure Needlefish to the tourist on Desert Island.",
+    "description": "The Pufferfish bait received by trading an eligible endangered creature to the tourist on Desert Island.",
     "image": "/images/official/gameplay-02.jpg",
     "imageAlt": "Official How to Fish screenshot of the Desert Island Pufferfish encounter",
     "featured": true,
@@ -71,8 +71,8 @@
     "sourceUrl": "https://allthings.how/how-to-fish-how-to-unlock-every-island-forest-desert-rocks-volcano/",
     "sections": [
       {
-        "heading": "Needlefish trade",
-        "bullets": ["Buy the $15 Standard Lure.", "Catch Needlefish and keep it uncooked.", "Give it to the tourist under the tree for the Carrot.", "Use the Carrot for Pufferfish and return the fin to unlock Rocks Island."]
+        "heading": "Endangered-creature trade",
+        "bullets": ["Buy the $15 Standard Lure.", "Catch an eligible endangered creature; Needlefish and Seahorse are confirmed options.", "Give the eligible catch to the tourist under the tree for the Carrot.", "Use the Carrot for Pufferfish and return the fin to unlock Rocks Island."]
       }
     ]
   },

@@ -50,7 +50,7 @@ export const questRelations: Record<string, RelationSpec> = {
     rewards: [{ title: "Desert Island coordinates", description: "Return the Giant Piranha trophy to advance the Radar route to Island 3." }],
   },
   vacation: {
-    creatures: ["needlefish", "pufferfish"],
+    creatures: ["needlefish", "seahorse", "pufferfish"],
     items: ["carrot"],
     bait: ["standard-lure", "carrot"],
     npcs: ["desert-tourist"],
@@ -72,11 +72,20 @@ export const questRelations: Record<string, RelationSpec> = {
     rewards: [{ title: "Volcano Island coordinates", description: "Keep the Tuna, use it to draw the Albatross, then return the bird's head." }],
   },
   "deadliest-catch": {
+    creatures: ["mutated-bowhead-whale"],
+    npcs: ["volcano-military-officer"],
+    quests: ["scientists-whale-bait"],
+    achievements: ["Deadliest catch"],
+    rewards: [{ title: "Military quest completion", description: "The military preparation feeds into the final Boss-type whale encounter that runs the Deadliest Catch check." }],
+  },
+  "scientists-whale-bait": {
     creatures: ["bowhead-whale", "mutated-bowhead-whale"],
     items: ["fish-bucket"],
     bait: ["fish-bucket"],
+    npcs: ["volcano-scientist"],
+    quests: ["deadliest-catch"],
     achievements: ["Deadliest catch", "We are so back", "Handyman", "Bean"],
-    rewards: [{ title: "Story completion", description: "The Bowhead-to-mutated-whale chain completes the five-island launch route." }],
+    rewards: [{ title: "Ending transport", description: "The Bowhead body opens the mutated encounter; the transport after that fight runs the finish-game checkpoint." }],
   },
 };
 
@@ -88,45 +97,46 @@ export const bossRelations: Record<string, RelationSpec> = {
   pufferfish: { items: ["carrot"], bait: ["carrot"], quests: ["vacation"], achievements: ["Vacation"], rewards: [{ title: "Pufferfish fin", description: "Return the fin to the Desert Tourist to reveal Rocks Island." }] },
   "blue-shark": { bait: ["standard-boss-lure"], quests: ["grillmaster"], achievements: ["Grillmaster"], rewards: [{ title: "Blue Shark body", description: "Take the defeated shark to the Grillmaster to unlock cooking." }] },
   tuna: { bait: ["professional-boss-lure"], quests: ["terrorizing-bird"], achievements: ["Terrorizing bird"], rewards: [{ title: "Defeated Tuna", description: "Keep the body intact and place it on land to trigger Albatross." }] },
-  albatross: { quests: ["terrorizing-bird"], achievements: ["Terrorizing bird"], rewards: [{ title: "Albatross head", description: "Return the head to the Rocks Shop NPC for Volcano Island coordinates." }] },
+  albatross: { quests: ["terrorizing-bird"], achievements: ["Terrorizing bird"], rewards: [{ title: "Albatross head", description: "Return the head to the scared Rocks islander for Volcano Island coordinates." }] },
   "goblin-shark": { bait: ["scientific-boss-lure"], achievements: ["Collector"], rewards: [{ title: "Optional encyclopedia entry", description: "Goblin Shark counts toward the creature collection but is not part of the story route." }] },
-  "bowhead-whale": { items: ["fish-bucket"], bait: ["fish-bucket"], quests: ["deadliest-catch"], achievements: ["Deadliest catch"], rewards: [{ title: "Defeated Bowhead Whale", description: "Keep the body intact and carry it into the Volcano final trigger." }] },
-  "mutated-bowhead-whale": { quests: ["deadliest-catch"], achievements: ["We are so back", "Handyman", "Bean"], rewards: [{ title: "Story completion", description: "Defeating the mutated phase completes the five-island route and opens cleanup play." }] },
+  "bowhead-whale": { items: ["fish-bucket"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], achievements: ["Collector"], rewards: [{ title: "Defeated Bowhead Whale", description: "Keep the body intact and carry it into the Volcano final trigger." }] },
+  "mutated-bowhead-whale": { quests: ["deadliest-catch", "scientists-whale-bait"], achievements: ["Deadliest catch", "We are so back", "Handyman", "Bean"], rewards: [{ title: "Final boss cleared", description: "The death check covers the boss achievements; use the ending transport afterward for story completion." }] },
 };
 
 const islandRelations: Record<string, RelationSpec> = {
   lighthouse: {
-    npcs: ["lighthouse-keeper", "melvin"],
+    npcs: ["lighthouse-keeper"],
     items: ["beer-can", "radar", "boat-engine"],
     quests: ["who-stole-my-beer"],
     weapons: ["brass-knuckles", "knife"],
     achievements: ["Getting started", "Who stole my beer", "Getting an upgrade"],
   },
   "island-2-forest": {
-    npcs: ["forest-lake-lady"],
+    npcs: ["forest-lake-lady", "forest-shopkeeper"],
     items: ["modified-leech"],
     quests: ["dinnertime"],
     weapons: ["pistol", "shotgun", "dynamite"],
     achievements: ["Dinnertime", "Let me go"],
   },
   "island-3-desert": {
-    npcs: ["desert-tourist", "grillmaster"],
+    npcs: ["desert-tourist", "grillmaster", "desert-kiosk-seller"],
     items: ["carrot"],
     quests: ["vacation", "grillmaster"],
     weapons: ["smg"],
-    achievements: ["Vacation", "Grillmaster", "Yummy in my tummy", "GOLD GOLD GOLD"],
+    achievements: ["Vacation", "Grillmaster", "Yummy in my tummy"],
   },
   "island-4-rocks": {
-    npcs: ["rocks-shop-npc"],
+    npcs: ["rocks-shop-npc", "rocks-store-clerk", "rocks-weapon-seller", "rocks-roulette-operator", "rocks-slot-operator"],
     bait: ["professional-lure", "professional-boss-lure"],
     quests: ["terrorizing-bird"],
     weapons: ["sniper-rifle"],
-    achievements: ["Terrorizing bird"],
+    achievements: ["Terrorizing bird", "All in", "GOLD GOLD GOLD", "Fully equipped"],
   },
   "island-5-volcano": {
+    npcs: ["volcano-military-officer", "volcano-quartermaster", "volcano-scientist"],
     items: ["fish-bucket"],
     bait: ["scientific-lure", "scientific-boss-lure", "fish-bucket"],
-    quests: ["deadliest-catch"],
+    quests: ["deadliest-catch", "scientists-whale-bait"],
     weapons: ["assault-rifle"],
     achievements: ["Deadliest catch", "We are so back", "Handyman", "Bean"],
   },
@@ -147,18 +157,26 @@ const itemRelations: Record<string, RelationSpec> = {
   radar: { islands: ["lighthouse", "island-2-forest", "island-3-desert", "island-4-rocks", "island-5-volcano"], quests: ["who-stole-my-beer"] },
   "beer-can": { creatures: ["spider-crab"], bait: ["empty-beer-can"], npcs: ["lighthouse-keeper"], quests: ["who-stole-my-beer"], bosses: ["spider-crab"], islands: ["lighthouse"], achievements: ["Who stole my beer"], rods: ["crab-fishing-rod"] },
   "modified-leech": { creatures: ["giant-piranha"], bait: ["modified-leech"], npcs: ["forest-lake-lady"], quests: ["dinnertime"], bosses: ["giant-piranha"], islands: ["island-2-forest"], achievements: ["Dinnertime"], rods: ["fishing-rod"] },
-  carrot: { creatures: ["needlefish", "pufferfish"], bait: ["standard-lure", "carrot"], npcs: ["desert-tourist"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"], rods: ["fishing-rod"] },
-  "fish-bucket": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], bait: ["fish-bucket"], quests: ["deadliest-catch"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["Deadliest catch", "We are so back"], rods: ["fishing-rod"] },
+  carrot: { creatures: ["needlefish", "seahorse", "pufferfish"], bait: ["standard-lure", "carrot"], npcs: ["desert-tourist"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"], rods: ["fishing-rod"] },
+  "fish-bucket": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["Deadliest catch", "We are so back"], rods: ["fishing-rod"] },
   "boat-engine": { islands: ["lighthouse", "island-2-forest", "island-3-desert", "island-4-rocks", "island-5-volcano"], achievements: ["Getting an upgrade", "I am speed"] },
 };
 
 const npcRelations: Record<string, RelationSpec> = {
   "lighthouse-keeper": { creatures: ["spider-crab"], items: ["beer-can", "radar"], bait: ["empty-beer-can"], quests: ["who-stole-my-beer"], bosses: ["spider-crab"], islands: ["lighthouse"], achievements: ["Who stole my beer"] },
-  melvin: { islands: ["lighthouse"] },
   "forest-lake-lady": { creatures: ["giant-piranha"], items: ["modified-leech"], bait: ["modified-leech"], quests: ["dinnertime"], bosses: ["giant-piranha"], islands: ["island-2-forest"], achievements: ["Dinnertime"] },
-  "desert-tourist": { creatures: ["needlefish", "pufferfish"], items: ["carrot"], bait: ["standard-lure", "carrot"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"] },
+  "desert-tourist": { creatures: ["needlefish", "seahorse", "pufferfish"], items: ["carrot"], bait: ["standard-lure", "carrot"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"] },
   grillmaster: { creatures: ["blue-shark"], bait: ["standard-boss-lure"], quests: ["grillmaster"], bosses: ["blue-shark"], islands: ["island-3-desert"], achievements: ["Grillmaster", "Yummy in my tummy"] },
   "rocks-shop-npc": { creatures: ["tuna", "albatross"], bait: ["professional-boss-lure"], quests: ["terrorizing-bird"], bosses: ["tuna", "albatross"], islands: ["island-4-rocks"], achievements: ["Terrorizing bird"] },
+  "forest-shopkeeper": { weapons: ["pistol", "shotgun", "dynamite"], rods: ["fishing-rod"], islands: ["island-2-forest"], achievements: ["Getting an upgrade"] },
+  "desert-kiosk-seller": { items: ["boat-engine"], weapons: ["smg"], islands: ["island-3-desert"], achievements: ["I am speed"] },
+  "rocks-roulette-operator": { islands: ["island-4-rocks"], achievements: ["All in", "Everyone's dream"] },
+  "rocks-slot-operator": { islands: ["island-4-rocks"], achievements: ["GOLD GOLD GOLD"] },
+  "rocks-store-clerk": { bait: ["professional-lure", "professional-boss-lure"], islands: ["island-4-rocks"] },
+  "rocks-weapon-seller": { weapons: ["sniper-rifle"], islands: ["island-4-rocks"], achievements: ["360 no scope", "Fully equipped"] },
+  "volcano-military-officer": { creatures: ["mutated-bowhead-whale"], quests: ["deadliest-catch"], bosses: ["mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["Deadliest catch"] },
+  "volcano-quartermaster": { weapons: ["assault-rifle"], bait: ["scientific-lure", "scientific-boss-lure"], islands: ["island-5-volcano"] },
+  "volcano-scientist": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], items: ["fish-bucket"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["We are so back", "Handyman", "Bean"] },
 };
 
 const questNames = new Map(getCollection("quests").map((entry) => [entry.slug, entry]));
@@ -174,12 +192,12 @@ export const achievementsForFish: Record<string, string[]> = {
   "spider-crab": ["Who stole my beer"],
   "giant-piranha": ["Dinnertime"],
   needlefish: ["Vacation"],
+  seahorse: ["Vacation"],
   pufferfish: ["Vacation"],
   "blue-shark": ["Grillmaster"],
   tuna: ["Terrorizing bird"],
   albatross: ["Terrorizing bird"],
-  "bowhead-whale": ["Deadliest catch"],
-  "mutated-bowhead-whale": ["We are so back", "Handyman", "Bean"],
+  "mutated-bowhead-whale": ["Deadliest catch", "We are so back", "Handyman", "Bean"],
 };
 
 function anchor(value: string) {
@@ -241,7 +259,7 @@ function mechanicsItem(): RelationItem {
     title: "Weapons & attachment slots",
     href: "/wiki/weapons/",
     meta: "Equipment",
-    description: "Weapon roles, the four attachment slots and the Fully equipped requirement.",
+    description: "Weapon roles and the five Fully equipped conditions: optic, damage upgrade, muzzle, laser and extended magazine.",
   };
 }
 
@@ -367,10 +385,10 @@ const achievementExtras: Record<string, RelationItem[]> = {
   Drip: [{ title: "Fish list", href: "/fish/", meta: "Creature routes", description: "Match each base creature to its island, rod and bait before hunting the rare variant." }],
   Noob: [{ title: "Beginner Guide", href: "/guides/beginner-guide/", meta: "Guide", description: "Learn the opening catch, combat and selling loop." }],
   Impressive: [{ title: "Weapons", href: "/wiki/weapons/", meta: "Equipment", description: "Choose a weapon that makes style-condition attempts easier to control." }],
-  "GOLD GOLD GOLD": [{ title: "Desert Island", href: "/islands/island-3-desert/", meta: "Island route", description: "Find the grill and economy systems used during high-value sale attempts." }],
+  "GOLD GOLD GOLD": [{ title: "Rocks Island", href: "/islands/island-4-rocks/", meta: "Island route", description: "Feed a Drip creature or boss trophy to the Rocks Island slot machine for a chance at a legendary skin." }],
   "360 no scope": [{ title: "Sniper Rifle", href: "/wiki/weapons/sniper-rifle/", meta: "Weapon", description: "Use the precision weapon tied to no-scope attempts." }],
-  "Fully equipped": [{ title: "Weapons & attachments", href: "/wiki/weapons/", meta: "Equipment", description: "Choose a firearm before filling its magazine, laser, optic and muzzle slots." }],
-  "All in": [{ title: "Desert Island", href: "/islands/island-3-desert/", meta: "Island route", description: "The Reel of Fortune challenge is part of the Desert Island economy route." }],
+  "Fully equipped": [{ title: "Weapons & attachments", href: "/wiki/weapons/", meta: "Equipment", description: "Use one eligible firearm with a non-default optic, damage upgrade, muzzle, laser and extended magazine." }],
+  "All in": [{ title: "Rocks Island", href: "/islands/island-4-rocks/", meta: "Island route", description: "The roulette table used by All in is on Rocks Island." }],
   Easy: [{ title: "Boss guides", href: "/bosses/", meta: "Encounter directory", description: "Return to an early encounter with a stronger loadout for the ten-second kill." }],
   "I'm the bird now": [{ title: "Dynamite", href: "/wiki/weapons/dynamite/", meta: "Weapon", description: "Boat physics and explosive placement control the launch attempt." }],
   Collector: [

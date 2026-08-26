@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Titan One";
-  src: url("/fonts/TitanOne-Regular.ttf") format("truetype");
+  font-family: "Underdog";
+  src: url("/fonts/Underdog-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -23,7 +23,7 @@
 }
 
 :root {
-  --font-display: "Titan One", "Arial Rounded MT Bold", sans-serif;
+  --font-display: "Underdog", "Arial Rounded MT Bold", sans-serif;
   --font-brand: "MedievalSharp", "Palatino Linotype", serif;
   --font-body: "Nunito", ui-rounded, system-ui, sans-serif;
   --navy-950: #031d34;

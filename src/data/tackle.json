@@ -4,7 +4,7 @@
     "name": "Crab Fishing Rod",
     "stage": "Lighthouse starting gear",
     "description": "The opening rod used for the Lighthouse crab pool, Hot Dog catches and the Empty Beer Can Spider Crab route.",
-    "fishSlugs": ["brown-crab", "blue-crab", "rock-crab", "shrimp", "lobster", "spider-crab"]
+    "fishSlugs": ["brown-crab", "rock-crab", "shrimp", "lobster", "spider-crab"]
   },
   {
     "slug": "fishing-rod",

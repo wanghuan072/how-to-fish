@@ -18,7 +18,7 @@
       {
         "heading": "Trigger and reward",
         "bullets": [
-          "Give a Beer Can to the Lighthouse Keeper.",
+          "Give a Beer to the Lighthouse Keeper.",
           "Equip the returned Empty Beer Can on the Crab Fishing Rod.",
           "After the kill, keep the quest result and return it to the keeper.",
           "The completed hand-in awards the boat key; buy the $10 Radar before leaving."
@@ -162,7 +162,7 @@
     "slug": "pufferfish",
     "name": "Pufferfish Boss Guide",
     "eyebrow": "Story boss · Desert Island",
-    "description": "Trade Needlefish for a Carrot, fight around the charge cycle and return the fin to unlock Rocks Island.",
+    "description": "Trade an eligible endangered creature for a Carrot, fight around the charge cycle and return the fin to unlock Rocks Island.",
     "image": "/images/game/bosses/pufferfish.webp",
     "imageAlt": "In-game screenshot of Pufferfish encounter in How to Fish",
     "featured": true,
@@ -177,8 +177,8 @@
       {
         "heading": "Trigger and reward",
         "bullets": [
-          "Catch Needlefish with the Standard Lure.",
-          "Give it to the tourist under the tree for a Carrot.",
+          "Catch an eligible endangered creature with the Standard Lure; Needlefish and Seahorse are confirmed options.",
+          "Give the eligible catch to the tourist under the tree for a Carrot.",
           "Equip the Carrot to summon Pufferfish.",
           "Return the Pufferfish fin to unlock Rocks Island."
         ]
@@ -246,7 +246,7 @@
           "Place the defeated Tuna on the ground.",
           "Wait for Albatross to enter the area.",
           "Defeat it and pick up the head.",
-          "Return the head to the shop NPC for Volcano coordinates."
+          "Return the head to the scared Rocks islander for Volcano coordinates."
         ]
       },
       {

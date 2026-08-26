@@ -19,6 +19,7 @@ export type BaitGameEntry = {
   catchTimeSeconds: { min: number; max: number };
   lostOnBaitChance: number;
   requireReeling: boolean;
+  rod: "Crab Fishing Rod" | "Fishing Rod";
   image: string;
   catchables: BaitCatchable[];
 };
@@ -28,16 +29,20 @@ export type DefaultCatchPool = {
   name: string;
   rod: "Crab Fishing Rod" | "Fishing Rod";
   islandSlug: string;
+  mappingSource: "Gameplay cross-check";
   catchTimeSeconds: { min: number; max: number };
   catchables: BaitCatchable[];
 };
 
 export const baitBuild = {
   unityVersion: "6000.4.4f1",
-  verifiedOn: "2026-08-26",
+  integratedOn: "2026-08-26",
+  extractedFields: ["price", "catchTimeSeconds", "lostOnBaitChance", "requireReeling", "catchables", "shopIslandSlugs"] as const,
 };
 
-export const baitGameData: BaitGameEntry[] = [
+type ExtractedBaitGameEntry = Omit<BaitGameEntry, "rod">;
+
+const extractedBaitGameData: ExtractedBaitGameEntry[] = [
   {
     slug: "empty-beer-can",
     sourceName: "Empty Beer Can",
@@ -314,12 +319,30 @@ export const baitGameData: BaitGameEntry[] = [
   },
 ];
 
+// Rod compatibility is an explicit gameplay cross-check. It is deliberately not
+// inferred from requireReeling: that Unity field only records whether reeling is
+// required after a bite.
+const crabRodBaitSlugs = new Set(["empty-beer-can", "hot-dog"]);
+
+export const baitGameData: BaitGameEntry[] = extractedBaitGameData.map((entry) => ({
+  ...entry,
+  rod: crabRodBaitSlugs.has(entry.slug) ? "Crab Fishing Rod" : "Fishing Rod",
+}));
+
+const baitSlugs = new Set(baitGameData.map((entry) => entry.slug));
+if (baitSlugs.size !== baitGameData.length) throw new Error("Duplicate public bait slug detected.");
+for (const entry of baitGameData) {
+  const shareTotal = entry.catchables.reduce((total, catchable) => total + catchable.poolShare, 0);
+  if (Math.abs(shareTotal - 100) > 0.02) throw new Error(`${entry.slug} catch-pool shares total ${shareTotal}, not 100.`);
+}
+
 export const defaultCatchPools: DefaultCatchPool[] = [
   {
     id: "default-crab-pool",
     name: "Default Crab Pool",
     rod: "Crab Fishing Rod",
     islandSlug: "lighthouse",
+    mappingSource: "Gameplay cross-check",
     catchTimeSeconds: { min: 1, max: 4 },
     catchables: [
       { slug: "brown-crab", name: "Brown Crab", weight: 10, poolShare: 55.5556 },
@@ -331,6 +354,7 @@ export const defaultCatchPools: DefaultCatchPool[] = [
     name: "Default Fish Pool",
     rod: "Fishing Rod",
     islandSlug: "island-2-forest",
+    mappingSource: "Gameplay cross-check",
     catchTimeSeconds: { min: 2, max: 3 },
     catchables: [
       { slug: "mackerel", name: "Mackerel", weight: 10, poolShare: 40 },

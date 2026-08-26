@@ -1,24 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BookOpen, CheckCircle2, Fish, MapPinned, Sparkles } from "lucide-react";
+import { BookOpen, CheckCircle2, Fish, MapPinned, Skull } from "lucide-react";
 import { FishExplorer } from "@/components/fish/FishExplorer";
 import { InnerHero } from "@/components/layout/InnerHero";
 import { FaqList } from "@/components/ui/FaqList";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { regularFish, islands } from "@/lib/content";
+import { bossCreatures, collectorFish, islands, regularCollectorFish, regularFish } from "@/lib/content";
 import { breadcrumbSchema, collectionPageSchema, faqSchema } from "@/seo/schema";
 import { pageTdk } from "@/seo/tdk";
 import ui from "@/style/components/ui.module.css";
 import styles from "@/style/page/fish.module.css";
 
 const fishFaq = [
-  { question: "How many non-boss fish and creatures are in How to Fish?", answer: `This page lists ${regularFish.length} non-boss creatures across five stages. Story bosses, optional mini-bosses and the final encounter are listed separately under Bosses.` },
+  { question: "How many fish and creatures are in How to Fish?", answer: `The current journal route contains ${collectorFish.length} creatures: ${regularCollectorFish.length} non-boss catches on this page and ${bossCreatures.length} bosses or special encounters on the Bosses page.` },
   { question: "How do rare Drip variants work?", answer: "Drip is the term used by official Steam achievements for rare variants. Use the normal species route and lure while farming for one." },
   { question: "What is the best bait for rare fish?", answer: "Use the bait associated with the base species. Drip variants do not use a separate universal bait." },
   { question: "Do fish have different values?", answer: "Yes. The table shows the available raw base values. Killscore and cooking can change the final sale." },
   { question: "When is the fish list updated?", answer: "Fish pages are updated when a route, lure pairing, value or creature location changes after a game update." },
 ];
+
+const optionalFishLocationSlugs = new Set(["sunfish", "old-pike"]);
+const fishLocationTotal = regularCollectorFish.length + bossCreatures.filter((entry) => optionalFishLocationSlugs.has(entry.slug)).length;
 
 export function FishPage() {
   const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Fish", href: "/fish/" }, { name: "All Fish", href: "/fish/" }];
@@ -29,15 +32,15 @@ export function FishPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Creature encyclopedia"
-        title="How to Fish Fish List — Locations, Bait, Rods & Values"
-        description="Choose a creature to see where it appears, which rod and bait it uses, how much it can sell for and whether a quest or achievement depends on it. Boss encounters are kept in their own fight section."
+        title={`How to Fish Steam Fish Guide: All ${fishLocationTotal} Locations & Bait`}
+        description={`Browse ${regularCollectorFish.length} non-boss creatures here, then open Sunfish and The Old Pike in Bosses to complete all ${fishLocationTotal} fish-location routes. Every entry connects its island, rod, bait and observed value.`}
         image="/images/official/gameplay-03.jpg"
         imageAlt="Official How to Fish gameplay screenshot of fishing on a tropical island"
         summary={<>
-          <span><Fish size={18} /><strong>{regularFish.length}</strong><small>Non-boss catches</small></span>
-          <span><Sparkles size={18} /><strong>{regularFish.filter((entry) => entry.category === "Special").length}</strong><small>Special catches</small></span>
+          <span><Fish size={18} /><strong>{regularCollectorFish.length}</strong><small>Non-boss catches</small></span>
+          <span><Skull size={18} /><strong>{bossCreatures.length}</strong><small>Encounter guides</small></span>
           <span><MapPinned size={18} /><strong>{islands.length}</strong><small>Island stages</small></span>
-          <span><BookOpen size={18} /><strong>{regularFish.length}</strong><small>Catch pages</small></span>
+          <span><BookOpen size={18} /><strong>{collectorFish.length}</strong><small>Journal routes</small></span>
         </>}
       />
 

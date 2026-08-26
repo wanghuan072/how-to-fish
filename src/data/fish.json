@@ -30,28 +30,10 @@
     "sourceKeys": [
       "whisper-fish-list"
     ],
-    "note": "A separate encyclopedia entry from Blue Crab and Rock Crab.",
+    "note": "A separate encyclopedia entry from Rock Crab; the unpacked English creature table identifies it as Brown Crab.",
     "guide": true,
     "image": "/images/game/fish/brown-crab.png",
     "imageAlt": "Original species reference illustration of Brown Crab for the How to Fish Wiki"
-  },
-  {
-    "slug": "blue-crab",
-    "name": "Blue Crab",
-    "islandSlug": "lighthouse",
-    "islandName": "Lighthouse",
-    "rod": "Crab Fishing Rod",
-    "lure": "Lighthouse pool",
-    "category": "Regular",
-    "progression": "Collection",
-    "evidence": "Cross-checked",
-    "sourceKeys": [
-      "whisper-fish-list"
-    ],
-    "note": "A separate encyclopedia entry from Brown Crab and Rock Crab.",
-    "guide": true,
-    "image": "/images/game/fish/blue-crab.png",
-    "imageAlt": "Original species reference illustration of Blue Crab for the How to Fish Wiki"
   },
   {
     "slug": "rock-crab",
@@ -94,9 +76,9 @@
     "name": "Lobster",
     "islandSlug": "lighthouse",
     "islandName": "Lighthouse",
-    "rod": "Fishing Rod",
-    "lure": "Beginner Lure",
-    "lureCost": 3,
+    "rod": "Crab Fishing Rod",
+    "lure": "Hot Dog",
+    "lureCost": 1,
     "category": "Regular",
     "progression": "Collection",
     "evidence": "Cross-checked",
@@ -557,7 +539,7 @@
     "lure": "Standard Lure",
     "lureCost": 15,
     "baseValue": 60,
-    "valueNote": "Observed raw base value; needed for the tourist's Carrot route.",
+    "valueNote": "Observed raw base value; Needlefish is one confirmed eligible trade for the tourist's Carrot route.",
     "category": "Regular",
     "progression": "Story",
     "evidence": "Cross-checked",
@@ -608,7 +590,7 @@
       "ath-progression",
       "showgamer-walkthrough"
     ],
-    "note": "Trade a Needlefish to the tourist for the Carrot; return the Pufferfish fin to unlock Rocks Island.",
+    "note": "Trade an eligible endangered creature such as Needlefish or Seahorse to the tourist for the Carrot; return the Pufferfish fin to unlock Rocks Island.",
     "image": "/images/game/bosses/pufferfish.webp",
     "guide": true,
     "imageAlt": "In-game screenshot of Pufferfish in How to Fish"
@@ -818,24 +800,6 @@
     ],
     "image": "/images/game/fish/red-snapper.png",
     "imageAlt": "Original species reference illustration of Red Snapper for the How to Fish Wiki"
-  },
-  {
-    "slug": "flounder",
-    "name": "Flounder",
-    "islandSlug": "island-4-rocks",
-    "islandName": "Rocks Island (Island 4)",
-    "rod": "Fishing Rod",
-    "lure": "Unconfirmed catch method",
-    "category": "Regular",
-    "progression": "Collection",
-    "evidence": "Community",
-    "sourceKeys": [
-      "whisper-fish-list"
-    ],
-    "note": "Flounder is not in the Professional Lure catch pool. Its current catch method remains unconfirmed.",
-    "guide": true,
-    "image": "/images/game/fish/flounder.png",
-    "imageAlt": "Original species reference illustration of Flounder for the How to Fish Wiki"
   },
   {
     "slug": "dripper",

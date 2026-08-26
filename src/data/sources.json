@@ -132,6 +132,6 @@
     "url": "https://www.whisperofthehouse.com/how-to-fish/all-fish-locations",
     "tier": "Secondary",
     "checked": "2026-08-24",
-    "usedFor": "The 49-entry encyclopedia order, including Clam, Brown Crab, Blue Crab and Flounder."
+    "usedFor": "A secondary creature-list comparison. Blue Crab and Flounder claims were rejected after no matching localized name, creature Prefab or catch-table record was found in the unpacked build."
   }
 ]

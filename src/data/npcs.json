@@ -14,26 +14,7 @@
     "sections": [
       {
         "heading": "Quest chain",
-        "bullets": ["Give the keeper a Beer Can.", "Use the Empty Beer Can for Spider Crab.", "Return the requested result to receive the boat key.", "Buy the $10 Radar before following the next marker."]
-      }
-    ]
-  },
-  {
-    "slug": "melvin",
-    "name": "Melvin",
-    "eyebrow": "Named companion",
-    "description": "A recurring companion identified by name in official Steam screenshots.",
-    "image": "/images/official/gameplay-03.jpg",
-    "imageAlt": "Official How to Fish screenshot showing Melvin beside the player and a Mackerel",
-    "featured": true,
-    "tags": ["Lighthouse", "Companion"],
-    "updated": "2026-08-24",
-    "sourceLabel": "Official Steam media",
-    "sourceUrl": "https://store.steampowered.com/app/4001890/How_to_Fish/",
-    "sections": [
-      {
-        "heading": "Known role",
-        "paragraphs": ["Melvin is a named companion in the opening route. No separate item trade or mandatory quest hand-in is attached to this NPC record."]
+        "bullets": ["Give the keeper a Beer.", "Use the returned Empty Beer Can for Spider Crab.", "Return the requested result to receive the boat key.", "Buy the $10 Radar before following the next marker."]
       }
     ]
   },
@@ -60,7 +41,7 @@
     "slug": "desert-tourist",
     "name": "Desert Tourist",
     "eyebrow": "Desert story NPC",
-    "description": "Trades a Needlefish for the Carrot used to summon Pufferfish.",
+    "description": "Trades an eligible endangered creature for the Carrot used to summon Pufferfish.",
     "image": "/images/official/gameplay-02.jpg",
     "imageAlt": "Official How to Fish screenshot from Desert Island",
     "featured": true,
@@ -71,7 +52,7 @@
     "sections": [
       {
         "heading": "Quest role",
-        "paragraphs": ["Catch Needlefish with the $15 Standard Lure and give it to the tourist under the tree. The Carrot reward is story bait, so do not discard it before Pufferfish."]
+        "paragraphs": ["Catch an eligible endangered creature with the $15 Standard Lure and give it to the tourist under the tree. Needlefish and Seahorse are confirmed options. The Carrot reward is story bait, so do not discard it before Pufferfish."]
       }
     ]
   },
@@ -96,9 +77,9 @@
   },
   {
     "slug": "rocks-shop-npc",
-    "name": "Rocks Shop NPC",
-    "eyebrow": "Rocks progression NPC",
-    "description": "Receives the Albatross head after the Tuna bait sequence and reveals the Volcano marker.",
+    "name": "Scared Rocks Islander",
+    "eyebrow": "Rocks story NPC",
+    "description": "Explains the Tuna-to-Albatross trigger, receives the Albatross head and reveals the Volcano coordinates.",
     "image": "/images/official/gameplay-07.jpg",
     "imageAlt": "Official How to Fish screenshot of a late-game island and weapon shop route",
     "featured": false,
@@ -109,8 +90,143 @@
     "sections": [
       {
         "heading": "Quest hand-in",
-        "paragraphs": ["Buy the $1,200 Professional Boss Lure, defeat Tuna, use its body as ground bait for Albatross, then return the Albatross head to this NPC for the pink Volcano coordinate."]
+        "paragraphs": ["Use Professional Boss Lure to catch Tuna, place the defeated Tuna on the island grass to draw the Albatross, then return the Albatross head to this NPC for the pink Volcano coordinate."]
       }
+    ]
+  },
+  {
+    "slug": "forest-shopkeeper",
+    "name": "Swamp Man",
+    "eyebrow": "Forest equipment seller",
+    "description": "Runs the Forest Island shop and points new arrivals toward the Fishing Rod, firearms and the equipment needed after Lighthouse.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Swamp Man is available",
+    "featured": false,
+    "tags": ["Forest", "Shop"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"What this NPC does","paragraphs":["Use this seller when the starter Crab Fishing Rod no longer matches the Forest catch tables. The shop dialogue points players toward the Fishing Rod and explains that trick-shot Killscore bonuses can raise sale value."]},
+      {"heading":"When to visit","bullets":["Open the shop after reaching the green Radar marker.","Buy only the weapon and tackle your current route needs before saving for the first engine upgrade.","Return when a Forest boss or achievement needs a more reliable damage setup."]}
+    ]
+  },
+  {
+    "slug": "desert-kiosk-seller",
+    "name": "Desert Kiosk Seller",
+    "eyebrow": "Desert utility shop",
+    "description": "Runs the Desert Island kiosk for utility items, boat upgrades and equipment available around the third story stage.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Desert Kiosk Seller is available",
+    "featured": false,
+    "tags": ["Desert", "Kiosk"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"What this NPC does","paragraphs":["The unpacked Kiosk NPC dialogue covers utility purchases, boat improvements and firearms. Treat this as a service stop rather than part of the Pufferfish story hand-in, which belongs to the Desert Tourist."]},
+      {"heading":"Shopping order","bullets":["Keep enough money for the Standard Lure and Carrot route first.","Upgrade the engine when travel time becomes the main slowdown.","Buy combat gear only when the current boss setup needs it."]}
+    ]
+  },
+  {
+    "slug": "rocks-roulette-operator",
+    "name": "Roulette Operator",
+    "eyebrow": "Rocks Island minigame NPC",
+    "description": "Runs the roulette table where carried items can be wagered for value multipliers and the All in achievement.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Roulette Operator is available",
+    "featured": false,
+    "tags": ["Rocks", "Roulette"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"How roulette works","paragraphs":["The table uses a carried item's value as the stake. A failed spin can erase the item, so do not wager a story trophy, unique quest object or catch you still need for the journal."]},
+      {"heading":"Achievement use","bullets":["All in requires a winning green bet.","Everyone's dream can use a high-value item and roulette multiplier, but the item should be treated as expendable.","Finish the Rocks story hand-in before gambling with anything tied to progression."]}
+    ]
+  },
+  {
+    "slug": "rocks-slot-operator",
+    "name": "Slot Machine Operator",
+    "eyebrow": "Rocks Island skin machine",
+    "description": "Explains the slot machine that accepts Drip creatures or boss trophies and can award character skins.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Slot Machine Operator is available",
+    "featured": false,
+    "tags": ["Rocks", "Skins"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"What to insert","paragraphs":["The machine accepts a Drip creature or a boss trophy. The input is consumed, so never use a trophy that still has a quest hand-in attached to it."]},
+      {"heading":"Achievement use","bullets":["GOLD GOLD GOLD unlocks when the machine awards a legendary skin.","The legendary result is random rather than guaranteed by a specific species.","Farm replaceable Drip catches after story progression instead of risking the next-island trophy."]}
+    ]
+  },
+  {
+    "slug": "rocks-store-clerk",
+    "name": "Rocks Store Clerk",
+    "eyebrow": "Rocks tackle seller",
+    "description": "Handles the fourth island's regular supplies, including the Professional lure tier used by its catch table.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Rocks Store Clerk is available",
+    "featured": false,
+    "tags": ["Rocks", "Tackle shop"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"What to buy first","bullets":["Professional Lure for the regular Rocks pool.","Professional Boss Lure only when you are ready to keep Tuna for the Albatross trigger.","Extra supplies after the story bait is secured."]},
+      {"heading":"Common mistake","paragraphs":["Professional Lure can include Tuna in its wider pool, but Professional Boss Lure is the dedicated story setup. Keep the defeated Tuna instead of selling it."]}
+    ]
+  },
+  {
+    "slug": "rocks-weapon-seller",
+    "name": "Rocks Weapon Seller",
+    "eyebrow": "Rocks firearm seller",
+    "description": "Runs the late-game weapon counter where players can prepare a precision loadout for Albatross and combat achievements.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Rocks Weapon Seller is available",
+    "featured": false,
+    "tags": ["Rocks", "Weapons"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"Useful purchases","paragraphs":["Rocks Island is the natural point to build a Sniper Rifle setup for the airborne Albatross and precision achievements. Check attachment compatibility on the weapon page before spending on a full set."]},
+      {"heading":"Before upgrading","bullets":["Secure the Professional Boss Lure first if story progression is blocked.","Use one eligible firearm for all five Fully equipped attachment conditions.","Do not assume every attachment fits every weapon."]}
+    ]
+  },
+  {
+    "slug": "volcano-military-officer",
+    "name": "Volcano Military Officer",
+    "eyebrow": "Final-island quest giver",
+    "description": "Owns the military quest record that prepares the final Boss-type whale encounter and the Deadliest Catch achievement route.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Volcano Military Officer is available",
+    "featured": true,
+    "tags": ["Volcano", "Deadliest Catch"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"Quest chain","paragraphs":["Speak to this officer before beginning the ending route. The unpacked game contains a separate military quest record and Scientist whale-bait records, so check both NPCs rather than expecting one conversation to start every final objective."]},
+      {"heading":"Achievement timing","paragraphs":["Deadliest Catch is checked when the final Boss-type Bowhead encounter dies. The Scientist's bait hand-ins and the ending transport are separate progression steps."]}
+    ]
+  },
+  {
+    "slug": "volcano-quartermaster",
+    "name": "Volcano Quartermaster",
+    "eyebrow": "Final-island store NPC",
+    "description": "Runs the separate Volcano store record for Scientific tackle, late-game weapons and final-route supplies.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Volcano Quartermaster is available",
+    "featured": false,
+    "tags": ["Volcano", "Store"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"Priority purchases","bullets":["Scientific Lure for the five regular Volcano species.","Scientific Boss Lure only for the optional Goblin Shark route.","A reliable firearm and upgrades before the final whale fight."]},
+      {"heading":"Do not confuse the lures","paragraphs":["Scientific Boss Lure summons Goblin Shark; it does not replace the Fish Bucket made through the Scientist's story quest for Bowhead Whale."]}
+    ]
+  },
+  {
+    "slug": "volcano-scientist",
+    "name": "Volcano Scientist",
+    "eyebrow": "Whale Bait quest giver",
+    "description": "Requests a set of smaller catches, turns the completed hand-ins into Fish Bucket / Whale Bait and starts the Bowhead ending chain.",
+    "image": "/images/brand/npc-thumbnail-pending.svg",
+    "imageAlt": "Neutral placeholder because no verified in-game portrait of the Volcano Scientist is available",
+    "featured": true,
+    "tags": ["Volcano", "Whale Bait"],
+    "updated": "2026-08-26",
+    "sections": [
+      {"heading":"Quest chain","bullets":["Read the active requested-catch list before fishing.","Return every requested smaller catch to receive the Fish Bucket.","Use it for Bowhead Whale and keep the defeated body.","Carry the body into the Volcano trigger for Mutated Bowhead Whale.","Take the ending transport after the fight."]},
+      {"heading":"Why this is separate","paragraphs":["The unpacked NPC mapping contains two Whale quests on the Scientist and separate military quests on the military NPCs. Completing one chain does not automatically satisfy the other NPC's active objective."]}
     ]
   }
 ]

@@ -99,7 +99,7 @@
     "slug": "carrot",
     "name": "Carrot Bait",
     "eyebrow": "Quest bait · Desert Island",
-    "description": "Complete the Desert Island bait quest to receive the Carrot, then use it with the Fishing Rod for Pufferfish.",
+    "description": "Trade an eligible endangered creature to the Desert Tourist for the Carrot, then use it with the Fishing Rod for Pufferfish.",
     "image": "/images/game/bait/carrot.webp",
     "imageAlt": "Game-derived low-poly Carrot bait model from How to Fish",
     "featured": true,
@@ -107,7 +107,7 @@
     "updated": "2026-08-26",
     "catchSlugs": ["pufferfish"],
     "sections": [
-      {"heading": "How to get and use it", "bullets": ["Catch Needlefish with Standard Lure.", "Finish the tourist's bait trade.", "Equip the Carrot on the Fishing Rod.", "Keep the Pufferfish fin for the return hand-in that opens the next route."]}
+      {"heading": "How to get and use it", "bullets": ["Catch an endangered creature with Standard Lure; Needlefish and Seahorse are confirmed eligible trades.", "Give the eligible catch to the Desert Tourist.", "Equip the Carrot on the Fishing Rod.", "Keep the Pufferfish fin for the return hand-in that opens the next route."]}
     ]
   },
   {
@@ -139,7 +139,7 @@
     "catchSlugs": ["sengarat", "red-snapper", "tigerfish", "parrotfish", "bass", "halibut", "flying-fish", "eel", "voxelfish", "dripper", "tuna", "seahorse"],
     "sections": [
       {"heading": "Where to buy it", "paragraphs": ["Professional Lure first appears in the Rocks Island shop for $50 and is also stocked on Volcano Island."]},
-      {"heading": "Important pool differences", "bullets": ["Dripper belongs to this pool.", "Tuna and Seahorse can appear at low pool weight.", "Professional Boss Lure gives Tuna a dedicated catch pool.", "Flounder is not in the Professional Lure catch table, so its method remains unconfirmed in the creature list."]}
+      {"heading": "Important pool differences", "bullets": ["Dripper belongs to this pool.", "Tuna and Seahorse can appear at low pool weight.", "Professional Boss Lure gives Tuna a dedicated catch pool."]}
     ]
   },
   {
@@ -218,7 +218,7 @@
     "updated": "2026-08-26",
     "catchSlugs": ["spider-crab"],
     "sections": [
-      {"heading": "How to get and use it", "bullets": ["Complete the opening Beer Can exchange.", "Equip Empty Beer Can on the Crab Fishing Rod.", "Defeat Spider Crab and keep the quest result.", "Return to the Lighthouse Keeper to continue the boat route."]}
+      {"heading": "How to get and use it", "bullets": ["Give a Beer to the Lighthouse Keeper and keep the returned empty can.", "Equip Empty Beer Can on the Crab Fishing Rod.", "Defeat Spider Crab and keep the quest result.", "Return to the Lighthouse Keeper to continue the boat route."]}
     ]
   },
   {

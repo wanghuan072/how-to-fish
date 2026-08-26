@@ -43,8 +43,8 @@ export function AchievementsPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Steam achievement checklist"
-        title={`How to Fish Achievements — All ${achievements.length} Requirements & Tips`}
-        description="Choose an achievement to see what it asks for, where it fits in the story and which creature, weapon, item or island can help you finish it."
+        title={`How to Fish Steam Achievements Guide: All ${achievements.length} Unlocks`}
+        description="Complete every Steam achievement with its real trigger, practical route advice, unlock rate and direct links to the fish, boss, item, weapon, NPC or island involved."
         image="/images/official/gameplay-07.jpg"
         imageAlt="Official How to Fish gameplay screenshot"
         summary={<><span><strong>{achievements.length}</strong> achievements</span><span><strong>{groups.length}</strong> categories</span></>}
@@ -57,7 +57,7 @@ export function AchievementsPage() {
               const entries = group.names.map((name) => achievements.find((entry) => entry.name === name)).filter((entry): entry is (typeof achievements)[number] => Boolean(entry));
               return <section className={styles.group} id={group.id} key={group.id}><header className={styles.groupHeader}><div><p>Achievement category</p><h2>{group.title}</h2><span>{group.description}</span></div><strong>{entries.length} objectives</strong></header><div className={styles.achievementGrid}>{entries.map((entry) => {
                 const links = getAchievementRelationItems(entry.name);
-                return <article className={styles.achievement} id={achievementId(entry.name)} key={entry.name}><span className={styles.achievementIcon}><Image src={entry.image} alt={entry.imageAlt} width={68} height={68} /></span><div><h3>{entry.name}</h3><p>{entry.description}</p><p><strong>Hint:</strong> {entry.hint}</p><div className={styles.achievementMeta}>{entry.globalPercent !== undefined ? <span>{entry.globalPercent.toFixed(1)}% unlock rate</span> : null}<span>{links.length} related pages</span></div></div>{links.length ? <nav className={styles.relationLinks} aria-label={`${entry.name} related pages`}>{links.map((item) => <Link href={item.href} key={item.href}>{item.meta}: {item.title}<ArrowRight size={10} /></Link>)}</nav> : null}</article>;
+                return <article className={styles.achievement} id={achievementId(entry.name)} key={entry.name}><span className={styles.achievementIcon}><Image src={entry.image} alt={entry.imageAlt} width={68} height={68} /></span><div><h3>{entry.name}</h3><p>{entry.description}</p><p><strong>Hint:</strong> {entry.hint}</p>{entry.reward ? <p><strong>Unlock:</strong> {entry.reward}</p> : null}<div className={styles.achievementMeta}>{entry.globalPercent !== undefined ? <span>{entry.globalPercent.toFixed(1)}% unlock rate</span> : null}<span>{links.length} related pages</span></div></div>{links.length ? <nav className={styles.relationLinks} aria-label={`${entry.name} related pages`}>{links.map((item) => <Link href={item.href} key={item.href}>{item.meta}: {item.title}<ArrowRight size={10} /></Link>)}</nav> : null}</article>;
               })}</div></section>;
             })}
             <section className={styles.group} id="killscore-bonuses">

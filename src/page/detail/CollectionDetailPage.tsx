@@ -12,8 +12,8 @@ const islandReach: Record<string, { paragraph: string; bullets: string[] }> = {
   lighthouse: { paragraph: "Lighthouse is the starting area and does not require a Radar coordinate.", bullets: ["Finish the opening creature loop around the Lighthouse.", "Complete Who Stole My Beer? for the boat key.", "Buy the $10 Radar before following later island markers."] },
   "island-2-forest": { paragraph: "Forest Island is the green Radar marker northwest of the Lighthouse.", bullets: ["Complete the Lighthouse Spider Crab hand-in.", "Take the boat key and buy the Radar.", "Follow the green marker to the wooded island."] },
   "island-3-desert": { paragraph: "Desert Island appears as the yellow Radar marker after the Forest story hand-in.", bullets: ["Defeat Giant Piranha with Leech Bait.", "Return its named trophy to the lady by the forest lake.", "Follow the new yellow Radar marker."] },
-  "island-4-rocks": { paragraph: "Rocks Island is the red Radar marker unlocked by the Pufferfish route.", bullets: ["Trade Needlefish for the Carrot and defeat Pufferfish.", "Return the Pufferfish fin to the Desert Tourist.", "Follow the red Radar marker to Island 4."] },
-  "island-5-volcano": { paragraph: "Volcano Island is the final pink Radar marker in the five-island route.", bullets: ["Defeat Tuna and use its body to trigger Albatross.", "Return the Albatross head to the Rocks Shop NPC.", "Follow the pink Radar marker to the final island."] },
+  "island-4-rocks": { paragraph: "Rocks Island is the red Radar marker unlocked by the Pufferfish route.", bullets: ["Trade an eligible endangered creature such as Needlefish or Seahorse for the Carrot, then defeat Pufferfish.", "Return the Pufferfish fin to the Desert Tourist.", "Follow the red Radar marker to Island 4."] },
+  "island-5-volcano": { paragraph: "Volcano Island is the final pink Radar marker in the five-island route.", bullets: ["Defeat Tuna and use its body to trigger Albatross.", "Return the Albatross head to the scared Rocks islander.", "Follow the pink Radar marker to the final island."] },
 };
 
 function detailFacts(collection: CollectionKey, entry: NonNullable<ReturnType<typeof getEntry>>) {
@@ -48,7 +48,7 @@ function detailFacts(collection: CollectionKey, entry: NonNullable<ReturnType<ty
     return [
       { label: "Available at", value: weapon?.availableAt ?? "Check the route below" },
       { label: "Price", value: weapon?.price ?? "No price shown" },
-      { label: "Damage", value: weapon?.damage ?? "Version dependent" },
+      { label: "Damage", value: weapon?.baseDamage ?? weapon?.damage ?? "Version dependent" },
       { label: "Combat role", value: weapon?.role ?? tags[0] ?? "Weapon" },
     ];
   }
@@ -63,16 +63,20 @@ function detailFacts(collection: CollectionKey, entry: NonNullable<ReturnType<ty
     return [
       { label: "Item type", value: bait.bossBait ? "Boss lure" : bait.kind },
       { label: "Price", value: bait.price === null ? "Quest supplied" : `$${bait.price.toLocaleString("en-US")}` },
-      { label: "Bite time", value: `${bait.catchTimeSeconds.min}–${bait.catchTimeSeconds.max} seconds` },
-      { label: "Bait loss", value: `${bait.lostOnBaitChance}%` },
+      { label: "Catch time", value: `${bait.catchTimeSeconds.min}–${bait.catchTimeSeconds.max} seconds` },
+      { label: "Bait-loss value", value: `${bait.lostOnBaitChance}%` },
     ];
   }
-  if (collection === "npcs") return [
-    { label: "Location", value: tags[0] ?? entry.eyebrow ?? "Check the route below" },
-    { label: "Quest role", value: tags[1] ?? "Quest giver" },
-    { label: "Role", value: "Quest and progression NPC" },
-    { label: "Dialogue flow", value: "Accept · return · speak again" },
-  ];
+  if (collection === "npcs") {
+    const routeRole = tags[1] ?? "Quest giver";
+    const serviceNpc = /(shop|kiosk|weapon|store|roulette|skin)/i.test(routeRole);
+    return [
+      { label: "Location", value: tags[0] ?? entry.eyebrow ?? "Check the route below" },
+      { label: serviceNpc ? "Service" : "Quest role", value: routeRole },
+      { label: "Role", value: serviceNpc ? "Shop or island service NPC" : "Quest and progression NPC" },
+      { label: "Player action", value: serviceNpc ? "Inspect stock or use the service" : "Accept · complete · return" },
+    ];
+  }
   if (collection === "items") {
     const item = itemRoutes[entry.slug];
     return [
@@ -98,10 +102,29 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
   const relationGroups = getRelationGroups(collection, entry);
   const progression = collection === "islands" ? islandProgression[entry.slug] : undefined;
   const baitData = collection === "bait" ? getBaitGameData(entry.slug) : undefined;
+  const islandGameSections = progression ? [
+    {
+      heading: "Shops, bait and upgrades",
+      paragraphs: ["Check the island stock before leaving; later islands keep much of the earlier equipment while adding the next lure, firearm and attachment tier."],
+      bullets: [
+        `Equipment and items: ${progression.shopInventory.join(", ")}.`,
+        `Bait stock: ${progression.baitStock.join(", ")}.`,
+        progression.attachmentStock.length ? `Attachments: ${progression.attachmentStock.join(", ")}.` : "Attachments: no standalone firearm attachment seller is placed in this scene.",
+        progression.bulletUpgradeCap !== undefined ? `Firearm damage station cap: ${progression.bulletUpgradeCap}.` : "Firearm damage station: not present in the opening scene.",
+        `Melee sharpness station cap: ${progression.sharpnessUpgradeCap}.`,
+      ],
+    },
+    {
+      heading: "NPCs and services",
+      paragraphs: ["Talk to quest NPCs again after completing their objective; several island coordinates are awarded on the return dialogue rather than on the boss kill itself."],
+      bullets: progression.npcRoles,
+    },
+  ] : [];
   const displayEntry = collection === "islands" && progression
     ? { ...entry, sections: [
         { heading: entry.slug === "lighthouse" ? "How to start here" : "How to reach this island", paragraphs: [progression.unlockRequirement], bullets: islandReach[entry.slug]?.bullets ?? [] },
         ...entry.sections,
+        ...islandGameSections,
         ...(progression.next ? [{ heading: `How to unlock ${progression.next.name}`, paragraphs: [progression.nextUnlockRequirement ?? progression.unlockRequirement], bullets: progression.steps }] : []),
       ] }
     : collection === "weapons"
@@ -112,18 +135,18 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
           ? { ...entry, sections: [{ heading: "Quest brief", paragraphs: [entry.description] }, ...entry.sections] }
         : collection === "npcs"
           ? { ...entry, sections: [
-              ...entry.sections.map((section, index) => index === 0 && entry.slug !== "melvin" ? { ...section, heading: "Quest chain" } : section),
+              ...entry.sections.map((section, index) => index === 0 && /quest/i.test(section.heading) ? { ...section, heading: "Quest chain" } : section),
               { heading: "NPC overview", paragraphs: [entry.description] },
             ] }
           : collection === "bait" && baitData
             ? { ...entry, sections: [
                 {
                   heading: "Gameplay parameters",
-                  paragraphs: ["Pool share compares the targets available from this bait. It does not mean the creature has the same catch chance with another bait or on another island."],
+                  paragraphs: ["Pool share compares targets inside this bait's extracted catch table. Bait-loss value mirrors the raw Unity field; the exact gameplay moment when it is applied was not derived from this record alone."],
                   bullets: [
-                    `Rod: ${baitData.requireReeling ? "Fishing Rod" : "Crab Fishing Rod"}`,
-                    `Bite window: ${baitData.catchTimeSeconds.min}–${baitData.catchTimeSeconds.max} seconds`,
-                    `Loss chance on bite: ${baitData.lostOnBaitChance}%`,
+                    `Rod: ${baitData.rod}`,
+                    `Catch time: ${baitData.catchTimeSeconds.min}–${baitData.catchTimeSeconds.max} seconds`,
+                    `Bait-loss value: ${baitData.lostOnBaitChance}%`,
                     `Reeling required: ${baitData.requireReeling ? "Yes" : "No"}`,
                     baitData.acquisition === "Shop"
                       ? `Shop availability: ${baitData.shopIslandSlugs.map((islandSlug) => (getEntry("islands", islandSlug) as IslandEntry | undefined)?.label ?? islandSlug).join(", ")}`

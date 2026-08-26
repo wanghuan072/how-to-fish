@@ -45,6 +45,7 @@ export type FishEntry = {
   guide?: boolean;
   image?: string;
   imageAlt?: string;
+  collectionStatus?: "Confirmed" | "Unconfirmed";
   catchMethods?: FishCatchMethod[];
 };
 
@@ -54,7 +55,8 @@ export type FishCatchMethod = {
   islandSlug: string;
   islandName: string;
   rod: string;
-  methodType: "Bait" | "Lure" | "Default pool" | "Ground pickup" | "Encounter trigger";
+  methodType: "Bait" | "Lure" | "Default pool" | "Ground pickup" | "Encounter trigger" | "Unconfirmed";
+  verification: "Unity BaitInfo" | "Gameplay cross-check" | "Route cross-check";
   price?: number;
   rawWeight?: number;
   poolShare?: number;
@@ -78,6 +80,7 @@ export type AchievementEntry = {
   imageAlt: string;
   globalPercent?: number;
   statsChecked?: string;
+  reward?: string;
 };
 
 export type SourceEntry = {

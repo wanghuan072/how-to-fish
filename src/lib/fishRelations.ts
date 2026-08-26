@@ -21,17 +21,18 @@ const baitRoutes: Record<string, InternalRecordLink[]> = {
   "Scientific Boss Lure": [{ name: "Scientific Boss Lure", href: "/wiki/bait/scientific-boss-lure/", kind: "Bait" }],
   "Fish Bucket / Whale Bait": [{ name: "Fish Bucket / Whale Bait", href: "/wiki/bait/fish-bucket/", kind: "Bait" }],
   "Empty Beer Can": [{ name: "Empty Beer Can", href: "/wiki/bait/empty-beer-can/", kind: "Bait" }],
-  "Defeated Tuna": [{ name: "Defeated Tuna", href: "/fish/tuna/", kind: "Fish" }],
-  "Defeated Bowhead Whale": [{ name: "Defeated Bowhead Whale", href: "/fish/bowhead-whale/", kind: "Fish" }],
+  "Defeated Tuna": [{ name: "Defeated Tuna", href: "/bosses/tuna/", kind: "Boss" }],
+  "Defeated Bowhead Whale": [{ name: "Defeated Bowhead Whale", href: "/bosses/bowhead-whale/", kind: "Boss" }],
 };
 
 export const questFishSlugs: Record<string, string[]> = {
   "who-stole-my-beer": ["spider-crab"],
   dinnertime: ["giant-piranha"],
-  vacation: ["needlefish", "pufferfish"],
+  vacation: ["needlefish", "seahorse", "pufferfish"],
   grillmaster: ["blue-shark"],
   "terrorizing-bird": ["tuna", "albatross"],
-  "deadliest-catch": ["bowhead-whale", "mutated-bowhead-whale"],
+  "deadliest-catch": ["mutated-bowhead-whale"],
+  "scientists-whale-bait": ["bowhead-whale", "mutated-bowhead-whale"],
 };
 
 const questNames: Record<string, string> = {
@@ -40,13 +41,13 @@ const questNames: Record<string, string> = {
   vacation: "Vacation & Pufferfish Route",
   grillmaster: "Grillmaster & Blue Shark",
   "terrorizing-bird": "Terrorizing Bird",
-  "deadliest-catch": "Deadliest Catch & Final Whale Route",
+  "deadliest-catch": "Deadliest Catch Military Route",
+  "scientists-whale-bait": "Scientist's Whale Bait & Final Route",
 };
 
 const preciseAreas: Record<string, string> = {
   clam: "Lighthouse opening grounds",
   "brown-crab": "Lighthouse starting pool",
-  "blue-crab": "Lighthouse fishing pool",
   "spider-crab": "Lighthouse story encounter waters",
   "giant-piranha": "Forest Island lake quest waters",
   pufferfish: "Desert Island story encounter waters",
@@ -90,6 +91,7 @@ export function getFishBossLink(entry: FishEntry): InternalRecordLink | null {
 export function getFishCatchMethod(entry: FishEntry) {
   if (entry.catchMethods?.some((method) => method.methodType === "Ground pickup")) return "Ground pickup";
   if (entry.catchMethods?.some((method) => method.methodType === "Encounter trigger")) return "Story creature trigger";
+  if (entry.catchMethods?.some((method) => method.methodType === "Unconfirmed")) return "Catch method unconfirmed";
   if (entry.catchMethods?.every((method) => method.methodType === "Default pool")) return "Starter pool catch";
   if (entry.category === "Boss" || entry.category === "Final encounter") return "Quest encounter";
   if (entry.category === "Mini-boss" || entry.catchMethods?.some((method) => method.baitName.includes("Boss Lure"))) return "Boss-lure catch";

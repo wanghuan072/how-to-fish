@@ -15,13 +15,13 @@ import {
 import { FaqList } from "@/components/ui/FaqList";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { achievements, getCollection, getFishImage, getFishImageAlt, islands, regularFish } from "@/lib/content";
+import { achievements, bossCreatures, collectorFish, getCollection, getFishImage, getFishImageAlt, islands, regularCollectorFish, regularFish } from "@/lib/content";
 import { faqSchema, organizationSchema, websiteSchema } from "@/seo/schema";
 import styles from "@/style/page/home.module.css";
 
 const homeFaq = [
   { question: "How do I get to the next island?", answer: "Finish the local quest, defeat the required story boss, pick up its named trophy and return it to the quest giver. A new colored dot appears on the Radar after the hand-in." },
-  { question: "What counts toward the creature collection?", answer: `This catch list covers ${regularFish.length} non-boss creatures, while ${getCollection("bosses").length} boss and special encounters have separate strategy pages. Kill a creature so it registers; catching or seeing it is not enough. Steam's Collector achievement still uses its 49-creature wording.` },
+  { question: "What counts toward the creature collection?", answer: `The current journal route has ${collectorFish.length} creatures: ${regularCollectorFish.length} non-boss entries plus ${bossCreatures.length} bosses and special encounters listed separately. Kill a creature so it registers; catching or seeing it is not enough.` },
   { question: "Which lure should I use on each island?", answer: "The rods' built-in no-bait pools cover the first crabs and fish. Beginner Lure starts the named lure tiers, followed by Standard on Desert, Professional on Rocks and Scientific on Volcano. Story bosses use their own quest bait or carried trigger." },
   { question: "What should I buy first?", answer: "Buy the $10 Radar once the boat is available, then choose a reliable weapon and improve the boat engine when travel time starts slowing the route down." },
   { question: "How do I catch rare Drip creatures?", answer: "Use the normal creature route and watch for the rainbow-name variant. Kill it so the Tab encyclopedia records the Drip entry." },
@@ -39,7 +39,7 @@ const questPreviewImages: Record<string, string> = {
   vacation: "/images/game/bosses/pufferfish.webp",
   grillmaster: "/images/game/bosses/blue-shark.png",
   "terrorizing-bird": "/images/game/bosses/albatross.webp",
-  "deadliest-catch": "/images/game/bosses/mutated-bowhead-whale.webp",
+  "scientists-whale-bait": "/images/game/bosses/mutated-bowhead-whale.webp",
 };
 
 export function HomePage() {
@@ -51,7 +51,7 @@ export function HomePage() {
     .map((slug) => bosses.find((boss) => boss.slug === slug))
     .filter((boss): boss is (typeof bosses)[number] => Boolean(boss));
   const achievementSpotlights = [
-    { entry: achievements.find((item) => item.name === "Collector")!, title: "Collector", description: "Find and kill all 49 creatures.", href: "/wiki/achievements/" },
+    { entry: achievements.find((item) => item.name === "Collector")!, title: "Collector", description: "Finish the full base-creature checklist.", href: "/wiki/achievements/" },
     { entry: achievements.find((item) => item.name === "Fishipedia")!, title: "Fishipedia", description: "Complete the separate Drip collection.", href: "/wiki/achievements/#fishipedia" },
     { entry: achievements.find((item) => item.name === "Handyman")!, title: "Handyman", description: "Defeat the final boss with bare hands.", href: "/wiki/achievements/" },
   ];
@@ -65,14 +65,14 @@ export function HomePage() {
         <div className={styles.heroShade} />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <h1>How to Fish - Catch Every Creature, Unlock Every Island</h1>
-            <p className={styles.heroLead}>Looking for the right bait, the next island unlock or what to bring to a boss? Follow connected guides for {regularFish.length} non-boss catches, quests, weapons, items, island routes and all 28 Steam achievements.</p>
+            <h1>How to Fish Steam Guide: Complete Walkthrough & Wiki</h1>
+            <p className={styles.heroLead}>Use one connected Steam guide for beginner tips, 42 fish-location routes, all {bosses.length} bosses, {islands.length} islands, story quests, weapons, items and every one of the {achievements.length} achievements.</p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/guides/beginner-guide/"><Anchor size={19} /> Start Here</Link>
               <Link className={styles.secondaryButton} href="/fish/"><Fish size={19} /> Browse Fish</Link>
             </div>
             <div className={styles.heroStats}>
-              <span className={styles.heroStat}><Fish size={22} /><strong>{regularFish.length}</strong><small>Non-boss catches</small></span>
+              <span className={styles.heroStat}><Fish size={22} /><strong>{collectorFish.length}</strong><small>Confirmed creatures</small></span>
               <span className={styles.heroStat}><Skull size={22} /><strong>{bosses.length}</strong><small>Boss guides</small></span>
               <span className={styles.heroStat}><Map size={22} /><strong>{islands.length}</strong><small>Route stages</small></span>
               <span className={styles.heroStat}><ScrollText size={22} /><strong>{achievements.length}</strong><small>Achievements</small></span>
@@ -111,7 +111,7 @@ export function HomePage() {
 
         <div className={`${styles.section} ${styles.middlePair}`}>
           <section className={`${styles.panel} ${styles.databasePanel}`}>
-            <SectionHeading number={2} title="Fish & Creature List" description={`Search ${regularFish.length} non-boss catches by name, island, rod or bait.`} href="/fish/" linkLabel="View all fish" />
+            <SectionHeading number={2} title="Fish & Creature List" description={`Search all ${regularCollectorFish.length} non-boss journal entries by name, island, rod or bait. Boss encounters have their own route pages.`} href="/fish/" linkLabel="View all fish" />
             <div className={styles.databaseTools}><span>Search by creature, island or bait</span><b>All</b><span>Island</span><span>Type</span></div>
             <div className={styles.homeTableWrap}>
               <table className={styles.homeTable}>
@@ -196,7 +196,7 @@ export function HomePage() {
               <div className={styles.aboutLinks}><Link href="/legal/about-us/">How this wiki is maintained <ArrowRight size={14} /></Link><Link href="/legal/contact-us/">Report a correction <ArrowRight size={14} /></Link></div>
             </div>
             <dl className={styles.aboutFacts}>
-              <div><dt>Catch directory</dt><dd>{regularFish.length} catches</dd><span>Non-boss creatures · {bosses.length} encounters listed separately</span></div>
+              <div><dt>Creature journal</dt><dd>{collectorFish.length} routes</dd><span>{regularCollectorFish.length} non-boss catches and {bossCreatures.length} encounter pages</span></div>
               <div><dt>Story route</dt><dd>5 stages</dd><span>Lighthouse through Volcano</span></div>
               <div><dt>Steam achievements</dt><dd>{achievements.length}</dd><span>Story, combat and collection goals</span></div>
               <div><dt>Play styles</dt><dd>1–4 players</dd><span>Single-player and online co-op</span></div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { collectionConfig } from "@/config/collections";
 import { getEntry } from "@/lib/content";
+import { collectionEntryHref } from "@/lib/contentRoutes";
 import { createMetadata } from "@/seo/metadata";
 import { getDetailTdk, pageTdk } from "@/seo/tdk";
 import type { CollectionKey } from "@/types/content";
@@ -25,6 +26,6 @@ export function entryMetadata(collection: CollectionKey, slug: string): Metadata
   const entry = getEntry(collection, slug);
   const config = collectionConfig[collection];
   if (!entry) return createMetadata({ title: "Page not found", description: "This guide is not available.", path: config.href, noIndex: true });
-  const path = `${config.detailPrefix}/${entry.slug}/`;
+  const path = collectionEntryHref(collection, entry.slug);
   return createMetadata({ ...getDetailTdk(collection, entry, path), type: "article" });
 }

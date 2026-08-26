@@ -1,4 +1,5 @@
 import { achievements, fish, getCollection, getFishImage, getFishImageAlt, isBossCreature } from "@/lib/content";
+import { collectionEntryHref } from "@/lib/contentRoutes";
 import { islandProgression } from "@/lib/gameplayData";
 import type { CollectionKey, ContentEntry } from "@/types/content";
 
@@ -207,10 +208,9 @@ function anchor(value: string) {
 function contentItem(collection: CollectionKey, slug: string, meta: string): RelationItem | null {
   const entry = getCollection(collection).find((candidate) => candidate.slug === slug);
   if (!entry) return null;
-  const prefix = ["weapons", "items", "bait", "npcs"].includes(collection) ? `/wiki/${collection}` : `/${collection}`;
   return {
     title: entry.name,
-    href: `${prefix}/${entry.slug}/`,
+    href: collectionEntryHref(collection, entry.slug),
     meta,
     description: entry.description,
     image: entry.image,
@@ -269,7 +269,7 @@ function group(id: string, title: string, description: string, items: Array<Rela
 }
 
 function buildGroups(spec: RelationSpec, context: "quest" | "boss" | "island"): RelationGroup[] {
-  const rewardHref = context === "quest" ? "#steps" : spec.quests?.[0] ? `/quests/${spec.quests[0]}/` : "#rewards";
+  const rewardHref = context === "quest" ? "#quest-brief" : spec.quests?.[0] ? `/quests/${spec.quests[0]}/` : "#rewards";
   const groups = [
     group("related-creatures", "Related creatures", "Creatures caught, defeated or handed in during this route.", (spec.creatures ?? []).map(fishItem)),
     group("required-items", "Required items and lures", "Check each item and lure before starting the objective.", [

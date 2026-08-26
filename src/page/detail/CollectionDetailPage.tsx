@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { ArticleDetailPage } from "@/page/detail/ArticleDetailPage";
 import { collectionConfig } from "@/config/collections";
 import { getCollection, getEntry, getFish } from "@/lib/content";
+import { collectionEntryHref } from "@/lib/contentRoutes";
 import { getRelationGroups } from "@/lib/contentRelations";
 import { contentDisplayName } from "@/lib/contentNaming";
 import { islandProgression, itemRoutes, itemSections, weaponProgression, weaponSections } from "@/lib/gameplayData";
@@ -167,7 +168,7 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
     .slice(0, 3)
     .map((candidate) => ({
       title: candidate.name,
-      href: `${config.detailPrefix}/${candidate.slug}/`,
+      href: collectionEntryHref(collection, candidate.slug),
       meta: candidate.tags?.[0] ?? "Guide",
       description: candidate.description,
       image: candidate.image,

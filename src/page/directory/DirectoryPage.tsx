@@ -17,16 +17,18 @@ import {
 import { InnerHero } from "@/components/layout/InnerHero";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionConfig } from "@/config/collections";
+import directoryGroupsJson from "@/data/directory-groups.json";
 import { fish, getCollection, isBossCreature } from "@/lib/content";
 import { itemRoutes, weaponProgression } from "@/lib/gameplayData";
 import { getBaitGameData } from "@/data/baitGameData";
 import { contentDisplayName } from "@/lib/contentNaming";
 import { breadcrumbSchema, collectionPageSchema } from "@/seo/schema";
 import { pageTdk } from "@/seo/tdk";
-import type { CollectionKey, ContentEntry, IslandEntry } from "@/types/content";
+import type { CollectionKey, ContentEntry, DirectoryGroups, IslandEntry } from "@/types/content";
 import styles from "@/style/page/directory.module.css";
 
 type DirectoryConfig = (typeof collectionConfig)[CollectionKey];
+const directoryGroups = directoryGroupsJson as DirectoryGroups;
 
 function entryHref(config: DirectoryConfig, entry: ContentEntry) {
   return `${config.detailPrefix}/${entry.slug}/`;
@@ -137,31 +139,7 @@ function UpdateDirectory({ entries }: { entries: ContentEntry[] }) {
 }
 
 function WikiCatalog({ collection, entries, config }: { collection: CollectionKey; entries: ContentEntry[]; config: DirectoryConfig }) {
-  const layouts: Partial<Record<CollectionKey, Array<{ id: string; title: string; description: string; slugs: string[] }>>> = {
-    weapons: [
-      { id: "ranged-weapons", title: "Ranged weapons", description: "Firearms for general catches, bosses and flying targets.", slugs: ["pistol", "shotgun", "sniper-rifle", "assault-rifle", "smg"] },
-      { id: "melee-and-explosives", title: "Melee & explosives", description: "Ammunition-saving finishers and physics-based achievement tools.", slugs: ["brass-knuckles", "knife", "dynamite"] },
-    ],
-    items: [
-      { id: "story-items", title: "Story items", description: "Single-route objects that must be kept until their boss or NPC hand-in is complete.", slugs: ["beer-can", "modified-leech", "carrot", "fish-bucket"] },
-      { id: "permanent-upgrades", title: "Navigation & upgrades", description: "Permanent tools that improve travel and unlock the next route.", slugs: ["radar", "boat-engine"] },
-    ],
-    bait: [
-      { id: "regular-lures", title: "Regular lure tiers", description: "Purchased lure tiers with weighted catch pools for Islands 2 through 5.", slugs: ["beginner-lure", "standard-lure", "professional-lure", "scientific-lure"] },
-      { id: "food-bait", title: "Special shop bait", description: "Purchased bait with a small, dedicated catch pool rather than a full island tier.", slugs: ["hot-dog", "coconut"] },
-      { id: "boss-lures", title: "Boss lures", description: "Purchased lures for optional or route-specific encounter creatures.", slugs: ["beginner-boss-lure", "standard-boss-lure", "professional-boss-lure", "scientific-boss-lure"] },
-      { id: "story-bait", title: "Story bait", description: "Quest-made triggers that should not be sold, cooked or substituted.", slugs: ["empty-beer-can", "modified-leech", "carrot", "fish-bucket"] },
-      { id: "encounter-triggers", title: "Encounter triggers", description: "Defeated bodies used to start the next fight; these are not equippable lures.", slugs: ["defeated-tuna", "defeated-bowhead-whale"] },
-    ],
-    npcs: [
-      { id: "lighthouse-npcs", title: "Lighthouse", description: "The first progression hand-in and boat-key route.", slugs: ["lighthouse-keeper"] },
-      { id: "forest-npcs", title: "Forest Island", description: "The Leech Bait story chain and the first full fishing-and-weapon shop.", slugs: ["forest-lake-lady", "forest-shopkeeper"] },
-      { id: "desert-npcs", title: "Desert Island", description: "The Carrot, Pufferfish and cooking routes plus the island utility kiosk.", slugs: ["desert-tourist", "grillmaster", "desert-kiosk-seller"] },
-      { id: "rocks-npcs", title: "Rocks Island", description: "Story hand-ins, tackle and weapon counters, roulette and the Drip trophy slot machine.", slugs: ["rocks-shop-npc", "rocks-store-clerk", "rocks-weapon-seller", "rocks-roulette-operator", "rocks-slot-operator"] },
-      { id: "volcano-npcs", title: "Volcano Island", description: "Separate military, store and Scientist records that converge on the final whale route.", slugs: ["volcano-military-officer", "volcano-quartermaster", "volcano-scientist"] },
-    ],
-  };
-  const groups = layouts[collection] ?? [];
+  const groups = directoryGroups[collection] ?? [];
   const groupEntries = (slugs: string[]) => slugs.map((slug) => entries.find((entry) => entry.slug === slug)).filter((entry): entry is ContentEntry => Boolean(entry));
   const sidebar = <aside className={styles.categorySidebar} aria-label={`${config.title} categories`}><h2>Categories</h2><nav>{groups.map((group) => <a href={`#${group.id}`} key={group.id}><span>{group.title}</span><b>{groupEntries(group.slugs).length}</b></a>)}</nav>{collection === "bait" ? <Link href="/wiki/rods-and-lures/">Rod compatibility <ArrowRight size={14} /></Link> : null}</aside>;
   const groupHeader = (group: (typeof groups)[number]) => <header className={styles.wikiGroupHeader}><div><p>{config.eyebrow}</p><h2>{group.title}</h2><span>{group.description}</span></div><strong>{groupEntries(group.slugs).length} entries</strong></header>;

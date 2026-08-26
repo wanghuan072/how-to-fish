@@ -15,6 +15,8 @@ type GlobalSearchProps = {
 export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
     if (!needle) return items.slice(0, 8);
@@ -27,15 +29,31 @@ export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
 
   useEffect(() => {
     if (!open) return;
+    returnFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     inputRef.current?.focus();
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
+      if (event.key !== "Tab") return;
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+      );
+      if (!focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
+      returnFocusRef.current?.focus();
     };
   }, [open, onClose]);
 
@@ -44,6 +62,7 @@ export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
   return (
     <div className={styles.backdrop} role="presentation" onMouseDown={onClose}>
       <section
+        ref={dialogRef}
         className={styles.searchPanel}
         role="dialog"
         aria-modal="true"

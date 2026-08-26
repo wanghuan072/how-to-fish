@@ -1,0 +1,94 @@
+{
+  "weapons": [
+    {
+      "id": "ranged-weapons",
+      "title": "Ranged weapons",
+      "description": "Firearms for general catches, bosses and flying targets.",
+      "slugs": ["pistol", "shotgun", "sniper-rifle", "assault-rifle", "smg"]
+    },
+    {
+      "id": "melee-and-explosives",
+      "title": "Melee & explosives",
+      "description": "Ammunition-saving finishers and physics-based achievement tools.",
+      "slugs": ["brass-knuckles", "knife", "dynamite"]
+    }
+  ],
+  "items": [
+    {
+      "id": "story-items",
+      "title": "Story items",
+      "description": "Single-route objects that must be kept until their boss or NPC hand-in is complete.",
+      "slugs": ["beer-can", "modified-leech", "carrot", "fish-bucket"]
+    },
+    {
+      "id": "permanent-upgrades",
+      "title": "Navigation & upgrades",
+      "description": "Permanent tools that improve travel and unlock the next route.",
+      "slugs": ["radar", "boat-engine"]
+    }
+  ],
+  "bait": [
+    {
+      "id": "regular-lures",
+      "title": "Regular lure tiers",
+      "description": "Purchased lure tiers with weighted catch pools for Islands 2 through 5.",
+      "slugs": ["beginner-lure", "standard-lure", "professional-lure", "scientific-lure"]
+    },
+    {
+      "id": "food-bait",
+      "title": "Special shop bait",
+      "description": "Purchased bait with a small, dedicated catch pool rather than a full island tier.",
+      "slugs": ["hot-dog", "coconut"]
+    },
+    {
+      "id": "boss-lures",
+      "title": "Boss lures",
+      "description": "Purchased lures for optional or route-specific encounter creatures.",
+      "slugs": ["beginner-boss-lure", "standard-boss-lure", "professional-boss-lure", "scientific-boss-lure"]
+    },
+    {
+      "id": "story-bait",
+      "title": "Story bait",
+      "description": "Quest-made triggers that should not be sold, cooked or substituted.",
+      "slugs": ["empty-beer-can", "modified-leech", "carrot", "fish-bucket"]
+    },
+    {
+      "id": "encounter-triggers",
+      "title": "Encounter triggers",
+      "description": "Defeated bodies used to start the next fight; these are not equippable lures.",
+      "slugs": ["defeated-tuna", "defeated-bowhead-whale"]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "lighthouse-npcs",
+      "title": "Lighthouse",
+      "description": "The first progression hand-in and boat-key route.",
+      "slugs": ["lighthouse-keeper"]
+    },
+    {
+      "id": "forest-npcs",
+      "title": "Forest Island",
+      "description": "The Leech Bait story chain and the first full fishing-and-weapon shop.",
+      "slugs": ["forest-lake-lady", "forest-shopkeeper"]
+    },
+    {
+      "id": "desert-npcs",
+      "title": "Desert Island",
+      "description": "The Carrot, Pufferfish and cooking routes plus the island utility kiosk.",
+      "slugs": ["desert-tourist", "grillmaster", "desert-kiosk-seller"]
+    },
+    {
+      "id": "rocks-npcs",
+      "title": "Rocks Island",
+      "description": "Story hand-ins, tackle and weapon counters, roulette and the Drip trophy slot machine.",
+      "slugs": ["rocks-shop-npc", "rocks-store-clerk", "rocks-weapon-seller", "rocks-roulette-operator", "rocks-slot-operator"]
+    },
+    {
+      "id": "volcano-npcs",
+      "title": "Volcano Island",
+      "description": "Separate military, store and Scientist records that converge on the final whale route.",
+      "slugs": ["volcano-military-officer", "volcano-quartermaster", "volcano-scientist"]
+    }
+  ]
+}

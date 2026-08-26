@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { Coins, Filter, MapPinned, Search } from "lucide-react";
-import { getFishImage, getFishImageAlt } from "@/lib/content";
+import { getFishImage, getFishImageAlt } from "@/lib/fishPresentation";
 import type { FishEntry, IslandEntry } from "@/types/content";
 import styles from "@/style/page/fish.module.css";
 

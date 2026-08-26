@@ -54,6 +54,12 @@ Begin at the Lighthouse and learn the opening fishing pool before buying expensi
 
 Keep named quest objects and boss trophies until their return dialogue is complete. A creature that can be sold may still be needed for a trade, trigger or achievement, so open its connected page when the purpose is unclear.
 
+## Maintaining Local Content
+
+Game content is maintained as separate local JSON files in `src/data`, including `fish.json`, `bosses.json`, `weapons.json`, `quests.json`, `guides.json`, `items.json`, `bait.json`, `npcs.json` and `islands.json`. Edit the matching JSON file directly when content changes.
+
+Use the `published` field in `guides.json` to control which guides appear on the site. Wiki directory categories are kept in `directory-groups.json`.
+
 ## Frequently Asked Questions
 
 ### How many creatures are tracked?

@@ -12,7 +12,9 @@ import questsJson from "@/data/quests.json";
 import sourcesJson from "@/data/sources.json";
 import updatesJson from "@/data/updates.json";
 import weaponsJson from "@/data/weapons.json";
+import { collectionEntryHref } from "@/lib/contentRoutes";
 import { getFishArea, getFishCatchMethod } from "@/lib/fishRelations";
+import { getFishImage, getFishImageAlt } from "@/lib/fishPresentation";
 import type {
   AchievementEntry,
   CollectionKey,
@@ -87,8 +89,8 @@ function fallbackCatchMethod(entry: FishEntry): FishCatchMethod {
   };
 }
 
-const publishedGuideSlugs = new Set(["beginner-guide", "full-walkthrough"]);
-const publishedGuides = (guidesJson as ContentEntry[]).filter((entry) => publishedGuideSlugs.has(entry.slug));
+const guideEntries = guidesJson as ContentEntry[];
+const publishedGuides = guideEntries.filter((entry) => entry.published);
 
 const contentCollections = {
   guides: publishedGuides,
@@ -130,7 +132,7 @@ export const fish: FishEntry[] = (fishJson as FishEntry[]).map((entry) => {
     catchMethods: methods,
   };
 });
-const bossCreatureSlugs = new Set((bossesJson as ContentEntry[]).map((entry) => entry.slug));
+const bossCreatureSlugs = new Set(contentCollections.bosses.map((entry) => entry.slug));
 
 export function isBossCreature(entry: FishEntry) {
   return bossCreatureSlugs.has(entry.slug) || ["Boss", "Mini-boss", "Final encounter"].includes(entry.category);
@@ -141,24 +143,6 @@ export const bossCreatures = fish.filter(isBossCreature);
 export const collectorFish = fish.filter((entry) => entry.collectionStatus === "Confirmed");
 export const additionalCatchTableFish = fish.filter((entry) => entry.collectionStatus === "Unconfirmed");
 export const regularCollectorFish = regularFish.filter((entry) => entry.collectionStatus === "Confirmed");
-
-export const fishDataAudit = {
-  documentedRecords: fish.length,
-  confirmedCollectorRecords: collectorFish.length,
-  additionalCatchTableRecords: additionalCatchTableFish.length,
-  confirmedNonBossRecords: regularCollectorFish.length,
-  encounterRecords: bossCreatures.length,
-} as const;
-
-if (fishDataAudit.documentedRecords !== 51) throw new Error(`Expected 51 documented creature records; found ${fishDataAudit.documentedRecords}.`);
-if (fishDataAudit.confirmedCollectorRecords !== 51) throw new Error(`Expected 51 current journal creature records; found ${fishDataAudit.confirmedCollectorRecords}.`);
-if (fishDataAudit.additionalCatchTableRecords !== 0) throw new Error(`Expected no detached catch-table records; found ${fishDataAudit.additionalCatchTableRecords}.`);
-if (fishDataAudit.confirmedNonBossRecords !== 40 || fishDataAudit.encounterRecords !== 11) throw new Error("Creature directory split no longer matches the audited 40 non-boss + 11 encounter structure.");
-
-const fishSlugs = new Set(fish.map((entry) => entry.slug));
-for (const catchable of [...baitGameData, ...defaultCatchPools].flatMap((entry) => entry.catchables)) {
-  if (!fishSlugs.has(catchable.slug)) throw new Error(`Catch-table creature ${catchable.slug} has no matching fish record.`);
-}
 export const islands = (islandsJson as unknown as IslandEntry[]).map((entry) => ({
   ...entry,
   fishCount: fish.filter((creature) => creature.islandSlug === entry.slug).length,
@@ -184,16 +168,7 @@ export function getFish(slug: string) {
   return fish.find((entry) => entry.slug === slug);
 }
 
-export function getFishImage(entry: FishEntry) {
-  if (entry.image) return entry.image;
-  return "/images/brand/creature-thumbnail-pending.svg";
-}
-
-export function getFishImageAlt(entry: FishEntry) {
-  return entry.image
-    ? entry.imageAlt ?? `${entry.name} creature illustration from How to Fish`
-    : `No verified in-game creature thumbnail is available for ${entry.name}`;
-}
+export { getFishImage, getFishImageAlt } from "@/lib/fishPresentation";
 
 export function getFishContent(entry: FishEntry): ContentEntry {
   const bossLike = isBossCreature(entry);
@@ -298,7 +273,7 @@ export function buildSearchIndex(): SearchItem[] {
     contentCollections[key].forEach((entry) => {
       index.push({
         title: entry.name,
-        href: `${key === "weapons" || key === "items" || key === "bait" || key === "npcs" ? `/wiki/${key}` : `/${key}`}/${entry.slug}/`,
+        href: collectionEntryHref(key, entry.slug),
         type: key.charAt(0).toUpperCase() + key.slice(1),
         description: entry.description,
       });

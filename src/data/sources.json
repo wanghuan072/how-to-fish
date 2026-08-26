@@ -133,5 +133,14 @@
     "tier": "Secondary",
     "checked": "2026-08-24",
     "usedFor": "A secondary creature-list comparison. Blue Crab and Flounder claims were rejected after no matching localized name, creature Prefab or catch-table record was found in the unpacked build."
+  },
+  {
+    "key": "game-bait-extract",
+    "title": "How to Fish v1.0.4 BaitInfo Extract",
+    "publisher": "Local game-build inspection",
+    "url": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+    "tier": "Gameplay evidence",
+    "checked": "2026-08-26",
+    "usedFor": "Unity BaitInfo catch tables, raw weights, pool shares, compatible rods, catch times and bait-loss values extracted from game build 1.0.4."
   }
 ]

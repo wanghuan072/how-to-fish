@@ -12,6 +12,7 @@ export type FaqItem = {
 export type ContentEntry = {
   slug: string;
   name: string;
+  published?: boolean;
   eyebrow?: string;
   description: string;
   image: string;
@@ -110,3 +111,12 @@ export type CollectionKey =
   | "bait"
   | "npcs"
   | "updates";
+
+export type DirectoryGroup = {
+  id: string;
+  title: string;
+  description: string;
+  slugs: string[];
+};
+
+export type DirectoryGroups = Partial<Record<CollectionKey, DirectoryGroup[]>>;

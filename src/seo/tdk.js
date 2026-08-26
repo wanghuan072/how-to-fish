@@ -197,7 +197,7 @@ export function getDetailTdk(collection, entry, path) {
     const fullTitle = `${bossName} Boss Strategy - How to Fish Steam Guide`;
     return {
       title: fullTitle.length <= 60 ? fullTitle : `${bossName} Boss Strategy - How to Fish Guide`,
-      description: clean(entry.description),
+      description: clean(entry.seoDescription ?? entry.description),
       keywords: [bossName, `${bossName} How to Fish`, `${bossName} boss strategy`, `${bossName} boss guide`, "How to Fish bosses", ...(entry.tags ?? []).slice(0, 2)],
       path,
       lastModified: entry.updated ?? "2026-08-24",

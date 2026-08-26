@@ -15,6 +15,7 @@ export type ContentEntry = {
   published?: boolean;
   eyebrow?: string;
   description: string;
+  seoDescription?: string;
   image: string;
   imageAlt: string;
   featured?: boolean;

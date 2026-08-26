@@ -164,12 +164,6 @@ function fitDescription(value) {
     description = description.slice(0, 159).replace(/[,;:\s]+\S*$/, "").replace(/[,.!?;:]+$/, "");
     return `${description}.`;
   }
-  const filler = " Open the connected pages to plan the next step without losing a quest item.";
-  while (description.length < 140) description += filler;
-  if (description.length > 160) {
-    description = description.slice(0, 159).replace(/[,;:\s]+\S*$/, "").replace(/[,.!?;:]+$/, "");
-    description += ".";
-  }
   return description;
 }
 
@@ -216,9 +210,23 @@ export function getDetailTdk(collection, entry, path) {
 }
 
 export function getFishTdk(entry, content, path) {
+  const method = entry.catchMethods?.[0];
+  const isGroundPickup = method?.methodType === "Ground pickup";
+  const isAmbient = entry.creatureStatus === "Ambient";
+  const isUnconfirmed = method?.methodType === "Unconfirmed";
+  const poolDetail = method?.poolShare !== undefined
+    ? ` Extracted pool weight: ${method.rawWeight} (${method.poolShare.toFixed(method.poolShare % 1 ? 2 : 0)}%).`
+    : "";
+  const description = isGroundPickup
+    ? `Find ${entry.name} on ${entry.islandName} as a direct ground pickup; no rod or bait is required. It is a ${entry.progression ?? "collection"} ${entry.creatureGroup ?? "special"} record outside fishing pools.`
+    : isAmbient
+      ? `${entry.name} is an ambient ${entry.sourceClass ?? "special"} creature referenced by the game scenes. Its exact spawn route, sell value and Collector slot need live-build confirmation.`
+    : isUnconfirmed
+        ? `${entry.name} is associated with ${entry.islandName}, but the unpacked data does not confirm a repeatable rod-and-bait pool. Verify the live route before spending a lure.`
+        : `Find ${entry.name} on ${entry.islandName} with the ${entry.rod} and ${entry.lure}.${poolDetail} Check its sell value and collection status.`;
   return {
     title: fitTitle(entry.name, " Creature Location & Bait", "How to Fish Steam Guide"),
-    description: fitDescription(`${clean(content.description).replace(/[.!?]+$/, "")}. See the exact area, rod, bait or trigger, sell value, quests and achievements for this How to Fish creature.`),
+    description: fitDescription(description),
     keywords: [entry.name, `${entry.name} How to Fish`, `${entry.name} bait`, `${entry.name} location`, "How to Fish creatures"],
     path,
     lastModified: content.updated ?? "2026-08-24",

@@ -1,0 +1,540 @@
+[
+  {
+    "id": "melee",
+    "name": "Melee",
+    "multiplier": 1.05,
+    "formula": null,
+    "extraValuePercent": 5.0,
+    "summary": "Defeat a target with a melee attack.",
+    "exactTrigger": "Use a melee attack for the killing blow.",
+    "triggerValues": {},
+    "attackTypes": [
+      "melee"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckKillType",
+      "GetMeleeBonuses",
+      "GetMeleePlayerBonuses"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "explosion",
+    "name": "Explosion",
+    "multiplier": 1.5,
+    "formula": null,
+    "extraValuePercent": 50.0,
+    "summary": "Defeat a target with an explosion.",
+    "exactTrigger": "Use explosion damage for the killing blow.",
+    "triggerValues": {},
+    "attackTypes": [
+      "explosion"
+    ],
+    "targets": [
+      "creature"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckKillType",
+      "GetExplosionBonuses"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "three-sixty",
+    "name": "360",
+    "multiplier": 1.5,
+    "formula": null,
+    "extraValuePercent": 50.0,
+    "summary": "Score a kill after a completed spin.",
+    "exactTrigger": "Complete at least 320 degrees of rotation without pausing the turn for more than 0.5 seconds, then score the kill within 1 second.",
+    "triggerValues": {
+      "minimumRotationDegrees": 320.0,
+      "maximumSecondsSinceCompleted": 1.0,
+      "maximumTurnPauseSeconds": 0.5
+    },
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "Check360"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "no-scope",
+    "name": "No Scope",
+    "multiplier": 1.2,
+    "formula": null,
+    "extraValuePercent": 20.0,
+    "summary": "Score a ranged kill without aiming.",
+    "exactTrigger": "Do not aim for at least 0.25 seconds before the killing shot.",
+    "triggerValues": {
+      "minimumSecondsSinceAiming": 0.25
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckScope"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "quick-scope",
+    "name": "Quick Scope",
+    "multiplier": 1.1,
+    "formula": null,
+    "extraValuePercent": 10.0,
+    "summary": "Score a ranged kill shortly after aiming.",
+    "exactTrigger": "Score the kill within 0.5 seconds after you start aiming.",
+    "triggerValues": {
+      "maximumSecondsSinceAiming": 0.5
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckScope"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "longshot",
+    "name": "Longshot",
+    "multiplier": 1.3,
+    "formula": null,
+    "extraValuePercent": 30.0,
+    "summary": "Score a distant ranged kill.",
+    "exactTrigger": "Score the kill from at least 25 distance units away.",
+    "triggerValues": {
+      "minimumDistance": 25.0
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckLongshot"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "headshot",
+    "name": "Headshot",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Score a ranged kill with a hit above the creature's head position.",
+    "exactTrigger": "Land the killing shot above the creature's head-position line.",
+    "triggerValues": {
+      "localHitPointZGreaterThan": "Creature.HeadPos"
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckHeadshot"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "dogfight",
+    "name": "Dogfight",
+    "multiplier": 1.5,
+    "formula": null,
+    "extraValuePercent": 50.0,
+    "summary": "Defeat a flying target while airborne.",
+    "exactTrigger": "Both you and the target must be airborne when the kill lands.",
+    "triggerValues": {},
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckAerials"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "aerial",
+    "name": "Aerial",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Defeat a target while airborne.",
+    "exactTrigger": "You must be airborne while the target stays on the ground.",
+    "triggerValues": {},
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckAerials"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "fly-fishing",
+    "name": "Fly Fishing",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Defeat a flying target from the ground.",
+    "exactTrigger": "Kill an airborne target while you remain on the ground.",
+    "triggerValues": {},
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckAerials"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "noob-kill",
+    "name": "Noob Kill",
+    "multiplier": 1.01,
+    "formula": null,
+    "extraValuePercent": 1.0,
+    "summary": "Earn this when no earlier bonus has been added for the kill.",
+    "exactTrigger": "Finish the target without earning another Killscore bonus on that kill.",
+    "triggerValues": {
+      "requiredExistingBonuses": 0
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckNoob"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "one-shot-one-kill",
+    "name": "One Shot One Kill",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Defeat a full-health creature with one damaging hit.",
+    "exactTrigger": "Take a full-health creature to zero with one damaging hit.",
+    "triggerValues": {
+      "targetStartsAtFullHealth": true,
+      "incomingDamageAtLeastCurrentHp": true
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckOneShotOneKill"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "multikill",
+    "name": "Multikill",
+    "multiplier": null,
+    "formula": {
+      "kind": "clamped-lerp",
+      "minimum": 1.0,
+      "maximum": 1.5,
+      "countScale": 0.1,
+      "countOffset": -1
+    },
+    "extraValuePercent": null,
+    "summary": "Chain kills within the multikill time window.",
+    "exactTrigger": "Chain at least two kills with no more than 3 seconds between them; the multiplier reaches its cap at 11 kills.",
+    "triggerValues": {
+      "maximumSecondsBetweenKills": 3.0,
+      "minimumTotalKills": 2,
+      "maximumTotalKillsForCap": 11
+    },
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckMultikill"
+    ],
+    "notes": "Verified from the managed kill-score calculator.",
+    "tiers": [
+      {
+        "count": 2,
+        "name": "Double Kill",
+        "multiplier": 1.05
+      },
+      {
+        "count": 3,
+        "name": "Triple Kill",
+        "multiplier": 1.1
+      },
+      {
+        "count": 4,
+        "name": "Quadra Kill",
+        "multiplier": 1.15
+      },
+      {
+        "count": 5,
+        "name": "Penta Kill",
+        "multiplier": 1.2
+      },
+      {
+        "count": 6,
+        "name": "Multikill",
+        "multiplier": 1.25
+      },
+      {
+        "count": 7,
+        "name": "Multikill",
+        "multiplier": 1.3
+      },
+      {
+        "count": 8,
+        "name": "Multikill",
+        "multiplier": 1.35
+      },
+      {
+        "count": 9,
+        "name": "Multikill",
+        "multiplier": 1.4
+      },
+      {
+        "count": 10,
+        "name": "Multikill",
+        "multiplier": 1.45
+      },
+      {
+        "count": 11,
+        "name": "Multikill",
+        "multiplier": 1.5
+      }
+    ]
+  },
+  {
+    "id": "finally",
+    "name": "Finally",
+    "multiplier": 1.1,
+    "formula": null,
+    "extraValuePercent": 10.0,
+    "summary": "Score a kill after many shots without one.",
+    "exactTrigger": "Score a kill after firing more than five shots without one.",
+    "triggerValues": {
+      "minimumShotsWithoutKillExclusive": 5.0
+    },
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckFinally"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "endangered",
+    "name": "Endangered",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Defeat an endangered target.",
+    "exactTrigger": "Defeat a creature marked as endangered.",
+    "triggerValues": {},
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckEndangered"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "killsteal",
+    "name": "Killsteal",
+    "multiplier": 1.3,
+    "formula": null,
+    "extraValuePercent": 30.0,
+    "summary": "Finish a target without having landed a local hit while it was above 30% health.",
+    "exactTrigger": "Land the finishing blow at 30% health or lower without having hit the creature earlier in the fight.",
+    "triggerValues": {
+      "requiredLocalHitsTaken": 0,
+      "maximumHealthFraction": 0.3
+    },
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckKillsteal"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "point-blank",
+    "name": "Point Blank",
+    "multiplier": 1.1,
+    "formula": null,
+    "extraValuePercent": 10.0,
+    "summary": "Score a very close ranged kill.",
+    "exactTrigger": "Score a ranged kill from less than 2 distance units away.",
+    "triggerValues": {
+      "maximumDistanceExclusive": 2.0
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckPointBlank"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "overkill",
+    "name": "Overkill",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Deal far more damage than needed to a non-boss target.",
+    "exactTrigger": "Finish a non-boss target with enough excess damage to push its remaining health below -70.",
+    "triggerValues": {
+      "remainingHpAfterDamageLessThan": -70,
+      "bossesExcluded": true
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckOverkill"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "last-bullet",
+    "name": "Last Bullet",
+    "multiplier": 1.25,
+    "formula": null,
+    "extraValuePercent": 25.0,
+    "summary": "Score a kill after the shot empties the held weapon.",
+    "exactTrigger": "Score the kill with the shot that empties your held weapon.",
+    "triggerValues": {
+      "heldWeaponRequired": true,
+      "ammoEquals": 0
+    },
+    "attackTypes": [
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckLastBullet"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  },
+  {
+    "id": "impressive",
+    "name": "Impressive",
+    "multiplier": 2.0,
+    "formula": null,
+    "extraValuePercent": 100.0,
+    "summary": "Combine at least five other bonuses.",
+    "exactTrigger": "Earn at least five other Killscore bonuses on the same kill.",
+    "triggerValues": {
+      "minimumOtherBonuses": 5
+    },
+    "attackTypes": [
+      "melee",
+      "ranged"
+    ],
+    "targets": [
+      "creature",
+      "player"
+    ],
+    "stackable": true,
+    "sourceMethods": [
+      "CheckImpressive"
+    ],
+    "notes": "Verified from the managed kill-score calculator."
+  }
+]

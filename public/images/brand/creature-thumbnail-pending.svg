@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Creature thumbnail pending</title>
+  <desc id="desc">Neutral ocean card used when no verified in-game creature thumbnail is available.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#031f38"/>
+      <stop offset="1" stop-color="#07576a"/>
+    </linearGradient>
+    <linearGradient id="fish" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#39c6cf"/>
+      <stop offset="1" stop-color="#8ae6db"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="42" fill="url(#sea)"/>
+  <path d="M0 382c112-42 208-30 310 1 125 38 230 47 490-18v155H0z" fill="#02172a" opacity=".72"/>
+  <g fill="none" stroke="#83dcd4" stroke-width="10" opacity=".32">
+    <path d="M74 130c70-28 142-28 212 0"/>
+    <path d="M500 98c66-24 132-24 198 0"/>
+  </g>
+  <g transform="translate(400 238)">
+    <path d="M-210 0c88-94 236-101 330-16 32-29 70-48 115-57-11 44-10 89 2 134-47-9-86-29-118-59-96 84-243 75-329-2Z" fill="url(#fish)" opacity=".9"/>
+    <circle cx="42" cy="-26" r="12" fill="#03253c"/>
+    <path d="M-47-54c21-50 52-78 92-84-8 36-2 68 18 96" fill="#55d4d2" opacity=".8"/>
+  </g>
+  <text x="400" y="447" fill="#f8f4e8" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle" letter-spacing="2">THUMBNAIL PENDING</text>
+</svg>

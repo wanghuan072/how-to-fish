@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "hot-dog",
+    "name": "Hot Dog Bait Guide",
+    "eyebrow": "Food bait · $1",
+    "description": "Use Hot Dog with the Crab Fishing Rod for Rock Crab and Lobster. It does not belong to the Forest Island Piranha pool.",
+    "image": "/images/game/bait/hot-dog.webp",
+    "imageAlt": "Game-derived low-poly Hot Dog bait model from How to Fish",
+    "featured": true,
+    "tags": ["$1", "Lighthouse"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["rock-crab", "lobster"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Hot Dog is available from the Lighthouse bait shop for $1 and remains available in later island shops."]},
+      {"heading": "When to use it", "bullets": ["Equip the Crab Fishing Rod.", "Use it for Rock Crab or Lobster in the opening route.", "Switch to the normal Fishing Rod and Beginner Lure for Piranha."]}
+    ]
+  },
+  {
+    "slug": "beginner-lure",
+    "name": "Beginner Lure Guide",
+    "eyebrow": "Regular lure · $3",
+    "description": "The first paid regular lure opens a nine-creature pool on Forest Island, including Goby, Salmon and a low-weight Sunfish result.",
+    "image": "/images/game/bait/beginner-lure.webp",
+    "imageAlt": "Game-derived low-poly Beginner Lure model from How to Fish",
+    "featured": true,
+    "tags": ["$3", "Forest Island"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["cod", "pike", "piranha", "triggerfish", "goby", "salmon", "goldfish", "perch", "sunfish"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Buy Beginner Lure from Forest Island for $3. Later bait shops continue to stock it."]},
+      {"heading": "How to use it", "bullets": ["Equip the Fishing Rod and Beginner Lure.", "Use Beginner Boss Lure when you want an even Sunfish or The Old Pike pool.", "A normal Beginner Lure can still roll Sunfish, but its pool weight is much lower."]}
+    ]
+  },
+  {
+    "slug": "beginner-boss-lure",
+    "name": "Beginner Boss Lure Guide",
+    "eyebrow": "Boss lure · $40",
+    "description": "Use the $40 Beginner Boss Lure for an even two-target pool containing Sunfish and The Old Pike.",
+    "image": "/images/game/bait/beginner-boss-lure.webp",
+    "imageAlt": "Game-derived low-poly Beginner Boss Lure model from How to Fish",
+    "featured": false,
+    "tags": ["$40", "Forest Island"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["sunfish", "old-pike"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["The lure first appears in the Forest Island shop for $40 and is also sold on later islands."]},
+      {"heading": "Before casting", "bullets": ["Use the Fishing Rod.", "The lure is lost when a target takes it.", "Giant Piranha uses quest-made Leech Bait instead."]}
+    ]
+  },
+  {
+    "slug": "modified-leech",
+    "name": "Leech Bait",
+    "eyebrow": "Quest bait · Forest Island",
+    "description": "Collect three ground leeches during the Forest Island quest, trade them for Leech Bait and use it to call Giant Piranha.",
+    "image": "/images/game/bait/leech-bait.webp",
+    "imageAlt": "Game-derived low-poly Leech Bait model from How to Fish",
+    "featured": true,
+    "tags": ["Giant Piranha", "Quest item"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["giant-piranha"],
+    "sections": [
+      {"heading": "How to get it", "bullets": ["Accept the Forest Island bait quest.", "Pick up three leeches from the ground.", "Return them to receive Leech Bait.", "Use the Fishing Rod and keep the resulting Giant Piranha trophy for the return hand-in."]},
+      {"heading": "Name shown in game", "paragraphs": ["The inventory name is Leech Bait. Some older walkthroughs call it Modified Leech, so this page keeps the older address for saved links."]}
+    ]
+  },
+  {
+    "slug": "standard-lure",
+    "name": "Standard Lure Guide",
+    "eyebrow": "Regular lure · $15",
+    "description": "Standard Lure is the Desert Island regular pool, with ten possible creatures including Bowlfish and a low-weight Blue Shark result.",
+    "image": "/images/game/bait/standard-lure.webp",
+    "imageAlt": "Game-derived low-poly Standard Lure model from How to Fish",
+    "featured": true,
+    "tags": ["$15", "Desert Island"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["catfish", "bluegill", "boxfish", "angelfish", "needlefish", "sea-urchin", "clownfish", "seahorse", "bowlfish", "blue-shark"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Standard Lure first appears in the Desert Island shop for $15 and remains available on Islands 4 and 5."]},
+      {"heading": "Important pool differences", "bullets": ["Salmon belongs to Beginner Lure, not Standard Lure.", "Bowlfish is part of this pool.", "Blue Shark has a small regular-lure weight; Standard Boss Lure gives it the dedicated pool."]}
+    ]
+  },
+  {
+    "slug": "standard-boss-lure",
+    "name": "Standard Boss Lure Guide",
+    "eyebrow": "Boss lure · $280",
+    "description": "Standard Boss Lure gives Blue Shark its dedicated Desert Island pool and supports the Grillmaster hand-in.",
+    "image": "/images/game/bait/standard-boss-lure.webp",
+    "imageAlt": "Game-derived low-poly Standard Boss Lure model from How to Fish",
+    "featured": false,
+    "tags": ["$280", "Blue Shark"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["blue-shark"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Buy it from Desert Island for $280; the later shops also stock it."]},
+      {"heading": "Use in the Grillmaster route", "bullets": ["Equip the Fishing Rod and Standard Boss Lure.", "Defeat Blue Shark.", "Keep the body and take it to the Grillmaster rather than selling it."]}
+    ]
+  },
+  {
+    "slug": "carrot",
+    "name": "Carrot Bait",
+    "eyebrow": "Quest bait · Desert Island",
+    "description": "Complete the Desert Island bait quest to receive the Carrot, then use it with the Fishing Rod for Pufferfish.",
+    "image": "/images/game/bait/carrot.webp",
+    "imageAlt": "Game-derived low-poly Carrot bait model from How to Fish",
+    "featured": true,
+    "tags": ["Pufferfish", "Quest item"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["pufferfish"],
+    "sections": [
+      {"heading": "How to get and use it", "bullets": ["Catch Needlefish with Standard Lure.", "Finish the tourist's bait trade.", "Equip the Carrot on the Fishing Rod.", "Keep the Pufferfish fin for the return hand-in that opens the next route."]}
+    ]
+  },
+  {
+    "slug": "coconut",
+    "name": "Coconut Bait Guide",
+    "eyebrow": "Special bait · $350",
+    "description": "Coconut is a Desert Island shop bait with a dedicated Bing Bong pool. It is not stocked by the later island shops.",
+    "image": "/images/game/bait/coconut.webp",
+    "imageAlt": "Game-derived low-poly Coconut bait model from How to Fish",
+    "featured": true,
+    "tags": ["$350", "Bing Bong"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["bing-bong"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Buy Coconut from the Desert Island bait shop for $350. It is sold only on Island 3; the later shops do not stock it."]},
+      {"heading": "How to use it", "bullets": ["Equip the Fishing Rod.", "Select Coconut before casting.", "The Coconut pool contains Bing Bong only."]}
+    ]
+  },
+  {
+    "slug": "professional-lure",
+    "name": "Professional Lure Guide",
+    "eyebrow": "Regular lure · $50",
+    "description": "Professional Lure has a twelve-creature Rocks Island pool, including Dripper and low-weight Tuna and Seahorse results.",
+    "image": "/images/game/bait/professional-lure.webp",
+    "imageAlt": "Game-derived low-poly Professional Lure model from How to Fish",
+    "featured": true,
+    "tags": ["$50", "Rocks Island"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["sengarat", "red-snapper", "tigerfish", "parrotfish", "bass", "halibut", "flying-fish", "eel", "voxelfish", "dripper", "tuna", "seahorse"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Professional Lure first appears in the Rocks Island shop for $50 and is also stocked on Volcano Island."]},
+      {"heading": "Important pool differences", "bullets": ["Dripper belongs to this pool.", "Tuna and Seahorse can appear at low pool weight.", "Professional Boss Lure gives Tuna a dedicated catch pool.", "Flounder is not in the Professional Lure catch table, so its method remains unconfirmed in the creature list."]}
+    ]
+  },
+  {
+    "slug": "professional-boss-lure",
+    "name": "Professional Boss Lure Guide",
+    "eyebrow": "Boss lure · $1,200",
+    "description": "Professional Boss Lure gives Tuna its dedicated Rocks Island pool. Keep the body intact for the Albatross encounter.",
+    "image": "/images/game/bait/professional-boss-lure.webp",
+    "imageAlt": "Game-derived low-poly Professional Boss Lure model from How to Fish",
+    "featured": false,
+    "tags": ["$1,200", "Tuna"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["tuna"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Buy it on Rocks Island for $1,200. Volcano Island also stocks the lure."]},
+      {"heading": "Use in the Albatross route", "bullets": ["Catch and defeat Tuna.", "Do not sell or cook the body.", "Place the defeated Tuna on land to trigger Albatross."]}
+    ]
+  },
+  {
+    "slug": "scientific-lure",
+    "name": "Scientific Lure Guide",
+    "eyebrow": "Regular lure · $500",
+    "description": "Scientific Lure is the Volcano Island regular pool for Stonefish, Blobfish, Anglerfish, Oarfish and Superdwarf Fish.",
+    "image": "/images/game/bait/scientific-lure.webp",
+    "imageAlt": "Game-derived low-poly Scientific Lure model from How to Fish",
+    "featured": true,
+    "tags": ["$500", "Volcano Island"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["stonefish", "blobfish", "anglerfish", "oarfish", "superdwarf-fish"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["Scientific Lure is sold on Volcano Island for $500."]},
+      {"heading": "Farming notes", "bullets": ["Stonefish, Blobfish and Anglerfish each carry equal top weight in this pool.", "Oarfish has a lower weight.", "Superdwarf Fish has the lowest raw weight of the five."]}
+    ]
+  },
+  {
+    "slug": "scientific-boss-lure",
+    "name": "Scientific Boss Lure Guide",
+    "eyebrow": "Boss lure · $5,800",
+    "description": "Scientific Boss Lure is the expensive Volcano Island lure with a dedicated Goblin Shark pool.",
+    "image": "/images/game/bait/scientific-boss-lure.webp",
+    "imageAlt": "Game-derived low-poly Scientific Boss Lure model from How to Fish",
+    "featured": false,
+    "tags": ["$5,800", "Goblin Shark"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["goblin-shark"],
+    "sections": [
+      {"heading": "Where to buy it", "paragraphs": ["The Volcano Island bait shop sells Scientific Boss Lure for $5,800."]},
+      {"heading": "Before buying it", "bullets": ["Check whether Goblin Shark is still missing from your creature list.", "Equip the Fishing Rod.", "The lure is lost when the target takes it."]}
+    ]
+  },
+  {
+    "slug": "fish-bucket",
+    "name": "Fish Bucket",
+    "eyebrow": "Quest bait · Volcano Island",
+    "description": "Complete the Volcano whale-bait quest to receive Fish Bucket, then use it with the Fishing Rod for Bowhead Whale.",
+    "image": "/images/game/bait/fish-bucket.webp",
+    "imageAlt": "Game-derived low-poly Fish Bucket model from How to Fish",
+    "featured": false,
+    "tags": ["Bowhead Whale", "Quest item"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["bowhead-whale"],
+    "sections": [
+      {"heading": "How to obtain it", "bullets": ["Reach the Volcano Island scientist route.", "Finish the whale-bait objective that requests five creatures.", "Confirm Fish Bucket is in the bait slot before casting."]},
+      {"heading": "Use in the ending route", "bullets": ["Use Fish Bucket to call Bowhead Whale.", "Keep the defeated body intact.", "Carry it into the Volcano trigger for the mutated final phase."]}
+    ]
+  },
+  {
+    "slug": "empty-beer-can",
+    "name": "Empty Beer Can Bait",
+    "eyebrow": "Quest bait · Lighthouse",
+    "description": "Complete the Lighthouse bait exchange, equip the returned Empty Beer Can on the Crab Fishing Rod and call Spider Crab.",
+    "image": "/images/game/bait/empty-beer-can.webp",
+    "imageAlt": "Game-derived low-poly Empty Beer Can bait model from How to Fish",
+    "featured": false,
+    "tags": ["Spider Crab", "Quest item"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["spider-crab"],
+    "sections": [
+      {"heading": "How to get and use it", "bullets": ["Complete the opening Beer Can exchange.", "Equip Empty Beer Can on the Crab Fishing Rod.", "Defeat Spider Crab and keep the quest result.", "Return to the Lighthouse Keeper to continue the boat route."]}
+    ]
+  },
+  {
+    "slug": "defeated-tuna",
+    "name": "Defeated Tuna Trigger",
+    "eyebrow": "Encounter trigger · Rocks Island",
+    "description": "The defeated Tuna body is placed on land to draw in Albatross. It is a carried encounter object, not an equippable bait or lure.",
+    "image": "/images/game/bosses/tuna.png",
+    "imageAlt": "In-game Tuna encounter image used for the Albatross trigger record",
+    "featured": false,
+    "tags": ["Albatross", "Physical trigger"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["albatross"],
+    "sections": [{"heading": "How the trigger works", "bullets": ["Catch Tuna with Professional Boss Lure.", "Do not sell or cook the body.", "Place it on land to start the Albatross encounter.", "Return the Albatross head after the fight."]}]
+  },
+  {
+    "slug": "defeated-bowhead-whale",
+    "name": "Defeated Bowhead Whale Trigger",
+    "eyebrow": "Final encounter trigger · Volcano",
+    "description": "The defeated Bowhead Whale body starts the mutated final phase. It is a carried encounter object, not an equippable bait or lure.",
+    "image": "/images/game/bosses/bowhead-whale.webp",
+    "imageAlt": "In-game Bowhead Whale encounter image used for the final trigger record",
+    "featured": false,
+    "tags": ["Mutated Bowhead Whale", "Physical trigger"],
+    "updated": "2026-08-26",
+    "catchSlugs": ["mutated-bowhead-whale"],
+    "sections": [{"heading": "How the trigger works", "bullets": ["Defeat Bowhead Whale with Fish Bucket.", "Keep the whale body intact.", "Carry it into the Volcano final encounter area.", "Defeat the mutated phase to complete the story route."]}]
+  }
+]

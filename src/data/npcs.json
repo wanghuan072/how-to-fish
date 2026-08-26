@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "lighthouse-keeper",
+    "name": "Lighthouse Keeper",
+    "eyebrow": "Opening quest giver",
+    "description": "Runs the beer-and-Spider-Crab chain that ends with the boat key.",
+    "image": "/images/official/gameplay-01.jpg",
+    "imageAlt": "Official How to Fish screenshot of the opening Lighthouse Island",
+    "featured": true,
+    "tags": ["Lighthouse", "Boat key"],
+    "updated": "2026-08-24",
+    "sourceLabel": "Official achievement + cross-checked route",
+    "sourceUrl": "https://steamcommunity.com/stats/4001890/achievements/?l=english",
+    "sections": [
+      {
+        "heading": "Quest chain",
+        "bullets": ["Give the keeper a Beer Can.", "Use the Empty Beer Can for Spider Crab.", "Return the requested result to receive the boat key.", "Buy the $10 Radar before following the next marker."]
+      }
+    ]
+  },
+  {
+    "slug": "melvin",
+    "name": "Melvin",
+    "eyebrow": "Named companion",
+    "description": "A recurring companion identified by name in official Steam screenshots.",
+    "image": "/images/official/gameplay-03.jpg",
+    "imageAlt": "Official How to Fish screenshot showing Melvin beside the player and a Mackerel",
+    "featured": true,
+    "tags": ["Lighthouse", "Companion"],
+    "updated": "2026-08-24",
+    "sourceLabel": "Official Steam media",
+    "sourceUrl": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+    "sections": [
+      {
+        "heading": "Known role",
+        "paragraphs": ["Melvin is a named companion in the opening route. No separate item trade or mandatory quest hand-in is attached to this NPC record."]
+      }
+    ]
+  },
+  {
+    "slug": "forest-lake-lady",
+    "name": "Lady by the Forest Lake",
+    "eyebrow": "Forest story NPC",
+    "description": "Trades three ground leeches for the Leech Bait needed by Giant Piranha.",
+    "image": "/images/official/gameplay-06.jpg",
+    "imageAlt": "Official How to Fish screenshot of the Forest Island environment",
+    "featured": true,
+    "tags": ["Forest", "Leech Bait"],
+    "updated": "2026-08-26",
+    "sourceLabel": "Cross-checked Forest walkthrough",
+    "sourceUrl": "https://showgamer.com/en/prohozhdeniya-igr/5151-prohozhdenie-how-to-fish",
+    "sections": [
+      {
+        "heading": "Quest role",
+        "bullets": ["Collect three leeches from the ground.", "Hand them in for Leech Bait.", "Use that bait for Giant Piranha.", "Return the boss trophy to unlock the next coordinates."]
+      }
+    ]
+  },
+  {
+    "slug": "desert-tourist",
+    "name": "Desert Tourist",
+    "eyebrow": "Desert story NPC",
+    "description": "Trades a Needlefish for the Carrot used to summon Pufferfish.",
+    "image": "/images/official/gameplay-02.jpg",
+    "imageAlt": "Official How to Fish screenshot from Desert Island",
+    "featured": true,
+    "tags": ["Desert", "Carrot"],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked Desert walkthrough",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-unlock-every-island-forest-desert-rocks-volcano/",
+    "sections": [
+      {
+        "heading": "Quest role",
+        "paragraphs": ["Catch Needlefish with the $15 Standard Lure and give it to the tourist under the tree. The Carrot reward is story bait, so do not discard it before Pufferfish."]
+      }
+    ]
+  },
+  {
+    "slug": "grillmaster",
+    "name": "Grillmaster",
+    "eyebrow": "Desert cooking NPC",
+    "description": "Accepts the defeated Blue Shark and opens the grill route for increasing item sale value.",
+    "image": "/images/official/gameplay-02.jpg",
+    "imageAlt": "Official How to Fish screenshot of the Desert Island boss area",
+    "featured": false,
+    "tags": ["Desert", "Cooking"],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked boss and cooking route",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-defeat-all-bosses/",
+    "sections": [
+      {
+        "heading": "Unlocking the grill",
+        "bullets": ["Buy the $280 Standard Boss Lure.", "Defeat Blue Shark and bring it to the Grillmaster.", "Cook items only until the multiplier approaches 1.5×.", "Remove them before they burn black and become worth $0."]
+      }
+    ]
+  },
+  {
+    "slug": "rocks-shop-npc",
+    "name": "Rocks Shop NPC",
+    "eyebrow": "Rocks progression NPC",
+    "description": "Receives the Albatross head after the Tuna bait sequence and reveals the Volcano marker.",
+    "image": "/images/official/gameplay-07.jpg",
+    "imageAlt": "Official How to Fish screenshot of a late-game island and weapon shop route",
+    "featured": false,
+    "tags": ["Rocks", "Volcano coordinates"],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked Rocks progression",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-unlock-every-island-forest-desert-rocks-volcano/",
+    "sections": [
+      {
+        "heading": "Quest hand-in",
+        "paragraphs": ["Buy the $1,200 Professional Boss Lure, defeat Tuna, use its body as ground bait for Albatross, then return the Albatross head to this NPC for the pink Volcano coordinate."]
+      }
+    ]
+  }
+]

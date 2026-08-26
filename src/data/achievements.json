@@ -1,0 +1,254 @@
+[
+  {
+    "name": "Getting started",
+    "description": "Kill your first creature.",
+    "hint": "Complete the basic catch-and-combat loop.",
+    "globalPercent": 99.8,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/getting-started.jpg",
+    "imageAlt": "Official Steam achievement icon for Getting started"
+  },
+  {
+    "name": "Drip",
+    "description": "Kill a drip creature.",
+    "hint": "Watch for a rainbow-name variant, kill it, then confirm the Drip entry with Tab.",
+    "globalPercent": 97.7,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/drip.jpg",
+    "imageAlt": "Official Steam achievement icon for Drip"
+  },
+  {
+    "name": "Who stole my beer",
+    "description": "Find and kill the culprit, and bring it to the lighthouse keeper.",
+    "hint": "Use the Empty Beer Can for Spider Crab and return the required quest result.",
+    "globalPercent": 90.3,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/who-stole-my-beer.jpg",
+    "imageAlt": "Official Steam achievement icon for Who stole my beer"
+  },
+  {
+    "name": "Noob",
+    "description": "Get a kill with no kill score multiplier.",
+    "hint": "Finish a grounded creature without distance, spin, no-scope or other style conditions.",
+    "globalPercent": 81.4,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/noob.jpg",
+    "imageAlt": "Official Steam achievement icon for Noob"
+  },
+  {
+    "name": "Getting an upgrade",
+    "description": "Upgrade the engine on the boat.",
+    "hint": "Purchase the first engine improvement.",
+    "globalPercent": 80.6,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/getting-an-upgrade.jpg",
+    "imageAlt": "Official Steam achievement icon for Getting an upgrade"
+  },
+  {
+    "name": "Dinnertime",
+    "description": "Catch dinner for the lady in the forest.",
+    "hint": "Accept the Forest Island quest and return with the requested catch.",
+    "globalPercent": 77,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/dinnertime.jpg",
+    "imageAlt": "Official Steam achievement icon for Dinnertime"
+  },
+  {
+    "name": "Let me go",
+    "description": "Get picked up by a seagull.",
+    "hint": "Stay exposed near a hostile seagull and allow the interaction.",
+    "globalPercent": 76.8,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/let-me-go.jpg",
+    "imageAlt": "Official Steam achievement icon for Let me go"
+  },
+  {
+    "name": "Impressive",
+    "description": "Get a 5x killscore multiplier.",
+    "hint": "Stack several style conditions on one predictable target.",
+    "globalPercent": 72.5,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/impressive.jpg",
+    "imageAlt": "Official Steam achievement icon for Impressive"
+  },
+  {
+    "name": "Grillmaster",
+    "description": "Start the grill.",
+    "hint": "Bring Blue Shark to the Grillmaster and start the grill.",
+    "globalPercent": 68.3,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/grillmaster.jpg",
+    "imageAlt": "Official Steam achievement icon for Grillmaster"
+  },
+  {
+    "name": "GOLD GOLD GOLD",
+    "description": "Unlock a legendary skin from the slot machine.",
+    "hint": "Feed a Drip creature to the Reel of Fortune; the legendary result is random.",
+    "globalPercent": 60.2,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/gold-gold-gold.jpg",
+    "imageAlt": "Official Steam achievement icon for GOLD GOLD GOLD"
+  },
+  {
+    "name": "Vacation",
+    "description": "Help the tourist swim on his vacation.",
+    "hint": "Complete the tourist's physics-based water objective.",
+    "globalPercent": 56.1,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/vacation.jpg",
+    "imageAlt": "Official Steam achievement icon for Vacation"
+  },
+  {
+    "name": "360 no scope",
+    "description": "Kill a creature with a 360 no scope.",
+    "hint": "Lower a weak target first, make a full spin, then land the unscoped finishing shot.",
+    "globalPercent": 55.5,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/360-no-scope.jpg",
+    "imageAlt": "Official Steam achievement icon for 360 no scope"
+  },
+  {
+    "name": "I am speed",
+    "description": "Buy the best engine for the boat.",
+    "hint": "Complete the boat-engine upgrade chain.",
+    "globalPercent": 45.1,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/i-am-speed.jpg",
+    "imageAlt": "Official Steam achievement icon for I am speed"
+  },
+  {
+    "name": "Fully equipped",
+    "description": "Apply all attachments to a single weapon.",
+    "hint": "Fill the magazine, laser, optic and muzzle slots on one weapon.",
+    "globalPercent": 44.4,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/fully-equipped.jpg",
+    "imageAlt": "Official Steam achievement icon for Fully equipped"
+  },
+  {
+    "name": "Yummy in my tummy",
+    "description": "Eat a burnt creature.",
+    "hint": "Leave a catch on the grill until black, then consume it.",
+    "globalPercent": 37,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/yummy-in-my-tummy.jpg",
+    "imageAlt": "Official Steam achievement icon for Yummy in my tummy"
+  },
+  {
+    "name": "Terrorizing bird",
+    "description": "Defend the scared islanders from the terrorizing bird.",
+    "hint": "Use the Tuna-to-Albatross chain and return the bird's head.",
+    "globalPercent": 35.4,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/terrorizing-bird.jpg",
+    "imageAlt": "Official Steam achievement icon for Terrorizing bird"
+  },
+  {
+    "name": "Deadliest catch",
+    "description": "Help the military defeat the big creature they located.",
+    "hint": "Complete the military's large-creature encounter on the final route.",
+    "globalPercent": 22.7,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/deadliest-catch.jpg",
+    "imageAlt": "Official Steam achievement icon for Deadliest catch"
+  },
+  {
+    "name": "We are so back",
+    "description": "Finish the game.",
+    "hint": "Complete the five-stage story route and final whale encounter.",
+    "globalPercent": 22.2,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/we-are-so-back.jpg",
+    "imageAlt": "Official Steam achievement icon for We are so back"
+  },
+  {
+    "name": "All in",
+    "description": "Bet on green and win at roulette.",
+    "hint": "Green is one pocket in 37; use only an item you can afford to lose.",
+    "globalPercent": 20.8,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/all-in.jpg",
+    "imageAlt": "Official Steam achievement icon for All in"
+  },
+  {
+    "name": "Competitive eating",
+    "description": "Eat a mini-boss.",
+    "hint": "Preserve an optional early mini-boss and consume it.",
+    "globalPercent": 14.5,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/competitive-eating.jpg",
+    "imageAlt": "Official Steam achievement icon for Competitive eating"
+  },
+  {
+    "name": "Easy",
+    "description": "Kill a boss within 10 seconds.",
+    "hint": "Return over-equipped to an early boss and front-load damage.",
+    "globalPercent": 14.5,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/easy.jpg",
+    "imageAlt": "Official Steam achievement icon for Easy"
+  },
+  {
+    "name": "I'm the bird now",
+    "description": "Make the boat fly.",
+    "hint": "Use dynamite and the game's physics to launch the boat.",
+    "globalPercent": 14.3,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/im-the-bird-now.jpg",
+    "imageAlt": "Official Steam achievement icon for I'm the bird now"
+  },
+  {
+    "name": "Collector",
+    "description": "Find and kill all the creatures.",
+    "hint": "Use the Tab encyclopedia and include optional boss-lure encounters.",
+    "globalPercent": 8,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/collector.jpg",
+    "imageAlt": "Official Steam achievement icon for Collector"
+  },
+  {
+    "name": "Rich! Millionaire",
+    "description": "Sell something worth 100,000 or more.",
+    "hint": "Stack Killscore and 1.5x cooking on a high-value item, then use roulette green to reach the threshold.",
+    "globalPercent": 6.7,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/rich-millionaire.jpg",
+    "imageAlt": "Official Steam achievement icon for Rich! Millionaire"
+  },
+  {
+    "name": "Everyone's dream",
+    "description": "Kill a seagull with dynamite.",
+    "hint": "Lead the flight path and time the detonation in open space.",
+    "globalPercent": 3.1,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/everyones-dream.jpg",
+    "imageAlt": "Official Steam achievement icon for Everyone's dream"
+  },
+  {
+    "name": "Handyman",
+    "description": "Defeat the final boss with your bare hands.",
+    "hint": "Attempt after a normal clear; learn the fight before the fists-only challenge run.",
+    "globalPercent": 0.9,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/handyman.jpg",
+    "imageAlt": "Official Steam achievement icon for Handyman"
+  },
+  {
+    "name": "Fishipedia",
+    "description": "Find and kill all drip creatures.",
+    "hint": "Use the separate Drip entries in the Tab encyclopedia as the checklist.",
+    "globalPercent": 0.7,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/fishipedia.jpg",
+    "imageAlt": "Official Steam achievement icon for Fishipedia"
+  },
+  {
+    "name": "Bean",
+    "description": "Finish the game within 1 hour.",
+    "hint": "Use a practiced solo route and buy only progression-critical upgrades.",
+    "globalPercent": 0.4,
+    "statsChecked": "2026-08-24",
+    "image": "/images/game/achievements/bean.jpg",
+    "imageAlt": "Official Steam achievement icon for Bean"
+  }
+]

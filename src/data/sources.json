@@ -1,0 +1,137 @@
+[
+  {
+    "key": "steam-store",
+    "title": "How to Fish on Steam",
+    "publisher": "Dazed Games / Valve",
+    "url": "https://store.steampowered.com/app/4001890/How_to_Fish/",
+    "tier": "Official",
+    "checked": "2026-08-24",
+    "usedFor": "Game identity, release date, modes, features, system requirements and official media."
+  },
+  {
+    "key": "steam-achievements",
+    "title": "How to Fish Global Achievements",
+    "publisher": "Steam Community",
+    "url": "https://steamcommunity.com/stats/4001890/achievements/?l=english",
+    "tier": "Official",
+    "checked": "2026-08-24",
+    "usedFor": "The canonical list of 28 achievement names and descriptions."
+  },
+  {
+    "key": "dazed-games",
+    "title": "Dazed Games",
+    "publisher": "Dazed Games",
+    "url": "https://dazed.games/",
+    "tier": "Official",
+    "checked": "2026-08-24",
+    "usedFor": "Developer identity and official game listing."
+  },
+  {
+    "key": "steamdb",
+    "title": "How to Fish App Data",
+    "publisher": "SteamDB",
+    "url": "https://steamdb.info/app/4001890/info/",
+    "tier": "Platform data",
+    "checked": "2026-08-24",
+    "usedFor": "Controller support, Steam Deck status and build-level store metadata."
+  },
+  {
+    "key": "toi-fish-list",
+    "title": "How to Fish: List of all fish and how to get them",
+    "publisher": "The Times of India",
+    "url": "https://timesofindia.indiatimes.com/sports/esports/news/how-to-fish-list-of-all-fish-how-to-get-them-and-more/articleshow/133438002.cms",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Cross-checking creature, island, rod and bait pairings."
+  },
+  {
+    "key": "ath-fish-list",
+    "title": "All Fish Locations and the Bait You Need",
+    "publisher": "All Things How",
+    "url": "https://allthings.how/how-to-fish-all-fish-locations-and-the-bait-you-need/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Independent cross-check of regular species and lure tiers."
+  },
+  {
+    "key": "ath-progression",
+    "title": "Full Island and Boss Progression Walkthrough",
+    "publisher": "All Things How",
+    "url": "https://allthings.how/how-to-fish-full-island-and-boss-progression-walkthrough/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Quest hand-ins, radar markers and island progression order."
+  },
+  {
+    "key": "ath-bosses",
+    "title": "Full Island and Boss Progression Walkthrough",
+    "publisher": "All Things How",
+    "url": "https://allthings.how/how-to-fish-full-island-and-boss-progression-walkthrough/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Boss triggers, locations, quest drops and encounter order."
+  },
+  {
+    "key": "ath-weapons",
+    "title": "The Upgrades and Weapons Worth Buying First",
+    "publisher": "All Things How",
+    "url": "https://allthings.how/how-to-fish-the-upgrades-and-weapons-worth-buying-first/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Cross-checking Radar, Dynamite and Shotgun prices plus upgrade-order advice; unverified weapon DPS is excluded."
+  },
+  {
+    "key": "nerdschalk-lures",
+    "title": "How to Fish Lures and Baits",
+    "publisher": "Nerd's Chalk",
+    "url": "https://nerdschalk.com/how-to-fish-every-lure-bait-catch/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Lure prices, boss-lure targets and value observations; used only where corroborated."
+  },
+  {
+    "key": "nerdschalk-values",
+    "title": "Most Valuable Fish, Sell Values and Cooking",
+    "publisher": "Nerd's Chalk",
+    "url": "https://nerdschalk.com/most-valuable-fish-sell-values-how-to-fish/",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Observed base values, 1.5x cooking cap and value-system caveats."
+  },
+  {
+    "key": "nerdschalk-creature-values",
+    "title": "Every How to Fish Creature by Value",
+    "publisher": "Nerd's Chalk",
+    "url": "https://nerdschalk.com/how-to-fish-guides-bosses-quests-creatures-and-every-achievement/",
+    "tier": "Gameplay evidence",
+    "checked": "2026-08-24",
+    "usedFor": "The v1.0.4 inspect-panel weight, base value and health table for 46 of the 49 tracked creatures."
+  },
+  {
+    "key": "showgamer-walkthrough",
+    "title": "How to Fish Walkthrough",
+    "publisher": "Showgamer",
+    "url": "https://showgamer.com/en/prohozhdeniya-igr/5151-prohozhdenie-how-to-fish",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "Full-route and achievement cross-checking."
+  },
+  {
+    "key": "skoottie-video",
+    "title": "I'm Playing 100% of How to Fish",
+    "publisher": "Skoottie / YouTube",
+    "url": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "tier": "Gameplay evidence",
+    "checked": "2026-08-24",
+    "usedFor": "Long-form launch-build quest flow and boss encounter context."
+  },
+  {
+    "key": "whisper-fish-list",
+    "title": "How to Fish All 49 Creatures & Collector Guide",
+    "publisher": "Whisper of the House",
+    "url": "https://www.whisperofthehouse.com/how-to-fish/all-fish-locations",
+    "tier": "Secondary",
+    "checked": "2026-08-24",
+    "usedFor": "The 49-entry encyclopedia order, including Clam, Brown Crab, Blue Crab and Flounder."
+  }
+]

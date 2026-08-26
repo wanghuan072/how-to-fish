@@ -1,0 +1,236 @@
+[
+  {
+    "slug": "pistol",
+    "name": "Pistol Guide",
+    "eyebrow": "Early weapon",
+    "description": "A dependable early firearm for learning creature movement, conserving shots and setting up simple trick kills.",
+    "image": "/images/game/weapons/pistol.jpg",
+    "imageAlt": "In-game screenshot showing the Pistol in How to Fish",
+    "featured": true,
+    "tags": [
+      "Ranged",
+      "Early game"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Use the pistol when control matters more than burst damage. It is well suited to ordinary catches and learning how targets move around the boat."
+        ],
+        "bullets": [
+          "Fire deliberately instead of emptying a magazine.",
+          "Create a clear background for trick shots.",
+          "Move to a heavier option for large bosses if fights drag on."
+        ]
+      },
+      {
+        "heading": "Upgrade logic",
+        "paragraphs": [
+          "Choose one firearm you plan to keep, then fill its magazine, laser, optic and muzzle slots. Completing all four attachment slots on one weapon unlocks Fully equipped."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "shotgun",
+    "name": "Shotgun Guide",
+    "eyebrow": "Close-range weapon",
+    "description": "A forgiving close-range choice when a newly landed creature is already crowding the boat.",
+    "image": "/images/game/weapons/shotgun.jpg",
+    "imageAlt": "In-game screenshot showing the Shotgun in How to Fish",
+    "featured": true,
+    "tags": [
+      "Close range",
+      "Burst"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "The shotgun is strongest when the target is close and large enough for the spread to connect. Reposition before firing if an NPC, explosive object or teammate is in the line."
+        ],
+        "bullets": [
+          "Use open deck space.",
+          "Wait for a clean close-range window.",
+          "Carry a ranged alternative for birds and distant bosses."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sniper-rifle",
+    "name": "Sniper Rifle Guide",
+    "eyebrow": "Precision weapon",
+    "description": "A long-range option for deliberate trick shots, flying targets and clean sightlines.",
+    "image": "/images/game/weapons/sniper-rifle.jpg",
+    "imageAlt": "In-game screenshot showing the Sniper Rifle in How to Fish",
+    "featured": true,
+    "tags": [
+      "Long range",
+      "Trick shots"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Use the sniper rifle when the target path is predictable and the battlefield is open. It rewards preparation more than panic firing."
+        ],
+        "bullets": [
+          "Watch one movement cycle before shooting.",
+          "Lead flying targets.",
+          "Use a faster secondary option when creatures reach the boat."
+        ]
+      },
+      {
+        "heading": "Multiplier play",
+        "paragraphs": [
+          "Precision weapons pair naturally with 360, no-scope, headshot and distance conditions. Watch one movement cycle first so a missed setup does not slow a money route."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "assault-rifle",
+    "name": "Assault Rifle Guide",
+    "eyebrow": "Sustained fire",
+    "description": "A flexible late-route weapon for maintaining pressure on large creatures and boss targets.",
+    "image": "/images/game/weapons/assault-rifle.jpg",
+    "imageAlt": "In-game screenshot showing the Assault Rifle in How to Fish",
+    "featured": false,
+    "tags": [
+      "Ranged",
+      "Bosses"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Sustained fire helps when a large target stays exposed, but only if you can control the weapon and afford the ammunition. Short bursts preserve accuracy."
+        ],
+        "bullets": [
+          "Use short bursts at range.",
+          "Restock before boss lures.",
+          "Favor mobility over standing still to finish a magazine."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dynamite",
+    "name": "Dynamite Guide",
+    "eyebrow": "Explosive · $25",
+    "description": "A fast bulk-kill tool and physics launcher with two dedicated achievement uses.",
+    "image": "/images/game/weapons/dynamite.jpg",
+    "imageAlt": "In-game screenshot showing the Dynamite in How to Fish",
+    "featured": false,
+    "tags": [
+      "Explosive",
+      "$25"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Dynamite costs $25 in the early shop route and is useful for clustered creatures. It is also required for Everyone's dream and the boat-launching I'm the bird now challenge."
+        ],
+        "bullets": [
+          "Keep clear of the blast.",
+          "Avoid cramped quest areas.",
+          "Practice the fuse timing before achievement attempts."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "brass-knuckles",
+    "name": "Brass Knuckles Guide",
+    "eyebrow": "Melee weapon",
+    "description": "An early melee upgrade for finishing ordinary creatures without spending ammunition.",
+    "image": "/images/game/weapons/brass-knuckles.jpg",
+    "imageAlt": "In-game screenshot showing the Brass Knuckles in How to Fish",
+    "featured": false,
+    "tags": [
+      "Melee",
+      "Early game"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Use Brass Knuckles for low-health catches when ammunition costs more than the time saved. Do not confuse ordinary melee cleanup with the Handyman challenge, which requires fists for the final boss."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "knife",
+    "name": "Knife Guide",
+    "eyebrow": "Melee weapon",
+    "description": "A stronger early melee finisher that preserves ammunition on small and medium catches.",
+    "image": "/images/game/weapons/knife.jpg",
+    "imageAlt": "In-game screenshot showing the Knife in How to Fish",
+    "featured": false,
+    "tags": [
+      "Melee",
+      "Economy"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "Use the Knife when a creature is already controlled on land or in the boat. It is an economy tool, not a safe answer to large charge bosses."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "smg",
+    "name": "SMG / Uzi Guide",
+    "eyebrow": "Rapid-fire weapon",
+    "description": "A flexible mid-game weapon for Blue Shark, Albatross and other moving targets.",
+    "image": "/images/game/weapons/smg.jpg",
+    "imageAlt": "In-game screenshot showing the SMG / Uzi in How to Fish",
+    "featured": true,
+    "tags": [
+      "Rapid fire",
+      "Mid game"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
+    "sections": [
+      {
+        "heading": "Best use",
+        "paragraphs": [
+          "The weapon is labeled SMG in some inventories and called Uzi by many guides. Its fast follow-up shots make it practical for Blue Shark and the flying Albatross."
+        ],
+        "bullets": [
+          "Use short bursts at range.",
+          "Buy magazine upgrades only for a weapon you plan to keep.",
+          "Carry enough ammunition before using a single-use boss lure."
+        ]
+      }
+    ]
+  }
+]

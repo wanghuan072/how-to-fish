@@ -1,0 +1,1068 @@
+[
+  {
+    "slug": "clam",
+    "name": "Clam",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "None",
+    "lure": "No bait (ground pickup)",
+    "category": "Special",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "whisper-fish-list"
+    ],
+    "note": "Pick up a Clam around the opening Lighthouse area; it is a ground creature, not a rod catch.",
+    "guide": true,
+    "image": "/images/game/fish/clam.png",
+    "imageAlt": "Original species reference illustration of Clam for the How to Fish Wiki"
+  },
+  {
+    "slug": "brown-crab",
+    "name": "Brown Crab",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Crab Fishing Rod",
+    "lure": "Starting Lighthouse pool",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "whisper-fish-list"
+    ],
+    "note": "A separate encyclopedia entry from Blue Crab and Rock Crab.",
+    "guide": true,
+    "image": "/images/game/fish/brown-crab.png",
+    "imageAlt": "Original species reference illustration of Brown Crab for the How to Fish Wiki"
+  },
+  {
+    "slug": "blue-crab",
+    "name": "Blue Crab",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Crab Fishing Rod",
+    "lure": "Lighthouse pool",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "whisper-fish-list"
+    ],
+    "note": "A separate encyclopedia entry from Brown Crab and Rock Crab.",
+    "guide": true,
+    "image": "/images/game/fish/blue-crab.png",
+    "imageAlt": "Original species reference illustration of Blue Crab for the How to Fish Wiki"
+  },
+  {
+    "slug": "rock-crab",
+    "name": "Rock Crab",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Crab Fishing Rod",
+    "lure": "Hot Dog",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "note": "Hot Dog has the verified Rock Crab pool entry; its raw weight is 10.",
+    "image": "/images/game/fish/rock-crab.png",
+    "guide": true,
+    "imageAlt": "Original species reference illustration of Rock Crab for the How to Fish Wiki"
+  },
+  {
+    "slug": "shrimp",
+    "name": "Shrimp",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Crab Fishing Rod",
+    "lure": "Default Crab Pool",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/shrimp.png",
+    "imageAlt": "Original species reference illustration of Shrimp for the How to Fish Wiki"
+  },
+  {
+    "slug": "lobster",
+    "name": "Lobster",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/lobster.png",
+    "imageAlt": "Original species reference illustration of Lobster for the How to Fish Wiki"
+  },
+  {
+    "slug": "spider-crab",
+    "name": "Spider Crab",
+    "islandSlug": "lighthouse",
+    "islandName": "Lighthouse",
+    "rod": "Crab Fishing Rod",
+    "lure": "Empty Beer Can",
+    "category": "Boss",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-bosses",
+      "ath-progression"
+    ],
+    "note": "Return the quest result to the Lighthouse Keeper to receive the boat key.",
+    "image": "/images/game/bosses/spider-crab.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Spider Crab in How to Fish"
+  },
+  {
+    "slug": "piranha",
+    "name": "Piranha",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/piranha.png",
+    "imageAlt": "Original species reference illustration of Piranha for the How to Fish Wiki"
+  },
+  {
+    "slug": "goby",
+    "name": "Goby",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["game-bait-extract"],
+    "note": "Goby is part of the Beginner Lure pool with a raw pool weight of 5.",
+    "guide": true
+  },
+  {
+    "slug": "mackerel",
+    "name": "Mackerel",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Default Fish Pool",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/mackerel.png",
+    "guide": true,
+    "imageAlt": "Original species reference illustration of Mackerel for the How to Fish Wiki"
+  },
+  {
+    "slug": "gar",
+    "name": "Gar",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Default Fish Pool",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/gar.png",
+    "imageAlt": "Original species reference illustration of Gar for the How to Fish Wiki"
+  },
+  {
+    "slug": "pike",
+    "name": "Pike",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Default Fish Pool / Beginner Lure",
+    "lureCost": 3,
+    "baseValue": 12,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/pike.png",
+    "imageAlt": "Original species reference illustration of Pike for the How to Fish Wiki"
+  },
+  {
+    "slug": "cod",
+    "name": "Cod",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "baseValue": 10,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/cod.png",
+    "imageAlt": "Original species reference illustration of Cod for the How to Fish Wiki"
+  },
+  {
+    "slug": "goldfish",
+    "name": "Goldfish",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "baseValue": 24,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/goldfish.png",
+    "imageAlt": "Original species reference illustration of Goldfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "perch",
+    "name": "Perch",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "baseValue": 18,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/perch.png",
+    "imageAlt": "Original species reference illustration of Perch for the How to Fish Wiki"
+  },
+  {
+    "slug": "triggerfish",
+    "name": "Triggerfish",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "baseValue": 18,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/triggerfish.png",
+    "imageAlt": "Original species reference illustration of Triggerfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "sunfish",
+    "name": "Sunfish",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Boss Lure",
+    "lureCost": 40,
+    "category": "Mini-boss",
+    "progression": "Optional",
+    "evidence": "Community",
+    "sourceKeys": [
+      "nerdschalk-lures",
+      "skoottie-video"
+    ],
+    "note": "A possible Beginner Boss Lure encounter; not part of the main island-unlock chain.",
+    "image": "/images/game/bosses/sunfish.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Sunfish in How to Fish"
+  },
+  {
+    "slug": "old-pike",
+    "name": "The Old Pike",
+    "aliases": [
+      "Gammelgäddan"
+    ],
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Boss Lure",
+    "lureCost": 40,
+    "category": "Mini-boss",
+    "progression": "Optional",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "nerdschalk-lures",
+      "ath-bosses"
+    ],
+    "note": "Gammelgäddan is the Swedish label used by some guides; it means The Old Pike.",
+    "image": "/images/game/bosses/old-pike.jpg",
+    "guide": true,
+    "imageAlt": "In-game screenshot of The Old Pike in How to Fish"
+  },
+  {
+    "slug": "giant-piranha",
+    "name": "Giant Piranha",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Leech Bait",
+    "category": "Boss",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-bosses",
+      "ath-progression",
+      "showgamer-walkthrough"
+    ],
+    "note": "Bring three ground-spawned leeches to the lake NPC, use the returned bait, then hand in the boss trophy.",
+    "image": "/images/game/bosses/giant-piranha.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Giant Piranha in How to Fish"
+  },
+  {
+    "slug": "angelfish",
+    "name": "Angelfish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 62,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/angelfish.png",
+    "imageAlt": "Original species reference illustration of Angelfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "boxfish",
+    "name": "Yellow Boxfish",
+    "aliases": [
+      "Boxfish"
+    ],
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 53,
+    "valueNote": "Observed raw base value under the Yellow Boxfish label.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/boxfish.png",
+    "imageAlt": "Original species reference illustration of Boxfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "catfish",
+    "name": "Catfish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 46,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/catfish.png",
+    "imageAlt": "Original species reference illustration of Catfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "sea-urchin",
+    "name": "Sea Urchin",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 52,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/sea-urchin.png",
+    "imageAlt": "Original species reference illustration of Sea Urchin for the How to Fish Wiki"
+  },
+  {
+    "slug": "seahorse",
+    "name": "Seahorse",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 100,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/seahorse.png",
+    "imageAlt": "Original species reference illustration of Seahorse for the How to Fish Wiki"
+  },
+  {
+    "slug": "clownfish",
+    "name": "Clownfish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 46,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/clownfish.png",
+    "imageAlt": "Original species reference illustration of Clownfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "bluegill",
+    "name": "Bluegill",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 62,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/bluegill.png",
+    "imageAlt": "Original species reference illustration of Bluegill for the How to Fish Wiki"
+  },
+  {
+    "slug": "salmon",
+    "name": "Salmon",
+    "islandSlug": "island-2-forest",
+    "islandName": "Forest Island (Island 2)",
+    "rod": "Fishing Rod",
+    "lure": "Beginner Lure",
+    "lureCost": 3,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list"
+    ],
+    "image": "/images/game/fish/salmon.png",
+    "imageAlt": "Original species reference illustration of Salmon for the How to Fish Wiki"
+  },
+  {
+    "slug": "bowlfish",
+    "name": "Bowlfish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["game-bait-extract"],
+    "note": "Bowlfish is part of the Standard Lure pool with a raw pool weight of 3.",
+    "guide": true
+  },
+  {
+    "slug": "needlefish",
+    "name": "Needlefish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Lure",
+    "lureCost": 15,
+    "baseValue": 60,
+    "valueNote": "Observed raw base value; needed for the tourist's Carrot route.",
+    "category": "Regular",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "ath-progression",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/needlefish.png",
+    "guide": true,
+    "imageAlt": "Original species reference illustration of Needlefish for the How to Fish Wiki"
+  },
+  {
+    "slug": "blue-shark",
+    "name": "Blue Shark",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Standard Boss Lure",
+    "lureCost": 280,
+    "category": "Mini-boss",
+    "progression": "Optional",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "nerdschalk-lures",
+      "ath-bosses"
+    ],
+    "note": "Bring it to the Grillmaster to unlock the grill and cooking route.",
+    "image": "/images/game/bosses/blue-shark.png",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Blue Shark in How to Fish"
+  },
+  {
+    "slug": "pufferfish",
+    "name": "Pufferfish",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Carrot",
+    "category": "Boss",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-bosses",
+      "ath-progression",
+      "showgamer-walkthrough"
+    ],
+    "note": "Trade a Needlefish to the tourist for the Carrot; return the Pufferfish fin to unlock Rocks Island.",
+    "image": "/images/game/bosses/pufferfish.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Pufferfish in How to Fish"
+  },
+  {
+    "slug": "bing-bong",
+    "name": "Bing Bong",
+    "islandSlug": "island-3-desert",
+    "islandName": "Desert Island (Island 3)",
+    "rod": "Fishing Rod",
+    "lure": "Coconut",
+    "lureCost": 350,
+    "category": "Special",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["game-bait-extract"],
+    "note": "Use Coconut for the dedicated Bing Bong catch pool.",
+    "guide": true
+  },
+  {
+    "slug": "parrotfish",
+    "name": "Parrotfish",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 350,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/parrotfish.png",
+    "imageAlt": "Original species reference illustration of Parrotfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "voxelfish",
+    "name": "Voxelfish",
+    "aliases": [
+      "Voxel Fish"
+    ],
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 340,
+    "valueNote": "Observed raw base value under the Voxel Fish label.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-values"
+    ],
+    "image": "/images/game/fish/voxelfish.png",
+    "imageAlt": "Original species reference illustration of Voxelfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "bass",
+    "name": "Bass",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 250,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/bass.png",
+    "imageAlt": "Original species reference illustration of Bass for the How to Fish Wiki"
+  },
+  {
+    "slug": "halibut",
+    "name": "Halibut",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 290,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/halibut.png",
+    "imageAlt": "Original species reference illustration of Halibut for the How to Fish Wiki"
+  },
+  {
+    "slug": "eel",
+    "name": "Eel",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/eel.png",
+    "guide": true,
+    "imageAlt": "Original species reference illustration of Eel for the How to Fish Wiki"
+  },
+  {
+    "slug": "tigerfish",
+    "name": "Tigerfish",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 310,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/tigerfish.png",
+    "imageAlt": "Original species reference illustration of Tigerfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "flying-fish",
+    "name": "Flying Fish",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "baseValue": 320,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-values"
+    ],
+    "image": "/images/game/fish/flying-fish.png",
+    "imageAlt": "Original species reference illustration of Flying Fish for the How to Fish Wiki"
+  },
+  {
+    "slug": "sengarat",
+    "name": "Sengarat",
+    "aliases": [
+      "Belodontichthys truncatus"
+    ],
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "note": "Some guides use the scientific name Belodontichthys truncatus.",
+    "image": "/images/game/fish/sengarat.png",
+    "imageAlt": "Original species reference illustration of Sengarat for the How to Fish Wiki"
+  },
+  {
+    "slug": "red-snapper",
+    "name": "Red Snapper",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/red-snapper.png",
+    "imageAlt": "Original species reference illustration of Red Snapper for the How to Fish Wiki"
+  },
+  {
+    "slug": "flounder",
+    "name": "Flounder",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Unconfirmed catch method",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Community",
+    "sourceKeys": [
+      "whisper-fish-list"
+    ],
+    "note": "Flounder is not in the Professional Lure catch pool. Its current catch method remains unconfirmed.",
+    "guide": true,
+    "image": "/images/game/fish/flounder.png",
+    "imageAlt": "Original species reference illustration of Flounder for the How to Fish Wiki"
+  },
+  {
+    "slug": "dripper",
+    "name": "Dripper",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Lure",
+    "lureCost": 50,
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Verified",
+    "sourceKeys": ["game-bait-extract"],
+    "note": "Dripper is part of the Professional Lure pool with a raw pool weight of 3.",
+    "guide": true
+  },
+  {
+    "slug": "tuna",
+    "name": "Tuna",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "Fishing Rod",
+    "lure": "Professional Boss Lure",
+    "lureCost": 1200,
+    "category": "Mini-boss",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "nerdschalk-lures",
+      "ath-bosses",
+      "ath-progression"
+    ],
+    "note": "Do not sell it: the defeated Tuna is the bait for the Albatross encounter.",
+    "image": "/images/game/bosses/tuna.png",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Tuna in How to Fish"
+  },
+  {
+    "slug": "albatross",
+    "name": "Albatross",
+    "islandSlug": "island-4-rocks",
+    "islandName": "Rocks Island (Island 4)",
+    "rod": "None",
+    "lure": "Defeated Tuna",
+    "category": "Boss",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "ath-bosses",
+      "ath-progression",
+      "showgamer-walkthrough"
+    ],
+    "note": "Place the defeated Tuna on the ground; return the Albatross head to unlock the Volcano.",
+    "image": "/images/game/bosses/albatross.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Albatross in How to Fish"
+  },
+  {
+    "slug": "anglerfish",
+    "name": "Anglerfish",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Lure",
+    "lureCost": 500,
+    "baseValue": 1500,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/anglerfish.png",
+    "imageAlt": "Original species reference illustration of Anglerfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "blobfish",
+    "name": "Blobfish",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Lure",
+    "lureCost": 500,
+    "baseValue": 1360,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/blobfish.png",
+    "imageAlt": "Original species reference illustration of Blobfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "oarfish",
+    "name": "Oarfish",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Lure",
+    "lureCost": 500,
+    "baseValue": 1450,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/oarfish.png",
+    "imageAlt": "Original species reference illustration of Oarfish for the How to Fish Wiki"
+  },
+  {
+    "slug": "superdwarf-fish",
+    "name": "Superdwarf Fish",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Lure",
+    "lureCost": 500,
+    "baseValue": 1700,
+    "valueNote": "The highest raw base value in the launch creature list; cooking can raise it to 2,550 before other multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-values"
+    ],
+    "image": "/images/game/fish/superdwarf-fish.png",
+    "guide": true,
+    "imageAlt": "Original species reference illustration of Superdwarf Fish for the How to Fish Wiki"
+  },
+  {
+    "slug": "stonefish",
+    "name": "Stonefish",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Lure",
+    "lureCost": 500,
+    "baseValue": 1500,
+    "valueNote": "Observed raw base value; final value changes with multipliers.",
+    "category": "Regular",
+    "progression": "Collection",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-fish-list",
+      "nerdschalk-lures"
+    ],
+    "image": "/images/game/fish/stonefish.png",
+    "imageAlt": "Original species reference illustration of Stonefish for the How to Fish Wiki"
+  },
+  {
+    "slug": "goblin-shark",
+    "name": "Goblin Shark",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Scientific Boss Lure",
+    "lureCost": 5800,
+    "category": "Mini-boss",
+    "progression": "Optional",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "nerdschalk-lures",
+      "ath-bosses"
+    ],
+    "note": "Optional completion target commonly missed by Collector runs.",
+    "image": "/images/game/bosses/goblin-shark.jpg",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Goblin Shark in How to Fish"
+  },
+  {
+    "slug": "bowhead-whale",
+    "name": "Bowhead Whale",
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "Fishing Rod",
+    "lure": "Fish Bucket / Whale Bait",
+    "category": "Special",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "toi-fish-list",
+      "ath-bosses",
+      "showgamer-walkthrough"
+    ],
+    "note": "The defeated whale becomes the trigger for the mutated final encounter.",
+    "image": "/images/game/bosses/bowhead-whale.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Bowhead Whale in How to Fish"
+  },
+  {
+    "slug": "mutated-bowhead-whale",
+    "name": "Mutated Bowhead Whale",
+    "aliases": [
+      "Magma Whale",
+      "Volcanic Whale"
+    ],
+    "islandSlug": "island-5-volcano",
+    "islandName": "Volcano Island (Island 5)",
+    "rod": "None",
+    "lure": "Defeated Bowhead Whale",
+    "category": "Final encounter",
+    "progression": "Story",
+    "evidence": "Cross-checked",
+    "sourceKeys": [
+      "ath-bosses",
+      "showgamer-walkthrough",
+      "steam-achievements"
+    ],
+    "note": "Final story encounter; Handyman requires defeating the final boss using only fists.",
+    "image": "/images/game/bosses/mutated-bowhead-whale.webp",
+    "guide": true,
+    "imageAlt": "In-game screenshot of Mutated Bowhead Whale in How to Fish"
+  }
+]

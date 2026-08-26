@@ -1,0 +1,356 @@
+[
+  {
+    "slug": "spider-crab",
+    "name": "Spider Crab Boss Guide",
+    "eyebrow": "Story boss · Lighthouse",
+    "description": "Use the Empty Beer Can, punish missed charges and return the required quest result for the boat key.",
+    "image": "/images/game/bosses/spider-crab.webp",
+    "imageAlt": "In-game screenshot of Spider Crab encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Empty Beer Can",
+      "Story"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked boss and progression evidence",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-defeat-all-bosses/",
+    "sections": [
+      {
+        "heading": "Trigger and reward",
+        "bullets": [
+          "Give a Beer Can to the Lighthouse Keeper.",
+          "Equip the returned Empty Beer Can on the Crab Fishing Rod.",
+          "After the kill, keep the quest result and return it to the keeper.",
+          "The completed hand-in awards the boat key; buy the $10 Radar before leaving."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Stay close enough that the boss commits to its charge, sidestep the attack, then damage it during the recovery window. Watch the white escape bar below its health: if it empties, the attempt resets and the bait is lost."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sunfish",
+    "name": "Sunfish Mini-Boss Guide",
+    "eyebrow": "Optional · Forest Island",
+    "description": "An optional Beginner Boss Lure encounter that counts toward Collector.",
+    "image": "/images/game/bosses/sunfish.webp",
+    "imageAlt": "In-game screenshot of Sunfish encounter in How to Fish",
+    "featured": false,
+    "tags": [
+      "Beginner Boss Lure",
+      "Optional"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Community gameplay evidence; exact encounter roll is version-sensitive",
+    "sourceUrl": "https://nerdschalk.com/how-to-fish-every-lure-bait-catch/",
+    "sections": [
+      {
+        "heading": "How to summon",
+        "paragraphs": [
+          "Buy the $40 Beginner Boss Lure on Forest Island and fish in open water. It can summon Sunfish or The Old Pike as an early mini-boss encounter."
+        ]
+      },
+      {
+        "heading": "Why it matters",
+        "paragraphs": [
+          "This is an optional collection encounter, not the Giant Piranha story boss. Check the Tab encyclopedia before spending another lure."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "old-pike",
+    "name": "The Old Pike Mini-Boss Guide",
+    "eyebrow": "Optional · Forest Island",
+    "description": "The optional Beginner Boss Lure encounter also labeled Gammelgäddan in some launch guides.",
+    "image": "/images/game/bosses/old-pike.jpg",
+    "imageAlt": "In-game screenshot of The Old Pike encounter in How to Fish",
+    "featured": false,
+    "tags": [
+      "Beginner Boss Lure",
+      "Gammelgäddan"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked creature and lure data",
+    "sourceUrl": "https://timesofindia.indiatimes.com/sports/esports/news/how-to-fish-list-of-all-fish-how-to-get-them-and-more/articleshow/133438002.cms",
+    "sections": [
+      {
+        "heading": "Name and trigger",
+        "paragraphs": [
+          "The Old Pike uses the $40 Beginner Boss Lure. Gammelgäddan is the Swedish label found in some guides; it refers to the same old-pike encounter, not a separate confirmed species."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Use the Shotgun or another reliable early firearm, keep spacing around tail attacks, and avoid spending story bait on this optional target."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "giant-piranha",
+    "name": "Giant Piranha Boss Guide",
+    "eyebrow": "Story boss · Forest Island",
+    "description": "Collect three leeches, receive Leech Bait and return the boss trophy to unlock Desert Island.",
+    "image": "/images/game/bosses/giant-piranha.webp",
+    "imageAlt": "In-game screenshot of Giant Piranha encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Leech Bait",
+      "Story"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked progression and walkthrough evidence",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-defeat-all-bosses/",
+    "sections": [
+      {
+        "heading": "Trigger and reward",
+        "bullets": [
+          "Pick up three leeches from the Forest Island ground.",
+          "Give them to the lady by the lake for Leech Bait.",
+          "Use it to summon Giant Piranha.",
+          "Return the named boss trophy—not generic meat—to receive Desert Island coordinates."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Clear the smaller piranhas first so the swarm cannot interrupt every shot. Bait the boss jump, sidestep, then use the recovery window for damage."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "blue-shark",
+    "name": "Blue Shark Mini-Boss Guide",
+    "eyebrow": "Grill quest · Desert Island",
+    "description": "Use the $280 Standard Boss Lure and deliver the shark to the Grillmaster to unlock cooking.",
+    "image": "/images/game/bosses/blue-shark.png",
+    "imageAlt": "In-game screenshot of Blue Shark encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Standard Boss Lure",
+      "Grillmaster"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked lure and quest evidence",
+    "sourceUrl": "https://nerdschalk.com/standard-boss-lure-how-to-fish/",
+    "sections": [
+      {
+        "heading": "Trigger and reward",
+        "bullets": [
+          "Buy Standard Boss Lure on Desert Island for $280.",
+          "Summon and defeat Blue Shark.",
+          "Bring the body to the Grillmaster.",
+          "Cooking then becomes available and can raise item value to about 1.5×."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "A well-upgraded SMG/Uzi is sufficient. Use the trees carefully: they can block movement, but may also catch the shark and create a free damage window."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "pufferfish",
+    "name": "Pufferfish Boss Guide",
+    "eyebrow": "Story boss · Desert Island",
+    "description": "Trade Needlefish for a Carrot, fight around the charge cycle and return the fin to unlock Rocks Island.",
+    "image": "/images/game/bosses/pufferfish.webp",
+    "imageAlt": "In-game screenshot of Pufferfish encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Carrot",
+      "Story"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Official boss image + cross-checked route evidence",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-unlock-every-island-forest-desert-rocks-volcano/",
+    "sections": [
+      {
+        "heading": "Trigger and reward",
+        "bullets": [
+          "Catch Needlefish with the Standard Lure.",
+          "Give it to the tourist under the tree for a Carrot.",
+          "Equip the Carrot to summon Pufferfish.",
+          "Return the Pufferfish fin to unlock Rocks Island."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Fire briefly, then move opposite the incoming roll. Fighting in open space keeps rocks and trees from trapping you during the charge."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "tuna",
+    "name": "Tuna Mini-Boss Guide",
+    "eyebrow": "Story setup · Rocks Island",
+    "description": "Catch Tuna with the $1,200 Professional Boss Lure and preserve the body for the Albatross fight.",
+    "image": "/images/game/bosses/tuna.png",
+    "imageAlt": "In-game screenshot of Tuna encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Professional Boss Lure",
+      "Story item"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked boss and progression evidence",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-defeat-all-bosses/",
+    "sections": [
+      {
+        "heading": "Trigger and hand-off",
+        "bullets": [
+          "Buy Professional Boss Lure for $1,200.",
+          "Summon Tuna on Rocks Island and defeat it.",
+          "Do not sell or cook the body.",
+          "Place it on the ground to trigger Albatross."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Dodge the Tuna's committed jump and answer with close-range Shotgun damage. The important part is keeping the result intact for the next encounter."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "albatross",
+    "name": "Albatross Boss Guide",
+    "eyebrow": "Story boss · Rocks Island",
+    "description": "Use the defeated Tuna as bait, fight the long-range bird and return its head for Volcano coordinates.",
+    "image": "/images/game/bosses/albatross.webp",
+    "imageAlt": "In-game screenshot of Albatross encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Defeated Tuna",
+      "Story"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked progression and boss evidence",
+    "sourceUrl": "https://allthings.how/how-to-fish-how-to-unlock-every-island-forest-desert-rocks-volcano/",
+    "sections": [
+      {
+        "heading": "Trigger and reward",
+        "bullets": [
+          "Place the defeated Tuna on the ground.",
+          "Wait for Albatross to enter the area.",
+          "Defeat it and pick up the head.",
+          "Return the head to the shop NPC for Volcano coordinates."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Use the SMG/Uzi or Sniper Rifle rather than relying on close-range Shotgun spread. Stay under cover while its falling attack is in the air, then shoot as it circles back."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "goblin-shark",
+    "name": "Goblin Shark Mini-Boss Guide",
+    "eyebrow": "Optional · Volcano Island",
+    "description": "The $5,800 Scientific Boss Lure summons this commonly missed Collector target.",
+    "image": "/images/game/bosses/goblin-shark.jpg",
+    "imageAlt": "In-game screenshot of Goblin Shark encounter in How to Fish",
+    "featured": false,
+    "tags": [
+      "Scientific Boss Lure",
+      "Collector"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked lure and completion evidence",
+    "sourceUrl": "https://nerdschalk.com/where-to-buy-scientific-boss-lure/",
+    "sections": [
+      {
+        "heading": "How to summon",
+        "paragraphs": [
+          "Buy Scientific Boss Lure on Volcano Island for $5,800 and use it in open water. This encounter is optional for the story but often the final blank in Collector."
+        ]
+      },
+      {
+        "heading": "Before buying",
+        "paragraphs": [
+          "Open the Tab encyclopedia first. The lure is expensive enough that a blind purchase can create unnecessary late-game grinding."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "bowhead-whale",
+    "name": "Bowhead Whale Guide",
+    "eyebrow": "Final-route setup · Volcano Island",
+    "description": "Use the Fish Bucket or Whale Bait, defeat the whale and keep it for the mutated final encounter.",
+    "image": "/images/game/bosses/bowhead-whale.webp",
+    "imageAlt": "In-game screenshot of Bowhead Whale Guide encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Whale Bait",
+      "Story item"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked boss and walkthrough evidence",
+    "sourceUrl": "https://nerdschalk.com/how-to-fish-every-lure-bait-catch/",
+    "sections": [
+      {
+        "heading": "Trigger and hand-off",
+        "bullets": [
+          "Reach the volcano scientist and bring the five requested fish.",
+          "Use the returned Fish Bucket / Whale Bait for Bowhead Whale.",
+          "Defeat the whale and keep its body intact.",
+          "Carry the defeated whale to the volcano to start the mutated phase."
+        ]
+      },
+      {
+        "heading": "Fight plan",
+        "paragraphs": [
+          "Watch the white escape bar and keep the fight inside the active route. If the escape bar expires, the attempt ends and the setup is consumed, so restock before using the quest bait."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "mutated-bowhead-whale",
+    "name": "Mutated Bowhead Whale Final Boss",
+    "eyebrow": "Final story encounter",
+    "description": "Use the defeated Bowhead Whale to begin the final phase and finish the game.",
+    "image": "/images/game/bosses/mutated-bowhead-whale.webp",
+    "imageAlt": "In-game screenshot of Mutated Bowhead Whale Final Boss encounter in How to Fish",
+    "featured": true,
+    "tags": [
+      "Final boss",
+      "Magma Whale"
+    ],
+    "updated": "2026-08-24",
+    "sourceLabel": "Cross-checked walkthrough + official completion achievements",
+    "sourceUrl": "https://showgamer.com/en/prohozhdeniya-igr/5151-prohozhdenie-how-to-fish",
+    "sections": [
+      {
+        "heading": "Final route",
+        "bullets": [
+          "Bring the defeated Bowhead Whale into the final trigger.",
+          "Keep the fight inside the encounter boundary.",
+          "Finish the mutated phase to complete the story.",
+          "Use the post-game return for collection cleanup."
+        ]
+      },
+      {
+        "heading": "Challenge runs",
+        "paragraphs": [
+          "Handyman requires the final boss using only fists, while Bean requires finishing the entire game within one hour. Treat both as dedicated runs after a normal clear."
+        ]
+      }
+    ]
+  }
+]

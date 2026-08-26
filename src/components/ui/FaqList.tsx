@@ -5,10 +5,10 @@ export function FaqList({ items }: { items: FaqItem[] }) {
   return (
     <div className={ui.faqList}>
       {items.map((item) => (
-        <details className={ui.faq} key={item.question}>
-          <summary>{item.question}</summary>
+        <article className={ui.faq} key={item.question}>
+          <h3>{item.question}</h3>
           <p>{item.answer}</p>
-        </details>
+        </article>
       ))}
     </div>
   );

@@ -133,7 +133,7 @@
   position: relative;
   z-index: 5;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 355px;
+  grid-template-columns: minmax(0, 1fr) 320px;
   gap: 18px;
   align-items: start;
   margin-top: 0;
@@ -147,13 +147,13 @@
 }
 
 .article {
-  padding: 12px;
+  padding: 14px;
   border-radius: 15px 15px 0 0;
 }
 
 .block {
   scroll-margin-top: 92px;
-  padding: 11px 13px;
+  padding: 16px 17px;
   border: 1px solid var(--line);
   border-radius: 10px;
 }
@@ -162,7 +162,7 @@
 .splitBlocks + .block,
 .block + .splitBlocks,
 .splitBlocks + .splitBlocks {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .sectionTitle {
@@ -188,7 +188,7 @@
 }
 
 .intro {
-  margin: 0 0 8px 33px;
+  margin: 0 0 12px;
   color: var(--muted);
   font-size: 11px;
 }
@@ -242,7 +242,7 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 7px;
-  margin: 10px 0 0 33px;
+  margin: 11px 0 0;
 }
 
 .dataOverview > div {
@@ -255,7 +255,7 @@
 
 .dataOverview dt {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -265,7 +265,7 @@
   margin: 3px 0 0;
   overflow: hidden;
   color: var(--ink);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1.25;
   text-overflow: ellipsis;
@@ -287,14 +287,15 @@
 
 .locationGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(210px, 0.55fr);
-  gap: 12px;
-  margin-left: 33px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  align-items: stretch;
+  gap: 14px;
 }
 
 .locationImage {
   position: relative;
-  height: 190px;
+  height: auto;
+  min-height: 310px;
   overflow: hidden;
   border-radius: 9px;
 }
@@ -304,7 +305,7 @@
 }
 
 .locationCard {
-  padding: 10px;
+  padding: 15px;
   background: #f7fbf8;
   border: 1px solid var(--line);
   border-radius: 9px;
@@ -344,7 +345,7 @@
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 8px;
-  margin-left: 33px;
+  margin-left: 0;
 }
 
 .steps > div {
@@ -352,8 +353,8 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 125px;
-  padding: 9px;
+  min-height: 150px;
+  padding: 13px 10px;
   text-align: center;
   background: #fbfdfa;
   border: 1px solid var(--line);
@@ -381,7 +382,7 @@
 }
 
 .steps strong {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .steps p {
@@ -396,7 +397,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
-  margin-left: 33px;
+  margin-left: 0;
 }
 
 .singleMethodGrid {
@@ -436,7 +437,7 @@
 .gearGrid p {
   margin: 0;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.3;
 }
 
@@ -502,7 +503,7 @@
   grid-template-columns: 210px 1fr 145px;
   gap: 12px;
   align-items: center;
-  margin-left: 33px;
+  margin-left: 0;
 }
 
 .rareImage {
@@ -522,12 +523,12 @@
 .rare p {
   margin: 0;
   color: var(--muted);
-  font-size: 9px;
+  font-size: 13px;
 }
 
 .rare p strong {
   color: #734195;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .rare aside {
@@ -554,6 +555,193 @@
   color: #734195;
   font-size: 14px;
   font-weight: 900;
+}
+
+.connections {
+  background:
+    radial-gradient(circle at 100% 0, rgb(26 157 164 / 10%), transparent 22rem),
+    linear-gradient(145deg, #fffef9, #f3faf7);
+}
+
+.connectionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.connectionPanel {
+  min-width: 0;
+  padding: 13px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.connectionPanel h3,
+.relatedFishStrip h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.connectionPanel > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.connectionLinks {
+  display: grid;
+  gap: 6px;
+}
+
+.connectionLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 9px;
+  color: var(--ink);
+  background: #f5faf7;
+  border: 1px solid #dbe9e5;
+  border-radius: 8px;
+}
+
+.connectionLinks a > span {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.connectionLinks small,
+.islandConnection small {
+  color: var(--orange);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.connectionLinks strong {
+  margin-top: 1px;
+  font-size: 13px;
+}
+
+.connectionLinks svg,
+.relatedFishStrip nav > a > svg {
+  flex: 0 0 auto;
+  color: var(--ocean-700);
+}
+
+.islandConnection {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 240px minmax(0, 1fr);
+  align-items: stretch;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.islandConnectionImage {
+  position: relative;
+  display: block;
+  min-height: 150px;
+  overflow: hidden;
+}
+
+.islandConnectionImage img {
+  object-fit: cover;
+}
+
+.islandConnection > span:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+.islandConnection strong {
+  margin-top: 2px;
+  font-family: var(--font-display);
+  font-size: 20px;
+}
+
+.islandConnection p {
+  display: -webkit-box;
+  margin: 5px 0;
+  overflow: hidden;
+  color: var(--muted);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.islandConnection b {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  color: var(--ocean-700);
+  font-size: 13px;
+}
+
+.relatedFishStrip {
+  padding-top: 13px;
+  margin-top: 13px;
+  border-top: 1px solid var(--line);
+}
+
+.relatedFishStrip nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.relatedFishStrip nav > a {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  padding: 7px;
+  color: var(--ink);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.relatedFishImage {
+  position: relative;
+  display: block;
+  width: 78px;
+  height: 54px;
+  overflow: hidden;
+  background: var(--navy-900);
+  border-radius: 7px;
+}
+
+.relatedFishImage img {
+  padding: 4px;
+  object-fit: contain;
+}
+
+.relatedFishStrip nav > a > span:nth-child(2) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.relatedFishStrip strong {
+  font-size: 13px;
+}
+
+.relatedFishStrip small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
 }
 
 .splitBlocks {
@@ -585,7 +773,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-left: 33px;
+  margin-left: 0;
 }
 
 .mistakes svg {
@@ -639,8 +827,11 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 92px;
   display: grid;
   gap: 10px;
+  align-self: start;
 }
 
 .sideCard {
@@ -833,7 +1024,7 @@
   display: block;
   padding: 3px 0;
   color: #335464;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -939,6 +1130,18 @@
   font-size: 17px;
 }
 
+.gearGrid b,
+.valueGrid small,
+.valueGrid span,
+.rare aside strong {
+  font-size: 11px;
+}
+
+.steps strong,
+.gearGrid strong {
+  font-size: 13px;
+}
+
 .horizontalSideCard small,
 .relatedSideList small,
 .horizontalSideCard b,
@@ -961,6 +1164,7 @@
   }
 
   .sidebar {
+    position: static;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1015,6 +1219,10 @@
     margin-left: 0;
   }
 
+  .locationImage {
+    min-height: 220px;
+  }
+
   .dataOverview {
     grid-template-columns: 1fr 1fr;
     margin-left: 0;
@@ -1033,5 +1241,15 @@
 
   .sidebar {
     order: 2;
+  }
+
+  .connectionGrid,
+  .relatedFishStrip nav,
+  .islandConnection {
+    grid-template-columns: 1fr;
+  }
+
+  .islandConnectionImage {
+    min-height: 180px;
   }
 }

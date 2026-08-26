@@ -25,7 +25,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
         <div className={`container ${styles.headerInner}`}>
           <Link className={styles.brand} href="/" onClick={() => setMenuOpen(false)}>
             <span className={styles.brandIcon}>
-              <Image src="/images/logo.png" alt="" width={48} height={48} priority />
+              <Image src="/images/brand/how-to-fish-game-mark.png" alt="" width={48} height={48} priority />
             </span>
             <span>
               How to <span className={styles.brandGold}>Fish Wiki</span>

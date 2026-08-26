@@ -40,14 +40,16 @@
 .section:last-child { border-bottom: 0; }
 .panel { min-width: 0; padding: 16px; background: #fbfdf9; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 4px 14px rgb(4 55 69 / 4%); }
 
-.featureGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.featureCard { display: flex; min-width: 0; min-height: 214px; flex-direction: column; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 5px 14px rgb(4 55 69 / 6%); }
+.resourcePair { display: grid; grid-template-columns: .92fr 1.08fr; align-items: stretch; gap: 14px; }
+.guidePanel, .armoryPanel { display: flex; min-width: 0; flex-direction: column; }
+.featureGrid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.featureCard { display: grid; grid-template-columns: 190px minmax(0, 1fr); min-width: 0; min-height: 148px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 5px 14px rgb(4 55 69 / 6%); }
 .featureLead { border-color: #efb24d; box-shadow: 0 5px 18px rgb(242 138 34 / 14%); }
 .featureImage, .guideCardImage, .islandImage, .questImage, .bossImage, .gearImage, .achievementIcon { position: relative; display: block; min-width: 0; overflow: hidden; background: var(--navy-900); }
-.featureImage, .featureLead .featureImage { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.featureImage, .featureLead .featureImage { width: 100%; height: 100%; aspect-ratio: auto; }
 .featureImage img, .guideCardImage img, .islandImage img, .questImage img, .bossImage img, .gearImage img { object-fit: cover; object-position: center; }
 .gearImage img { object-fit: contain; }
-.featureBody { display: flex; min-width: 0; flex: 1; flex-direction: column; padding: 13px 14px; }
+.featureBody { display: flex; min-width: 0; flex-direction: column; padding: 13px 14px; }
 .featureBody small, .guideCardBody small, .questBody small, .bossBody small, .gearBody small, .achievementBody small { color: var(--ocean-700); font-size: 12px; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
 .featureBody h3, .guideCardBody h3, .islandBody h3, .questBody h3, .bossBody h3, .gearBody h3, .achievementBody h3 { margin: 0; font-family: var(--font-display); line-height: 1.12; letter-spacing: -.025em; }
 .featureBody h3 { margin-top: 4px; font-size: 21px; }
@@ -103,16 +105,16 @@
 .bossBody h3 { margin-top: 3px; font-size: 19px; }
 .bossBody p { margin: 6px 0; color: var(--muted); font-size: 14px; }
 
-.bottomPair { display: grid; grid-template-columns: .98fr 1.02fr; align-items: stretch; gap: 14px; }
-.armoryPanel, .achievementPanel { display: flex; flex-direction: column; }
+.achievementPanel { display: flex; flex-direction: column; }
 .gearGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.gearCard { display: grid; grid-template-columns: 150px minmax(0, 1fr); min-width: 0; min-height: 202px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 10px; }
-.gearImage { height: 100%; }
+.gearCard { display: grid; grid-template-columns: 126px minmax(0, 1fr); min-width: 0; min-height: 142px; overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 10px; }
+.gearImage { min-height: 142px; }
+.gearImage img { object-fit: cover; }
 .gearBody { display: flex; min-width: 0; flex-direction: column; padding: 9px 10px; }
 .gearBody h3 { margin-top: 3px; font-size: 18px; }
-.gearBody p { display: -webkit-box; margin: 6px 0; overflow: hidden; color: var(--muted); font-size: 14px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
-.achievementGrid { display: grid; gap: 9px; }
-.achievementCard { display: grid; grid-template-columns: 102px minmax(0, 1fr); min-width: 0; min-height: 132px; padding: 9px; background: white; border: 1px solid var(--line); border-radius: 10px; }
+.gearBody p { display: -webkit-box; margin: 6px 0; overflow: hidden; color: var(--muted); font-size: 14px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.achievementGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.achievementCard { display: grid; grid-template-columns: 112px minmax(0, 1fr); min-width: 0; min-height: 150px; padding: 10px; background: linear-gradient(145deg, #fff, #f5faf7); border: 1px solid var(--line); border-radius: 11px; }
 .achievementIcon { border-radius: 8px; }
 .achievementIcon img { object-fit: cover; }
 .achievementBody { display: grid; grid-template-columns: 1fr auto; align-content: center; padding: 2px 4px 2px 12px; }
@@ -124,7 +126,7 @@
 .rarityLine { position: relative; display: flex; align-items: center; height: 16px; margin: 3px 0; overflow: hidden; background: #e7f0ed; border-radius: 999px; }
 .rarityLine i { align-self: stretch; background: linear-gradient(90deg, var(--orange), var(--gold)); border-radius: inherit; }
 .rarityLine em { position: absolute; right: 7px; color: #6f5a29; font-size: 11px; font-style: normal; font-weight: 900; }
-.completionLink { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 10px 13px; margin-top: 9px; color: white; background: linear-gradient(110deg, #08798c, #07516d); border-radius: 10px; }
+.completionLink { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 11px 14px; margin-top: 10px; color: white; background: linear-gradient(110deg, #08798c, #07516d); border-radius: 10px; }
 .completionLink > span { display: flex; min-width: 0; flex-direction: column; }
 .completionLink strong { font-size: 15px; }
 .completionLink small { color: #d3edef; font-size: 13px; }
@@ -152,8 +154,7 @@
   .hero h1 { font-size: clamp(40px, 5vw, 52px); }
   .heroStats { display: grid; grid-template-columns: 1fr 1fr; }
   .heroPlanner { padding: 18px; }
-  .featureGrid { grid-template-columns: 1fr 1fr; }
-  .middlePair, .bottomPair { grid-template-columns: 1fr; }
+  .middlePair, .resourcePair { grid-template-columns: 1fr; }
   .aboutGrid { grid-template-columns: 1fr; }
   .guideGrid { grid-template-columns: 1fr 1fr; }
   .islandRoute { display: flex; padding-bottom: 8px; overflow-x: auto; scroll-snap-type: x proximity; }
@@ -161,7 +162,8 @@
   .islandRoute::-webkit-scrollbar { display: none; }
   .islandRoute::before { display: none; }
   .islandCard { flex: 0 0 260px; scroll-snap-align: start; }
-  .gearGrid { min-height: 360px; }
+  .gearGrid { min-height: 0; }
+  .achievementGrid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -175,7 +177,7 @@
   .heroPlanner { display: none; }
   .dashboard { width: min(calc(100% - 24px), 1400px); padding: 14px; }
   .section { padding: 16px 0; }
-  .featureGrid { grid-template-columns: 1fr 1fr; }
+  .featureCard { grid-template-columns: 170px minmax(0, 1fr); }
   .guideCard { grid-template-columns: 125px minmax(0, 1fr); }
   .bossGrid { grid-template-columns: 1fr; }
   .bossCard { grid-template-columns: 145px minmax(0, 1fr); }
@@ -188,7 +190,7 @@
 @media (max-width: 768px) {
   .heroActions { display: grid; grid-template-columns: 1fr 1fr; }
   .primaryButton, .secondaryButton { min-width: 0; padding-inline: 10px; }
-  .featureGrid { grid-template-columns: 1fr; }
+  .featureCard { grid-template-columns: 125px minmax(0, 1fr); min-height: 150px; }
   .featureBody p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
   .guideGrid { grid-template-columns: 1fr; }
   .guideCard { grid-template-columns: 110px minmax(0, 1fr); min-height: 142px; }
@@ -199,7 +201,9 @@
   .tableLink { align-items: flex-start; flex-direction: column; }
   .bossCard { grid-template-columns: 125px minmax(0, 1fr); }
   .bossBody p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-  .gearCard { grid-template-columns: 125px minmax(0, 1fr); min-height: 140px; }
+  .gearCard { grid-template-columns: 115px minmax(0, 1fr); min-height: 140px; }
+  .gearImage { min-height: 140px; }
+  .achievementGrid { grid-template-columns: 1fr; }
   .achievementCard { grid-template-columns: 82px minmax(0, 1fr); }
   .achievementBody b { grid-column: 1 / -1; }
   .aboutFacts { grid-template-columns: 1fr; }

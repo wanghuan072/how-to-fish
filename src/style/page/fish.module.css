@@ -209,15 +209,9 @@
   border-radius: 11px;
 }
 
-.controls {
-  display: grid;
-  grid-template-columns: minmax(260px, 620px) auto;
-  gap: 8px;
-  justify-content: start;
-}
-
 .inputWrap {
   position: relative;
+  min-width: 0;
 }
 
 .inputWrap svg {
@@ -230,8 +224,7 @@
 }
 
 .searchInput,
-.select,
-.clearControl {
+.select {
   width: 100%;
   height: 40px;
   color: var(--ink);
@@ -249,20 +242,12 @@
   padding: 0 10px;
 }
 
-.clearControl {
-  width: max-content;
-  padding-inline: 15px;
-  color: var(--ocean-700);
-  font-weight: 850;
-  cursor: pointer;
-}
-
 .resultLine {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
-  margin: 11px 1px 7px;
+  margin: 0 1px 9px;
   color: var(--muted);
   font-size: 13px;
 }
@@ -632,12 +617,14 @@
     position: static;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: start;
     max-height: none;
     overflow: visible;
   }
 
-  .controls {
-    grid-template-columns: minmax(0, 1fr) auto;
+  .sidebar .filterPanel {
+    width: 100%;
+    align-self: start;
   }
 
   .islandGrid,
@@ -670,7 +657,6 @@
   }
 
   .sidebar,
-  .controls,
   .bottomGrid,
   .tips {
     grid-template-columns: 1fr;
@@ -707,8 +693,20 @@
     height: 22px;
   }
 
-  .clearControl {
-    width: 100%;
+  .resultLine {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .resultLine label:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .resultLine select {
+    flex: 1;
   }
 
   .islandGrid,

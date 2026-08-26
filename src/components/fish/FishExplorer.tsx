@@ -56,11 +56,11 @@ export function FishExplorer({ entries, islandEntries }: { entries: FishEntry[];
       </aside>
 
       <div className={styles.main}>
-        <div className={styles.controls}>
+        <div className={styles.resultLine}>
           <label className={styles.inputWrap}><span className="sr-only">Search fish</span><input className={styles.searchInput} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search fish by name, island, rod or lure..." /><Search size={18} /></label>
-          <button className={styles.clearControl} onClick={() => { setQuery(""); setIsland(all); setCategory(all); }}>Clear filters</button>
+          <span>Showing {filtered.length} of {entries.length} creatures</span>
+          <label>Sort <select value={sort} onChange={(event) => setSort(event.target.value)}><option value="route">Story / encyclopedia order</option><option value="name">Name</option><option value="island">Island</option><option value="category">Type</option><option value="value">Base coins (high to low)</option></select></label>
         </div>
-        <div className={styles.resultLine}><span>Showing {filtered.length} of {entries.length} creatures on one page</span><label>Sort <select value={sort} onChange={(event) => setSort(event.target.value)}><option value="route">Story / encyclopedia order</option><option value="name">Name</option><option value="island">Island</option><option value="category">Type</option><option value="value">Base coins (high to low)</option></select></label></div>
         <section className={styles.tablePanel} aria-label="Fish list results">
           <div className={styles.tableWrap}>
             <table className={styles.table}>

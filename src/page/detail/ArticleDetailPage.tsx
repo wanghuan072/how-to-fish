@@ -40,6 +40,17 @@ const operatingNotes: Partial<Record<CollectionKey, { title: string; text: strin
   guides: { title: "What this guide helps with", text: "Follow the steps below when you reach this part of the route, then open the linked fish, item or island page when you need a specific setup." },
 };
 
+const detailPageClasses: Partial<Record<CollectionKey, string>> = {
+  bosses: styles.bossPage,
+  quests: styles.questPage,
+  islands: styles.islandPage,
+  weapons: styles.weaponPage,
+  items: styles.itemPage,
+  bait: styles.baitPage,
+  npcs: styles.npcPage,
+  guides: styles.guidePage,
+};
+
 export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [] }: ArticleDetailPageProps) {
   const displayName = contentDisplayName(collection, entry);
   const schemas: Record<string, unknown>[] = [
@@ -49,7 +60,7 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
   if (entry.faq?.length) schemas.push(faqSchema(entry.faq));
 
   return (
-    <main id="main-content">
+    <main className={collection ? detailPageClasses[collection] : undefined} id="main-content">
       <JsonLd data={schemas} />
       <header className={styles.hero}>
         <Image className={styles.heroImage} src={entry.image} alt="" fill loading="eager" sizes="100vw" aria-hidden="true" />
@@ -110,21 +121,31 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
             </section>
           ) : null}
 
-          {relationGroups.map((group) => (
-            <section className={`${styles.section} ${styles.relationDataSection}`} id={group.id} key={group.id}>
-              <div className={styles.sectionHeading}><span>↔</span><h2>{group.title}</h2></div>
-              <p>{group.description}</p>
-              <div className={styles.relationDataGrid}>
-                {group.items.map((item) => (
-                  <Link className={styles.relationDataCard} href={item.href} key={`${group.id}-${item.href}-${item.title}`}>
-                    {item.image ? <span className={styles.relationDataImage}><Image src={item.image} alt={item.imageAlt ?? ""} fill sizes="96px" /></span> : <span className={styles.relationDataGlyph}>✓</span>}
-                    <div><small>{item.meta}</small><h3>{item.title}</h3><p>{item.description}</p></div>
-                    <ArrowRight size={14} aria-hidden="true" />
-                  </Link>
+          {relationGroups.length ? (
+            <section className={`${styles.section} ${styles.relationHub}`} id="connected-records">
+              <div className={styles.sectionHeading}><span>↔</span><h2>Connected routes and records</h2></div>
+              <p>Open the exact creature, item, island, quest or achievement used by this entry.</p>
+              <div className={styles.relationGroups}>
+                {relationGroups.map((group) => (
+                  <section className={`${styles.relationGroup} ${group.items.length > 4 ? styles.wideRelationGroup : ""}`} id={group.id} key={group.id}>
+                    <header><div><h3>{group.title}</h3><p>{group.description}</p></div><span>{group.items.length}</span></header>
+                    <div className={`${styles.relationDataGrid} ${group.items.length === 1 ? styles.singleRelation : ""}`}>
+                      {group.items.map((item) => {
+                        const coverImage = /(boss|island|quest|npc|achievement|encounter|route)/i.test(item.meta);
+                        return (
+                          <Link className={styles.relationDataCard} href={item.href} key={`${group.id}-${item.href}-${item.title}`}>
+                            {item.image ? <span className={`${styles.relationDataImage} ${coverImage ? styles.relationCoverImage : ""}`}><Image src={item.image} alt={item.imageAlt ?? ""} fill sizes="104px" /></span> : <span className={styles.relationDataGlyph}>✓</span>}
+                            <div><small>{item.meta}</small><h3>{item.title}</h3><p>{item.description}</p></div>
+                            <ArrowRight size={14} aria-hidden="true" />
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </section>
                 ))}
               </div>
             </section>
-          ))}
+          ) : null}
 
           {entry.faq?.length ? (
             <section className={styles.faqSection} id="frequently-asked-questions">

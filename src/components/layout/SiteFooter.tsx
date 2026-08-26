@@ -19,7 +19,7 @@ export function SiteFooter() {
         <div className={styles.footerBrand}>
           <Link className={styles.brand} href="/">
             <span className={styles.brandIcon}>
-              <Image src="/images/logo.png" alt="" width={48} height={48} />
+              <Image src="/images/brand/how-to-fish-game-mark.png" alt="" width={48} height={48} />
             </span>
             <span>
               How to <span className={styles.brandGold}>Fish Wiki</span>

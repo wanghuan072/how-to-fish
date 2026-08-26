@@ -444,24 +444,96 @@
   color: var(--ocean-700);
 }
 
-.relationDataSection {
-  background: linear-gradient(145deg, #fffef9, #f4faf7);
+.relationHub {
+  background:
+    radial-gradient(circle at 100% 0, rgb(27 151 158 / 10%), transparent 22rem),
+    linear-gradient(145deg, #fffef9, #f3faf7);
+}
+
+.relationGroups {
+  column-count: 2;
+  column-gap: 11px;
+  margin-top: 14px;
+}
+
+.relationGroup {
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  padding: 13px;
+  margin-bottom: 11px;
+  scroll-margin-top: 95px;
+  background: rgb(255 255 255 / 78%);
+  border: 1px solid #d8e8e4;
+  border-radius: 11px;
+  break-inside: avoid;
+}
+
+.wideRelationGroup {
+  display: block;
+  column-span: all;
+}
+
+.wideRelationGroup .relationDataGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.relationGroup > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--line);
+}
+
+.relationGroup > header h3,
+.relationGroup > header p {
+  margin: 0;
+}
+
+.relationGroup > header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.relationGroup > header p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.relationGroup > header > span {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  color: white;
+  background: var(--ocean-700);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 .relationDataGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 14px;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-top: 9px;
+}
+
+.singleRelation {
+  grid-template-columns: 1fr !important;
 }
 
 .relationDataCard {
   display: grid;
-  grid-template-columns: 88px minmax(0, 1fr) auto;
-  gap: 12px;
+  grid-template-columns: 82px minmax(0, 1fr) auto;
+  gap: 10px;
   align-items: center;
   min-width: 0;
-  padding: 10px;
+  padding: 8px;
   background: white;
   border: 1px solid #d7e7e3;
   border-radius: 11px;
@@ -480,8 +552,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  width: 88px;
-  height: 68px;
+  width: 82px;
+  height: 62px;
   overflow: hidden;
   color: white;
   background: linear-gradient(145deg, var(--navy-900), var(--ocean-700));
@@ -494,6 +566,11 @@
   object-fit: contain;
 }
 
+.relationCoverImage img {
+  padding: 0;
+  object-fit: cover;
+}
+
 .relationDataCard small,
 .relationDataCard h3,
 .relationDataCard p {
@@ -502,7 +579,7 @@
 
 .relationDataCard small {
   color: var(--orange);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 900;
   letter-spacing: .05em;
   text-transform: uppercase;
@@ -511,7 +588,7 @@
 .relationDataCard h3 {
   margin-top: 2px;
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.15;
 }
 
@@ -520,13 +597,110 @@
   margin-top: 4px;
   overflow: hidden;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 
 .relationDataCard > svg {
   color: var(--ocean-700);
+}
+
+.bossPage .heroMedia img,
+.bossPage .asideMedia img,
+.questPage .heroMedia img,
+.questPage .asideMedia img,
+.islandPage .heroMedia img,
+.islandPage .asideMedia img,
+.guidePage .heroMedia img,
+.guidePage .asideMedia img {
+  padding: 0;
+  object-fit: cover;
+}
+
+.bossPage .dataOverview {
+  background: linear-gradient(145deg, #3b1d22, #082d43);
+  border-color: #934b45;
+}
+
+.bossPage .sectionHeading > span {
+  background: #a63f32;
+}
+
+.bossPage .section .dataList,
+.islandPage .section .dataList,
+.weaponPage .section .dataList,
+.itemPage .section .dataList,
+.baitPage .section .dataList {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.questPage .dataOverview {
+  background: linear-gradient(145deg, #3d351a, #063b50);
+  border-color: #a88935;
+}
+
+.questPage .dataList li {
+  border-left: 4px solid var(--orange);
+}
+
+.islandPage .dataOverview {
+  background: linear-gradient(145deg, #15452f, #06475f);
+  border-color: #4c9777;
+}
+
+.islandPage .dataList li {
+  background: linear-gradient(145deg, #f4fbf4, #eef8f6);
+}
+
+.weaponPage .dataOverview {
+  background: linear-gradient(145deg, #272f38, #073e56);
+  border-color: #607781;
+}
+
+.weaponPage .section {
+  border-left: 5px solid #a86a23;
+}
+
+.itemPage .dataOverview {
+  background: linear-gradient(145deg, #5a3b20, #17475b);
+  border-color: #9a7446;
+}
+
+.itemPage .sectionHeading > span {
+  background: #9a642d;
+}
+
+.baitPage .dataOverview {
+  background: linear-gradient(145deg, #075c66, #07334e);
+  border-color: #3b9092;
+}
+
+.baitPage .section .dataList li {
+  background: #eff9f7;
+  border-color: #c9e4df;
+}
+
+.npcPage .dataOverview {
+  background: linear-gradient(145deg, #3d2d57, #073c51);
+  border-color: #77649b;
+}
+
+.npcPage .dataOverview + .section {
+  background: linear-gradient(145deg, #fff8e8, #fffdf8);
+  border-color: #e6bd61;
+}
+
+.bossPage .relationGroups,
+.questPage .relationGroups,
+.islandPage .relationGroups {
+  column-count: 1;
+}
+
+.bossPage .relationDataGrid,
+.questPage .relationDataGrid,
+.islandPage .relationDataGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .faqSection {
@@ -992,6 +1166,22 @@
   }
 
   .relationDataGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .wideRelationGroup .relationDataGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .relationGroups {
+    column-count: 1;
+  }
+
+  .bossPage .section .dataList,
+  .islandPage .section .dataList,
+  .weaponPage .section .dataList,
+  .itemPage .section .dataList,
+  .baitPage .section .dataList {
     grid-template-columns: 1fr;
   }
 }

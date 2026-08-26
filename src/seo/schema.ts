@@ -18,7 +18,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: new URL("/images/logo.png", siteConfig.url).toString(),
+    logo: new URL("/images/brand/how-to-fish-game-mark.png", siteConfig.url).toString(),
     description: "Independent fan-made How to Fish guide site for fish, quests, bosses, islands and equipment.",
   };
 }
@@ -69,7 +69,7 @@ export function articleSchema(entry: ContentEntry, path: string) {
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
-      logo: { "@type": "ImageObject", url: new URL("/images/logo.png", siteConfig.url).toString() },
+      logo: { "@type": "ImageObject", url: new URL("/images/brand/how-to-fish-game-mark.png", siteConfig.url).toString() },
     },
   };
 }

@@ -25,7 +25,7 @@ import { getFishArea, getFishBaitLinks, getFishCatchMethod, getFishRecordLinks, 
 import { articleSchema, breadcrumbSchema, faqSchema } from "@/seo/schema";
 import styles from "@/style/page/fish-detail.module.css";
 
-const sectionIds = ["quick-answer", "data-overview", "where-to-find", "how-to-catch", "best-bait-gear", "sell-value", "rare-variant", "common-mistakes", "faq"];
+const sectionIds = ["quick-answer", "data-overview", "where-to-find", "how-to-catch", "best-bait-gear", "sell-value", "rare-variant", "route-links", "common-mistakes", "faq"];
 
 function SectionTitle({ number, children }: { number: number; children: React.ReactNode }) {
   return <h2 className={styles.sectionTitle}><span>{number}</span>{children}</h2>;
@@ -163,9 +163,28 @@ export function FishDetailPage({ slug }: { slug: string }) {
             <div><span className={styles.rareImage}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} fill sizes="520px" /></span><p><strong>Drip {entry.name}</strong><br />Drip variants use the normal creature route and are tracked separately in the Tab encyclopedia. Watch for the rainbow-name treatment, kill the variant so it registers, and use blank encyclopedia entries for cleanup.</p><aside><Sparkles size={27} /><strong>Setup</strong><span>{entry.lure}</span></aside></div>
           </section> : null}
 
-          <section className={`${styles.block} ${styles.mistakes}`} id="common-mistakes"><SectionTitle number={collectionConfirmed ? 8 : 7}>Common Mistakes</SectionTitle><div><TriangleAlert size={50} /><ul><li>Using the wrong bait.</li><li>Fishing on the wrong island.</li><li>Skipping prerequisite dialogue.</li><li>Trusting an old fixed-value table.</li></ul></div></section>
+          <section className={`${styles.block} ${styles.connections}`} id="route-links">
+            <SectionTitle number={collectionConfirmed ? 8 : 7}>Routes, Objectives and Nearby Fish</SectionTitle>
+            <div className={styles.connectionGrid}>
+              <section className={styles.connectionPanel}>
+                <h3>Catch and route links</h3>
+                <nav className={styles.connectionLinks}>{recordLinks.map((item) => <Link href={item.href} key={`${item.kind}-${item.href}`}><span><small>{item.kind}</small><strong>{item.name}</strong></span><ArrowRight size={14} /></Link>)}</nav>
+              </section>
+              <section className={styles.connectionPanel}>
+                <h3>Quests and achievements</h3>
+                {[...objectiveLinks.quests, ...objectiveLinks.achievements].length ? <nav className={styles.connectionLinks}>{[...objectiveLinks.quests, ...objectiveLinks.achievements].map((item) => <Link href={item.href} key={item.href}><span><small>{item.meta}</small><strong>{item.title}</strong></span><ArrowRight size={14} /></Link>)}</nav> : <p>No direct quest or achievement is required for this catch.</p>}
+              </section>
+              <Link className={styles.islandConnection} href={`/islands/${entry.islandSlug}/`}><span className={styles.islandConnectionImage}><Image src={island?.image ?? getFishImage(entry)} alt={`${entry.islandName} island`} fill sizes="230px" /></span><span><small>Found in</small><strong>{entry.islandName}</strong><p>{island?.description}</p><b>Open island route <ArrowRight size={12} /></b></span></Link>
+            </div>
+            <div className={styles.relatedFishStrip}>
+              <h3>Other catches on {entry.islandName}</h3>
+              <nav>{related.map((item) => <Link href={`/fish/${item.slug}/`} key={item.slug}><span className={styles.relatedFishImage}><Image src={getFishImage(item)} alt={getFishImageAlt(item)} fill sizes="88px" /></span><span><strong>{item.name}</strong><small>{item.category} · {item.lure}</small></span><ArrowRight size={13} /></Link>)}</nav>
+            </div>
+          </section>
 
-          <section className={styles.block} id="faq"><SectionTitle number={collectionConfirmed ? 9 : 8}>FAQ</SectionTitle><FaqList items={content.faq ?? []} /></section>
+          <section className={`${styles.block} ${styles.mistakes}`} id="common-mistakes"><SectionTitle number={collectionConfirmed ? 9 : 8}>Common Mistakes</SectionTitle><div><TriangleAlert size={50} /><ul><li>Using the wrong bait.</li><li>Fishing on the wrong island.</li><li>Skipping prerequisite dialogue.</li><li>Trusting an old fixed-value table.</li></ul></div></section>
+
+          <section className={styles.block} id="faq"><SectionTitle number={collectionConfirmed ? 10 : 9}>FAQ</SectionTitle><FaqList items={content.faq ?? []} /></section>
 
         </article>
 
@@ -175,18 +194,7 @@ export function FishDetailPage({ slug }: { slug: string }) {
             <div className={styles.sideImage}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} fill sizes="520px" /></div>
           </section>
 
-          <section className={`${styles.sideCard} ${styles.toc}`}><h2>On This Page</h2><ol>{visibleSectionIds.map((id, index) => <li key={id}><a href={`#${id}`}>{index + 1}. {id === "best-bait-gear" ? "Catch Methods" : id.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}</a></li>)}</ol></section>
-
-          <section className={styles.sideCard}><h2><PackageCheck size={17} /> Catch & Route Links</h2><nav className={styles.sideLinks}>{recordLinks.map((item) => <Link href={item.href} key={`${item.kind}-${item.href}`}><span><small>{item.kind}</small>{item.name}</span><ArrowRight size={13} /></Link>)}</nav></section>
-
-          {objectiveLinks.quests.length || objectiveLinks.achievements.length ? <section className={styles.sideCard}><h2><Trophy size={17} /> Quests & Achievements</h2><nav className={styles.sideLinks}>{[...objectiveLinks.quests, ...objectiveLinks.achievements].map((item) => <Link href={item.href} key={item.href}><span><small>{item.meta}</small>{item.title}</span><ArrowRight size={13} /></Link>)}</nav></section> : null}
-
-          <section className={styles.sideCard}>
-            <h2><MapPin size={17} /> Found In</h2>
-            <Link className={styles.horizontalSideCard} href={`/islands/${entry.islandSlug}/`}><span className={styles.horizontalImage}><Image src={island?.image ?? getFishImage(entry)} alt={`${entry.islandName} island`} fill sizes="130px" /></span><span><strong>{entry.islandName}</strong><small>{island?.description}</small><b>View island guide <ArrowRight size={12} /></b></span></Link>
-          </section>
-
-          <section className={styles.sideCard}><h2>Related Fish</h2><nav className={styles.relatedSideList}>{related.map((item) => <Link href={`/fish/${item.slug}/`} key={item.slug}><span className={styles.relatedSideImage}><Image src={getFishImage(item)} alt={getFishImageAlt(item)} fill sizes="92px" /></span><span><strong>{item.name}</strong><small>{item.category} · {item.lure}</small><b>See catch details <ArrowRight size={11} /></b></span></Link>)}</nav><Link className={styles.moreLink} href="/fish/">View all fish →</Link></section>
+          <section className={`${styles.sideCard} ${styles.toc}`}><h2>On This Page</h2><ol>{visibleSectionIds.map((id, index) => <li key={id}><a href={`#${id}`}>{index + 1}. {id === "best-bait-gear" ? "Catch Methods" : id === "route-links" ? "Routes & Related Fish" : id.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}</a></li>)}</ol><Link className={styles.moreLink} href="/fish/">View all fish →</Link></section>
         </aside>
       </div>
     </main>

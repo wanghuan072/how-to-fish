@@ -125,7 +125,7 @@ export function HomePage() {
           <section className={`${styles.panel} ${styles.questPanel}`}>
             <SectionHeading number={3} title="Stuck on a Quest?" description="Pick the point where your island route stopped." href="/quests/" linkLabel="View all quests" />
             <div className={styles.questGrid}>
-              {quests.map((quest, index) => (
+              {quests.slice(0, 5).map((quest, index) => (
                 <Link className={styles.questCard} href={`/quests/${quest.slug}/`} key={quest.slug}>
                   <span className={styles.questImage}><Image src={questPreviewImages[quest.slug] ?? quest.image} alt={`${quest.name} route encounter`} fill sizes="(max-width: 768px) 110px, 140px" /></span>
                   <span className={styles.questBody}><small>Step {index + 1} · {quest.tags?.[0]}</small><h3>{quest.name}</h3><p>{quest.description}</p><b>Open quest <ArrowRight size={13} /></b></span>
@@ -147,44 +147,44 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className={styles.section}>
-          <SectionHeading number={5} title="Choose Your Guide" description="Start with the spoiler-light beginner route or follow the complete Lighthouse-to-Volcano walkthrough." href="/guides/" linkLabel="View both guides" />
-          <div className={styles.featureGrid}>
-            {startCards.map(({ title, text, href, image, label }, index) => (
-              <Link className={`${styles.featureCard} ${index === 0 ? styles.featureLead : ""}`} href={href} key={title}>
-                <span className={styles.featureImage}><Image src={image} alt={`${title} gameplay preview`} fill sizes={index === 0 ? "(max-width: 768px) 100vw, 540px" : "(max-width: 768px) 100vw, 240px"} /></span>
-                <span className={styles.featureBody}><small>{index === 0 ? "Recommended first" : `Route ${index + 1}`}</small><h3>{title}</h3><p>{text}</p><span className={styles.smallLink}>{label} <ArrowRight size={14} /></span></span>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <div className={`${styles.section} ${styles.resourcePair}`}>
+          <section className={`${styles.panel} ${styles.guidePanel}`}>
+            <SectionHeading number={5} title="Choose Your Guide" description="Pick a spoiler-light start or the complete island route." href="/guides/" linkLabel="View both guides" />
+            <div className={styles.featureGrid}>
+              {startCards.map(({ title, text, href, image, label }, index) => (
+                <Link className={`${styles.featureCard} ${index === 0 ? styles.featureLead : ""}`} href={href} key={title}>
+                  <span className={styles.featureImage}><Image src={image} alt={`${title} gameplay preview`} fill sizes="(max-width: 768px) 100vw, 220px" /></span>
+                  <span className={styles.featureBody}><small>{index === 0 ? "Recommended first" : `Route ${index + 1}`}</small><h3>{title}</h3><p>{text}</p><span className={styles.smallLink}>{label} <ArrowRight size={14} /></span></span>
+                </Link>
+              ))}
+            </div>
+          </section>
 
-        <div className={`${styles.section} ${styles.bottomPair}`}>
           <section className={`${styles.panel} ${styles.armoryPanel}`}>
             <SectionHeading number={6} title="Weapons & Gear" description="Match the weapon to the encounter and open each loadout for its practical role." href="/wiki/weapons/" linkLabel="View all gear" />
             <div className={styles.gearGrid}>
               {weapons.slice(0, 4).map((weapon) => (
                 <Link className={styles.gearCard} href={`/wiki/weapons/${weapon.slug}/`} key={weapon.slug}>
-                  <span className={styles.gearImage}><Image src={weapon.image} alt={weapon.imageAlt} fill sizes="180px" /></span>
+                  <span className={styles.gearImage}><Image src={weapon.image} alt={weapon.imageAlt} fill sizes="140px" /></span>
                   <span className={styles.gearBody}><small>{weapon.eyebrow}</small><h3>{weapon.name.replace(" Guide", "")}</h3><p>{weapon.description}</p><b>Open loadout <ArrowRight size={13} /></b></span>
                 </Link>
               ))}
             </div>
           </section>
-
-          <section className={`${styles.panel} ${styles.achievementPanel}`}>
-            <SectionHeading number={7} title="Achievement Hunting" description="Three low-unlock completion goals from Steam's current global achievement data." href="/wiki/achievements/" linkLabel="View all achievements" />
-            <div className={styles.achievementGrid}>
-              {achievementSpotlights.map(({ entry, title, description, href }, index) => (
-                <Link className={styles.achievementCard} href={href} key={entry.name}>
-                  <span className={styles.achievementIcon}><Image src={entry.image} alt={entry.imageAlt} fill sizes="82px" /></span>
-                  <span className={styles.achievementBody}><small><Trophy size={13} /> Challenge {index + 1}</small><h3>{title}</h3><p>{description}</p><span className={styles.rarityLine}><i style={{ width: `${Math.max(entry.globalPercent ?? 0, 3)}%` }} /> <em>{entry.globalPercent}% unlocked</em></span><b>View achievement <ArrowRight size={13} /></b></span>
-                </Link>
-              ))}
-            </div>
-            <Link className={styles.completionLink} href="/wiki/achievements/"><CheckCircle2 size={18} /><span><strong>Planning a full clear?</strong><small>Open the creature and 28-achievement checklist.</small></span><ArrowRight size={16} /></Link>
-          </section>
         </div>
+
+        <section className={`${styles.section} ${styles.achievementPanel}`}>
+          <SectionHeading number={7} title="Achievement Hunting" description="Use three rare goals to plan collection, Drip and bare-hands cleanup before a full achievement run." href="/wiki/achievements/" linkLabel="View all achievements" />
+          <div className={styles.achievementGrid}>
+            {achievementSpotlights.map(({ entry, title, description, href }, index) => (
+              <Link className={styles.achievementCard} href={href} key={entry.name}>
+                <span className={styles.achievementIcon}><Image src={entry.image} alt={entry.imageAlt} fill sizes="120px" /></span>
+                <span className={styles.achievementBody}><small><Trophy size={13} /> Challenge {index + 1}</small><h3>{title}</h3><p>{description}</p><span className={styles.rarityLine}><i style={{ width: `${Math.max(entry.globalPercent ?? 0, 3)}%` }} /> <em>{entry.globalPercent}% unlocked</em></span><b>View achievement <ArrowRight size={13} /></b></span>
+              </Link>
+            ))}
+          </div>
+          <Link className={styles.completionLink} href="/wiki/achievements/"><CheckCircle2 size={18} /><span><strong>Planning a full clear?</strong><small>Open the creature and 28-achievement checklist.</small></span><ArrowRight size={16} /></Link>
+        </section>
 
         <section className={`${styles.section} ${styles.aboutSection}`}>
           <SectionHeading number={8} title="About How to Fish Wiki" description="Built for the moments when the game stops telling you what to keep, where to go or which lure starts the next fight." />

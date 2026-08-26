@@ -3,7 +3,7 @@ import type { CollectionKey, ContentEntry } from "@/types/content";
 export function contentDisplayName(collection: CollectionKey | undefined, entry: ContentEntry) {
   if (collection === "quests") return entry.name.split(" & ")[0];
   if (collection === "islands") return entry.name.replace(/ Starting Area Guide$| Guide$/i, "");
-  if (collection === "bosses") return entry.name.replace(/ Mini-Boss Guide$| Boss Guide$| Final Boss$| Guide$/i, "");
+  if (collection === "bosses") return entry.name.replace(/\s+(?:(?:Mini-)?Boss(?:\s+Guide)?|Final Boss|Guide)$/i, "");
   if (collection === "weapons") return entry.name.replace(/ Guide$/i, "");
   if (collection === "bait") return entry.name.replace(/ Guide$/i, "");
   if (collection === "guides") return entry.name;

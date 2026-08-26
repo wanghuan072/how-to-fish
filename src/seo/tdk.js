@@ -140,7 +140,7 @@ function clean(value) {
 function detailName(collection, name) {
   const value = clean(name);
   if (collection === "guides") return value;
-  if (collection === "bosses") return value.replace(/\s+(?:Final\s+)?Boss(?:\s+Guide)?$/i, "").trim();
+  if (collection === "bosses") return value.replace(/\s+(?:(?:Mini-)?Boss(?:\s+Guide)?|Final Boss|Guide)$/i, "").trim();
   return value.replace(/\s+Guide$/i, "").trim();
 }
 
@@ -188,6 +188,17 @@ export function getDetailTdk(collection, entry, path) {
       title: "How to Fish Walkthrough: All Islands, Bosses & Quests",
       description: "Complete the How to Fish walkthrough from Lighthouse to Volcano with all island unlocks, boss triggers, bait requirements, trophies and NPC hand-ins.",
       keywords: ["How to Fish walkthrough", "How to Fish all islands", "How to Fish boss guide", "How to Fish quest walkthrough", "How to Fish island unlocks"],
+      path,
+      lastModified: entry.updated ?? "2026-08-24",
+    };
+  }
+  if (collection === "bosses") {
+    const bossName = detailName(collection, entry.name);
+    const fullTitle = `${bossName} Boss Strategy - How to Fish Steam Guide`;
+    return {
+      title: fullTitle.length <= 60 ? fullTitle : `${bossName} Boss Strategy - How to Fish Guide`,
+      description: clean(entry.description),
+      keywords: [bossName, `${bossName} How to Fish`, `${bossName} boss strategy`, `${bossName} boss guide`, "How to Fish bosses", ...(entry.tags ?? []).slice(0, 2)],
       path,
       lastModified: entry.updated ?? "2026-08-24",
     };

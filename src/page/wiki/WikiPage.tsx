@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import tackle from "@/data/tackle.json";
 import { InnerHero } from "@/components/layout/InnerHero";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { achievements, getCollection } from "@/lib/content";
@@ -21,34 +20,14 @@ const sections = [
     action: "Browse weapons",
   },
   {
-    title: "Items & Upgrades",
-    description: "Find quest objects, navigation tools and boat upgrades, including where to get them and when to keep them.",
-    href: "/wiki/items/",
-    image: "/images/official/gameplay-05.jpg",
-    count: getCollection("items").length,
-    label: "items",
-    tags: ["Locations", "Quest uses"],
-    action: "Browse items",
-  },
-  {
-    title: "Bait & Lures",
-    description: "Check every regular lure, boss lure and story bait with its price, rod requirement and connected catch pool.",
-    href: "/wiki/bait/",
-    image: "/images/official/gameplay-06.jpg",
-    count: getCollection("bait").length,
-    label: "bait records",
-    tags: ["Catch pools", "Shop prices"],
-    action: "Browse bait",
-  },
-  {
-    title: "Rods & Lures",
-    description: "Choose the correct rod and follow its compatible default pools, purchased lures and story-specific bait routes.",
-    href: "/wiki/rods-and-lures/",
+    title: "Bait, Lures & Rods",
+    description: "Match every rod, default pool, regular lure, boss lure and quest trigger to its creatures and island route.",
+    href: "/wiki/bait-and-lures/",
     image: "/images/official/gameplay-07.jpg",
-    count: tackle.length,
-    label: "rod types",
-    tags: ["Compatibility", "Creature links"],
-    action: "Check rod setups",
+    count: getCollection("bait").length,
+    label: "bait & triggers",
+    tags: ["Rods & pools", "Catch setups"],
+    action: "Browse catch setups",
   },
   {
     title: "NPCs & Quest Givers",
@@ -81,8 +60,8 @@ export function WikiPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Player reference"
-        title="How to Fish Steam Wiki: Weapons, Items, Bait & Achievements"
-        description="Use the complete Steam Wiki to compare all 8 weapons, locate quest items and NPCs, match bait with catch pools, check rod compatibility and finish all 28 achievements."
+        title="How to Fish Steam Wiki: Weapons, Bait, NPCs & Achievements"
+        description="Use the complete Steam Wiki to compare all 8 weapons, match bait and rods with catch pools, follow NPC quest chains and finish all 28 achievements."
         image="/images/official/gameplay-05.jpg"
         imageAlt="Official How to Fish gameplay screenshot showing equipment and island exploration"
         summary={<><span><strong>{sections.length}</strong> gameplay categories</span><span><strong>{achievements.length}</strong> achievements</span></>}

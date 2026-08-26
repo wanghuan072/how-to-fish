@@ -13,20 +13,6 @@
       "slugs": ["brass-knuckles", "knife", "dynamite"]
     }
   ],
-  "items": [
-    {
-      "id": "story-items",
-      "title": "Story items",
-      "description": "Single-route objects that must be kept until their boss or NPC hand-in is complete.",
-      "slugs": ["beer-can", "modified-leech", "carrot", "fish-bucket"]
-    },
-    {
-      "id": "permanent-upgrades",
-      "title": "Navigation & upgrades",
-      "description": "Permanent tools that improve travel and unlock the next route.",
-      "slugs": ["radar", "boat-engine"]
-    }
-  ],
   "bait": [
     {
       "id": "regular-lures",

@@ -21,7 +21,6 @@ export type RelationGroup = {
 
 type RelationSpec = {
   creatures?: string[];
-  items?: string[];
   bait?: string[];
   npcs?: string[];
   quests?: string[];
@@ -36,7 +35,6 @@ type RelationSpec = {
 export const questRelations: Record<string, RelationSpec> = {
   "who-stole-my-beer": {
     creatures: ["spider-crab"],
-    items: ["beer-can", "radar"],
     bait: ["empty-beer-can"],
     npcs: ["lighthouse-keeper"],
     achievements: ["Who stole my beer"],
@@ -44,7 +42,6 @@ export const questRelations: Record<string, RelationSpec> = {
   },
   dinnertime: {
     creatures: ["giant-piranha"],
-    items: ["modified-leech"],
     bait: ["modified-leech"],
     npcs: ["forest-lake-lady"],
     achievements: ["Dinnertime"],
@@ -52,7 +49,6 @@ export const questRelations: Record<string, RelationSpec> = {
   },
   vacation: {
     creatures: ["needlefish", "seahorse", "pufferfish"],
-    items: ["carrot"],
     bait: ["standard-lure", "carrot"],
     npcs: ["desert-tourist"],
     achievements: ["Vacation"],
@@ -81,7 +77,6 @@ export const questRelations: Record<string, RelationSpec> = {
   },
   "scientists-whale-bait": {
     creatures: ["bowhead-whale", "mutated-bowhead-whale"],
-    items: ["fish-bucket"],
     bait: ["fish-bucket"],
     npcs: ["volcano-scientist"],
     quests: ["deadliest-catch"],
@@ -91,37 +86,37 @@ export const questRelations: Record<string, RelationSpec> = {
 };
 
 export const bossRelations: Record<string, RelationSpec> = {
-  "spider-crab": { items: ["beer-can"], bait: ["empty-beer-can"], quests: ["who-stole-my-beer"], achievements: ["Who stole my beer"], rewards: [{ title: "Spider Crab quest result", description: "Keep the named quest result and return it to the Lighthouse Keeper for the boat key." }] },
+  "spider-crab": { bait: ["empty-beer-can"], quests: ["who-stole-my-beer"], achievements: ["Who stole my beer"], rewards: [{ title: "Spider Crab quest result", description: "Keep the named quest result and return it to the Lighthouse Keeper for the boat key." }] },
   sunfish: { bait: ["beginner-boss-lure"], achievements: ["Competitive eating", "Collector"], rewards: [{ title: "Optional encyclopedia entry", description: "Sunfish counts toward the creature collection but does not drop an item needed to unlock another island." }] },
   "old-pike": { bait: ["beginner-boss-lure"], achievements: ["Collector"], rewards: [{ title: "Optional encyclopedia entry", description: "The Old Pike counts toward the creature collection but does not drop an item needed to unlock another island." }] },
-  "giant-piranha": { items: ["modified-leech"], bait: ["modified-leech"], quests: ["dinnertime"], achievements: ["Dinnertime"], rewards: [{ title: "Giant Piranha trophy", description: "Return the named trophy to the lady by the lake for Desert Island coordinates." }] },
-  pufferfish: { items: ["carrot"], bait: ["carrot"], quests: ["vacation"], achievements: ["Vacation"], rewards: [{ title: "Pufferfish fin", description: "Return the fin to the Desert Tourist to reveal Rocks Island." }] },
+  "giant-piranha": { bait: ["modified-leech"], quests: ["dinnertime"], achievements: ["Dinnertime"], rewards: [{ title: "Giant Piranha trophy", description: "Return the named trophy to the lady by the lake for Desert Island coordinates." }] },
+  pufferfish: { bait: ["carrot"], quests: ["vacation"], achievements: ["Vacation"], rewards: [{ title: "Pufferfish fin", description: "Return the fin to the Desert Tourist to reveal Rocks Island." }] },
   "blue-shark": { bait: ["standard-boss-lure"], quests: ["grillmaster"], achievements: ["Grillmaster"], rewards: [{ title: "Blue Shark body", description: "Take the defeated shark to the Grillmaster to unlock cooking." }] },
   tuna: { bait: ["professional-boss-lure"], quests: ["terrorizing-bird"], achievements: ["Terrorizing bird"], rewards: [{ title: "Defeated Tuna", description: "Keep the body intact and place it on land to trigger Albatross." }] },
   albatross: { quests: ["terrorizing-bird"], achievements: ["Terrorizing bird"], rewards: [{ title: "Albatross head", description: "Return the head to the scared Rocks islander for Volcano Island coordinates." }] },
   "goblin-shark": { bait: ["scientific-boss-lure"], achievements: ["Collector"], rewards: [{ title: "Optional encyclopedia entry", description: "Goblin Shark counts toward the creature collection but is not part of the story route." }] },
-  "bowhead-whale": { items: ["fish-bucket"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], achievements: ["Collector"], rewards: [{ title: "Defeated Bowhead Whale", description: "Keep the body intact and carry it into the Volcano final trigger." }] },
+  "bowhead-whale": { bait: ["fish-bucket"], quests: ["scientists-whale-bait"], achievements: ["Collector"], rewards: [{ title: "Defeated Bowhead Whale", description: "Keep the body intact and carry it into the Volcano final trigger." }] },
   "mutated-bowhead-whale": { quests: ["deadliest-catch", "scientists-whale-bait"], achievements: ["Deadliest catch", "We are so back", "Handyman", "Bean"], rewards: [{ title: "Final boss cleared", description: "The death check covers the boss achievements; use the ending transport afterward for story completion." }] },
 };
 
 const islandRelations: Record<string, RelationSpec> = {
   lighthouse: {
     npcs: ["lighthouse-keeper"],
-    items: ["beer-can", "radar", "boat-engine"],
+    bait: ["empty-beer-can", "hot-dog"],
     quests: ["who-stole-my-beer"],
     weapons: ["brass-knuckles", "knife"],
     achievements: ["Getting started", "Who stole my beer", "Getting an upgrade"],
   },
   "island-2-forest": {
     npcs: ["forest-lake-lady", "forest-shopkeeper"],
-    items: ["modified-leech"],
+    bait: ["modified-leech"],
     quests: ["dinnertime"],
     weapons: ["pistol", "shotgun", "dynamite"],
     achievements: ["Dinnertime", "Let me go"],
   },
   "island-3-desert": {
     npcs: ["desert-tourist", "grillmaster", "desert-kiosk-seller"],
-    items: ["carrot"],
+    bait: ["standard-lure", "carrot", "standard-boss-lure", "coconut"],
     quests: ["vacation", "grillmaster"],
     weapons: ["smg"],
     achievements: ["Vacation", "Grillmaster", "Yummy in my tummy"],
@@ -135,7 +130,6 @@ const islandRelations: Record<string, RelationSpec> = {
   },
   "island-5-volcano": {
     npcs: ["volcano-military-officer", "volcano-quartermaster", "volcano-scientist"],
-    items: ["fish-bucket"],
     bait: ["scientific-lure", "scientific-boss-lure", "fish-bucket"],
     quests: ["deadliest-catch", "scientists-whale-bait"],
     weapons: ["assault-rifle"],
@@ -154,30 +148,21 @@ const weaponRelations: Record<string, RelationSpec> = {
   smg: { islands: ["island-3-desert"], bosses: ["blue-shark", "albatross"] },
 };
 
-const itemRelations: Record<string, RelationSpec> = {
-  radar: { islands: ["lighthouse", "island-2-forest", "island-3-desert", "island-4-rocks", "island-5-volcano"], quests: ["who-stole-my-beer"] },
-  "beer-can": { creatures: ["spider-crab"], bait: ["empty-beer-can"], npcs: ["lighthouse-keeper"], quests: ["who-stole-my-beer"], bosses: ["spider-crab"], islands: ["lighthouse"], achievements: ["Who stole my beer"], rods: ["crab-fishing-rod"] },
-  "modified-leech": { creatures: ["giant-piranha"], bait: ["modified-leech"], npcs: ["forest-lake-lady"], quests: ["dinnertime"], bosses: ["giant-piranha"], islands: ["island-2-forest"], achievements: ["Dinnertime"], rods: ["fishing-rod"] },
-  carrot: { creatures: ["needlefish", "seahorse", "pufferfish"], bait: ["standard-lure", "carrot"], npcs: ["desert-tourist"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"], rods: ["fishing-rod"] },
-  "fish-bucket": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["Deadliest catch", "We are so back"], rods: ["fishing-rod"] },
-  "boat-engine": { islands: ["lighthouse", "island-2-forest", "island-3-desert", "island-4-rocks", "island-5-volcano"], achievements: ["Getting an upgrade", "I am speed"] },
-};
-
 const npcRelations: Record<string, RelationSpec> = {
-  "lighthouse-keeper": { creatures: ["spider-crab"], items: ["beer-can", "radar"], bait: ["empty-beer-can"], quests: ["who-stole-my-beer"], bosses: ["spider-crab"], islands: ["lighthouse"], achievements: ["Who stole my beer"] },
-  "forest-lake-lady": { creatures: ["giant-piranha"], items: ["modified-leech"], bait: ["modified-leech"], quests: ["dinnertime"], bosses: ["giant-piranha"], islands: ["island-2-forest"], achievements: ["Dinnertime"] },
-  "desert-tourist": { creatures: ["needlefish", "seahorse", "pufferfish"], items: ["carrot"], bait: ["standard-lure", "carrot"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"] },
+  "lighthouse-keeper": { creatures: ["spider-crab"], bait: ["empty-beer-can"], quests: ["who-stole-my-beer"], bosses: ["spider-crab"], islands: ["lighthouse"], achievements: ["Who stole my beer"] },
+  "forest-lake-lady": { creatures: ["giant-piranha"], bait: ["modified-leech"], quests: ["dinnertime"], bosses: ["giant-piranha"], islands: ["island-2-forest"], achievements: ["Dinnertime"] },
+  "desert-tourist": { creatures: ["needlefish", "seahorse", "pufferfish"], bait: ["standard-lure", "carrot"], quests: ["vacation"], bosses: ["pufferfish"], islands: ["island-3-desert"], achievements: ["Vacation"] },
   grillmaster: { creatures: ["blue-shark"], bait: ["standard-boss-lure"], quests: ["grillmaster"], bosses: ["blue-shark"], islands: ["island-3-desert"], achievements: ["Grillmaster", "Yummy in my tummy"] },
   "rocks-shop-npc": { creatures: ["tuna", "albatross"], bait: ["professional-boss-lure"], quests: ["terrorizing-bird"], bosses: ["tuna", "albatross"], islands: ["island-4-rocks"], achievements: ["Terrorizing bird"] },
   "forest-shopkeeper": { weapons: ["pistol", "shotgun", "dynamite"], rods: ["fishing-rod"], islands: ["island-2-forest"], achievements: ["Getting an upgrade"] },
-  "desert-kiosk-seller": { items: ["boat-engine"], weapons: ["smg"], islands: ["island-3-desert"], achievements: ["I am speed"] },
+  "desert-kiosk-seller": { weapons: ["smg"], islands: ["island-3-desert"], achievements: ["I am speed"] },
   "rocks-roulette-operator": { islands: ["island-4-rocks"], achievements: ["All in", "Everyone's dream"] },
   "rocks-slot-operator": { islands: ["island-4-rocks"], achievements: ["GOLD GOLD GOLD"] },
   "rocks-store-clerk": { bait: ["professional-lure", "professional-boss-lure"], islands: ["island-4-rocks"] },
   "rocks-weapon-seller": { weapons: ["sniper-rifle"], islands: ["island-4-rocks"], achievements: ["360 no scope", "Fully equipped"] },
   "volcano-military-officer": { creatures: ["mutated-bowhead-whale"], quests: ["deadliest-catch"], bosses: ["mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["Deadliest catch"] },
   "volcano-quartermaster": { weapons: ["assault-rifle"], bait: ["scientific-lure", "scientific-boss-lure"], islands: ["island-5-volcano"] },
-  "volcano-scientist": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], items: ["fish-bucket"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["We are so back", "Handyman", "Bean"] },
+  "volcano-scientist": { creatures: ["bowhead-whale", "mutated-bowhead-whale"], bait: ["fish-bucket"], quests: ["scientists-whale-bait"], bosses: ["bowhead-whale", "mutated-bowhead-whale"], islands: ["island-5-volcano"], achievements: ["We are so back", "Handyman", "Bean"] },
 };
 
 const questNames = new Map(getCollection("quests").map((entry) => [entry.slug, entry]));
@@ -248,7 +233,7 @@ function rodItem(slug: string): RelationItem {
   const crab = slug === "crab-fishing-rod";
   return {
     title: crab ? "Crab Fishing Rod" : "Fishing Rod",
-    href: `/wiki/rods-and-lures/#${slug}`,
+    href: `/wiki/bait-and-lures/#${slug}`,
     meta: "Rod",
     description: crab ? "Opening rod for Lighthouse pools and the first story trigger." : "Main rod for regular, boss and story bait routes.",
   };
@@ -272,8 +257,7 @@ function buildGroups(spec: RelationSpec, context: "quest" | "boss" | "island"): 
   const rewardHref = context === "quest" ? "#quest-brief" : spec.quests?.[0] ? `/quests/${spec.quests[0]}/` : "#rewards";
   const groups = [
     group("related-creatures", "Related creatures", "Creatures caught, defeated or handed in during this route.", (spec.creatures ?? []).map(fishItem)),
-    group("required-items", "Required items and lures", "Check each item and lure before starting the objective.", [
-      ...(spec.items ?? []).map((slug) => contentItem("items", slug, "Quest item")),
+    group("required-items", "Required bait and lures", "Check the bait, lure or carried trigger before starting the objective.", [
       ...(spec.bait ?? []).map((slug) => contentItem("bait", slug, "Bait / trigger")),
     ]),
     group("available-weapons", "Weapons available at this stage", "Shop and progression weapons associated with this island stage.", (spec.weapons ?? []).map((slug) => contentItem("weapons", slug, "Available weapon"))),
@@ -299,8 +283,7 @@ function buildWikiGroups(spec: RelationSpec, includeMechanics = false): Relation
       ...(spec.bosses ?? []).map((slug) => contentItem("bosses", slug, "Boss encounter")),
       ...questSlugs.map((slug) => contentItem("quests", slug, "Quest")),
     ]),
-    group("equipment-links", "Connected equipment", "Items, bait and weapons used in the same route.", [
-      ...(spec.items ?? []).map((slug) => contentItem("items", slug, "Item")),
+    group("equipment-links", "Connected equipment", "Bait, rods and weapons used in the same route.", [
       ...(spec.bait ?? []).map((slug) => contentItem("bait", slug, "Bait / lure")),
       ...(spec.weapons ?? []).map((slug) => contentItem("weapons", slug, "Weapon")),
       ...(includeMechanics ? [mechanicsItem()] : []),
@@ -317,7 +300,6 @@ function baitRelations(entry: ContentEntry): RelationSpec {
   const quests = Object.entries(questRelations).filter(([, spec]) => spec.bait?.includes(entry.slug)).map(([slug]) => slug);
   const bosses = Object.entries(bossRelations).filter(([, spec]) => spec.bait?.includes(entry.slug)).map(([slug]) => slug);
   const npcs = Object.entries(npcRelations).filter(([, spec]) => spec.bait?.includes(entry.slug)).map(([slug]) => slug);
-  const item = getCollection("items").some((candidate) => candidate.slug === entry.slug) ? [entry.slug] : [];
   const achievementNames = [
     ...quests.flatMap((slug) => questRelations[slug]?.achievements ?? []),
     ...bosses.flatMap((slug) => bossRelations[slug]?.achievements ?? []),
@@ -330,7 +312,6 @@ function baitRelations(entry: ContentEntry): RelationSpec {
     quests,
     bosses,
     npcs,
-    items: item,
     achievements: [...new Set(achievementNames)],
   };
 }
@@ -366,7 +347,6 @@ export function getRelationGroups(collection: CollectionKey, entry: ContentEntry
     return groups;
   }
   if (collection === "weapons") return buildWikiGroups(weaponRelations[entry.slug] ?? {}, true);
-  if (collection === "items") return buildWikiGroups(itemRelations[entry.slug] ?? {});
   if (collection === "bait") return buildWikiGroups(baitRelations(entry));
   if (collection === "npcs") return buildWikiGroups(npcRelations[entry.slug] ?? {});
   return [];
@@ -413,7 +393,6 @@ export function getAchievementRelationItems(name: string): RelationItem[] {
   appendReverse("bosses", bossRelations, "Boss encounter");
   appendReverse("islands", islandRelations, "Island");
   appendReverse("weapons", weaponRelations, "Weapon");
-  appendReverse("items", itemRelations, "Item");
   appendReverse("npcs", npcRelations, "NPC");
   items.push(...(achievementExtras[name] ?? []));
   return [...new Map(items.map((item) => [item.href, item])).values()].slice(0, 6);

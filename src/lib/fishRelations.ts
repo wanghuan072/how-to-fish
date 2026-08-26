@@ -7,20 +7,20 @@ export type InternalRecordLink = {
 };
 
 const baitRoutes: Record<string, InternalRecordLink[]> = {
-  "Hot Dog": [{ name: "Hot Dog", href: "/wiki/bait/hot-dog/", kind: "Bait" }],
-  "Beginner Lure": [{ name: "Beginner Lure", href: "/wiki/bait/beginner-lure/", kind: "Bait" }],
-  "Beginner Boss Lure": [{ name: "Beginner Boss Lure", href: "/wiki/bait/beginner-boss-lure/", kind: "Bait" }],
-  "Leech Bait": [{ name: "Leech Bait", href: "/wiki/bait/modified-leech/", kind: "Bait" }],
-  Coconut: [{ name: "Coconut", href: "/wiki/bait/coconut/", kind: "Bait" }],
-  "Standard Lure": [{ name: "Standard Lure", href: "/wiki/bait/standard-lure/", kind: "Bait" }],
-  "Standard Boss Lure": [{ name: "Standard Boss Lure", href: "/wiki/bait/standard-boss-lure/", kind: "Bait" }],
-  Carrot: [{ name: "Carrot", href: "/wiki/bait/carrot/", kind: "Bait" }],
-  "Professional Lure": [{ name: "Professional Lure", href: "/wiki/bait/professional-lure/", kind: "Bait" }],
-  "Professional Boss Lure": [{ name: "Professional Boss Lure", href: "/wiki/bait/professional-boss-lure/", kind: "Bait" }],
-  "Scientific Lure": [{ name: "Scientific Lure", href: "/wiki/bait/scientific-lure/", kind: "Bait" }],
-  "Scientific Boss Lure": [{ name: "Scientific Boss Lure", href: "/wiki/bait/scientific-boss-lure/", kind: "Bait" }],
-  "Fish Bucket / Whale Bait": [{ name: "Fish Bucket / Whale Bait", href: "/wiki/bait/fish-bucket/", kind: "Bait" }],
-  "Empty Beer Can": [{ name: "Empty Beer Can", href: "/wiki/bait/empty-beer-can/", kind: "Bait" }],
+  "Hot Dog": [{ name: "Hot Dog", href: "/wiki/bait-and-lures/hot-dog/", kind: "Bait" }],
+  "Beginner Lure": [{ name: "Beginner Lure", href: "/wiki/bait-and-lures/beginner-lure/", kind: "Bait" }],
+  "Beginner Boss Lure": [{ name: "Beginner Boss Lure", href: "/wiki/bait-and-lures/beginner-boss-lure/", kind: "Bait" }],
+  "Leech Bait": [{ name: "Leech Bait", href: "/wiki/bait-and-lures/modified-leech/", kind: "Bait" }],
+  Coconut: [{ name: "Coconut", href: "/wiki/bait-and-lures/coconut/", kind: "Bait" }],
+  "Standard Lure": [{ name: "Standard Lure", href: "/wiki/bait-and-lures/standard-lure/", kind: "Bait" }],
+  "Standard Boss Lure": [{ name: "Standard Boss Lure", href: "/wiki/bait-and-lures/standard-boss-lure/", kind: "Bait" }],
+  Carrot: [{ name: "Carrot", href: "/wiki/bait-and-lures/carrot/", kind: "Bait" }],
+  "Professional Lure": [{ name: "Professional Lure", href: "/wiki/bait-and-lures/professional-lure/", kind: "Bait" }],
+  "Professional Boss Lure": [{ name: "Professional Boss Lure", href: "/wiki/bait-and-lures/professional-boss-lure/", kind: "Bait" }],
+  "Scientific Lure": [{ name: "Scientific Lure", href: "/wiki/bait-and-lures/scientific-lure/", kind: "Bait" }],
+  "Scientific Boss Lure": [{ name: "Scientific Boss Lure", href: "/wiki/bait-and-lures/scientific-boss-lure/", kind: "Bait" }],
+  "Fish Bucket / Whale Bait": [{ name: "Fish Bucket / Whale Bait", href: "/wiki/bait-and-lures/fish-bucket/", kind: "Bait" }],
+  "Empty Beer Can": [{ name: "Empty Beer Can", href: "/wiki/bait-and-lures/empty-beer-can/", kind: "Bait" }],
   "Defeated Tuna": [{ name: "Defeated Tuna", href: "/bosses/tuna/", kind: "Boss" }],
   "Defeated Bowhead Whale": [{ name: "Defeated Bowhead Whale", href: "/bosses/bowhead-whale/", kind: "Boss" }],
 };
@@ -62,7 +62,7 @@ export function getFishBaitLinks(entry: FishEntry) {
       .filter((method) => method.baitSlug)
       .map((method) => [method.baitSlug, {
         name: method.baitName,
-        href: `/wiki/bait/${method.baitSlug}/`,
+        href: `/wiki/bait-and-lures/${method.baitSlug}/`,
         kind: "Bait" as const,
       }])).values()];
   }
@@ -101,7 +101,7 @@ export function getFishCatchMethod(entry: FishEntry) {
 export function getFishRodLink(entry: FishEntry): InternalRecordLink | null {
   if (entry.rod === "None") return null;
   const anchor = entry.rod === "Crab Fishing Rod" ? "crab-fishing-rod" : "fishing-rod";
-  return { name: entry.rod, href: `/wiki/rods-and-lures/#${anchor}`, kind: "Rod" };
+  return { name: entry.rod, href: `/wiki/bait-and-lures/#${anchor}`, kind: "Rod" };
 }
 
 export function getFishRecordLinks(entry: FishEntry): InternalRecordLink[] {

@@ -9,7 +9,6 @@ import {
   Crosshair,
   Database,
   MapPin,
-  Package,
   Route,
   Target,
   UserRound,
@@ -19,7 +18,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionConfig } from "@/config/collections";
 import directoryGroupsJson from "@/data/directory-groups.json";
 import { fish, getCollection, isBossCreature } from "@/lib/content";
-import { itemRoutes, weaponProgression } from "@/lib/gameplayData";
+import { weaponProgression } from "@/lib/gameplayData";
 import { getBaitGameData } from "@/data/baitGameData";
 import { contentDisplayName } from "@/lib/contentNaming";
 import { breadcrumbSchema, collectionPageSchema } from "@/seo/schema";
@@ -122,7 +121,7 @@ function GuideDirectory({ entries, config }: { entries: ContentEntry[]; config: 
       <aside className={styles.categorySidebar} aria-label="Guide categories">
         <h2>Current Guides</h2>
         <nav>{entries.map((entry, index) => <a href={`#${entry.slug}`} key={entry.slug}><span>{contentDisplayName("guides", entry)}</span><b>{index + 1}</b></a>)}</nav>
-        <Link href="/wiki/rods-and-lures/">Rods & lures <ArrowRight size={14} /></Link>
+        <Link href="/wiki/bait-and-lures/">Bait, lures & rods <ArrowRight size={14} /></Link>
       </aside>
       <div className={styles.guideSections}>
         <section className={styles.guideGroup} id="current-guides">
@@ -141,7 +140,7 @@ function UpdateDirectory({ entries }: { entries: ContentEntry[] }) {
 function WikiCatalog({ collection, entries, config }: { collection: CollectionKey; entries: ContentEntry[]; config: DirectoryConfig }) {
   const groups = directoryGroups[collection] ?? [];
   const groupEntries = (slugs: string[]) => slugs.map((slug) => entries.find((entry) => entry.slug === slug)).filter((entry): entry is ContentEntry => Boolean(entry));
-  const sidebar = <aside className={styles.categorySidebar} aria-label={`${config.title} categories`}><h2>Categories</h2><nav>{groups.map((group) => <a href={`#${group.id}`} key={group.id}><span>{group.title}</span><b>{groupEntries(group.slugs).length}</b></a>)}</nav>{collection === "bait" ? <Link href="/wiki/rods-and-lures/">Rod compatibility <ArrowRight size={14} /></Link> : null}</aside>;
+  const sidebar = <aside className={styles.categorySidebar} aria-label={`${config.title} categories`}><h2>Categories</h2><nav>{groups.map((group) => <a href={`#${group.id}`} key={group.id}><span>{group.title}</span><b>{groupEntries(group.slugs).length}</b></a>)}</nav>{collection === "bait" ? <Link href="/wiki/bait-and-lures/">Rod compatibility <ArrowRight size={14} /></Link> : null}</aside>;
   const groupHeader = (group: (typeof groups)[number]) => <header className={styles.wikiGroupHeader}><div><p>{config.eyebrow}</p><h2>{group.title}</h2><span>{group.description}</span></div><strong>{groupEntries(group.slugs).length} entries</strong></header>;
 
   if (collection === "bait") return <div className={styles.catalogLayout}>{sidebar}<div className={styles.wikiSections}>{groups.map((group) => <section className={styles.wikiGroup} id={group.id} key={group.id}>{groupHeader(group)}<div className={styles.baitTable}>{groupEntries(group.slugs).map((entry) => {
@@ -155,7 +154,7 @@ function WikiCatalog({ collection, entries, config }: { collection: CollectionKe
 
   if (collection === "npcs") return <div className={styles.catalogLayout}>{sidebar}<div className={styles.wikiSections}>{groups.map((group) => <section className={styles.wikiGroup} id={group.id} key={group.id}>{groupHeader(group)}<div className={styles.roster}>{groupEntries(group.slugs).map((entry) => <article id={entry.slug} key={entry.slug}><div className={styles.rosterAvatar}><Image src={entry.image} alt={entry.imageAlt} fill sizes="96px" /></div><div><p><MapPin size={13} />{entry.tags?.[0] ?? entry.eyebrow}</p><h3><Link href={entryHref(config, entry)}>{entry.name}</Link></h3><span>{entry.description}</span></div><div className={styles.rosterRole}><UserRound size={17} /><small>Route role</small><strong>{entry.tags?.[1] ?? "Companion"}</strong></div><Link href={entryHref(config, entry)} aria-label={`Open ${entry.name}`}><ChevronRight /></Link></article>)}</div></section>)}</div></div>;
 
-  return <div className={styles.catalogLayout}>{sidebar}<div className={styles.wikiSections}>{groups.map((group) => <section className={styles.wikiGroup} id={group.id} key={group.id}>{groupHeader(group)}<div className={`${styles.inventory} ${styles.itemInventory}`}>{groupEntries(group.slugs).map((entry) => { const data = itemRoutes[entry.slug]; return <article id={entry.slug} key={entry.slug}><Link className={styles.inventoryMedia} href={entryHref(config, entry)}><Image src={entry.image} alt={entry.imageAlt} fill sizes="240px" /></Link><div className={styles.inventoryBody}><p><Package size={14} />{entry.eyebrow}</p><h3><Link href={entryHref(config, entry)}>{entry.name}</Link></h3><span>{entry.description}</span><dl><div><dt>Location</dt><dd>{data?.foundAt ?? entry.tags?.[0]}</dd></div><div><dt>Use</dt><dd>{data?.function ?? entry.tags?.[1]}</dd></div></dl><Link href={entryHref(config, entry)}>Open use & location <ArrowRight size={14} /></Link></div></article>; })}</div></section>)}</div></div>;
+  return <div className={styles.catalogLayout}>{sidebar}<div className={styles.wikiSections}>{groups.map((group) => <section className={styles.wikiGroup} id={group.id} key={group.id}>{groupHeader(group)}<div className={`${styles.inventory} ${styles.itemInventory}`}>{groupEntries(group.slugs).map((entry) => <article id={entry.slug} key={entry.slug}><Link className={styles.inventoryMedia} href={entryHref(config, entry)}><Image src={entry.image} alt={entry.imageAlt} fill sizes="240px" /></Link><div className={styles.inventoryBody}><p>{entry.eyebrow}</p><h3><Link href={entryHref(config, entry)}>{entry.name}</Link></h3><span>{entry.description}</span><dl><div><dt>Location</dt><dd>{entry.tags?.[0]}</dd></div><div><dt>Use</dt><dd>{entry.tags?.[1]}</dd></div></dl><Link href={entryHref(config, entry)}>Open route <ArrowRight size={14} /></Link></div></article>)}</div></section>)}</div></div>;
 }
 
 function CollectionList({ collection, entries, config }: { collection: CollectionKey; entries: ContentEntry[]; config: DirectoryConfig }) {
@@ -186,7 +185,7 @@ export function DirectoryPage({ collection }: { collection: CollectionKey }) {
         title={config.title}
         description={config.description}
         image={config.image}
-        summary={<><span><strong>{entryCount}</strong> entries</span><span>Connected quests, items and routes</span></>}
+        summary={<><span><strong>{entryCount}</strong> entries</span><span>Connected quests, equipment and routes</span></>}
       />
 
       <section className={styles.paper} aria-label={`${config.title} directory`}>

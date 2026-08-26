@@ -12,7 +12,6 @@ const collectionTdkKeys: Record<CollectionKey, keyof typeof pageTdk> = {
   bosses: "bosses",
   islands: "islands",
   weapons: "weapons",
-  items: "items",
   bait: "bait",
   npcs: "npcs",
   updates: "updates",

@@ -42,7 +42,7 @@ Travel from Lighthouse through Forest, Desert, Rocks and Volcano. Island pages e
 
 ### [Wiki](https://howtofish.org/wiki/)
 
-Open focused references for [weapons](https://howtofish.org/wiki/weapons/), [items](https://howtofish.org/wiki/items/), [bait and lures](https://howtofish.org/wiki/bait/), [rods and lure compatibility](https://howtofish.org/wiki/rods-and-lures/), [NPCs](https://howtofish.org/wiki/npcs/) and [achievements](https://howtofish.org/wiki/achievements/). These pages link back to the exact quests, islands, creatures and encounters where the subject matters.
+Open focused references for [weapons](https://howtofish.org/wiki/weapons/), [bait, lures and rods](https://howtofish.org/wiki/bait-and-lures/), [NPCs](https://howtofish.org/wiki/npcs/) and [achievements](https://howtofish.org/wiki/achievements/). These pages link back to the exact quests, islands, creatures and encounters where the subject matters.
 
 ### [Updates](https://howtofish.org/updates/)
 
@@ -56,7 +56,7 @@ Keep named quest objects and boss trophies until their return dialogue is comple
 
 ## Maintaining Local Content
 
-Game content is maintained as separate local JSON files in `src/data`, including `creatures.json`, `creature-categories.json`, `bosses.json`, `weapons.json`, `quests.json`, `guides.json`, `items.json`, `bait.json`, `npcs.json` and `islands.json`. Edit the matching JSON file directly when content changes.
+Game content is maintained as separate local JSON files in `src/data`, including `creatures.json`, `creature-categories.json`, `bosses.json`, `weapons.json`, `quests.json`, `guides.json`, `bait.json`, `npcs.json` and `islands.json`. Edit the matching JSON file directly when content changes.
 
 Use the `published` field in `guides.json` to control which guides appear on the site. Wiki directory categories are kept in `directory-groups.json`.
 

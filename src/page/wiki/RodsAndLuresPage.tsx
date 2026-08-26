@@ -25,18 +25,18 @@ function targetHref(entry: FishEntry) {
   return isBossCreature(entry) ? `/bosses/${entry.slug}/` : `/creatures/${entry.slug}/`;
 }
 
-export function RodsAndLuresPage() {
+export function BaitAndLuresPage() {
   const rods = tackleJson as RodEntry[];
   const lures = getCollection("bait");
-  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Wiki", href: "/wiki/" }, { name: "Rods & Lures", href: "/wiki/rods-and-lures/" }];
+  const breadcrumbs = [{ name: "Home", href: "/" }, { name: "Wiki", href: "/wiki/" }, { name: "Bait, Lures & Rods", href: "/wiki/bait-and-lures/" }];
   return (
     <main id="main-content">
-      <JsonLd data={[breadcrumbSchema(breadcrumbs), collectionPageSchema(pageTdk.rodsAndLures)]} />
+      <JsonLd data={[breadcrumbSchema(breadcrumbs), collectionPageSchema(pageTdk.bait)]} />
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Equipment compatibility"
-        title="How to Fish Steam Rods & Lures Guide: Best Catch Setups"
-        description="Choose a target, then match it with the correct rod, lure, island and weighted pool. Boss bodies and quest objects stay separate because they are carried triggers, not normal bait."
+        title="How to Fish Bait, Lures & Rods Guide"
+        description="Choose a target, then match it with the correct rod, lure, island and weighted catch pool. Defeated boss bodies are carried triggers; quest bait such as Leech Bait, Carrot, Fish Bucket and Empty Beer Can is equipped on a rod."
         image="/images/official/gameplay-07.jpg"
         imageAlt="Official How to Fish gameplay screenshot showing a fishing setup"
         summary={<><span><strong>{rods.length}</strong> rod types</span><span><strong>{lures.length}</strong> bait and trigger entries</span></>}
@@ -77,8 +77,8 @@ export function RodsAndLuresPage() {
                 const gameData = getBaitGameData(lure.slug);
                 const rodsUsed = gameData ? [gameData.rod] : [...new Set(catches.map((entry) => entry.rod).filter((rod) => rod !== "None"))];
                 return <article className={styles.lureCard} key={lure.slug}>
-                  <Link className={styles.lureMedia} href={`/wiki/bait/${lure.slug}/`}><Image src={lure.image} alt={lure.imageAlt} fill sizes="240px" /><small>{catches.length} target{catches.length === 1 ? "" : "s"}</small></Link>
-                  <div className={styles.lureBody}><p>{lure.eyebrow}</p><h3><Link href={`/wiki/bait/${lure.slug}/`}>{lure.name}</Link></h3><span>{lure.description}</span><div className={styles.setup}><Route size={13} /><b>{rodsUsed.join(" / ") || "No rod · physical trigger"}{gameData ? ` · ${gameData.catchTimeSeconds.min}–${gameData.catchTimeSeconds.max}s` : ""}</b></div><nav aria-label={`${lure.name} target pages`}>{catches.map((entry) => <Link href={targetHref(entry)} key={entry.slug}><FishIcon size={11} />{entry.name}</Link>)}</nav><Link className={styles.openLink} href={`/wiki/bait/${lure.slug}/`}>See stats and catch pool <ArrowRight size={13} /></Link></div>
+                  <Link className={styles.lureMedia} href={`/wiki/bait-and-lures/${lure.slug}/`}><Image src={lure.image} alt={lure.imageAlt} fill sizes="240px" /><small>{catches.length} target{catches.length === 1 ? "" : "s"}</small></Link>
+                  <div className={styles.lureBody}><p>{lure.eyebrow}</p><h3><Link href={`/wiki/bait-and-lures/${lure.slug}/`}>{lure.name}</Link></h3><span>{lure.description}</span><div className={styles.setup}><Route size={13} /><b>{rodsUsed.join(" / ") || "No rod · physical trigger"}{gameData ? ` · ${gameData.catchTimeSeconds.min}–${gameData.catchTimeSeconds.max}s` : ""}</b></div><nav aria-label={`${lure.name} target pages`}>{catches.map((entry) => <Link href={targetHref(entry)} key={entry.slug}><FishIcon size={11} />{entry.name}</Link>)}</nav><Link className={styles.openLink} href={`/wiki/bait-and-lures/${lure.slug}/`}>See stats and catch pool <ArrowRight size={13} /></Link></div>
                 </article>;
               })}</div>
             </section>;

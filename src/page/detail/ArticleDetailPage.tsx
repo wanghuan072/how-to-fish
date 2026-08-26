@@ -35,7 +35,6 @@ const operatingNotes: Partial<Record<CollectionKey, { title: string; text: strin
   islands: { title: "How this stage moves forward", text: "Finish the local quest, defeat the required encounter and return the requested item so the next route can appear on the Radar." },
   weapons: { title: "When to use this weapon", text: "Compare its price, damage, range and availability before buying it for the creature or boss ahead." },
   bait: { title: "Check the item name first", text: "Regular lure, boss lure and story bait can have similar names but different targets. Match the inventory label and route before casting." },
-  items: { title: "Keep quest items safe", text: "Do not cook, sell or discard a named quest object before its trade, boss trigger or return hand-in is finished." },
   npcs: { title: "Finish the conversation loop", text: "Accept the objective, return with the requested result, speak again and then check the Radar or inventory for the reward." },
   guides: { title: "What this guide helps with", text: "Follow the steps below when you reach this part of the route, then open the linked fish, item or island page when you need a specific setup." },
 };
@@ -45,7 +44,6 @@ const detailPageClasses: Partial<Record<CollectionKey, string>> = {
   quests: styles.questPage,
   islands: styles.islandPage,
   weapons: styles.weaponPage,
-  items: styles.itemPage,
   bait: styles.baitPage,
   npcs: styles.npcPage,
   guides: styles.guidePage,

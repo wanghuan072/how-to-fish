@@ -110,7 +110,6 @@ export type CollectionKey =
   | "bosses"
   | "islands"
   | "weapons"
-  | "items"
   | "bait"
   | "npcs"
   | "updates";

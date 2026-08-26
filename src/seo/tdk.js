@@ -44,9 +44,9 @@ export const pageTdk = {
     lastModified: "2026-08-26",
   },
   wiki: {
-    title: "How to Fish Steam Wiki: Weapons, Items, Bait & Achievements",
-    description: "Use the How to Fish Steam Wiki to compare 8 weapons, locate quest items and NPCs, match bait pools and complete all 28 achievements. Updated for 2026-08.",
-    keywords: ["How to Fish Wiki", "How to Fish weapons", "How to Fish items", "How to Fish achievements"],
+    title: "How to Fish Steam Wiki: Weapons, Bait, NPCs & Achievements",
+    description: "Use the How to Fish Steam Wiki to compare 8 weapons, match bait and rods to catch pools, follow NPC quest chains and complete all 28 achievements. Updated for 2026-08.",
+    keywords: ["How to Fish Wiki", "How to Fish weapons", "How to Fish bait and lures", "How to Fish rods", "How to Fish achievements"],
     path: "/wiki/",
     lastModified: "2026-08-26",
   },
@@ -64,25 +64,11 @@ export const pageTdk = {
     path: "/wiki/weapons/",
     lastModified: updated,
   },
-  items: {
-    title: "How to Fish Steam Items Guide: Uses, Locations & Quests",
-    description: "Find key How to Fish Steam items, where each one is obtained and whether it must be kept for a quest, boss trigger or island unlock. Updated for 2026-08.",
-    keywords: ["How to Fish items", "How to Fish item locations", "How to Fish quest items"],
-    path: "/wiki/items/",
-    lastModified: "2026-08-26",
-  },
   bait: {
-    title: "How to Fish Steam Bait Guide: Catch Lists, Prices & Rods",
-    description: "Match every How to Fish bait, lure and carried trigger with its catch pool, rod, island, shop price and connected boss or quest. Updated for 2026-08.",
-    keywords: ["How to Fish bait", "How to Fish lures", "How to Fish bait list"],
-    path: "/wiki/bait/",
-    lastModified: "2026-08-26",
-  },
-  rodsAndLures: {
-    title: "How to Fish Steam Rods & Lures Guide: Best Catch Setups",
-    description: "Choose the correct How to Fish rod and lure, compare default and weighted catch pools, and separate normal bait from boss triggers. Updated for 2026-08.",
-    keywords: ["How to Fish rods", "How to Fish lures", "How to Fish rod guide"],
-    path: "/wiki/rods-and-lures/",
+    title: "How to Fish Bait, Lures & Rods: Catch Setups",
+    description: "Match every How to Fish bait, lure and trigger with the right rod, catch pool, island, price, quest and boss route using extracted game data. Updated for 2026-08.",
+    keywords: ["How to Fish bait", "How to Fish lures", "How to Fish rods", "How to Fish bait and lures"],
+    path: "/wiki/bait-and-lures/",
     lastModified: "2026-08-26",
   },
   npcs: {
@@ -142,8 +128,7 @@ const detailLabels = {
   bosses: { noun: "Boss", middle: " Boss Strategy", suffix: "How to Fish Steam Guide", topics: "trigger, fight plan, drops, quests and achievements" },
   islands: { noun: "Island", middle: " Guide", suffix: "How to Fish Steam Wiki", topics: "arrival route, creatures, NPCs, quests, shops, weapons and unlocks" },
   weapons: { noun: "Weapon", middle: " Damage & Stats", suffix: "How to Fish Steam Wiki", topics: "damage, price, location, unlock stage and useful encounters" },
-  items: { noun: "Item", middle: " Locations & Uses", suffix: "How to Fish Steam Wiki", topics: "use, location, quest links, boss triggers and progression" },
-  bait: { noun: "Bait", middle: " Catch List", suffix: "How to Fish Steam Guide", topics: "price, rod compatibility, catch list, island and related objectives" },
+  bait: { noun: "Bait, Lure & Rod", middle: " Catch Setup", suffix: "How to Fish Steam Guide", topics: "rod compatibility, catch pool, price, island and related objectives" },
   npcs: { noun: "NPC", middle: " Quests", suffix: "How to Fish Steam Wiki", topics: "location, quest chain, requested items, rewards and unlocks" },
   updates: { noun: "Update", middle: " Patch Notes", suffix: "How to Fish Steam Update", topics: "dated changes to routes, creatures, items, quests and achievements" },
 };
@@ -189,6 +174,24 @@ function fitDescription(value) {
 }
 
 export function getDetailTdk(collection, entry, path) {
+  if (collection === "guides" && entry.slug === "beginner-guide") {
+    return {
+      title: "How to Fish Beginner Guide: Tips & Early Progression",
+      description: "Start How to Fish with beginner fishing tips, Lighthouse quests, selling, the Crab Fishing Rod, boat key, Radar and early weapon priorities.",
+      keywords: ["How to Fish beginner guide", "How to Fish tips", "How to Fish early progression", "How to Fish Lighthouse guide", "How to Fish fishing controls"],
+      path,
+      lastModified: entry.updated ?? "2026-08-24",
+    };
+  }
+  if (collection === "guides" && entry.slug === "full-walkthrough") {
+    return {
+      title: "How to Fish Walkthrough: All Islands, Bosses & Quests",
+      description: "Complete the How to Fish walkthrough from Lighthouse to Volcano with all island unlocks, boss triggers, bait requirements, trophies and NPC hand-ins.",
+      keywords: ["How to Fish walkthrough", "How to Fish all islands", "How to Fish boss guide", "How to Fish quest walkthrough", "How to Fish island unlocks"],
+      path,
+      lastModified: entry.updated ?? "2026-08-24",
+    };
+  }
   const label = detailLabels[collection] ?? detailLabels.guides;
   const context = clean(entry.description).replace(/[.!?]+$/, "");
   const description = fitDescription(`${context}. This ${label.noun.toLowerCase()} page covers ${label.topics} in How to Fish.`);

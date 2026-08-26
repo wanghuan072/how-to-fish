@@ -5,7 +5,7 @@ import { getCollection, getEntry, getFish } from "@/lib/content";
 import { collectionEntryHref } from "@/lib/contentRoutes";
 import { getRelationGroups } from "@/lib/contentRelations";
 import { contentDisplayName } from "@/lib/contentNaming";
-import { islandProgression, itemRoutes, itemSections, weaponProgression, weaponSections } from "@/lib/gameplayData";
+import { islandProgression, weaponProgression, weaponSections } from "@/lib/gameplayData";
 import { getBaitGameData } from "@/data/baitGameData";
 import type { CollectionKey, IslandEntry } from "@/types/content";
 
@@ -63,9 +63,11 @@ function detailFacts(collection: CollectionKey, entry: NonNullable<ReturnType<ty
     ];
     return [
       { label: "Item type", value: bait.bossBait ? "Boss lure" : bait.kind },
+      { label: "Equip to", value: bait.rod },
       { label: "Price", value: bait.price === null ? "Quest supplied" : `$${bait.price.toLocaleString("en-US")}` },
       { label: "Catch time", value: `${bait.catchTimeSeconds.min}–${bait.catchTimeSeconds.max} seconds` },
       { label: "Bait-loss value", value: `${bait.lostOnBaitChance}%` },
+      { label: "Target pool", value: bait.catchables.map((catchable) => catchable.name).join(", ") },
     ];
   }
   if (collection === "npcs") {
@@ -76,15 +78,6 @@ function detailFacts(collection: CollectionKey, entry: NonNullable<ReturnType<ty
       { label: serviceNpc ? "Service" : "Quest role", value: routeRole },
       { label: "Role", value: serviceNpc ? "Shop or island service NPC" : "Quest and progression NPC" },
       { label: "Player action", value: serviceNpc ? "Inspect stock or use the service" : "Accept · complete · return" },
-    ];
-  }
-  if (collection === "items") {
-    const item = itemRoutes[entry.slug];
-    return [
-      { label: "Item type", value: entry.eyebrow ?? "Game item" },
-      { label: "Found at", value: item?.foundAt ?? tags[0] ?? "Check the route below" },
-      { label: "Primary use", value: item?.function ?? tags[1] ?? "Progression" },
-      { label: "Handling", value: item?.handling ?? "See item route" },
     ];
   }
   return [
@@ -130,9 +123,7 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
       ] }
     : collection === "weapons"
       ? { ...entry, sections: [...weaponSections(entry.slug), ...entry.sections] }
-      : collection === "items"
-        ? { ...entry, sections: [...itemSections(entry.slug), ...entry.sections] }
-        : collection === "quests"
+      : collection === "quests"
           ? { ...entry, sections: [{ heading: "Quest brief", paragraphs: [entry.description] }, ...entry.sections] }
         : collection === "npcs"
           ? { ...entry, sections: [

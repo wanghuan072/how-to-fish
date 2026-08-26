@@ -7,7 +7,6 @@ export const detailCollectionKeys = [
   "bosses",
   "islands",
   "weapons",
-  "items",
   "bait",
   "npcs",
 ] as const satisfies readonly CollectionKey[];

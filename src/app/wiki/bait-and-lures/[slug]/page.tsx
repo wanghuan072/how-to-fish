@@ -1,0 +1,18 @@
+import type { Metadata } from "next";
+import { CollectionDetailPage } from "@/page/detail/CollectionDetailPage";
+import { getCollection } from "@/lib/content";
+import { entryMetadata } from "@/seo/route";
+
+export function generateStaticParams() {
+  return getCollection("bait").map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  return entryMetadata("bait", slug);
+}
+
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  return <CollectionDetailPage collection="bait" slug={slug} />;
+}

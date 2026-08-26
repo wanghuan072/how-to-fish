@@ -1,7 +1,7 @@
 [
   {
     "slug": "hot-dog",
-    "name": "Hot Dog Bait Guide",
+    "name": "Hot Dog",
     "eyebrow": "Food bait · $1",
     "description": "Use Hot Dog with the Crab Fishing Rod for Rock Crab and Lobster. It does not belong to the Forest Island Piranha pool.",
     "image": "/images/game/bait/hot-dog.webp",
@@ -17,7 +17,7 @@
   },
   {
     "slug": "beginner-lure",
-    "name": "Beginner Lure Guide",
+    "name": "Beginner Lure",
     "eyebrow": "Regular lure · $3",
     "description": "The first paid regular lure opens a nine-creature pool on Forest Island, including Goby, Salmon and a low-weight Sunfish result.",
     "image": "/images/game/bait/beginner-lure.webp",
@@ -33,7 +33,7 @@
   },
   {
     "slug": "beginner-boss-lure",
-    "name": "Beginner Boss Lure Guide",
+    "name": "Beginner Boss Lure",
     "eyebrow": "Boss lure · $40",
     "description": "Use the $40 Beginner Boss Lure for an even two-target pool containing Sunfish and The Old Pike.",
     "image": "/images/game/bait/beginner-boss-lure.webp",
@@ -65,7 +65,7 @@
   },
   {
     "slug": "standard-lure",
-    "name": "Standard Lure Guide",
+    "name": "Standard Lure",
     "eyebrow": "Regular lure · $15",
     "description": "Standard Lure is the Desert Island regular pool, with ten possible creatures including Bowlfish and a low-weight Blue Shark result.",
     "image": "/images/game/bait/standard-lure.webp",
@@ -81,7 +81,7 @@
   },
   {
     "slug": "standard-boss-lure",
-    "name": "Standard Boss Lure Guide",
+    "name": "Standard Boss Lure",
     "eyebrow": "Boss lure · $280",
     "description": "Standard Boss Lure gives Blue Shark its dedicated Desert Island pool and supports the Grillmaster hand-in.",
     "image": "/images/game/bait/standard-boss-lure.webp",
@@ -97,7 +97,7 @@
   },
   {
     "slug": "carrot",
-    "name": "Carrot Bait",
+    "name": "Carrot",
     "eyebrow": "Quest bait · Desert Island",
     "description": "Trade an eligible endangered creature to the Desert Tourist for the Carrot, then use it with the Fishing Rod for Pufferfish.",
     "image": "/images/game/bait/carrot.webp",
@@ -112,7 +112,7 @@
   },
   {
     "slug": "coconut",
-    "name": "Coconut Bait Guide",
+    "name": "Coconut",
     "eyebrow": "Special bait · $350",
     "description": "Coconut is a Desert Island shop bait with a dedicated Bing Bong pool. It is not stocked by the later island shops.",
     "image": "/images/game/bait/coconut.webp",
@@ -128,7 +128,7 @@
   },
   {
     "slug": "professional-lure",
-    "name": "Professional Lure Guide",
+    "name": "Professional Lure",
     "eyebrow": "Regular lure · $50",
     "description": "Professional Lure has a twelve-creature Rocks Island pool, including Dripper and low-weight Tuna and Seahorse results.",
     "image": "/images/game/bait/professional-lure.webp",
@@ -144,7 +144,7 @@
   },
   {
     "slug": "professional-boss-lure",
-    "name": "Professional Boss Lure Guide",
+    "name": "Professional Boss Lure",
     "eyebrow": "Boss lure · $1,200",
     "description": "Professional Boss Lure gives Tuna its dedicated Rocks Island pool. Keep the body intact for the Albatross encounter.",
     "image": "/images/game/bait/professional-boss-lure.webp",
@@ -160,7 +160,7 @@
   },
   {
     "slug": "scientific-lure",
-    "name": "Scientific Lure Guide",
+    "name": "Scientific Lure",
     "eyebrow": "Regular lure · $500",
     "description": "Scientific Lure is the Volcano Island regular pool for Stonefish, Blobfish, Anglerfish, Oarfish and Superdwarf Fish.",
     "image": "/images/game/bait/scientific-lure.webp",
@@ -176,7 +176,7 @@
   },
   {
     "slug": "scientific-boss-lure",
-    "name": "Scientific Boss Lure Guide",
+    "name": "Scientific Boss Lure",
     "eyebrow": "Boss lure · $5,800",
     "description": "Scientific Boss Lure is the expensive Volcano Island lure with a dedicated Goblin Shark pool.",
     "image": "/images/game/bait/scientific-boss-lure.webp",
@@ -208,7 +208,7 @@
   },
   {
     "slug": "empty-beer-can",
-    "name": "Empty Beer Can Bait",
+    "name": "Empty Beer Can",
     "eyebrow": "Quest bait · Lighthouse",
     "description": "Complete the Lighthouse bait exchange, equip the returned Empty Beer Can on the Crab Fishing Rod and call Spider Crab.",
     "image": "/images/game/bait/empty-beer-can.webp",

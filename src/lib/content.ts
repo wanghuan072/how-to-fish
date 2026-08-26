@@ -7,7 +7,6 @@ import creaturesJson from "@/data/creatures.json";
 import fishValuesJson from "@/data/fish-values.json";
 import guidesJson from "@/data/guides.json";
 import islandsJson from "@/data/islands.json";
-import itemsJson from "@/data/items.json";
 import npcsJson from "@/data/npcs.json";
 import questsJson from "@/data/quests.json";
 import sourcesJson from "@/data/sources.json";
@@ -99,7 +98,6 @@ const contentCollections = {
   bosses: bossesJson,
   islands: islandsJson,
   weapons: weaponsJson,
-  items: itemsJson,
   bait: baitJson,
   npcs: npcsJson,
   updates: updatesJson,
@@ -307,8 +305,8 @@ export function buildSearchIndex(): SearchItem[] {
       description: "All 28 official Steam achievements and concise hints.",
     },
     {
-      title: "Rods & Lures",
-      href: "/wiki/rods-and-lures/",
+      title: "Bait, Lures & Rods",
+      href: "/wiki/bait-and-lures/",
       type: "Wiki",
       description: "Rod compatibility, lure tiers, boss bait and the creatures caught by each setup.",
     },

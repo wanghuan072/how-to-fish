@@ -50,6 +50,27 @@ export const pageTdk = {
     path: "/wiki/",
     lastModified: "2026-08-26",
   },
+  tools: {
+    title: "How to Fish Tools: Killscore Calculator & Bonuses",
+    description: "Use How to Fish tools to calculate a Killscore reward and explore all 20 combat bonus triggers, multipliers and practical conditions.",
+    keywords: ["How to Fish tools", "How to Fish Killscore", "How to Fish bonus calculator", "How to Fish combat bonuses"],
+    path: "/tools/",
+    lastModified: "2026-08-27",
+  },
+  bonusMultiplierCalculator: {
+    title: "How to Fish Bonus Multiplier Calculator",
+    description: "Calculate a How to Fish Killscore reward using base value, attack type, compatible bonus conditions, Multikill tiers and exact multipliers.",
+    keywords: ["How to Fish bonus calculator", "How to Fish Killscore calculator", "How to Fish multiplier"],
+    path: "/tools/bonus-multiplier-calculator/",
+    lastModified: "2026-08-27",
+  },
+  exploreEveryBonus: {
+    title: "How to Fish Killscore Bonuses: All Triggers & Multipliers",
+    description: "Explore all 20 verified How to Fish Killscore bonuses with exact triggers, multipliers, attack types, targets and reward previews.",
+    keywords: ["How to Fish Killscore bonuses", "How to Fish bonus triggers", "How to Fish combat multipliers"],
+    path: "/tools/explore-every-bonus/",
+    lastModified: "2026-08-27",
+  },
   updates: {
     title: "How to Fish Steam Updates: Patch Notes & Game Changes",
     description: "Read How to Fish Steam patch notes with player-focused explanations of changes to fish, bait, prices, quests, bosses and achievements. Updated for 2026-08.",

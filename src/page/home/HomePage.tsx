@@ -25,7 +25,7 @@ const homeFaq = [
   { question: "Which lure should I use on each island?", answer: "The rods' built-in no-bait pools cover the first crabs and fish. Beginner Lure starts the named lure tiers, followed by Standard on Desert, Professional on Rocks and Scientific on Volcano. Story bosses use their own quest bait or carried trigger." },
   { question: "What should I buy first?", answer: "Buy the $10 Radar once the boat is available, then choose a reliable weapon and improve the boat engine when travel time starts slowing the route down." },
   { question: "How do I catch rare Drip creatures?", answer: "Use the normal creature route and watch for the rainbow-name variant. Kill it so the Tab encyclopedia records the Drip entry." },
-  { question: "Can I finish How to Fish solo?", answer: "Yes. The game supports single-player as well as online co-op for up to four players. Co-op makes some fights easier, but it is not required for the main route." },
+  { question: "Can I finish How to Fish solo?", answer: "Yes. The game supports single-player as well as online co-op for up to eight players after Patch 1.0.4. Co-op makes some fights easier, but it is not required for the main route." },
 ];
 
 const startCards = [
@@ -199,7 +199,7 @@ export function HomePage() {
               <div><dt>Creature directory</dt><dd>{creatures.length} entries</dd><span>40 fish · 5 shell creatures · 9 special creatures</span></div>
               <div><dt>Story route</dt><dd>5 stages</dd><span>Lighthouse through Volcano</span></div>
               <div><dt>Steam achievements</dt><dd>{achievements.length}</dd><span>Story, combat and collection goals</span></div>
-              <div><dt>Play styles</dt><dd>1–4 players</dd><span>Single-player and online co-op</span></div>
+              <div><dt>Play styles</dt><dd>1–8 players</dd><span>Single-player and online co-op</span></div>
             </dl>
           </div>
         </section>

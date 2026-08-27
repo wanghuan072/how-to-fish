@@ -12,6 +12,7 @@ import questsJson from "@/data/quests.json";
 import sourcesJson from "@/data/sources.json";
 import updatesJson from "@/data/updates.json";
 import weaponsJson from "@/data/weapons.json";
+import { killBonuses } from "@/lib/killBonuses";
 import { collectionEntryHref } from "@/lib/contentRoutes";
 import { getFishArea, getFishCatchMethod } from "@/lib/fishRelations";
 import { getFishImage, getFishImageAlt } from "@/lib/fishPresentation";
@@ -310,6 +311,18 @@ export function buildSearchIndex(): SearchItem[] {
       type: "Wiki",
       description: "Rod compatibility, lure tiers, boss bait and the creatures caught by each setup.",
     },
+    {
+      title: "Kill Bonus Calculator",
+      href: "/tools/bonus-multiplier-calculator/",
+      type: "Tool",
+      description: "All 20 verified Killscore triggers, multipliers and a practical combat reward calculator.",
+    },
+    ...killBonuses.map((bonus) => ({
+      title: `${bonus.name} Kill Bonus`,
+      href: "/tools/explore-every-bonus/",
+      type: "Tool",
+      description: bonus.summary,
+    })),
   );
   return index;
 }

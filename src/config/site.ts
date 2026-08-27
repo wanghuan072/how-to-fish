@@ -17,6 +17,7 @@ export const siteConfig = {
     { label: "Bosses", href: "/bosses/" },
     { label: "Islands", href: "/islands/" },
     { label: "Wiki", href: "/wiki/" },
+    { label: "Tools", href: "/tools/" },
     { label: "Updates", href: "/updates/" },
   ],
 } as const;

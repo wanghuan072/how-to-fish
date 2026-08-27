@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { InnerHero } from "@/components/layout/InnerHero";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { achievements, getCollection } from "@/lib/content";
+import { killBonuses } from "@/lib/killBonuses";
 import { breadcrumbSchema, collectionPageSchema } from "@/seo/schema";
 import { pageTdk } from "@/seo/tdk";
 import styles from "@/style/page/wiki.module.css";
@@ -48,6 +49,16 @@ const sections = [
     label: "achievements",
     tags: ["Steam checklist", "Unlock hints"],
     action: "View achievements",
+  },
+  {
+    title: "Kill Bonus Tools",
+    description: "Check every verified Killscore trigger and multiplier, then preview the reward for a real ranged, melee or explosive kill.",
+    href: "/tools/",
+    images: ["/images/game/weapons/shotgun.png", "/images/game/weapons/sniper-rifle.png", "/images/game/weapons/assault-rifle.png", "/images/game/weapons/pistol.png"],
+    count: killBonuses.length,
+    label: "combat bonuses",
+    tags: ["Killscore", "Reward calculator"],
+    action: "Open combat tools",
   },
 ] as const;
 

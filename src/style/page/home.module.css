@@ -6,6 +6,8 @@
 .heroCopy { max-width: 760px; }
 .hero h1 { max-width: 740px; margin: 0; font-family: var(--font-display); font-size: clamp(44px, 4.1vw, 60px); line-height: 1.02; letter-spacing: -.045em; text-wrap: balance; text-shadow: 0 5px 0 rgb(0 24 42 / 28%); }
 .heroLead { max-width: 680px; margin: 18px 0 0; color: #f0ffff; font-size: 17px; font-weight: 700; line-height: 1.55; }
+.heroUpdated { display: inline-flex; align-items: center; gap: 7px; margin: 12px 0 0; color: #cde8e9; font-size: 12px; font-weight: 750; }
+.heroUpdated svg { color: var(--gold); }
 .heroActions, .heroStats { display: flex; gap: 10px; }
 .heroActions { margin-top: 24px; }
 .primaryButton, .secondaryButton { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 168px; padding: 12px 18px; border: 1px solid; border-radius: 8px; font-size: 15px; font-weight: 900; box-shadow: 0 7px 16px rgb(0 21 37 / 24%); }
@@ -48,6 +50,9 @@
 .featureImage, .guideCardImage, .islandImage, .questImage, .bossImage, .gearImage, .achievementIcon { position: relative; display: block; min-width: 0; overflow: hidden; background: var(--navy-900); }
 .featureImage, .featureLead .featureImage { width: 100%; height: 100%; aspect-ratio: auto; }
 .featureImage img, .guideCardImage img, .islandImage img, .questImage img, .bossImage img, .gearImage img { object-fit: cover; object-position: center; }
+.homeTable td:first-child { display: table-cell; font-weight: 900; }
+.homeTable td > a { display: flex; align-items: center; gap: 8px; min-width: max-content; color: var(--navy-900); font-weight: 850; }
+.homeTable td > a:hover { color: var(--ocean-700); text-decoration: underline; text-underline-offset: 3px; }
 .gearImage img { object-fit: contain; }
 .featureBody { display: flex; min-width: 0; flex-direction: column; padding: 13px 14px; }
 .featureBody small, .guideCardBody small, .questBody small, .bossBody small, .gearBody small, .achievementBody small { color: var(--ocean-700); font-size: 12px; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
@@ -86,7 +91,6 @@
 .homeTable th, .homeTable td { padding: 9px 10px; text-align: left; border-bottom: 1px solid #e7efec; }
 .homeTable tr:last-child td { border-bottom: 0; }
 .homeTable th { color: var(--muted); background: #f2f7f4; font-size: 12px; }
-.homeTable td:first-child { display: flex; align-items: center; gap: 8px; font-weight: 900; }
 .homeTable td:first-child img { flex: 0 0 auto; padding: 2px; object-fit: contain; background: var(--navy-900); border-radius: 6px; }
 .homeTable td span { display: inline-block; padding: 3px 7px; color: #246649; background: #daf2df; border-radius: 999px; font-size: 12px; }
 .tableLink { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; color: var(--muted); font-size: 13px; }

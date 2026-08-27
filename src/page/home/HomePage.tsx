@@ -4,6 +4,7 @@ import {
   Anchor,
   ArrowRight,
   CheckCircle2,
+  CalendarClock,
   ChevronRight,
   Crosshair,
   Fish,
@@ -67,6 +68,7 @@ export function HomePage() {
           <div className={styles.heroCopy}>
             <h1>How to Fish Steam Guide: Complete Walkthrough & Wiki</h1>
             <p className={styles.heroLead}>Use one connected Steam guide for beginner tips, all {creatures.length} extracted creatures, all {bosses.length} bosses, {islands.length} islands, story quests, weapons, items and every one of the {achievements.length} achievements.</p>
+            <p className={styles.heroUpdated}><CalendarClock size={15} /><time dateTime="2026-08">Site updated: August 2026</time></p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/guides/beginner-guide/"><Anchor size={19} /> Start Here</Link>
               <Link className={styles.secondaryButton} href="/creatures/"><Fish size={19} /> Browse Creatures</Link>
@@ -116,7 +118,7 @@ export function HomePage() {
             <div className={styles.homeTableWrap}>
               <table className={styles.homeTable}>
                 <thead><tr><th>Creature</th><th>Location</th><th>Rod</th><th>Bait / trigger</th></tr></thead>
-                <tbody>{fishRows.map((entry) => <tr key={entry.slug}><td><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} width={52} height={36} />{entry.name}</td><td>{entry.islandName}</td><td><span>{entry.rod}</span></td><td>{entry.lure}</td></tr>)}</tbody>
+                <tbody>{fishRows.map((entry) => <tr key={entry.slug}><td><Link href={`/creatures/${entry.slug}/`}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} width={52} height={36} />{entry.name}</Link></td><td>{entry.islandName}</td><td><span>{entry.rod}</span></td><td>{entry.lure}</td></tr>)}</tbody>
               </table>
             </div>
             <Link className={styles.tableLink} href="/creatures/"><span>Previewing 10 non-boss creatures from the {creatures.length}-entry directory</span><b>Browse all creatures <ArrowRight size={14} /></b></Link>

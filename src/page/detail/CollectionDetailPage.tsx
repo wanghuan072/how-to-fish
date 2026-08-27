@@ -7,6 +7,8 @@ import { getRelationGroups } from "@/lib/contentRelations";
 import { contentDisplayName } from "@/lib/contentNaming";
 import { islandProgression, weaponProgression, weaponSections } from "@/lib/gameplayData";
 import { getBaitGameData } from "@/data/baitGameData";
+import { IslandViewer } from "@/components/islands/IslandViewer";
+import islandViewerJson from "@/data/island-viewers.json";
 import type { CollectionKey, IslandEntry } from "@/types/content";
 
 const islandReach: Record<string, { paragraph: string; bullets: string[] }> = {
@@ -95,6 +97,7 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
   const prefixIsWiki = config.href.startsWith("/wiki/");
   const relationGroups = getRelationGroups(collection, entry);
   const progression = collection === "islands" ? islandProgression[entry.slug] : undefined;
+  const islandViewer = collection === "islands" ? islandViewerJson.find((viewer) => viewer.slug === entry.slug) : undefined;
   const baitData = collection === "bait" ? getBaitGameData(entry.slug) : undefined;
   const islandGameSections = progression ? [
     {
@@ -179,6 +182,7 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
       facts={detailFacts(collection, entry)}
       relationGroups={relationGroups}
       related={relationshipDriven ? [] : related}
+      interactiveContent={islandViewer ? <IslandViewer islandName={(entry as IslandEntry).label} viewerPath={islandViewer.path} /> : undefined}
     />
   );
 }

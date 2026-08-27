@@ -9,6 +9,7 @@ import { contentDisplayName } from "@/lib/contentNaming";
 import type { ContentEntry } from "@/types/content";
 import type { CollectionKey } from "@/types/content";
 import type { RelationGroup } from "@/lib/contentRelations";
+import type { ReactNode } from "react";
 import styles from "@/style/page/detail.module.css";
 
 type Fact = { label: string; value: string };
@@ -23,6 +24,7 @@ type ArticleDetailPageProps = {
   linkedRecords?: Related[];
   relationGroups?: RelationGroup[];
   related?: Related[];
+  interactiveContent?: ReactNode;
 };
 
 function headingId(heading: string) {
@@ -49,7 +51,7 @@ const detailPageClasses: Partial<Record<CollectionKey, string>> = {
   guides: styles.guidePage,
 };
 
-export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [] }: ArticleDetailPageProps) {
+export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [], interactiveContent }: ArticleDetailPageProps) {
   const displayName = contentDisplayName(collection, entry);
   const isNpcPlaceholder = entry.image === "/images/brand/npc-thumbnail-pending.svg";
   const schemas: Record<string, unknown>[] = [
@@ -95,6 +97,8 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
             </div>
             <dl className={styles.overviewFacts}>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
           </section>
+
+          {interactiveContent}
 
           {entry.sections.map((section, index) => (
             <section className={styles.section} id={headingId(section.heading)} key={section.heading}>
@@ -187,6 +191,7 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
               {entry.sections.map((section) => (
                 <li key={section.heading}><a href={`#${headingId(section.heading)}`}>{section.heading}</a></li>
               ))}
+              {interactiveContent ? <li><a href="#interactive-island-map">Interactive 3D map</a></li> : null}
               {linkedRecords.length ? <li><a href="#linked-records">Creature links</a></li> : null}
               {relationGroups.map((group) => <li key={group.id}><a href={`#${group.id}`}>{group.title}</a></li>)}
               {entry.faq?.length ? <li><a href="#frequently-asked-questions">FAQ</a></li> : null}

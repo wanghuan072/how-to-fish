@@ -1,6 +1,5 @@
 "use client";
 
-import { ExternalLink, Maximize2 } from "lucide-react";
 import { useMemo, useSyncExternalStore } from "react";
 import styles from "@/style/page/detail.module.css";
 
@@ -38,9 +37,6 @@ export function IslandViewer({ islandName, viewerPath }: IslandViewerProps) {
           />
         ) : <div className={styles.islandViewerLoading}>Loading the interactive island model…</div>}
       </div>
-      <a className={styles.islandViewerLink} href={viewerUrl} target="_blank" rel="noopener noreferrer">
-        <Maximize2 size={15} aria-hidden="true" /> Open the full-screen island viewer <ExternalLink size={13} aria-hidden="true" />
-      </a>
     </section>
   );
 }

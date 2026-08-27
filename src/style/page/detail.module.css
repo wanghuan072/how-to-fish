@@ -141,6 +141,121 @@
   color: white;
 }
 
+.baitLoadout,
+.baitCatchPool {
+  scroll-margin-top: 95px;
+  padding: 19px;
+  border: 1px solid #1c6878;
+  border-radius: 13px;
+}
+
+.baitLoadout {
+  color: white;
+  background:
+    radial-gradient(circle at 95% 0, rgb(255 196 61 / 18%), transparent 14rem),
+    linear-gradient(145deg, #073c57, #052a46);
+}
+
+.baitCatchPool {
+  margin-top: 10px;
+  background: linear-gradient(145deg, #f7fcfb, #eff8f5);
+  border-color: #cfe5df;
+}
+
+.baitLoadout > header,
+.baitCatchPool > header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.baitLoadout > header > span,
+.baitCatchPool > header > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 29px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.baitLoadout > header > span { color: #062a44; background: var(--gold); }
+.baitCatchPool > header > span { color: white; background: var(--ocean-700); }
+.baitLoadout h2,.baitLoadout p,.baitCatchPool h2,.baitCatchPool p { margin: 0; }
+.baitLoadout h2,.baitCatchPool h2 { font-family: var(--font-display); font-size: 24px; }
+.baitLoadout p { margin-top: 3px; color: #d5e9ec; font-size: 13px; }
+.baitCatchPool p { margin-top: 3px; color: var(--muted); font-size: 13px; }
+.baitCatchPool > header > b { margin-left: auto; padding: 6px 8px; color: #225967; background: #dff0eb; border-radius: 999px; font-size: 11px; white-space: nowrap; }
+
+.baitLoadoutGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.baitLoadoutGrid > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  padding: 10px;
+  background: rgb(255 255 255 / 8%);
+  border: 1px solid rgb(144 225 223 / 22%);
+  border-radius: 9px;
+}
+
+.baitLoadoutGrid svg { color: var(--gold); }
+.baitLoadoutGrid small { color: #9cc6cf; font-size: 9px; text-transform: uppercase; }
+.baitLoadoutGrid strong { overflow: hidden; color: white; font-size: 12px; line-height: 1.35; text-overflow: ellipsis; }
+
+.catchPoolRows { display: grid; gap: 7px; margin-top: 15px; }
+.catchPoolRow { display: grid; grid-template-columns: 44px minmax(110px, .8fr) minmax(80px, 1.5fr) 43px; gap: 9px; align-items: center; padding: 7px; color: var(--ink); background: white; border: 1px solid #d8e9e4; border-radius: 9px; }
+.catchPoolRow:hover { border-color: #71bbb2; box-shadow: 0 6px 14px rgb(2 48 68 / 8%); }
+.catchPoolImage { position: relative; display: block; width: 44px; height: 39px; overflow: hidden; background: var(--navy-900); border-radius: 7px; }
+.catchPoolImage img { padding: 3px; object-fit: contain; }
+.catchPoolName { display: flex; flex-direction: column; min-width: 0; }
+.catchPoolName strong { font-size: 13px; }
+.catchPoolName small { margin-top: 2px; color: var(--muted); font-size: 10px; }
+.catchPoolBar { display: block; height: 9px; overflow: hidden; background: #e6f1ee; border-radius: 999px; }
+.catchPoolBar i { display: block; height: 100%; min-width: 3px; background: linear-gradient(90deg, var(--ocean-600), #42b8ad); border-radius: inherit; }
+.catchPoolRow > b { color: var(--ocean-700); font-size: 12px; text-align: right; }
+
+.weaponLoadout,
+.npcProfile {
+  scroll-margin-top: 95px;
+  padding: 19px;
+  border-radius: 13px;
+}
+
+.weaponLoadout { color: white; background: linear-gradient(135deg, #2a2438, #112b46); border: 1px solid #625276; }
+.npcProfile { background: linear-gradient(145deg, #fffaf0, #f4faf7); border: 1px solid #d8e6d9; }
+.weaponLoadout > header,.npcProfile > header { display: flex; align-items: flex-start; gap: 10px; }
+.weaponLoadout header > span,.npcProfile header > span { display: grid; place-items: center; width: 42px; height: 29px; border-radius: 7px; font-size: 9px; font-weight: 900; letter-spacing: .06em; }
+.weaponLoadout header > span { color: #251b30; background: #f0bf56; }
+.npcProfile header > span { color: white; background: #5c8c72; }
+.weaponLoadout h2,.weaponLoadout p,.npcProfile h2,.npcProfile p { margin: 0; }
+.weaponLoadout h2,.npcProfile h2 { font-family: var(--font-display); font-size: 24px; }
+.weaponLoadout p { margin-top: 3px; color: #ddd6ec; font-size: 13px; }
+.npcProfile p { margin-top: 3px; color: var(--muted); font-size: 13px; }
+.weaponStatGrid,.npcProfileGrid { display: grid; gap: 8px; margin-top: 15px; }
+.weaponStatGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.npcProfileGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.weaponStatGrid > div,.npcProfileGrid > div { display: grid; gap: 3px; min-width: 0; padding: 10px; border-radius: 9px; }
+.weaponStatGrid > div { background: rgb(255 255 255 / 8%); border: 1px solid rgb(235 215 255 / 18%); }
+.npcProfileGrid > div { background: white; border: 1px solid #d7e7dc; }
+.weaponStatGrid svg { color: #f0bf56; }
+.npcProfileGrid svg { color: #4d896a; }
+.weaponStatGrid small,.npcProfileGrid small { font-size: 9px; text-transform: uppercase; }
+.weaponStatGrid small { color: #c9bbdb; }
+.npcProfileGrid small { color: var(--muted); }
+.weaponStatGrid strong,.npcProfileGrid strong { overflow: hidden; font-size: 12px; line-height: 1.35; }
+.weaponStatGrid strong { color: white; }
+.npcProfileGrid strong { color: var(--ink); }
+.weaponHandling { display: grid; grid-template-columns: 90px 1fr; gap: 10px; margin-top: 10px; padding: 10px; color: #e2d8ef; background: rgb(0 0 0 / 14%); border-radius: 8px; font-size: 12px; line-height: 1.45; }
+.weaponHandling strong { color: #f0bf56; }
+
 .overviewCopy > p,
 .overviewCopy h2,
 .overviewCopy > span {
@@ -758,6 +873,32 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+/* Bait and lure records are equipment references: use the available width for
+   compact route cards instead of flowing all groups down a single column. */
+.baitPage .relationGroups,
+.weaponPage .relationGroups {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-count: auto;
+  gap: 11px;
+}
+
+.baitPage .relationGroup,
+.weaponPage .relationGroup {
+  display: block;
+  margin: 0;
+}
+
+.baitPage .relationDataGrid,
+.weaponPage .relationDataGrid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.baitPage .wideRelationGroup,
+.weaponPage .wideRelationGroup {
+  grid-column: 1 / -1;
+}
+
 .faqSection {
   padding: 23px 19px;
   margin-top: 10px;
@@ -1141,6 +1282,12 @@
     grid-template-columns: 1fr;
   }
 
+  .baitLoadoutGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .weaponStatGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .npcProfileGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   .aside {
     position: static;
     grid-row: 1;
@@ -1213,6 +1360,27 @@
     grid-template-columns: 1fr;
   }
 
+  .baitLoadout,
+  .baitCatchPool { padding: 16px 13px; }
+
+  .baitLoadoutGrid { grid-template-columns: 1fr 1fr; }
+
+  .weaponStatGrid,
+  .npcProfileGrid { grid-template-columns: 1fr 1fr; }
+
+  .weaponLoadout,
+  .npcProfile { padding: 16px 13px; }
+
+  .weaponHandling { grid-template-columns: 1fr; }
+
+  .baitCatchPool > header > b { display: none; }
+
+  .catchPoolRow { grid-template-columns: 39px minmax(0, 1fr) 46px; }
+
+  .catchPoolImage { width: 39px; height: 36px; }
+
+  .catchPoolBar { grid-column: 2 / -1; }
+
   .researchGrid {
     grid-template-columns: 1fr;
   }
@@ -1235,6 +1403,16 @@
 
   .relationGroups {
     column-count: 1;
+  }
+
+  .baitPage .relationGroups,
+  .weaponPage .relationGroups {
+    grid-template-columns: 1fr;
+  }
+
+  .baitPage .relationDataGrid,
+  .weaponPage .relationDataGrid {
+    grid-template-columns: 1fr;
   }
 
   .bossPage .section .dataList,

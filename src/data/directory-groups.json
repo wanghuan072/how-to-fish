@@ -37,12 +37,6 @@
       "title": "Story bait",
       "description": "Quest-made triggers that should not be sold, cooked or substituted.",
       "slugs": ["empty-beer-can", "modified-leech", "carrot", "fish-bucket"]
-    },
-    {
-      "id": "encounter-triggers",
-      "title": "Encounter triggers",
-      "description": "Defeated bodies used to start the next fight; these are not equippable lures.",
-      "slugs": ["defeated-tuna", "defeated-bowhead-whale"]
     }
   ],
   "npcs": [

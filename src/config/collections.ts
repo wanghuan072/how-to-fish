@@ -74,7 +74,7 @@ export const collectionConfig: Record<
     breadcrumb: "Bait, Lures & Rods",
     eyebrow: "How to Fish Wiki",
     description:
-      "Match every bait, lure and carried trigger with the correct rod, catch pool, island, shop price and connected boss or quest route.",
+      "Browse every equippable bait and lure by rod, island, shop price, catch pool and connected creature, boss or quest route.",
     href: "/wiki/bait-and-lures/",
     detailPrefix: "/wiki/bait-and-lures",
     image: "/images/official/gameplay-07.jpg",

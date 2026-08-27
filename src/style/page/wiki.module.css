@@ -122,14 +122,40 @@
   background: linear-gradient(145deg, transparent 50%, rgb(0 34 52 / 52%));
 }
 
-.directoryMedia img {
+.directoryMedia > img {
   object-fit: cover;
   transition: transform 180ms ease;
 }
 
-.directoryCard:hover .directoryMedia img {
+.directoryCard:hover .directoryMedia > img {
   transform: scale(1.035);
 }
+
+.categoryMosaic {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  padding: 6px;
+  background: linear-gradient(145deg, #082a42, #0b5c6a);
+}
+
+.categoryMosaic img {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0;
+  min-height: 0;
+  padding: 5px;
+  object-fit: contain;
+  background: rgb(0 22 38 / 46%);
+  border: 1px solid rgb(174 229 225 / 18%);
+  border-radius: 7px;
+}
+
+.directoryCard:hover .categoryMosaic img { transform: scale(1.04); }
 
 .directoryMedia > b {
   position: absolute;

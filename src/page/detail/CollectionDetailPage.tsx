@@ -9,6 +9,9 @@ import { islandProgression, weaponProgression, weaponSections } from "@/lib/game
 import { getBaitGameData } from "@/data/baitGameData";
 import { IslandViewer } from "@/components/islands/IslandViewer";
 import islandViewerJson from "@/data/island-viewers.json";
+import { BaitLoadout } from "@/components/bait/BaitLoadout";
+import { WeaponLoadout } from "@/components/weapons/WeaponLoadout";
+import { NpcProfile } from "@/components/npcs/NpcProfile";
 import type { CollectionKey, IslandEntry } from "@/types/content";
 
 const islandReach: Record<string, { paragraph: string; bullets: string[] }> = {
@@ -128,33 +131,9 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
       ? { ...entry, sections: [...weaponSections(entry.slug), ...entry.sections] }
       : collection === "quests"
           ? { ...entry, sections: [{ heading: "Quest brief", paragraphs: [entry.description] }, ...entry.sections] }
-        : collection === "npcs"
-          ? { ...entry, sections: [
-              ...entry.sections.map((section, index) => index === 0 && /quest/i.test(section.heading) ? { ...section, heading: "Quest chain" } : section),
-              { heading: "NPC overview", paragraphs: [entry.description] },
-            ] }
-          : collection === "bait" && baitData
-            ? { ...entry, sections: [
-                {
-                  heading: "Gameplay parameters",
-                  paragraphs: ["Pool share compares targets inside this bait's extracted catch table. Bait-loss value mirrors the raw Unity field; the exact gameplay moment when it is applied was not derived from this record alone."],
-                  bullets: [
-                    `Rod: ${baitData.rod}`,
-                    `Catch time: ${baitData.catchTimeSeconds.min}–${baitData.catchTimeSeconds.max} seconds`,
-                    `Bait-loss value: ${baitData.lostOnBaitChance}%`,
-                    `Reeling required: ${baitData.requireReeling ? "Yes" : "No"}`,
-                    baitData.acquisition === "Shop"
-                      ? `Shop availability: ${baitData.shopIslandSlugs.map((islandSlug) => (getEntry("islands", islandSlug) as IslandEntry | undefined)?.label ?? islandSlug).join(", ")}`
-                      : "Acquisition: complete the linked island bait quest",
-                  ],
-                },
-                {
-                  heading: "Catch pool weights",
-                  paragraphs: [`This bait can hook ${baitData.catchables.length} target${baitData.catchables.length === 1 ? "" : "s"}. The percentages below add up to the full catch pool for this bait.`],
-                  bullets: baitData.catchables.map((catchable) => `${catchable.name}: weight ${catchable.weight}; ${catchable.poolShare.toFixed(catchable.poolShare % 1 ? 2 : 0)}% pool share.`),
-                },
-                ...entry.sections,
-              ] }
+          : collection === "npcs"
+          ? { ...entry, sections: entry.sections.map((section, index) => index === 0 && /quest/i.test(section.heading) ? { ...section, heading: "Quest chain" } : section) }
+          : collection === "bait" && baitData ? entry
           : entry;
   const relationshipDriven = relationGroups.length > 0;
   const related = getCollection(collection)
@@ -183,6 +162,8 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
       relationGroups={relationGroups}
       related={relationshipDriven ? [] : related}
       interactiveContent={islandViewer ? <IslandViewer islandName={(entry as IslandEntry).label} viewerPath={islandViewer.path} /> : undefined}
+      overviewContent={baitData ? <BaitLoadout bait={baitData} /> : collection === "weapons" && weaponProgression[entry.slug] ? <WeaponLoadout weapon={weaponProgression[entry.slug]} /> : collection === "npcs" ? <NpcProfile entry={entry} /> : undefined}
+      customToc={baitData ? [{ id: "quick-setup", label: "Quick setup" }, { id: "catch-pool", label: "Catch pool" }] : collection === "weapons" ? [{ id: "weapon-overview", label: "Weapon overview" }] : collection === "npcs" ? [{ id: "npc-overview", label: "NPC overview" }] : undefined}
     />
   );
 }

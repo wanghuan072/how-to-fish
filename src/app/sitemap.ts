@@ -3,6 +3,10 @@ import { siteConfig } from "@/config/site";
 import { getCollection, getFishContent, regularFish } from "@/lib/content";
 import { collectionEntryHref, detailCollectionKeys } from "@/lib/contentRoutes";
 import { staticSitemapEntries } from "@/seo/tdk";
+import tackleJson from "@/data/tackle.json";
+
+type RodEntry = { slug: string };
+const rods = tackleJson as RodEntry[];
 
 function url(path: string) {
   return new URL(path, siteConfig.url).toString();
@@ -32,5 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   );
 
-  return [...staticPages, ...fishPages, ...detailPages];
+  const rodPages: MetadataRoute.Sitemap = rods.map((rod) => ({
+    url: url(`/wiki/bait-and-lures/rods/${rod.slug}/`),
+    lastModified: new Date("2026-08-27"),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...fishPages, ...detailPages, ...rodPages];
 }

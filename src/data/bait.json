@@ -220,31 +220,5 @@
     "sections": [
       {"heading": "How to get and use it", "bullets": ["Give a Beer to the Lighthouse Keeper and keep the returned empty can.", "Equip Empty Beer Can on the Crab Fishing Rod.", "Defeat Spider Crab and keep the quest result.", "Return to the Lighthouse Keeper to continue the boat route."]}
     ]
-  },
-  {
-    "slug": "defeated-tuna",
-    "name": "Defeated Tuna Trigger",
-    "eyebrow": "Encounter trigger · Rocks Island",
-    "description": "The defeated Tuna body is placed on land to draw in Albatross. It is a carried encounter object, not an equippable bait or lure.",
-    "image": "/images/game/bosses/tuna.png",
-    "imageAlt": "In-game Tuna encounter image used for the Albatross trigger record",
-    "featured": false,
-    "tags": ["Albatross", "Physical trigger"],
-    "updated": "2026-08-26",
-    "catchSlugs": ["albatross"],
-    "sections": [{"heading": "How the trigger works", "bullets": ["Catch Tuna with Professional Boss Lure.", "Do not sell or cook the body.", "Place it on land to start the Albatross encounter.", "Return the Albatross head after the fight."]}]
-  },
-  {
-    "slug": "defeated-bowhead-whale",
-    "name": "Defeated Bowhead Whale Trigger",
-    "eyebrow": "Final encounter trigger · Volcano",
-    "description": "The defeated Bowhead Whale body starts the mutated final phase. It is a carried encounter object, not an equippable bait or lure.",
-    "image": "/images/game/bosses/bowhead-whale.webp",
-    "imageAlt": "In-game Bowhead Whale encounter image used for the final trigger record",
-    "featured": false,
-    "tags": ["Mutated Bowhead Whale", "Physical trigger"],
-    "updated": "2026-08-26",
-    "catchSlugs": ["mutated-bowhead-whale"],
-    "sections": [{"heading": "How the trigger works", "bullets": ["Defeat Bowhead Whale with Fish Bucket.", "Keep the whale body intact.", "Carry it into the Volcano final encounter area.", "Defeat the mutated phase to complete the story route."]}]
   }
 ]

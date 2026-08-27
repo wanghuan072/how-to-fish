@@ -25,6 +25,8 @@ type ArticleDetailPageProps = {
   relationGroups?: RelationGroup[];
   related?: Related[];
   interactiveContent?: ReactNode;
+  overviewContent?: ReactNode;
+  customToc?: Array<{ id: string; label: string }>;
 };
 
 function headingId(heading: string) {
@@ -51,7 +53,7 @@ const detailPageClasses: Partial<Record<CollectionKey, string>> = {
   guides: styles.guidePage,
 };
 
-export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [], interactiveContent }: ArticleDetailPageProps) {
+export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [], interactiveContent, overviewContent, customToc = [] }: ArticleDetailPageProps) {
   const displayName = contentDisplayName(collection, entry);
   const isNpcPlaceholder = entry.image === "/images/brand/npc-thumbnail-pending.svg";
   const schemas: Record<string, unknown>[] = [
@@ -89,14 +91,14 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
 
       <div className={`container ${styles.layout}`}>
         <article className={styles.article}>
-          <section className={styles.dataOverview}>
+          {overviewContent ?? <section className={styles.dataOverview}>
             <div className={styles.overviewCopy}>
               <p><FileCheck2 size={15} /> Plan before you start</p>
               <h2>{operatingNotes[collection ?? "guides"]?.title ?? "What you need to know"}</h2>
               <span>{operatingNotes[collection ?? "guides"]?.text ?? "Check the route, equipment and next step below."}</span>
             </div>
             <dl className={styles.overviewFacts}>{facts.map((fact) => <div key={fact.label}><dt>{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
-          </section>
+          </section>}
 
           {interactiveContent}
 
@@ -188,6 +190,7 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
           <div className={styles.asidePanel}>
             <h2>On this page</h2>
             <ol className={styles.toc}>
+              {customToc.map((item) => <li key={item.id}><a href={`#${item.id}`}>{item.label}</a></li>)}
               {entry.sections.map((section) => (
                 <li key={section.heading}><a href={`#${headingId(section.heading)}`}>{section.heading}</a></li>
               ))}

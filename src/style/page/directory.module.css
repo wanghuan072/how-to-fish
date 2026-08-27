@@ -261,8 +261,9 @@
 }
 
 .bossMedia img {
-  padding: 8px;
+  padding: 0;
   object-fit: contain;
+  transform: scale(1.6);
 }
 
 .bossMedia > span {

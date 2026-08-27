@@ -13,7 +13,7 @@ const sections = [
     title: "Weapons & Attachments",
     description: "Compare weapon damage, price, magazine size, upgrades and the island where each loadout becomes available.",
     href: "/wiki/weapons/",
-    image: "/images/game/weapons/shotgun.jpg",
+    images: ["/images/game/weapons/shotgun.png", "/images/game/weapons/sniper-rifle.png", "/images/game/weapons/assault-rifle.png", "/images/game/weapons/pistol.png"],
     count: getCollection("weapons").length,
     label: "weapons",
     tags: ["Damage & prices", "Island shops"],
@@ -23,7 +23,7 @@ const sections = [
     title: "Bait, Lures & Rods",
     description: "Match every rod, default pool, regular lure, boss lure and quest trigger to its creatures and island route.",
     href: "/wiki/bait-and-lures/",
-    image: "/images/official/gameplay-07.jpg",
+    images: ["/images/game/rods/fishing-rod.png", "/images/game/bait/beginner-lure.webp", "/images/game/bait/standard-lure.webp", "/images/game/bait/fish-bucket.webp"],
     count: getCollection("bait").length,
     label: "bait & triggers",
     tags: ["Rods & pools", "Catch setups"],
@@ -33,7 +33,7 @@ const sections = [
     title: "NPCs & Quest Givers",
     description: "Locate each character and check the shop, quest request, hand-in or progression reward connected to them.",
     href: "/wiki/npcs/",
-    image: "/images/official/gameplay-04.jpg",
+    images: ["/images/official/gameplay-01.jpg", "/images/official/gameplay-06.jpg", "/images/official/gameplay-02.jpg", "/images/official/gameplay-07.jpg"],
     count: getCollection("npcs").length,
     label: "NPCs",
     tags: ["Locations", "Quest chains"],
@@ -43,7 +43,7 @@ const sections = [
     title: "Achievements",
     description: "Work through all Steam achievements with categorized objectives, unlock rates and links to required routes and equipment.",
     href: "/wiki/achievements/",
-    image: "/images/game/achievements/collector.jpg",
+    images: ["/images/game/achievements/collector.jpg", "/images/game/achievements/deadliest-catch.jpg", "/images/game/achievements/fully-equipped.jpg", "/images/game/achievements/vacation.jpg"],
     count: achievements.length,
     label: "achievements",
     tags: ["Steam checklist", "Unlock hints"],
@@ -81,7 +81,7 @@ export function WikiPage() {
           {sections.map((entry, index) => (
             <Link className={styles.directoryCard} href={entry.href} key={entry.href}>
               <span className={styles.directoryMedia}>
-                <Image src={entry.image} alt="" fill sizes="(max-width: 768px) 120px, 220px" />
+                <span className={styles.categoryMosaic}>{entry.images.map((image) => <Image src={image} alt="" fill sizes="120px" key={image} />)}</span>
                 <b>{String(index + 1).padStart(2, "0")}</b>
               </span>
               <span className={styles.directoryBody}>

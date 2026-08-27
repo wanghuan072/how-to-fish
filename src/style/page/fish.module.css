@@ -341,8 +341,9 @@
 }
 
 .fishThumb img {
-  padding: 3px;
+  padding: 0;
   object-fit: contain;
+  transform: scale(2.05);
   filter: drop-shadow(0 3px 4px rgb(0 15 29 / 28%));
 }
 

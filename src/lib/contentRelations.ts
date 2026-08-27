@@ -233,7 +233,7 @@ function rodItem(slug: string): RelationItem {
   const crab = slug === "crab-fishing-rod";
   return {
     title: crab ? "Crab Fishing Rod" : "Fishing Rod",
-    href: `/wiki/bait-and-lures/#${slug}`,
+    href: `/wiki/bait-and-lures/rods/${slug}/`,
     meta: "Rod",
     description: crab ? "Opening rod for Lighthouse pools and the first story trigger." : "Main rod for regular, boss and story bait routes.",
   };

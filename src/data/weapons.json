@@ -4,15 +4,15 @@
     "name": "Pistol Guide",
     "eyebrow": "Early weapon",
     "description": "A dependable early firearm for learning creature movement, conserving shots and setting up simple trick kills.",
-    "image": "/images/game/weapons/pistol.jpg",
-    "imageAlt": "In-game screenshot showing the Pistol in How to Fish",
+    "image": "/images/game/weapons/pistol.png",
+    "imageAlt": "Game-derived Pistol model from How to Fish",
     "featured": true,
     "tags": [
       "Ranged",
       "Early game"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -39,15 +39,15 @@
     "name": "Shotgun Guide",
     "eyebrow": "Close-range weapon",
     "description": "A forgiving close-range choice when a newly landed creature is already crowding the boat.",
-    "image": "/images/game/weapons/shotgun.jpg",
-    "imageAlt": "In-game screenshot showing the Shotgun in How to Fish",
+    "image": "/images/game/weapons/shotgun.png",
+    "imageAlt": "Game-derived Shotgun model from How to Fish",
     "featured": true,
     "tags": [
       "Close range",
       "Burst"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -68,15 +68,15 @@
     "name": "Sniper Rifle Guide",
     "eyebrow": "Precision weapon",
     "description": "A long-range option for deliberate trick shots, flying targets and clean sightlines.",
-    "image": "/images/game/weapons/sniper-rifle.jpg",
-    "imageAlt": "In-game screenshot showing the Sniper Rifle in How to Fish",
+    "image": "/images/game/weapons/sniper-rifle.png",
+    "imageAlt": "Game-derived Sniper Rifle model from How to Fish",
     "featured": true,
     "tags": [
       "Long range",
       "Trick shots"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -103,15 +103,15 @@
     "name": "Assault Rifle Guide",
     "eyebrow": "Sustained fire",
     "description": "A flexible late-route weapon for maintaining pressure on large creatures and boss targets.",
-    "image": "/images/game/weapons/assault-rifle.jpg",
-    "imageAlt": "In-game screenshot showing the Assault Rifle in How to Fish",
+    "image": "/images/game/weapons/assault-rifle.png",
+    "imageAlt": "Game-derived Assault Rifle model from How to Fish",
     "featured": false,
     "tags": [
       "Ranged",
       "Bosses"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -132,15 +132,15 @@
     "name": "Dynamite Guide",
     "eyebrow": "Explosive · $25",
     "description": "A fast bulk-kill tool and physics launcher with two dedicated achievement uses.",
-    "image": "/images/game/weapons/dynamite.jpg",
-    "imageAlt": "In-game screenshot showing the Dynamite in How to Fish",
+    "image": "/images/game/weapons/dynamite.png",
+    "imageAlt": "Game-derived Dynamite model from How to Fish",
     "featured": false,
     "tags": [
       "Explosive",
       "$25"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -161,15 +161,15 @@
     "name": "Brass Knuckles Guide",
     "eyebrow": "Melee weapon",
     "description": "An early melee upgrade for finishing ordinary creatures without spending ammunition.",
-    "image": "/images/game/weapons/brass-knuckles.jpg",
-    "imageAlt": "In-game screenshot showing the Brass Knuckles in How to Fish",
+    "image": "/images/game/weapons/brass-knuckles.png",
+    "imageAlt": "Game-derived Brass Knuckles model from How to Fish",
     "featured": false,
     "tags": [
       "Melee",
       "Early game"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -185,15 +185,15 @@
     "name": "Knife Guide",
     "eyebrow": "Melee weapon",
     "description": "A stronger early melee finisher that preserves ammunition on small and medium catches.",
-    "image": "/images/game/weapons/knife.jpg",
-    "imageAlt": "In-game screenshot showing the Knife in How to Fish",
+    "image": "/images/game/weapons/knife.png",
+    "imageAlt": "Game-derived Knife model from How to Fish",
     "featured": false,
     "tags": [
       "Melee",
       "Economy"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {
@@ -209,15 +209,15 @@
     "name": "SMG / Uzi Guide",
     "eyebrow": "Rapid-fire weapon",
     "description": "A flexible mid-game weapon for Blue Shark, Albatross and other moving targets.",
-    "image": "/images/game/weapons/smg.jpg",
-    "imageAlt": "In-game screenshot showing the SMG / Uzi in How to Fish",
+    "image": "/images/game/weapons/smg.png",
+    "imageAlt": "Game-derived SMG model from How to Fish",
     "featured": true,
     "tags": [
       "Rapid fire",
       "Mid game"
     ],
     "updated": "2026-08-24",
-    "sourceLabel": "In-game walkthrough frame with the weapon visible",
+    "sourceLabel": "Unpacked game weapon model",
     "sourceUrl": "https://www.youtube.com/watch?v=mK5WaARlT9w",
     "sections": [
       {

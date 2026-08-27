@@ -38,7 +38,7 @@
   { "slug": "rock-crab", "group": "Shell creatures", "status": "Journal", "sourceClass": "Crab", "image": "/images/game/creatures/rock-crab.png" },
   { "slug": "salmon", "group": "Fish", "status": "Journal", "sourceClass": "Fish", "image": "/images/game/creatures/salmon.png" },
   { "slug": "sea-urchin", "group": "Special creatures", "status": "Journal", "sourceClass": "AttackingFish", "image": "/images/game/creatures/sea-urchin.png" },
-  { "slug": "seagull", "group": "Special creatures", "status": "Ambient", "sourceClass": "Bird", "image": "/images/brand/creature-thumbnail-pending.svg" },
+  { "slug": "seagull", "group": "Special creatures", "status": "Ambient", "sourceClass": "Bird", "image": "/images/game/creatures/seagull.png" },
   { "slug": "seahorse", "group": "Fish", "status": "Journal", "sourceClass": "Fish", "image": "/images/game/creatures/seahorse.png" },
   { "slug": "sengarat", "group": "Fish", "status": "Journal", "sourceClass": "Fish", "image": "/images/game/creatures/sengarat.png" },
   { "slug": "shrimp", "group": "Shell creatures", "status": "Journal", "sourceClass": "Fish", "image": "/images/game/creatures/shrimp.png" },

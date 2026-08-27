@@ -11,7 +11,7 @@ import { defaultCatchPools, getBaitGameData } from "@/data/baitGameData";
 import type { ContentEntry, FishEntry } from "@/types/content";
 import styles from "@/style/page/tackle.module.css";
 
-type RodEntry = { slug: string; name: string; stage: string; description: string; fishSlugs: string[] };
+type RodEntry = { slug: string; name: string; stage: string; description: string; image: string; imageAlt: string; fishSlugs: string[] };
 
 const lureGroups = [
   { id: "regular", title: "Regular lure tiers", description: "Repeatable island catch pools", matches: (entry: ContentEntry) => /Regular lure|Starter lure/.test(entry.eyebrow ?? "") },
@@ -56,7 +56,7 @@ export function BaitAndLuresPage() {
               const catches = rod.fishSlugs.map((slug) => fish.find((entry) => entry.slug === slug)).filter((entry): entry is FishEntry => Boolean(entry));
               const regularCount = catches.filter((entry) => !isBossCreature(entry)).length;
               return <article className={styles.rodCard} id={rod.slug} key={rod.slug}>
-                <div className={styles.rodIdentity}><span><Anchor size={30} /></span><div><small>{rod.stage}</small><h3>{rod.name}</h3><p>{rod.description}</p></div></div>
+                <div className={styles.rodIdentity}><span className={styles.rodMedia}><Image src={rod.image} alt={rod.imageAlt} fill sizes="80px" /></span><div><small>{rod.stage}</small><h3>{rod.name}</h3><p>{rod.description}</p></div></div>
                 <dl><div><dt>Regular targets</dt><dd>{regularCount}</dd></div><div><dt>Encounters</dt><dd>{catches.length - regularCount}</dd></div><div><dt>Islands</dt><dd>{new Set(catches.map((entry) => entry.islandSlug)).size}</dd></div></dl>
                 <nav aria-label={`${rod.name} example targets`}>{catches.slice(0, 8).map((entry) => <Link href={targetHref(entry)} key={entry.slug}>{entry.name}</Link>)}</nav>
               </article>;

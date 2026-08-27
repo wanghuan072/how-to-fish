@@ -51,6 +51,7 @@ const detailPageClasses: Partial<Record<CollectionKey, string>> = {
 
 export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts = [], linkedRecords = [], relationGroups = [], related = [] }: ArticleDetailPageProps) {
   const displayName = contentDisplayName(collection, entry);
+  const isNpcPlaceholder = entry.image === "/images/brand/npc-thumbnail-pending.svg";
   const schemas: Record<string, unknown>[] = [
     articleSchema({ ...entry, name: displayName }, path),
     breadcrumbSchema(breadcrumbs),
@@ -67,7 +68,9 @@ export function ArticleDetailPage({ entry, collection, path, breadcrumbs, facts 
           <Breadcrumb items={breadcrumbs} />
           <div className={styles.heroInner}>
             <div className={styles.heroMedia}>
-              <Image src={entry.image} alt={entry.imageAlt} fill loading="eager" sizes="(max-width: 768px) 92vw, 560px" />
+              {isNpcPlaceholder
+                ? <Image className={styles.placeholderImage} src={entry.image} alt={entry.imageAlt} width={560} height={315} loading="eager" />
+                : <Image src={entry.image} alt={entry.imageAlt} fill loading="eager" sizes="(max-width: 768px) 92vw, 560px" />}
             </div>
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>{entry.eyebrow ?? "How to Fish guide"}</p>

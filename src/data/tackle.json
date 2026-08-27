@@ -3,6 +3,8 @@
     "slug": "crab-fishing-rod",
     "name": "Crab Fishing Rod",
     "stage": "Lighthouse starting gear",
+    "image": "/images/game/rods/crab-fishing-rod.png",
+    "imageAlt": "Game-derived Crab Fishing Rod model from How to Fish",
     "description": "The opening rod used for the Lighthouse crab pool, Hot Dog catches and the Empty Beer Can Spider Crab route.",
     "fishSlugs": ["brown-crab", "rock-crab", "shrimp", "lobster", "spider-crab"]
   },
@@ -10,6 +12,8 @@
     "slug": "fishing-rod",
     "name": "Fishing Rod",
     "stage": "Main five-island fishing rod",
+    "image": "/images/game/rods/fishing-rod.png",
+    "imageAlt": "Game-derived Fishing Rod model from How to Fish",
     "description": "The standard rod used by default fish pools, regular and boss lure tiers, Leech Bait, Carrot, Coconut and Fish Bucket.",
     "fishSlugs": ["mackerel", "gar", "pike", "cod", "piranha", "goby", "goldfish", "perch", "triggerfish", "salmon", "sunfish", "old-pike", "giant-piranha", "angelfish", "boxfish", "catfish", "sea-urchin", "seahorse", "clownfish", "bluegill", "bowlfish", "needlefish", "blue-shark", "pufferfish", "bing-bong", "parrotfish", "voxelfish", "bass", "halibut", "eel", "tigerfish", "flying-fish", "sengarat", "red-snapper", "dripper", "tuna", "anglerfish", "blobfish", "oarfish", "superdwarf-fish", "stonefish", "goblin-shark", "bowhead-whale"]
   }

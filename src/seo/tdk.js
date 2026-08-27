@@ -3,7 +3,7 @@ const updated = "2026-08-25";
 export const pageTdk = {
   home: {
     title: "How to Fish Steam Guide: 54 Creatures, Bosses & All Islands",
-    description: "Complete How to Fish Steam guide with all 54 extracted creatures, 11 boss strategies, 5 island routes, quest walkthroughs and all 28 Steam achievements. Updated for 2026-08.",
+    description: "Complete How to Fish Steam guide: 54 extracted creatures, 11 boss strategies, 5 island routes, quest walkthroughs and all 28 achievements. Updated August 2026.",
     keywords: ["How to Fish", "How to Fish guide", "How to Fish creatures", "How to Fish quests", "How to Fish bosses", "How to Fish islands"],
     path: "/",
     lastModified: "2026-08-26",
@@ -16,8 +16,8 @@ export const pageTdk = {
     lastModified: "2026-08-26",
   },
   creatures: {
-    title: "How to Fish Creatures: All 54 Fish, Shell & Special Creatures",
-    description: "Browse all 54 extracted How to Fish creatures: 40 fish, 5 shell creatures and 9 special creatures, with locations, bait, values and direct Boss links. Updated for 2026-08.",
+    title: "How to Fish Creatures: 54 Fish, Shell & Special Creatures",
+    description: "Browse all 54 extracted How to Fish creatures: 40 fish, 5 shell creatures and 9 special creatures, with locations, bait, values and Boss links.",
     keywords: ["How to Fish creatures", "How to Fish creature list", "How to Fish fish", "How to Fish shell creatures", "How to Fish special creatures"],
     path: "/creatures/",
     lastModified: "2026-08-26",
@@ -45,7 +45,7 @@ export const pageTdk = {
   },
   wiki: {
     title: "How to Fish Steam Wiki: Weapons, Bait, NPCs & Achievements",
-    description: "Use the How to Fish Steam Wiki to compare 8 weapons, match bait and rods to catch pools, follow NPC quest chains and complete all 28 achievements. Updated for 2026-08.",
+    description: "Use the How to Fish Steam Wiki to compare 8 weapons, match bait and rods to catch pools, follow NPC quest chains and complete all 28 achievements.",
     keywords: ["How to Fish Wiki", "How to Fish weapons", "How to Fish bait and lures", "How to Fish rods", "How to Fish achievements"],
     path: "/wiki/",
     lastModified: "2026-08-26",
@@ -66,7 +66,7 @@ export const pageTdk = {
   },
   bait: {
     title: "How to Fish Bait, Lures & Rods: Catch Setups",
-    description: "Match every How to Fish bait, lure and trigger with the right rod, catch pool, island, price, quest and boss route using extracted game data. Updated for 2026-08.",
+    description: "Match every How to Fish bait, lure and trigger with the right rod, catch pool, island, price, quest and boss route using extracted game data.",
     keywords: ["How to Fish bait", "How to Fish lures", "How to Fish rods", "How to Fish bait and lures"],
     path: "/wiki/bait-and-lures/",
     lastModified: "2026-08-26",

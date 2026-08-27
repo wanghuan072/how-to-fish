@@ -35,7 +35,7 @@ export function BaitAndLuresPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Equipment compatibility"
-        title="How to Fish Bait, Lures & Rods Guide"
+        title="How to Fish Bait, Lures & Rods: Catch Setups"
         description="Choose a target, then match it with the correct rod, lure, island and weighted catch pool. Defeated boss bodies are carried triggers; quest bait such as Leech Bait, Carrot, Fish Bucket and Empty Beer Can is equipped on a rod."
         image="/images/official/gameplay-07.jpg"
         imageAlt="Official How to Fish gameplay screenshot showing a fishing setup"

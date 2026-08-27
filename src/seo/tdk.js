@@ -58,7 +58,7 @@ export const pageTdk = {
     lastModified: updated,
   },
   weapons: {
-    title: "How to Fish Steam Weapons Guide: Damage, Prices & Locations",
+    title: "How to Fish Steam Weapons: Damage, Prices & Locations",
     description: "Compare all 8 How to Fish weapons by damage, price, magazine, upgrades and island availability, with practical boss loadouts. Updated for 2026-08.",
     keywords: ["How to Fish weapons", "How to Fish weapon damage", "How to Fish guns"],
     path: "/wiki/weapons/",
@@ -72,14 +72,14 @@ export const pageTdk = {
     lastModified: "2026-08-26",
   },
   npcs: {
-    title: "How to Fish Steam NPC Guide: Locations, Quests & Rewards",
+    title: "How to Fish Steam NPCs: Locations, Quests & Rewards",
     description: "Find all 14 documented How to Fish NPCs, their island and service, quest request, return dialogue, reward and next route unlock. Updated for 2026-08.",
     keywords: ["How to Fish NPCs", "How to Fish NPC locations", "How to Fish quest givers"],
     path: "/wiki/npcs/",
     lastModified: "2026-08-26",
   },
   achievements: {
-    title: "How to Fish Steam Achievements Guide: All 28 Unlocks",
+    title: "How to Fish Steam Achievements: All 28 Unlocks",
     description: "Complete all 28 How to Fish Steam achievements with trigger notes, practical tips, unlock rates and links to related fish, bosses and gear. Updated for 2026-08.",
     keywords: ["How to Fish achievements", "How to Fish achievement guide", "How to Fish Steam achievements"],
     path: "/wiki/achievements/",

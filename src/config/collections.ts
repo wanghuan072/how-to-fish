@@ -58,7 +58,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-01.jpg",
   },
   weapons: {
-    title: "How to Fish Steam Weapons Guide: All 8 Weapons & Stats",
+    title: "How to Fish Steam Weapons: All 8 Weapons & Stats",
     seoTitle: "Weapons — Prices, Damage & Locations",
     breadcrumb: "Weapons",
     eyebrow: "How to Fish Wiki",
@@ -69,7 +69,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-05.jpg",
   },
   bait: {
-    title: "How to Fish Bait, Lures & Rods Guide: Catch Setups",
+    title: "How to Fish Bait, Lures & Rods: Catch Setups",
     seoTitle: "Bait, Lures & Rods — Catch Setups",
     breadcrumb: "Bait, Lures & Rods",
     eyebrow: "How to Fish Wiki",
@@ -80,7 +80,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-07.jpg",
   },
   npcs: {
-    title: "How to Fish Steam NPC Guide: All 14 Locations & Quests",
+    title: "How to Fish Steam NPCs: All 14 Locations & Quests",
     seoTitle: "NPCs — Locations, Quests & Rewards",
     breadcrumb: "NPCs",
     eyebrow: "How to Fish Wiki",

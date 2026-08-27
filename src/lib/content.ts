@@ -158,6 +158,13 @@ export function isBossCreature(entry: FishEntry) {
 export const regularFish = fish.filter((entry) => !isBossCreature(entry));
 export const bossCreatures = fish.filter(isBossCreature);
 export const creatures = fish;
+export const killscoreCreatures = creatures.filter((entry) => (
+  entry.baseValue !== undefined
+  && entry.baseValue > 0
+  && entry.creatureStatus !== "Ground pickup"
+  && entry.creatureStatus !== "Ambient"
+  && !/ground pickup|ambient creature/i.test(entry.lure)
+));
 export const collectorFish = fish.filter((entry) => entry.collectionStatus === "Confirmed");
 export const additionalCatchTableFish = fish.filter((entry) => entry.collectionStatus === "Unconfirmed");
 export const regularCollectorFish = regularFish.filter((entry) => entry.collectionStatus === "Confirmed");

@@ -7,7 +7,7 @@ import { pageTdk } from "@/seo/tdk";
 import styles from "@/style/page/kill-bonuses.module.css";
 
 const tools = [
-  { title: "Bonus Multiplier Calculator", description: "Enter a base reward, select the attack type and combine compatible Killscore bonuses to preview the final value.", href: "/tools/bonus-multiplier-calculator/", icon: Calculator, label: "Interactive calculator", action: "Open calculator" },
+  { title: "Bonus Multiplier Calculator", description: "Choose a sellable creature, select the attack type and combine compatible Killscore bonuses to preview its final value.", href: "/tools/bonus-multiplier-calculator/", icon: Calculator, label: "Interactive calculator", action: "Open calculator" },
   { title: "Explore Every Bonus", description: "Browse all 20 verified Killscore bonuses and expand any record to see its trigger, multiplier and practical explanation.", href: "/tools/explore-every-bonus/", icon: ListChecks, label: "20 verified records", action: "Browse bonuses" },
 ] as const;
 

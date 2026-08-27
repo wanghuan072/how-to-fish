@@ -56,9 +56,28 @@
 .calculatorHeader h2, .detailTool h2 { margin-top: 4px; font-family: var(--font-display); font-size: 28px; line-height: 1.08; }
 .calculatorHeader > div > span { display: block; max-width: 570px; margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 .stepLabel { padding: 6px 9px; color: var(--ocean-700); background: #e7f5f0; border-radius: 999px; font-size: 10px; font-weight: 900; white-space: nowrap; }
-.calculatorSetup { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 16px; align-items: end; padding: 17px 22px; background: #f5faf7; border-bottom: 1px solid var(--line); }
+.calculatorSetup { display: grid; gap: 16px; padding: 17px 22px; background: #f5faf7; border-bottom: 1px solid var(--line); }
 .calculatorSetup label, .calculatorSetup fieldset { display: grid; gap: 6px; padding: 0; margin: 0; border: 0; color: #47646a; font-size: 10px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .calculatorSetup input, .calculatorSetup select, .detailTool input, .detailTool select { width: 100%; padding: 10px; color: var(--navy-900); background: white; border: 1px solid #bfded7; border-radius: 8px; font: inherit; text-transform: none; }
+.creaturePicker { padding: 14px; background: white; border: 1px solid #c9e4dd; border-radius: 12px; }
+.creaturePicker > header { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.creaturePicker p, .creaturePicker h3, .creaturePicker span { margin: 0; }
+.creaturePicker p { color: var(--orange); font-size: 9px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+.creaturePicker h3 { margin-top: 3px; color: var(--navy-900); font-family: var(--font-display); font-size: 20px; }
+.creaturePicker header span { display: block; max-width: 570px; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.4; }
+.creaturePicker > header > b { padding: 6px 9px; color: var(--ocean-700); background: #e7f5ef; border-radius: 999px; font-size: 10px; white-space: nowrap; }
+.creatureFilters { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 0 9px; }
+.creatureFilters button { padding: 6px 9px; color: #42666a; background: #f7fbf9; border: 1px solid #c9e4dd; border-radius: 999px; font-size: 10px; font-weight: 850; }
+.creatureFilters .selectedCreatureFilter { color: white; background: var(--ocean-700); border-color: var(--ocean-700); }
+.creatureList { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 7px; max-height: 258px; padding: 2px 3px 3px; overflow-y: auto; }
+.creatureOption { display: grid; grid-template-rows: 54px auto; gap: 5px; align-content: start; min-width: 0; padding: 6px; color: var(--navy-900); background: #fbfdfc; border: 1px solid #d4e8e1; border-radius: 9px; text-align: center; }
+.creatureOption:hover { border-color: #69aea5; background: #f1faf7; }
+.creatureOption.selectedCreature { background: #e4f5ee; border-color: var(--ocean-700); box-shadow: inset 0 0 0 1px var(--ocean-700); }
+.creatureImage { position: relative; display: block; height: 54px; overflow: hidden; background: #003c54; border-radius: 7px; }
+.creatureImage img { object-fit: contain; padding: 3px; transform: scale(2.2); }
+.creatureOption strong, .creatureOption small { display: block; min-width: 0; }
+.creatureOption strong { overflow: hidden; color: var(--navy-900); font-size: 10px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.creatureOption small { margin-top: 2px; overflow: hidden; color: var(--muted); font-size: 8px; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
 .calculatorSetup fieldset > div { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
 .calculatorSetup fieldset button { padding: 10px 8px; color: #41636a; background: white; border: 1px solid #bfded7; border-radius: 8px; font-size: 12px; font-weight: 850; }
 .calculatorSetup fieldset .selectedType { color: white; background: var(--ocean-700); border-color: var(--ocean-700); }
@@ -166,6 +185,7 @@
 
 @media (max-width: 900px) {
   .calculatorWorkspace { grid-template-columns: 1fr; }
+  .creatureList { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   .calculatorResult { position: static; grid-template-columns: repeat(3, minmax(0, 1fr)); border-left: 0; }
   .calculatorResult > p, .calculatorResult h3, .calculatorResult button, .appliedBonuses, .calculatorNote { grid-column: 1 / -1; }
   .calculatorResult dl { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -183,6 +203,8 @@
   .calculatorHeader, .conditionIntro { align-items: flex-start; flex-direction: column; }
   .calculatorSetup, .detailTool, .calculatorInputs, .bonusGrid { grid-template-columns: 1fr; }
   .calculatorSetup fieldset > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .creaturePicker > header { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .creatureList { grid-template-columns: repeat(3, minmax(0, 1fr)); max-height: 300px; }
   .conditionIntro span { max-width: none; text-align: left; }
   .conditionGroup > div { grid-template-columns: 1fr; }
   .multikillControl { grid-template-columns: 1fr; }

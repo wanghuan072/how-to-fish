@@ -1,0 +1,7 @@
+[
+  { "slug": "lighthouse", "viewerIsland": "Island1", "x": 46.72, "y": 20, "marker": "Starting area", "markerColor": "Blue" },
+  { "slug": "island-2-forest", "viewerIsland": "Island2", "x": 69.71, "y": 50.67, "marker": "Forest route", "markerColor": "Green" },
+  { "slug": "island-3-desert", "viewerIsland": "Island3", "x": 63.47, "y": 71.22, "marker": "Desert route", "markerColor": "Yellow" },
+  { "slug": "island-4-rocks", "viewerIsland": "Island4", "x": 48.36, "y": 80, "marker": "Rocks route", "markerColor": "Red" },
+  { "slug": "island-5-volcano", "viewerIsland": "Island5", "x": 30.29, "y": 70.78, "marker": "Final route", "markerColor": "Pink" }
+]

@@ -14,7 +14,6 @@ import {
   UserRound,
 } from "lucide-react";
 import { InnerHero } from "@/components/layout/InnerHero";
-import { IslandPreview } from "@/components/islands/IslandPreview";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { collectionConfig } from "@/config/collections";
 import directoryGroupsJson from "@/data/directory-groups.json";
@@ -86,7 +85,7 @@ function IslandDirectory({ entries, config }: { entries: ContentEntry[]; config:
       {islands.map((entry, index) => (
         <article className={styles.routeStop} id={entry.slug} key={entry.slug}>
           <div className={styles.routeRail}><span>{entry.number}</span>{index < islands.length - 1 ? <i /> : null}</div>
-          <Link className={styles.routeMedia} href={entryHref(config, entry)} aria-label={`Open ${entry.label} route`}><IslandPreview slug={entry.slug} label={entry.label} /></Link>
+          <Link className={styles.routeMedia} href={entryHref(config, entry)} aria-label={`Open ${entry.label} route`}><Image src={entry.image} alt={entry.imageAlt} fill sizes="(max-width: 768px) 100vw, 330px" /></Link>
           <div className={styles.routeBody}>
             <p className={styles.kicker}><Route size={14} /> Stage {entry.number} · {entry.tags?.[1]}</p>
             <h2><Link href={entryHref(config, entry)}>{entry.label}</Link></h2>

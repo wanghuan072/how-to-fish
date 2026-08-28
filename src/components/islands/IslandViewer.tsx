@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useSyncExternalStore } from "react";
+import Link from "next/link";
 import styles from "@/style/page/detail.module.css";
 
 const viewerOrigin = "https://how-to-fish-islands.vercel.app";
@@ -8,10 +9,11 @@ const emptySubscribe = () => () => {};
 
 type IslandViewerProps = {
   islandName: string;
+  islandSlug: string;
   viewerPath: string;
 };
 
-export function IslandViewer({ islandName, viewerPath }: IslandViewerProps) {
+export function IslandViewer({ islandName, islandSlug, viewerPath }: IslandViewerProps) {
   const parentOrigin = useSyncExternalStore(emptySubscribe, () => window.location.origin, () => "");
 
   const viewerUrl = useMemo(() => {
@@ -25,6 +27,7 @@ export function IslandViewer({ islandName, viewerPath }: IslandViewerProps) {
     <section className={`${styles.section} ${styles.islandViewerSection}`} id="interactive-island-map">
       <div className={styles.sectionHeading}><span>3D</span><h2>Explore {islandName} in 3D</h2></div>
       <p>Use the interactive island model to inspect the coastline and landmarks while following this route. Drag to rotate, scroll to zoom and use the viewer controls to reset the camera.</p>
+      <Link className={styles.mapReturnLink} href={`/map/#${islandSlug}`}>View {islandName} on the interactive map →</Link>
       <div className={styles.islandViewerFrame}>
         {parentOrigin ? (
           <iframe

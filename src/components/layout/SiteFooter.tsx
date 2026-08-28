@@ -30,7 +30,7 @@ export function SiteFooter() {
         <section>
           <h2>Navigate</h2>
           <ul className={styles.footerSmall}>
-            {siteConfig.nav.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}
+            {siteConfig.nav.map((item) => <li key={item.href}><Link href={item.href} prefetch={item.href === "/wiki/" ? false : undefined}>{item.label}</Link></li>)}
           </ul>
         </section>
         <section>

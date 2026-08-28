@@ -43,6 +43,13 @@ export const pageTdk = {
     path: "/islands/",
     lastModified: "2026-08-26",
   },
+  map: {
+    title: "How to Fish Interactive Map: All 5 Island Locations",
+    description: "Use the How to Fish interactive map to see Lighthouse, Forest, Desert, Rocks and Volcano Island locations, story order, Radar markers and linked route guides.",
+    keywords: ["How to Fish map", "How to Fish island map", "How to Fish island locations", "How to Fish interactive map"],
+    path: "/map/",
+    lastModified: "2026-08-28",
+  },
   wiki: {
     title: "How to Fish Steam Wiki: Weapons, Bait, NPCs & Achievements",
     description: "Use the How to Fish Steam Wiki to compare 8 weapons, match bait and rods to catch pools, follow NPC quest chains and complete all 28 achievements.",

@@ -1,0 +1,41 @@
+.paper { position: relative; z-index: 2; width: min(calc(100% - 40px), 1240px); padding: 24px; margin: -34px auto 38px; background: var(--paper); border: 1px solid white; border-radius: 20px; box-shadow: var(--shadow); }
+.mapSection { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: 15px; }
+.mapIntro { padding: 20px 22px 16px; border-bottom: 2px solid var(--navy-800); }
+.mapIntro p, .mapIntro h2, .mapIntro span { margin: 0; }
+.mapIntro p { color: var(--orange); font-size: 10px; font-weight: 900; letter-spacing: .075em; text-transform: uppercase; }
+.mapIntro h2 { margin-top: 3px; color: var(--navy-900); font-family: var(--font-display); font-size: 28px; }
+.mapIntro span { display: block; max-width: 700px; margin-top: 5px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.mapViewport { position: relative; height: 800px; overflow: hidden; background: #207fb9; }
+.mapLoading { height: 100%; display: grid; place-items: center; color: white; font-weight: 800; background: #207fb9; }
+.leafletMap { width: 100%; height: 100%; background: #207fb9; cursor: grab; }
+.leafletMap:active { cursor: grabbing; }
+.leafletMap :global(.leaflet-control-zoom) { overflow: hidden; border: 1px solid rgb(255 255 255 / 54%) !important; border-radius: 8px !important; box-shadow: 0 5px 15px rgb(1 32 54 / 28%) !important; }
+.leafletMap :global(.leaflet-control-zoom a) { width: 32px; height: 32px; border-color: rgb(255 255 255 / 45%) !important; color: var(--navy-900) !important; background: rgb(255 255 255 / 93%) !important; font: 22px/30px Arial, sans-serif !important; }
+.leafletMap :global(.leaflet-tooltip) { border: 1px solid rgb(0 58 85 / 18%); border-radius: 5px; color: var(--navy-900); background: rgb(255 255 255 / 94%); box-shadow: 0 4px 12px rgb(0 44 67 / 20%); font-family: var(--font-body); font-size: 11px; font-weight: 800; }
+.leafletMap :global(.leaflet-tooltip-top::before) { border-top-color: rgb(255 255 255 / 94%); }
+.leafletMap :global(.leaflet-popup-content-wrapper) { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 16px 36px rgb(0 46 69 / 28%); }
+.leafletMap :global(.leaflet-popup-content) { width: 270px !important; margin: 0; }
+.leafletMap :global(.leaflet-popup-tip) { background: var(--paper); }
+.leafletMap :global(.leaflet-popup-close-button) { z-index: 2; top: 9px !important; right: 9px !important; width: 25px !important; height: 25px !important; border: 1px solid rgb(255 255 255 / 64%); border-radius: 50%; color: white !important; background: rgb(1 45 65 / 74%) !important; font: 18px/22px Arial !important; }
+.islandMarker { border: 0 !important; background: transparent !important; }
+.islandPin { position: relative; display: grid; width: 38px; height: 38px; place-items: center; border: 3px solid white; border-radius: 50% 50% 50% 0; color: white; background: var(--marker-color); box-shadow: 0 3px 9px rgb(1 38 57 / 38%); transform: rotate(-45deg); }
+.islandPin::after { position: absolute; inset: -7px; content: ""; border: 1px solid rgb(255 255 255 / 70%); border-radius: 50% 50% 50% 0; opacity: .62; }
+.islandPin b { font-size: 9px; letter-spacing: .02em; transform: rotate(45deg); }
+.mapHint { position: absolute; z-index: 700; bottom: 11px; left: 11px; max-width: calc(100% - 22px); padding: 7px 10px; margin: 0; border: 1px solid rgb(255 255 255 / 55%); border-radius: 7px; color: white; background: rgb(1 45 65 / 78%); font-size: 10px; font-weight: 750; pointer-events: none; }
+.mapPopup { font-family: var(--font-body); }
+.popupImage { position: relative; height: 118px; overflow: hidden; background: #087289; }
+.popupImage img { object-fit: cover; }
+.popupBody { padding: 14px 15px 15px; }
+.popupBody > small { display: block; color: var(--orange); font-size: 9px; font-weight: 900; letter-spacing: .055em; text-transform: uppercase; }
+.popupBody h3 { margin: 5px 0 8px; color: var(--navy-900); font-family: var(--font-display); font-size: 24px; line-height: 1; }
+.popupBody p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.58; }
+.popupBody dl { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; padding: 13px 0; margin: 0; }
+.mapPopup dl div { padding: 7px; border: 1px solid var(--line); border-radius: 6px; background: #f3faf7; }
+.mapPopup dt { color: var(--muted); font-size: 8px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.mapPopup dd { margin: 3px 0 0; color: var(--ocean-700); font-size: 16px; font-weight: 900; }
+.popupGuideLink { display: flex; align-items: center; justify-content: space-between; min-height: 40px; padding: 0 12px; border-radius: 7px; color: white !important; background: var(--ocean-700); font-size: 11px; font-weight: 850; line-height: 1.2; }
+.popupGuideLink:hover { color: white !important; background: var(--navy-900); }.popupGuideLink span { font-size: 17px; line-height: .5; }
+.routeLinks { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.routeLinks button { display: grid; grid-template-columns: 29px minmax(0, 1fr); gap: 8px; min-height: 68px; padding: 11px 10px; border: 0; border-right: 1px solid var(--line); color: var(--navy-900); text-align: left; background: white; transition: background 140ms ease, box-shadow 140ms ease; cursor: pointer; }.routeLinks button:last-child { border-right: 0; }.routeLinks button:hover, .routeLinks button:focus-visible, .routeLinks button[aria-pressed="true"] { outline: 0; background: #e9f6f1; box-shadow: inset 0 -3px 0 var(--ocean-700); }
+.routeLinks > button > span { display: grid; place-items: center; width: 29px; height: 29px; color: var(--ocean-700); background: #dff2ed; border-radius: 50%; font-size: 10px; font-weight: 900; }.routeLinks small, .routeLinks strong { display: block; }.routeLinks small { color: var(--orange); font-size: 8px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase; }.routeLinks strong { margin-top: 3px; font-size: 11px; line-height: 1.2; }
+@media (max-width: 640px) { .paper { width: min(calc(100% - 24px), 1240px); padding: 13px; }.mapIntro { padding: 16px 14px 13px; }.mapIntro h2 { font-size: 24px; }.mapViewport { height: clamp(420px, 68vh, 560px); }.mapHint { display: none; }.routeLinks { grid-template-columns: repeat(5, 132px); overflow-x: auto; }.routeLinks button { min-height: 74px; }.leafletMap :global(.leaflet-popup-content) { width: min(270px, calc(100vw - 72px)) !important; } }

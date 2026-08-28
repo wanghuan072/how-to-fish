@@ -36,6 +36,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
               <Link
                 key={item.href}
                 href={item.href}
+                prefetch={item.href === "/wiki/" ? false : undefined}
                 className={`${styles.navLink} ${isActive(item.href) ? styles.navActive : ""}`}
                 onClick={() => setMenuOpen(false)}
               >

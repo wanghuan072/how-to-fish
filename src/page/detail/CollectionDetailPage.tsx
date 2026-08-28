@@ -161,7 +161,7 @@ export function CollectionDetailPage({ collection, slug }: { collection: Collect
       facts={detailFacts(collection, entry)}
       relationGroups={relationGroups}
       related={relationshipDriven ? [] : related}
-      interactiveContent={islandViewer ? <IslandViewer islandName={(entry as IslandEntry).label} viewerPath={islandViewer.path} /> : undefined}
+      interactiveContent={islandViewer ? <IslandViewer islandName={(entry as IslandEntry).label} islandSlug={entry.slug} viewerPath={islandViewer.path} /> : undefined}
       overviewContent={baitData ? <BaitLoadout bait={baitData} /> : collection === "weapons" && weaponProgression[entry.slug] ? <WeaponLoadout weapon={weaponProgression[entry.slug]} /> : collection === "npcs" ? <NpcProfile entry={entry} /> : undefined}
       customToc={baitData ? [{ id: "quick-setup", label: "Quick setup" }, { id: "catch-pool", label: "Catch pool" }] : collection === "weapons" ? [{ id: "weapon-overview", label: "Weapon overview" }] : collection === "npcs" ? [{ id: "npc-overview", label: "NPC overview" }] : undefined}
     />

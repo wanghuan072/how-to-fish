@@ -16,6 +16,7 @@ export const siteConfig = {
     { label: "Quests", href: "/quests/" },
     { label: "Bosses", href: "/bosses/" },
     { label: "Islands", href: "/islands/" },
+    { label: "Map", href: "/map/" },
     { label: "Wiki", href: "/wiki/" },
     { label: "Tools", href: "/tools/" },
     { label: "Updates", href: "/updates/" },

@@ -29,7 +29,7 @@ export function AchievementsPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Steam achievement checklist"
-        title={`How to Fish Steam Achievements: All ${achievements.length} Unlocks`}
+        title={`How to Fish Achievements: All ${achievements.length} Unlocks`}
         description="Complete every Steam achievement with its real trigger, practical route advice, unlock rate and direct links to the fish, boss, item, weapon, NPC or island involved."
         image="/images/official/gameplay-07.jpg"
         imageAlt="Official How to Fish gameplay screenshot"

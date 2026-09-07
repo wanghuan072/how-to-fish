@@ -71,8 +71,8 @@ export function WikiPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Player reference"
-        title="How to Fish Steam Wiki: Weapons, Bait, NPCs & Achievements"
-        description="Use the complete Steam Wiki to compare all 8 weapons, match bait and rods with catch pools, follow NPC quest chains and finish all 28 achievements."
+        title="How to Fish Wiki: Weapons, Bait, NPCs & Achievements"
+        description="Use the complete How to Fish Wiki to compare all 8 weapons, match bait and rods with catch pools, follow NPC quest chains and finish all 28 achievements."
         image="/images/official/gameplay-05.jpg"
         imageAlt="Official How to Fish gameplay screenshot showing equipment and island exploration"
         summary={<><span><strong>{sections.length}</strong> gameplay categories</span><span><strong>{achievements.length}</strong> achievements</span></>}

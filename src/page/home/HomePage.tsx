@@ -66,8 +66,8 @@ export function HomePage() {
         <div className={styles.heroShade} />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <h1>How to Fish Steam Guide: Complete Walkthrough & Wiki</h1>
-            <p className={styles.heroLead}>Use one connected Steam guide for beginner tips, all {creatures.length} extracted creatures, all {bosses.length} bosses, {islands.length} islands, story quests, weapons, items and every one of the {achievements.length} achievements.</p>
+            <h1>How to Fish: Complete Walkthrough & Wiki</h1>
+            <p className={styles.heroLead}>Use one connected How to Fish guide for beginner tips, all {creatures.length} extracted creatures, all {bosses.length} bosses, {islands.length} islands, story quests, weapons, items and every one of the {achievements.length} achievements.</p>
             <p className={styles.heroUpdated}><CalendarClock size={15} /><time dateTime="2026-08">Site updated: August 2026</time></p>
             <div className={styles.heroActions}>
               <Link className={styles.primaryButton} href="/guides/beginner-guide/"><Anchor size={19} /> Start Here</Link>

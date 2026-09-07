@@ -40,7 +40,7 @@ export function MechanicsPage() {
       <InnerHero
         breadcrumbs={breadcrumbs}
         eyebrow="Gameplay systems"
-        title="How to Fish Steam Mechanics Guide: Fishing, Combat & Money"
+        title="How to Fish Mechanics Guide: Fishing, Combat & Money"
         description="Learn how fishing tension, Killscore, cooking, island progression, Drip variants, weapon attachments and multiplayer roles work during a complete Steam playthrough."
         image="/images/official/gameplay-06.jpg"
         imageAlt="Official How to Fish gameplay screenshot"

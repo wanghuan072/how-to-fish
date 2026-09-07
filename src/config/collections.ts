@@ -19,13 +19,13 @@ export const collectionConfig: Record<
     breadcrumb: "Guides",
     eyebrow: "Walkthroughs & strategy",
     description:
-      "Start with spoiler-light beginner tips, then use the complete Steam walkthrough for every quest trigger, boss trophy and island unlock from Lighthouse to Volcano.",
+      "Start with spoiler-light beginner tips, then use the complete How to Fish walkthrough for every quest trigger, boss trophy and island unlock from Lighthouse to Volcano.",
     href: "/guides/",
     detailPrefix: "/guides",
     image: "/images/official/gameplay-03.jpg",
   },
   quests: {
-    title: "How to Fish Steam Quest Guide: All 7 Quest Walkthroughs",
+    title: "How to Fish Quest Guide: All 7 Quest Walkthroughs",
     seoTitle: "Quests — Steps, Items & Unlocks",
     breadcrumb: "Quests",
     eyebrow: "Objectives & solutions",
@@ -36,7 +36,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-04.jpg",
   },
   bosses: {
-    title: "How to Fish Steam Boss Guide: All 11 Bosses & Strategies",
+    title: "How to Fish Boss Guide: All 11 Bosses & Strategies",
     seoTitle: "Bosses — Triggers, Strategy & Rewards",
     breadcrumb: "Bosses",
     eyebrow: "Bait, preparation & tactics",
@@ -47,7 +47,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-02.jpg",
   },
   islands: {
-    title: "How to Fish Steam Islands Guide: All 5 Routes & Unlocks",
+    title: "How to Fish Islands Guide: All 5 Routes & Unlocks",
     seoTitle: "Islands — Unlock Routes & Locations",
     breadcrumb: "Islands",
     eyebrow: "Five-island progression",
@@ -58,7 +58,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-01.jpg",
   },
   weapons: {
-    title: "How to Fish Steam Weapons: All 8 Weapons & Stats",
+    title: "How to Fish Weapons: All 8 Weapons & Stats",
     seoTitle: "Weapons — Prices, Damage & Locations",
     breadcrumb: "Weapons",
     eyebrow: "How to Fish Wiki",
@@ -80,7 +80,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-07.jpg",
   },
   npcs: {
-    title: "How to Fish Steam NPCs: All 14 Locations & Quests",
+    title: "How to Fish NPCs: All 14 Locations & Quests",
     seoTitle: "NPCs — Locations, Quests & Rewards",
     breadcrumb: "NPCs",
     eyebrow: "How to Fish Wiki",
@@ -91,7 +91,7 @@ export const collectionConfig: Record<
     image: "/images/official/gameplay-03.jpg",
   },
   updates: {
-    title: "How to Fish Steam Updates: Patch Notes & Game Changes",
+    title: "How to Fish Updates: Patch Notes & Game Changes",
     seoTitle: "Updates — Patch Notes & News",
     breadcrumb: "Updates",
     eyebrow: "News & build notes",

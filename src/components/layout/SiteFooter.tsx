@@ -17,7 +17,7 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={`container ${styles.footerTop}`}>
         <div className={styles.footerBrand}>
-          <Link className={styles.brand} href="/">
+          <Link className={styles.brand} href="/" prefetch={false}>
             <span className={styles.brandIcon}>
               <Image src="/images/brand/how-to-fish-game-mark.png" alt="" width={48} height={48} />
             </span>

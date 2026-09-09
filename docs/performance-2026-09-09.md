@@ -86,3 +86,38 @@ Windows temporary-directory cleanup EPERM after writing complete reports.
 
 Verified the final mobile and desktop homepage visually, and navigated from the
 homepage to the beginner guide and back to check styles after CSS inlining.
+
+## Production verification after GitHub deployment
+
+Commit `0eccb57` passed GitHub CI and deployed successfully to Vercel.
+The public homepage was tested with PageSpeed Insights on September 9, 2026:
+https://pagespeed.web.dev/analysis/https-howtofish-org/9ad5h3y83u?form_factor=mobile
+
+- Mobile: performance 92; accessibility, best practices and SEO 100.
+- FCP 1.7 s, LCP 2.8 s, TBT 70 ms, CLS 0, Speed Index 4.5 s.
+- Desktop: performance 89; the other three categories 100.
+  FCP 0.5 s, LCP 0.8 s, TBT 270 ms, CLS 0, Speed Index 0.7 s.
+- Desktop long tasks included Google Analytics (160 ms and 123 ms) and
+  first-party initialization (170 ms and 83 ms).
+
+Follow-up commit `69ee04b` loads the search interface only on first open,
+retains its state and cached index after closing, and disables brand-link prefetch.
+Build and lint passed. Verified the deployed search opens and returns Brown Crab.
+
+The follow-up deployment passed GitHub CI and Vercel deployment checks.
+Final online PageSpeed Insights report (10:17 GMT+8):
+https://pagespeed.web.dev/analysis/https-howtofish-org/g76ugees5l?form_factor=mobile
+
+| Metric | Mobile | Desktop |
+| --- | --- | --- |
+| Performance | 96 | 98 |
+| Accessibility / Best practices / SEO | 100 / 100 / 100 | 100 / 100 / 100 |
+| FCP | 1.7 s | 0.5 s |
+| LCP | 2.6 s | 0.7 s |
+| TBT | 50 ms | 130 ms |
+| CLS | 0 | 0 |
+| Speed Index | 1.7 s | 0.5 s |
+
+Both devices exceed the 90-point target in this production lab test. Scores can
+vary between runs; the difference between reports is not solely attributable to
+the small follow-up code change. No CrUX field data was available in this report.

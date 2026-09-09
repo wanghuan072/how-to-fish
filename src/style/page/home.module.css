@@ -1,6 +1,6 @@
 .hero { position: relative; min-height: 520px; overflow: hidden; color: white; background: #064b68; }
 .heroImage, .heroShade { position: absolute; inset: 0; }
-.heroImage { object-fit: cover; object-position: center 46%; }
+.heroImage { width: 100%; height: 100%; object-fit: cover; object-position: center 46%; }
 .heroShade { background: linear-gradient(90deg, rgb(2 31 52 / 94%) 0%, rgb(2 45 67 / 77%) 48%, rgb(2 36 56 / 42%) 100%); }
 .heroInner { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(360px, .75fr); align-items: center; gap: 54px; min-height: 520px; padding-block: 54px 62px; }
 .heroCopy { max-width: 760px; }
@@ -144,7 +144,7 @@
 .aboutFacts div { display: flex; min-width: 0; flex-direction: column; justify-content: center; padding: 13px; background: white; border: 1px solid var(--line); border-radius: 10px; }
 .aboutFacts dt { color: var(--ocean-700); font-size: 12px; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
 .aboutFacts dd { margin: 3px 0 1px; font-family: var(--font-display); font-size: 21px; }
-.aboutFacts span { color: var(--muted); font-size: 13px; line-height: 1.4; }
+.aboutFacts span { display: block; font-family: var(--font-body); color: var(--muted); font-size: 13px; line-height: 1.4; }
 .faqSection { padding-bottom: 8px; }
 .homeFaq > div { grid-template-columns: 1fr 1fr; gap: 8px 18px; }
 

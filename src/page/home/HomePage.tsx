@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HomeHeroImage } from "@/components/home/HomeHeroImage";
 import Link from "next/link";
 import {
   Anchor,
@@ -62,7 +63,7 @@ export function HomePage() {
       <JsonLd data={[websiteSchema(), organizationSchema(), faqSchema(homeFaq)]} />
 
       <section className={styles.hero}>
-        <Image className={styles.heroImage} src="/images/official/gameplay-03.jpg" alt="Official How to Fish gameplay screenshot showing players fishing and exploring a tropical shore" fill loading="eager" sizes="100vw" />
+        <HomeHeroImage className={styles.heroImage} />
         <div className={styles.heroShade} />
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
@@ -70,8 +71,8 @@ export function HomePage() {
             <p className={styles.heroLead}>Use one connected How to Fish guide for beginner tips, all {creatures.length} extracted creatures, all {bosses.length} bosses, {islands.length} islands, story quests, weapons, items and every one of the {achievements.length} achievements.</p>
             <p className={styles.heroUpdated}><CalendarClock size={15} /><time dateTime="2026-08">Site updated: August 2026</time></p>
             <div className={styles.heroActions}>
-              <Link className={styles.primaryButton} href="/guides/beginner-guide/"><Anchor size={19} /> Start Here</Link>
-              <Link className={styles.secondaryButton} href="/creatures/"><Fish size={19} /> Browse Creatures</Link>
+              <Link prefetch={false} className={styles.primaryButton} href="/guides/beginner-guide/"><Anchor size={19} /> Start Here</Link>
+              <Link prefetch={false} className={styles.secondaryButton} href="/creatures/"><Fish size={19} /> Browse Creatures</Link>
             </div>
             <div className={styles.heroStats}>
               <span className={styles.heroStat}><Fish size={22} /><strong>{creatures.length}</strong><small>Extracted creatures</small></span>
@@ -87,9 +88,9 @@ export function HomePage() {
               <p>Jump straight to the decision holding up your run.</p>
             </header>
             <nav>
-              <Link href="/creatures/"><span><Fish size={20} /><b>Find a creature</b><small>Check its island, rod, bait and value</small></span><ArrowRight size={18} /></Link>
-              <Link href="/quests/"><span><ScrollText size={20} /><b>Finish a quest</b><small>Follow the steps and keep the right item</small></span><ArrowRight size={18} /></Link>
-              <Link href="/bosses/"><span><Skull size={20} /><b>Prepare for a boss</b><small>See the trigger before starting the fight</small></span><ArrowRight size={18} /></Link>
+              <Link prefetch={false} href="/creatures/"><span><Fish size={20} /><b>Find a creature</b><small>Check its island, rod, bait and value</small></span><ArrowRight size={18} /></Link>
+              <Link prefetch={false} href="/quests/"><span><ScrollText size={20} /><b>Finish a quest</b><small>Follow the steps and keep the right item</small></span><ArrowRight size={18} /></Link>
+              <Link prefetch={false} href="/bosses/"><span><Skull size={20} /><b>Prepare for a boss</b><small>See the trigger before starting the fight</small></span><ArrowRight size={18} /></Link>
             </nav>
             <div className={styles.routeNote}><Map size={22} /><span><small>Complete story route</small><strong>Lighthouse → Forest → Desert → Rocks → Volcano</strong></span></div>
           </aside>
@@ -101,7 +102,7 @@ export function HomePage() {
           <SectionHeading number={1} title="Explore Every Island" description="Travel in story order and check what unlocks each stop, which creatures live there and which fight moves the story forward." href="/islands/" linkLabel="View all islands" />
           <div className={styles.islandRoute}>
             {islands.map((island) => (
-              <Link className={styles.islandCard} href={`/islands/${island.slug}/`} key={island.slug}>
+              <Link prefetch={false} className={styles.islandCard} href={`/islands/${island.slug}/`} key={island.slug}>
                 <span className={styles.islandStage}>Stage {island.number}</span>
                 <span className={styles.islandImage}><Image src={island.image} alt={island.imageAlt} fill sizes="(max-width: 768px) 82vw, 270px" /></span>
                 <span className={styles.islandBody}><h3>{island.label}</h3><span><Fish size={13} /> {island.fishCount} creatures</span><span><Crosshair size={13} /> {island.bossNames[0] ?? "Explore"}</span><b>Open island guide <ArrowRight size={13} /></b></span>
@@ -118,17 +119,17 @@ export function HomePage() {
             <div className={styles.homeTableWrap}>
               <table className={styles.homeTable}>
                 <thead><tr><th>Creature</th><th>Location</th><th>Rod</th><th>Bait / trigger</th></tr></thead>
-                <tbody>{fishRows.map((entry) => <tr key={entry.slug}><td><Link href={`/creatures/${entry.slug}/`}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} width={52} height={36} />{entry.name}</Link></td><td>{entry.islandName}</td><td><span>{entry.rod}</span></td><td>{entry.lure}</td></tr>)}</tbody>
+                <tbody>{fishRows.map((entry) => <tr key={entry.slug}><td><Link prefetch={false} href={`/creatures/${entry.slug}/`}><Image src={getFishImage(entry)} alt={getFishImageAlt(entry)} width={52} height={36} />{entry.name}</Link></td><td>{entry.islandName}</td><td><span>{entry.rod}</span></td><td>{entry.lure}</td></tr>)}</tbody>
               </table>
             </div>
-            <Link className={styles.tableLink} href="/creatures/"><span>Previewing 10 non-boss creatures from the {creatures.length}-entry directory</span><b>Browse all creatures <ArrowRight size={14} /></b></Link>
+            <Link prefetch={false} className={styles.tableLink} href="/creatures/"><span>Previewing 10 non-boss creatures from the {creatures.length}-entry directory</span><b>Browse all creatures <ArrowRight size={14} /></b></Link>
           </section>
 
           <section className={`${styles.panel} ${styles.questPanel}`}>
             <SectionHeading number={3} title="Stuck on a Quest?" description="Pick the point where your island route stopped." href="/quests/" linkLabel="View all quests" />
             <div className={styles.questGrid}>
               {quests.slice(0, 5).map((quest, index) => (
-                <Link className={styles.questCard} href={`/quests/${quest.slug}/`} key={quest.slug}>
+                <Link prefetch={false} className={styles.questCard} href={`/quests/${quest.slug}/`} key={quest.slug}>
                   <span className={styles.questImage}><Image src={questPreviewImages[quest.slug] ?? quest.image} alt={`${quest.name} route encounter`} fill sizes="(max-width: 768px) 110px, 140px" /></span>
                   <span className={styles.questBody}><small>Step {index + 1} · {quest.tags?.[0]}</small><h3>{quest.name}</h3><p>{quest.description}</p><b>Open quest <ArrowRight size={13} /></b></span>
                 </Link>
@@ -141,7 +142,7 @@ export function HomePage() {
           <SectionHeading number={4} title="Boss Route" description="See the story trigger before spending a single-use lure or carrying a trophy back to an NPC." href="/bosses/" linkLabel="View all bosses" />
           <div className={styles.bossGrid}>
             {bossHighlights.map((boss) => (
-              <Link className={styles.bossCard} href={`/bosses/${boss.slug}/`} key={boss.slug}>
+              <Link prefetch={false} className={styles.bossCard} href={`/bosses/${boss.slug}/`} key={boss.slug}>
                 <span className={styles.bossImage}><Image src={boss.image} alt={boss.imageAlt} fill sizes="(max-width: 768px) 130px, 190px" /></span>
                 <span className={styles.bossBody}><small>{boss.tags?.[1] ?? "Encounter"}</small><h3>{boss.name.replace(" Boss Guide", "")}</h3><p>{boss.tags?.[0] ? `Trigger: ${boss.tags[0]}` : boss.description}</p><b>View strategy <ArrowRight size={13} /></b></span>
               </Link>
@@ -154,7 +155,7 @@ export function HomePage() {
             <SectionHeading number={5} title="Choose Your Guide" description="Pick a spoiler-light start or the complete island route." href="/guides/" linkLabel="View both guides" />
             <div className={styles.featureGrid}>
               {startCards.map(({ title, text, href, image, label }, index) => (
-                <Link className={`${styles.featureCard} ${index === 0 ? styles.featureLead : ""}`} href={href} key={title}>
+                <Link prefetch={false} className={`${styles.featureCard} ${index === 0 ? styles.featureLead : ""}`} href={href} key={title}>
                   <span className={styles.featureImage}><Image src={image} alt={`${title} gameplay preview`} fill sizes="(max-width: 768px) 100vw, 220px" /></span>
                   <span className={styles.featureBody}><small>{index === 0 ? "Recommended first" : `Route ${index + 1}`}</small><h3>{title}</h3><p>{text}</p><span className={styles.smallLink}>{label} <ArrowRight size={14} /></span></span>
                 </Link>
@@ -166,7 +167,7 @@ export function HomePage() {
             <SectionHeading number={6} title="Weapons & Gear" description="Match the weapon to the encounter and open each loadout for its practical role." href="/wiki/weapons/" linkLabel="View all gear" />
             <div className={styles.gearGrid}>
               {weapons.slice(0, 4).map((weapon) => (
-                <Link className={styles.gearCard} href={`/wiki/weapons/${weapon.slug}/`} key={weapon.slug}>
+                <Link prefetch={false} className={styles.gearCard} href={`/wiki/weapons/${weapon.slug}/`} key={weapon.slug}>
                   <span className={styles.gearImage}><Image src={weapon.image} alt={weapon.imageAlt} fill sizes="140px" /></span>
                   <span className={styles.gearBody}><small>{weapon.eyebrow}</small><h3>{weapon.name.replace(" Guide", "")}</h3><p>{weapon.description}</p><b>Open loadout <ArrowRight size={13} /></b></span>
                 </Link>
@@ -179,13 +180,13 @@ export function HomePage() {
           <SectionHeading number={7} title="Achievement Hunting" description="Use three rare goals to plan collection, Drip and bare-hands cleanup before a full achievement run." href="/wiki/achievements/" linkLabel="View all achievements" />
           <div className={styles.achievementGrid}>
             {achievementSpotlights.map(({ entry, title, description, href }, index) => (
-              <Link className={styles.achievementCard} href={href} key={entry.name}>
+              <Link prefetch={false} className={styles.achievementCard} href={href} key={entry.name}>
                 <span className={styles.achievementIcon}><Image src={entry.image} alt={entry.imageAlt} fill sizes="120px" /></span>
                 <span className={styles.achievementBody}><small><Trophy size={13} /> Challenge {index + 1}</small><h3>{title}</h3><p>{description}</p><span className={styles.rarityLine}><i style={{ width: `${Math.max(entry.globalPercent ?? 0, 3)}%` }} /> <em>{entry.globalPercent}% unlocked</em></span><b>View achievement <ArrowRight size={13} /></b></span>
               </Link>
             ))}
           </div>
-          <Link className={styles.completionLink} href="/wiki/achievements/"><CheckCircle2 size={18} /><span><strong>Planning a full clear?</strong><small>Open the creature and 28-achievement checklist.</small></span><ArrowRight size={16} /></Link>
+          <Link prefetch={false} className={styles.completionLink} href="/wiki/achievements/"><CheckCircle2 size={18} /><span><strong>Planning a full clear?</strong><small>Open the creature and 28-achievement checklist.</small></span><ArrowRight size={16} /></Link>
         </section>
 
         <section className={`${styles.section} ${styles.aboutSection}`}>
@@ -195,13 +196,13 @@ export function HomePage() {
               <h3>Keep the right item. Follow the right route.</h3>
               <p>How to Fish starts with a rod and a small island, then quickly turns into a chain of trades, boss bodies, Radar markers and equipment choices. This wiki keeps those steps together so you can check what to catch, what not to sell and what unlocks next.</p>
               <p>Use the creature directory for everyday catches and special finds, open a quest when progress stops, or follow the island route from Lighthouse to Volcano. Weapons, bait, items, NPCs and achievements link back to the same steps instead of leaving you to piece the route together.</p>
-              <div className={styles.aboutLinks}><Link href="/legal/about-us/">How this wiki is maintained <ArrowRight size={14} /></Link><Link href="/legal/contact-us/">Report a correction <ArrowRight size={14} /></Link></div>
+              <div className={styles.aboutLinks}><Link prefetch={false} href="/legal/about-us/">How this wiki is maintained <ArrowRight size={14} /></Link><Link prefetch={false} href="/legal/contact-us/">Report a correction <ArrowRight size={14} /></Link></div>
             </div>
             <dl className={styles.aboutFacts}>
-              <div><dt>Creature directory</dt><dd>{creatures.length} entries</dd><span>40 fish · 5 shell creatures · 9 special creatures</span></div>
-              <div><dt>Story route</dt><dd>5 stages</dd><span>Lighthouse through Volcano</span></div>
-              <div><dt>Steam achievements</dt><dd>{achievements.length}</dd><span>Story, combat and collection goals</span></div>
-              <div><dt>Play styles</dt><dd>1–8 players</dd><span>Single-player and online co-op</span></div>
+              <div><dt>Creature directory</dt><dd>{creatures.length} entries<span>40 fish · 5 shell creatures · 9 special creatures</span></dd></div>
+              <div><dt>Story route</dt><dd>5 stages<span>Lighthouse through Volcano</span></dd></div>
+              <div><dt>Steam achievements</dt><dd>{achievements.length}<span>Story, combat and collection goals</span></dd></div>
+              <div><dt>Play styles</dt><dd>1–8 players<span>Single-player and online co-op</span></dd></div>
             </dl>
           </div>
         </section>

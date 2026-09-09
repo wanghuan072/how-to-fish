@@ -1,11 +1,15 @@
-/* eslint-disable @next/next/next-script-for-ga */
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
+import Script from "next/script";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { siteConfig } from "@/config/site";
-import { buildSearchIndex } from "@/lib/content";
 import { pageTdk } from "@/seo/tdk";
 import "@/style/globals.css";
+
+const nunito = localFont({ src: "../../public/fonts/Nunito-Variable.woff2", variable: "--font-nunito", weight: "200 1000", display: "swap" });
+const underdog = localFont({ src: "../../public/fonts/Underdog-Regular.woff2", variable: "--font-underdog", weight: "400", display: "swap" });
+const medieval = localFont({ src: "../../public/fonts/MedievalSharp-Brand.woff2", variable: "--font-medieval", weight: "400", display: "swap", preload: false, adjustFontFallback: "Times New Roman" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -27,10 +31,10 @@ export const viewport: Viewport = { themeColor: "#031c31", colorScheme: "light" 
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" className={`${nunito.variable} ${underdog.variable} ${medieval.variable}`} data-scroll-behavior="smooth">
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BF2BMZKJP0" />
-        <script
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-BF2BMZKJP0" />
+        <Script id="google-analytics" strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -41,7 +45,7 @@ gtag('config', 'G-BF2BMZKJP0');`,
       </head>
       <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
-        <SiteHeader searchItems={buildSearchIndex()} />
+        <SiteHeader />
         {children}
         <SiteFooter />
       </body>

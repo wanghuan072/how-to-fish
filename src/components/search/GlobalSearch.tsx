@@ -7,17 +7,40 @@ import type { SearchItem } from "@/types/content";
 import styles from "@/style/components/layout.module.css";
 
 type GlobalSearchProps = {
-  items: SearchItem[];
   open: boolean;
   onClose: () => void;
 };
 
-export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
+export function GlobalSearch({ open, onClose }: GlobalSearchProps) {
+  const [items, setItems] = useState<SearchItem[] | null>(null);
+  const [loadError, setLoadError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [query, setQuery] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!open || items) return;
+    const controller = new AbortController();
+    fetch("/search-index/", { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Search index unavailable");
+        return response.json() as Promise<SearchItem[]>;
+      })
+      .then((entries) => {
+        if (!controller.signal.aborted) {
+          setItems(entries);
+          setLoadError(false);
+        }
+      })
+      .catch(() => {
+        if (!controller.signal.aborted) setLoadError(true);
+      });
+    return () => controller.abort();
+  }, [open, items, attempt]);
+
   const results = useMemo(() => {
+    if (!items) return [];
     const needle = query.trim().toLowerCase();
     if (!needle) return items.slice(0, 8);
     return items
@@ -84,9 +107,13 @@ export function GlobalSearch({ items, open, onClose }: GlobalSearchProps) {
           </button>
         </div>
         <div className={styles.results} aria-live="polite">
-          {results.length ? (
+          {loadError ? (
+            <p className={styles.empty}>Search could not load. <button type="button" onClick={() => { setLoadError(false); setAttempt((value) => value + 1); }}>Try again</button></p>
+          ) : !items ? (
+            <p className={styles.empty}>Loading search…</p>
+          ) : results.length ? (
             results.map((item) => (
-              <Link className={styles.result} href={item.href} key={`${item.type}-${item.href}`} onClick={onClose}>
+              <Link className={styles.result} href={item.href} key={`${item.type}-${item.href}-${item.title}`} onClick={onClose}>
                 <span className={styles.resultIcon}>
                   <Fish size={19} aria-hidden="true" />
                 </span>

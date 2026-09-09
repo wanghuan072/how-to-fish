@@ -27,7 +27,7 @@ export function SectionHeading({
         {description ? <p>{description}</p> : null}
       </div>
       {href ? (
-        <Link href={href} className={ui.textLink}>
+        <Link prefetch={false} href={href} className={ui.textLink}>
           {linkLabel} <ArrowRight size={15} aria-hidden="true" />
         </Link>
       ) : null}

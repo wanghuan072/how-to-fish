@@ -7,10 +7,9 @@ import { useCallback, useState } from "react";
 import { Menu, Search, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { GlobalSearch } from "@/components/search/GlobalSearch";
-import type { SearchItem } from "@/types/content";
 import styles from "@/style/components/layout.module.css";
 
-export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
+export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -36,7 +35,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
               <Link
                 key={item.href}
                 href={item.href}
-                prefetch={item.href === "/wiki/" ? false : undefined}
+                prefetch={false}
                 className={`${styles.navLink} ${isActive(item.href) ? styles.navActive : ""}`}
                 onClick={() => setMenuOpen(false)}
               >
@@ -67,7 +66,7 @@ export function SiteHeader({ searchItems }: { searchItems: SearchItem[] }) {
           </div>
         </div>
       </header>
-      <GlobalSearch items={searchItems} open={searchOpen} onClose={closeSearch} />
+      <GlobalSearch open={searchOpen} onClose={closeSearch} />
     </>
   );
 }

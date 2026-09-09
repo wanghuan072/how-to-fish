@@ -16,7 +16,7 @@ type InnerHeroProps = {
 export function InnerHero({ breadcrumbs, title, description, image, imageAlt = "", eyebrow, summary }: InnerHeroProps) {
   return (
     <header className={styles.hero}>
-      <Image className={styles.image} src={image} alt={imageAlt} fill loading="eager" sizes="100vw" />
+      <Image className={styles.image} src={image} alt={imageAlt} fill loading="eager" fetchPriority="high" sizes="100vw" />
       <div className={styles.shade} />
       <div className={`container ${styles.inner}`}>
         <Breadcrumb items={breadcrumbs} />

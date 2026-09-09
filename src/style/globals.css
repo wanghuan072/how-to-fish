@@ -1,31 +1,7 @@
-@font-face {
-  font-family: "Underdog";
-  src: url("/fonts/Underdog-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("/fonts/Nunito-Variable.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 200 1000;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "MedievalSharp";
-  src: url("/fonts/MedievalSharp-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 :root {
-  --font-display: "Underdog", "Arial Rounded MT Bold", sans-serif;
-  --font-brand: "MedievalSharp", "Palatino Linotype", serif;
-  --font-body: "Nunito", ui-rounded, system-ui, sans-serif;
+  --font-display: var(--font-underdog), "Arial Rounded MT Bold", sans-serif;
+  --font-brand: var(--font-medieval), "Palatino Linotype", serif;
+  --font-body: var(--font-nunito), ui-rounded, system-ui, sans-serif;
   --navy-950: #031d34;
   --navy-900: #052d4a;
   --navy-800: #07435f;
@@ -66,7 +42,7 @@ body {
   color: var(--ink);
   background:
     linear-gradient(180deg, rgb(3 29 52 / 28%), rgb(3 29 52 / 76%)),
-    url("/images/official/store-2026/page-background.jpg") center top / cover fixed,
+    url("/images/official/store-2026/page-background.webp") center top / cover fixed,
     #315f82;
   font-family: var(--font-body);
   font-size: 16px;
